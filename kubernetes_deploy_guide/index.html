@@ -594,7 +594,7 @@ add-apt-repository \
     &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \
     $(lsb_release -cs) \
     stable&quot;
-# 不要问我为什么添加仓库的方式不一样，他们官方文档就是这么写的，再问自杀（白眼
+# 不要问我为什么添加仓库的方式不一样，他们官方文档就是这么写的，再问自杀（手动白眼
 # 添加Kubernetes仓库
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 cat &amp;lt;&amp;lt;EOF &amp;gt;/etc/apt/sources.list.d/kubernetes.list
