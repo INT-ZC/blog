@@ -228,7 +228,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="./" title="Kubernetes" class="md-tabs__link md-tabs__link--active">
+        <a href="../introduction_to_kubernetes/" title="Kubernetes" class="md-tabs__link md-tabs__link--active">
           Kubernetes
         </a>
       
@@ -330,6 +330,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../introduction_to_kubernetes/" title="Kubernetes导论" class="md-nav__link">
+      Kubernetes导论
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -386,8 +398,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#kubernetes_1" title="初始化Kubernetes" class="md-nav__link">
-    初始化Kubernetes
+  <a href="#kubernetes_1" title="初始化kubernetes" class="md-nav__link">
+    初始化kubernetes
   </a>
   
     <nav class="md-nav">
@@ -414,8 +426,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#kuberneteskube" title="导出配置文件是十分必要的，Kubernetes会从当前操作用户的~/.kube目录下读取配置文件" class="md-nav__link">
-    导出配置文件是十分必要的，Kubernetes会从当前操作用户的~/.kube目录下读取配置文件
+  <a href="#kuberneteskube" title="导出配置文件是十分必要的，kubernetes会从当前操作用户的~/.kube目录下读取配置文件" class="md-nav__link">
+    导出配置文件是十分必要的，kubernetes会从当前操作用户的~/.kube目录下读取配置文件
   </a>
   
 </li>
@@ -433,8 +445,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#kubernetes_2" title="配置Kubernetes网络模型" class="md-nav__link">
-    配置Kubernetes网络模型
+  <a href="#kubernetes_2" title="配置kubernetes网络模型" class="md-nav__link">
+    配置kubernetes网络模型
   </a>
   
     <nav class="md-nav">
@@ -453,8 +465,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#kubernetes-dashboard" title="部署Kubernetes dashboard" class="md-nav__link">
-    部署Kubernetes dashboard
+  <a href="#kubernetes-dashboard" title="部署kubernetes dashboard" class="md-nav__link">
+    部署kubernetes dashboard
   </a>
   
 </li>
@@ -536,8 +548,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#kubernetes_1" title="初始化Kubernetes" class="md-nav__link">
-    初始化Kubernetes
+  <a href="#kubernetes_1" title="初始化kubernetes" class="md-nav__link">
+    初始化kubernetes
   </a>
   
     <nav class="md-nav">
@@ -564,8 +576,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#kuberneteskube" title="导出配置文件是十分必要的，Kubernetes会从当前操作用户的~/.kube目录下读取配置文件" class="md-nav__link">
-    导出配置文件是十分必要的，Kubernetes会从当前操作用户的~/.kube目录下读取配置文件
+  <a href="#kuberneteskube" title="导出配置文件是十分必要的，kubernetes会从当前操作用户的~/.kube目录下读取配置文件" class="md-nav__link">
+    导出配置文件是十分必要的，kubernetes会从当前操作用户的~/.kube目录下读取配置文件
   </a>
   
 </li>
@@ -583,8 +595,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#kubernetes_2" title="配置Kubernetes网络模型" class="md-nav__link">
-    配置Kubernetes网络模型
+  <a href="#kubernetes_2" title="配置kubernetes网络模型" class="md-nav__link">
+    配置kubernetes网络模型
   </a>
   
     <nav class="md-nav">
@@ -603,8 +615,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#kubernetes-dashboard" title="部署Kubernetes dashboard" class="md-nav__link">
-    部署Kubernetes dashboard
+  <a href="#kubernetes-dashboard" title="部署kubernetes dashboard" class="md-nav__link">
+    部署kubernetes dashboard
   </a>
   
 </li>
@@ -642,8 +654,8 @@
                 
                 
                 <h1 id="kubernetes">Kubernetes部署教程<a class="headerlink" href="#kubernetes" title="Permanent link">&para;</a></h1>
-<p>网上Kubernetes各种教程不少，但要么是上古时期的版本，要么三言两语匆匆带过。</p>
-<p>这里列一下我在部署Kubernetes v1.13.2时踩过的各种坑。</p>
+<p>网上kubernetes各种教程不少，但要么是上古时期的版本，要么三言两语匆匆带过。</p>
+<p>这里列一下我在部署kubernetes v1.13.2时踩过的各种坑。</p>
 <h2 id="docker-kubernetes">安装Docker &amp;&amp; Kubernetes<a class="headerlink" href="#docker-kubernetes" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span># 安装依赖
 apt-get install \
@@ -660,24 +672,24 @@ add-apt-repository \
     $(lsb_release -cs) \
     stable&quot;
 # 不要问我为什么添加仓库的方式不一样，他们官方文档就是这么写的，再问自杀（手动白眼
-# 添加Kubernetes仓库
+# 添加kubernetes仓库
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 cat &amp;lt;&amp;lt;EOF &amp;gt;/etc/apt/sources.list.d/kubernetes.list
     deb https://apt.kubernetes.io/ kubernetes-xenial main
     EOF
 # 更新仓库
 apt-get update
-# 安装Docker，由于Kubernetes v1.13.2最高支持Docker v1.18.0.6，这里手动指定版本。
-# 有的教程说Kubernetes不支持Docker-CE，只支持Docker-IO，相信我，他在胡扯。
+# 安装Docker，由于kubernetes v1.13.2最高支持Docker v1.18.0.6，这里手动指定版本。
+# 有的教程说kubernetes不支持Docker-CE，只支持Docker-IO，相信我，他在胡扯。
 apt-get install docker-ce=18.06.0~ce~3-0~ubuntu
-# 安装Kubernetes
+# 安装kubernetes
 apt-get install kubelet kubeadm kubectl
 </pre></div>
 
 
 <h2 id="_1">拉取依赖镜像<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <h4 id="gfw">本步骤仅适用于位于GFW影响范围内的主机<a class="headerlink" href="#gfw" title="Permanent link">&para;</a></h4>
-<p>运行以下脚本（如果您预期安装的Kubernetes版本不是v1.13.2，请运行kubeadm config images list并依据返回结果运行脚本）：</p>
+<p>运行以下脚本（如果您预期安装的kubernetes版本不是v1.13.2，请运行kubeadm config images list并依据返回结果运行脚本）：</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -804,14 +816,14 @@ docker rmi registry.cn-hangzhou.aliyuncs.com/kubernetes_containers/flannel:<span
 </pre></div>
 </td></tr></table>
 
-<h2 id="kubernetes_1">初始化Kubernetes<a class="headerlink" href="#kubernetes_1" title="Permanent link">&para;</a></h2>
+<h2 id="kubernetes_1">初始化kubernetes<a class="headerlink" href="#kubernetes_1" title="Permanent link">&para;</a></h2>
 <h4 id="flannel">出于对网络速度的考虑，我们使用了Flannel作为网络模型，不同网络模型的初始化参数可能不一样，请依据指导初始化<a class="headerlink" href="#flannel" title="Permanent link">&para;</a></h4>
 <div class="codehilite"><pre><span></span>kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=&amp;lt;ip-address&amp;gt;
 </pre></div>
 
 
 <h2 id="_2">导出配置文件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<h4 id="kuberneteskube">导出配置文件是十分必要的，Kubernetes会从当前操作用户的~/.kube目录下读取配置文件<a class="headerlink" href="#kuberneteskube" title="Permanent link">&para;</a></h4>
+<h4 id="kuberneteskube">导出配置文件是十分必要的，kubernetes会从当前操作用户的~/.kube目录下读取配置文件<a class="headerlink" href="#kuberneteskube" title="Permanent link">&para;</a></h4>
 <div class="codehilite"><pre><span></span># 对于普通用户
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
@@ -826,20 +838,20 @@ export KUBECONFIG=/etc/kubernetes/admin.conf
 </pre></div>
 
 
-<h2 id="kubernetes_2">配置Kubernetes网络模型<a class="headerlink" href="#kubernetes_2" title="Permanent link">&para;</a></h2>
+<h2 id="kubernetes_2">配置kubernetes网络模型<a class="headerlink" href="#kubernetes_2" title="Permanent link">&para;</a></h2>
 <h4 id="_4">如果您选择了其他网络模型，请依据指导完成本步骤<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
 <div class="codehilite"><pre><span></span>sysctl net.bridge.bridge-nf-call-iptables=1
 kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 </pre></div>
 
 
-<h2 id="kubernetes-dashboard">部署Kubernetes dashboard<a class="headerlink" href="#kubernetes-dashboard" title="Permanent link">&para;</a></h2>
+<h2 id="kubernetes-dashboard">部署kubernetes dashboard<a class="headerlink" href="#kubernetes-dashboard" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml
 </pre></div>
 
 
 <h2 id="_5">安装结束<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>至此，Kubernetes已经成功在您的机器上安装，运行</p>
+<p>至此，kubernetes已经成功在您的机器上安装，运行</p>
 <div class="codehilite"><pre><span></span>kubectl get pods --all-namespaces
 </pre></div>
 
@@ -882,7 +894,7 @@ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documen
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../master/about/" title="关于" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../introduction_to_kubernetes/" title="Kubernetes导论" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -891,7 +903,7 @@ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documen
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                关于
+                Kubernetes导论
               </span>
             </div>
           </a>
