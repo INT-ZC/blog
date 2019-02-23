@@ -13,7 +13,7 @@
         <meta name="description" content="The website of Zhiyuan Chen">
       
       
-        <link rel="canonical" href="https://zc.int.xyz/kubernetes/kubernetes_deploy_guide/">
+        <link rel="canonical" href="https://zc.int.xyz/kubernetes/deploy_guide/">
       
       
         <meta name="author" content="Zhiyuan Chen">
@@ -133,7 +133,7 @@
                 Zhiyuan Chen
               </span>
               <span class="md-header-nav__topic">
-                Kubernetes部署教程
+                Kubernetes Deploy Guide
               </span>
             
           
@@ -205,16 +205,14 @@
       
         
 
-  
-
-<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+<nav class="md-tabs" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href="../.." title="首页" class="md-tabs__link">
+      <a href="../.." title="首页" class="md-tabs__link md-tabs__link--active">
         首页
       </a>
     
@@ -230,7 +228,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../introduction_to_kubernetes/" title="Kubernetes" class="md-tabs__link md-tabs__link--active">
+        <a href="../introduction_to_kubernetes/" title="Kubernetes" class="md-tabs__link">
           Kubernetes
         </a>
       
@@ -323,12 +321,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
       Kubernetes
@@ -356,163 +352,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Kubernetes部署教程
-      </label>
-    
-    <a href="./" title="Kubernetes部署教程" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../kubernetes_deploy_guide.md" title="Kubernetes部署教程" class="md-nav__link">
       Kubernetes部署教程
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#docker-kubernetes-nvidia-docker2" title="安装Docker &amp;&amp; Kubernetes &amp;&amp; nvidia-docker2" class="md-nav__link">
-    安装Docker &amp;&amp; Kubernetes &amp;&amp; nvidia-docker2
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" title="拉取依赖镜像" class="md-nav__link">
-    拉取依赖镜像
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#gfw" title="本步骤仅适用于位于GFW影响范围内的主机" class="md-nav__link">
-    本步骤仅适用于位于GFW影响范围内的主机
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#kubernetes_1" title="初始化kubernetes" class="md-nav__link">
-    初始化kubernetes
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#flannel" title="出于对网络速度的考虑，我们使用了Flannel作为网络模型，不同网络模型的初始化参数可能不一样，请依据指导初始化" class="md-nav__link">
-    出于对网络速度的考虑，我们使用了Flannel作为网络模型，不同网络模型的初始化参数可能不一样，请依据指导初始化
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="导出配置文件" class="md-nav__link">
-    导出配置文件
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#kuberneteskube" title="导出配置文件是十分必要的，kubernetes会从当前操作用户的~/.kube目录下读取配置文件" class="md-nav__link">
-    导出配置文件是十分必要的，kubernetes会从当前操作用户的~/.kube目录下读取配置文件
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" title="如果配置文件无法读取，您在接下来的操作当中可能会看到如下错误之一：" class="md-nav__link">
-    如果配置文件无法读取，您在接下来的操作当中可能会看到如下错误之一：
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#kubernetes_2" title="部署kubernetes网络模型" class="md-nav__link">
-    部署kubernetes网络模型
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" title="如果您选择了其他网络模型，请依据指导完成本步骤" class="md-nav__link">
-    如果您选择了其他网络模型，请依据指导完成本步骤
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nvidia" title="部署NVIDIA设备插件" class="md-nav__link">
-    部署NVIDIA设备插件
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#kubernetes-dashboard" title="部署kubernetes dashboard" class="md-nav__link">
-    部署kubernetes dashboard
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" title="安装结束" class="md-nav__link">
-    安装结束
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-        <li class="md-nav__item">
-          <a href="#__comments" title="Comments" class="md-nav__link md-nav__link--active">
-            Comments
-          </a>
-        </li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -678,7 +522,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/int-zc/web/edit/master/docs/kubernetes/kubernetes_deploy_guide.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/int-zc/web/edit/master/docs/kubernetes/deploy_guide.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
                 <h1 id="kubernetes">Kubernetes部署教程<a class="headerlink" href="#kubernetes" title="Permanent link">&para;</a></h1>
@@ -941,9 +785,9 @@ kubectl create -f https://raw.githubusercontent.com/NVIDIA/k8s-device-plugin/v1.
   <div id="disqus_thread"></div>
   <script>
     var disqus_config = function () {
-      this.page.url = "https://zc.int.xyz/kubernetes/kubernetes_deploy_guide/";
+      this.page.url = "https://zc.int.xyz/kubernetes/deploy_guide/";
       this.page.identifier =
-        "/kubernetes/kubernetes_deploy_guide/";
+        "/kubernetes/deploy_guide/";
     };
     (function() {
       var d = document, s = d.createElement("script");
@@ -961,27 +805,6 @@ kubectl create -f https://raw.githubusercontent.com/NVIDIA/k8s-device-plugin/v1.
       
         
 <footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
-        
-          <a href="../introduction_to_kubernetes/" title="Kubernetes导论" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-            </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                Kubernetes导论
-              </span>
-            </div>
-          </a>
-        
-        
-      </nav>
-    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
