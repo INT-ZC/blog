@@ -36,6 +36,16 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://zc.int.xyz/docker/introduction_to_docker/</loc>
+     <lastmod>2019-07-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://zc.int.xyz/docker/installation/</loc>
+     <lastmod>2019-07-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://zc.int.xyz/sketch/20190610/</loc>
      <lastmod>2019-07-09</lastmod>
      <changefreq>daily</changefreq>
