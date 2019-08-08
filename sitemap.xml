@@ -21,6 +21,16 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://zc.int.xyz/algorithm/introduction_to_algorithm/</loc>
+     <lastmod>2019-08-08</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://zc.int.xyz/algorithm/complexity/</loc>
+     <lastmod>2019-08-08</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://zc.int.xyz/kubernetes/introduction_to_kubernetes/</loc>
      <lastmod>2019-08-08</lastmod>
      <changefreq>daily</changefreq>
@@ -62,16 +72,6 @@
     </url>
     <url>
      <loc>https://zc.int.xyz/sketch/20190727/</loc>
-     <lastmod>2019-08-08</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://zc.int.xyz/algorithm/introduction_to_algorithm/</loc>
-     <lastmod>2019-08-08</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://zc.int.xyz/algorithm/complexity/</loc>
      <lastmod>2019-08-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
