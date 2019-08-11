@@ -51,6 +51,16 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://zc.int.xyz/CppCoreGuidelines/CppCoreGuidelines/</loc>
+     <lastmod>2019-08-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://zc.int.xyz/CppCoreGuidelines/abstract/</loc>
+     <lastmod>2019-08-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://zc.int.xyz/docker/introduction/</loc>
      <lastmod>2019-08-12</lastmod>
      <changefreq>daily</changefreq>
