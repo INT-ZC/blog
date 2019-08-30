@@ -1,0 +1,352 @@
+<!doctype html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="description" content="The website of Zhiyuan Chen"><link rel="canonical" href="https://zc.int.xyz/docker/dockerfile/"><meta name="author" content="Zhiyuan Chen"><meta name="lang:clipboard.copy" content="Copy to clipboard"><meta name="lang:clipboard.copied" content="Copied to clipboard"><meta name="lang:search.language" content="en"><meta name="lang:search.pipeline.stopwords" content="True"><meta name="lang:search.pipeline.trimmer" content="True"><meta name="lang:search.result.none" content="No matching documents"><meta name="lang:search.result.one" content="1 matching document"><meta name="lang:search.result.other" content="# matching documents"><meta name="lang:search.tokenizer" content="[\s\-]+"><link rel="shortcut icon" href="../../images/favicon.ico"><meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.3.1"><title>JetBrains使用指南</title><link rel="stylesheet" href="../../assets/stylesheets/application.4031d38b.css"><link rel="stylesheet" href="../../assets/stylesheets/application-palette.224b79ff.css"><meta name="theme-color" content="#009688"><script src="../../assets/javascripts/modernizr.74668098.js"></script><link href="https://fonts.gstatic.com" rel="preconnect" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=swap"><style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style><link rel="stylesheet" href="../../assets/fonts/material-icons.css"><link rel="manifest" href="../../manifest.webmanifest"><link rel="stylesheet" href="../../css/css.css"><link rel="stylesheet" href="../../css/extra.css"><script>window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-104387513-1", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })</script><script async src="https://www.google-analytics.com/analytics.js"></script></head><body dir="ltr" data-md-color-primary="teal" data-md-color-accent="teal"><svg class="md-svg"><defs><svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg></defs></svg> <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off"> <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off"> <label class="md-overlay" data-md-component="overlay" for="__drawer"></label><a href="#dockerfile" tabindex="1" class="md-skip">Skip to content </a><header class="md-header" data-md-component="header"><nav class="md-header-nav md-grid"><div class="md-flex"><div class="md-flex__cell md-flex__cell--shrink"><a href="https://zc.int.xyz" title="Zhiyuan Chen" class="md-header-nav__button md-logo"><img src="../../images/zc.png" width="24" height="24"></a></div><div class="md-flex__cell md-flex__cell--shrink"><label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label></div><div class="md-flex__cell md-flex__cell--stretch"><div class="md-flex__ellipsis md-header-nav__title" data-md-component="title"><span class="md-header-nav__topic">Zhiyuan Chen</span><span class="md-header-nav__topic">JetBrains使用指南</span></div></div><div class="md-flex__cell md-flex__cell--shrink"><label class="md-icon md-icon--search md-header-nav__button" for="__search"></label><div class="md-search" data-md-component="search" role="dialog"><label class="md-search__overlay" for="__search"></label><div class="md-search__inner" role="search"><form class="md-search__form" name="search"><input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active"> <label class="md-icon md-search__icon" for="__search"></label> <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">&#xE5CD;</button></form><div class="md-search__output"><div class="md-search__scrollwrap" data-md-scrollfix><div class="md-search-result" data-md-component="result"><div class="md-search-result__meta">Type to start searching</div><ol class="md-search-result__list"></ol></div></div></div></div></div></div><div class="md-flex__cell md-flex__cell--shrink"><div class="md-header-nav__source"><a href="https://github.com/yc-zc/web/" title="Go to repository" class="md-source" data-md-source="github"><div class="md-source__icon"><svg viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#__github" width="24" height="24"></use></svg></div><div class="md-source__repository">The website of Zhiyuan Chen</div></a></div></div></div></nav></header><div class="md-container"><nav class="md-tabs md-tabs--active" data-md-component="tabs"><div class="md-tabs__inner md-grid"><ul class="md-tabs__list"><li class="md-tabs__item"><a href="../.." title="首页" class="md-tabs__link">首页</a></li><li class="md-tabs__item"><a href="../../document/jetbrains/" title="文档" class="md-tabs__link">文档</a></li><li class="md-tabs__item"><a href="../../algorithm/introduction/" title="算法" class="md-tabs__link">算法</a></li><li class="md-tabs__item"><a href="../../kubernetes/introduction/" title="Kubernetes" class="md-tabs__link">Kubernetes</a></li><li class="md-tabs__item"><a href="../introduction/" title="Docker" class="md-tabs__link md-tabs__link--active">Docker</a></li><li class="md-tabs__item"><a href="../../CppCoreGuidelines/CppCoreGuidelines/" title="C++核心指南" class="md-tabs__link">C++核心指南</a></li><li class="md-tabs__item"><a href="../../sketch/20190610/" title="随笔" class="md-tabs__link">随笔</a></li></ul></div></nav><main class="md-main"><div class="md-main__inner md-grid" data-md-component="container"><div class="md-sidebar md-sidebar--primary" data-md-component="navigation"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><nav class="md-nav md-nav--primary" data-md-level="0"><label class="md-nav__title md-nav__title--site" for="__drawer"><a href="https://zc.int.xyz" title="Zhiyuan Chen" class="md-nav__button md-logo"><img src="../../images/zc.png" width="48" height="48"></a>Zhiyuan Chen</label><div class="md-nav__source"><a href="https://github.com/yc-zc/web/" title="Go to repository" class="md-source" data-md-source="github"><div class="md-source__icon"><svg viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#__github" width="24" height="24"></use></svg></div><div class="md-source__repository">The website of Zhiyuan Chen</div></a></div><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../.." title="首页" class="md-nav__link">首页</a></li><li class="md-nav__item"><a href="../../master/donate/" title="捐赠" class="md-nav__link">捐赠</a></li><li class="md-nav__item"><a href="../../master/about/" title="关于" class="md-nav__link">关于</a></li><li class="md-nav__item"><a href="../../master/curriculum_vitae/" title="简历" class="md-nav__link">简历</a></li><li class="md-nav__item"><a href="../../master/resume/" title="Resume" class="md-nav__link">Resume</a></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6"><label class="md-nav__link" for="nav-6">文档</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-6">文档</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../document/jetbrains/" title="JetBrains使用指南" class="md-nav__link">JetBrains使用指南</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7"><label class="md-nav__link" for="nav-7">算法</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-7">算法</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../algorithm/introduction/" title="算法导论" class="md-nav__link">算法导论</a></li><li class="md-nav__item"><a href="../../algorithm/complexity/" title="复杂度" class="md-nav__link">复杂度</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8"><label class="md-nav__link" for="nav-8">Kubernetes</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-8">Kubernetes</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../kubernetes/introduction/" title="导论" class="md-nav__link">导论</a></li><li class="md-nav__item"><a href="../../kubernetes/installation/" title="安装" class="md-nav__link">安装</a></li><li class="md-nav__item"><a href="../../kubernetes/pods/" title="Pods" class="md-nav__link">Pods</a></li><li class="md-nav__item"><a href="../../kubernetes/deployments/" title="Deployments" class="md-nav__link">Deployments</a></li></ul></nav></li><li class="md-nav__item md-nav__item--active md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" checked><label class="md-nav__link" for="nav-9">Docker</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-9">Docker</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../introduction/" title="导论" class="md-nav__link">导论</a></li><li class="md-nav__item"><a href="../installation/" title="安装" class="md-nav__link">安装</a></li><li class="md-nav__item"><a href="../command_line_interface/" title="命令行接口" class="md-nav__link">命令行接口</a></li><li class="md-nav__item md-nav__item--active"><input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc"><label class="md-nav__link md-nav__link--active" for="__toc">Dockerfile</label><a href="./" title="Dockerfile" class="md-nav__link md-nav__link--active">Dockerfile</a><nav class="md-nav md-nav--secondary"><label class="md-nav__title" for="__toc">Table of contents</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="#_1" title="指令" class="md-nav__link">指令</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#from" title="FROM" class="md-nav__link">FROM</a></li><li class="md-nav__item"><a href="#label" title="LABEL" class="md-nav__link">LABEL</a></li><li class="md-nav__item"><a href="#arg-env" title="ARG 和 ENV" class="md-nav__link">ARG 和 ENV</a></li><li class="md-nav__item"><a href="#workdir-user" title="WORKDIR 和 USER" class="md-nav__link">WORKDIR 和 USER</a></li><li class="md-nav__item"><a href="#run" title="RUN" class="md-nav__link">RUN</a></li><li class="md-nav__item"><a href="#copy-add" title="COPY 和 ADD" class="md-nav__link">COPY 和 ADD</a></li><li class="md-nav__item"><a href="#expose" title="EXPOSE" class="md-nav__link">EXPOSE</a></li><li class="md-nav__item"><a href="#volume" title="VOLUME" class="md-nav__link">VOLUME</a></li><li class="md-nav__item"><a href="#healthcheck-stopsignal" title="HEALTHCHECK 和 STOPSIGNAL" class="md-nav__link">HEALTHCHECK 和 STOPSIGNAL</a></li><li class="md-nav__item"><a href="#onbuild" title="ONBUILD" class="md-nav__link">ONBUILD</a></li><li class="md-nav__item"><a href="#cmd-entrypoint" title="CMD 和 ENTRYPOINT" class="md-nav__link">CMD 和 ENTRYPOINT</a></li></ul></nav></li><li class="md-nav__item"><a href="#nvidiacuda" title="nvidia/cuda" class="md-nav__link">nvidia/cuda</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#101-cudnn7-devel-ubuntu1804" title="10.1-cudnn7-devel-ubuntu18.04" class="md-nav__link">10.1-cudnn7-devel-ubuntu18.04</a></li><li class="md-nav__item"><a href="#101-devel-ubuntu1804" title="10.1-devel-ubuntu18.04" class="md-nav__link">10.1-devel-ubuntu18.04</a></li><li class="md-nav__item"><a href="#101-runtime-ubuntu1804" title="10.1-runtime-ubuntu18.04" class="md-nav__link">10.1-runtime-ubuntu18.04</a></li><li class="md-nav__item"><a href="#101-base-ubuntu1804" title="10.1-base-ubuntu18.04" class="md-nav__link">10.1-base-ubuntu18.04</a></li><li class="md-nav__item"><a href="#ubuntu1804" title="ubuntu:18.04" class="md-nav__link">ubuntu:18.04</a></li></ul></nav></li><li class="md-nav__item"><a href="#__comments" title="Comments" class="md-nav__link md-nav__link--active">Comments</a></li></ul></nav></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10"><label class="md-nav__link" for="nav-10">C++核心指南</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-10">C++核心指南</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../CppCoreGuidelines/CppCoreGuidelines/" title="原文" class="md-nav__link">原文</a></li><li class="md-nav__item"><a href="../../CppCoreGuidelines/abstract/" title="摘要" class="md-nav__link">摘要</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11"><label class="md-nav__link" for="nav-11">随笔</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-11">随笔</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../sketch/20190610/" title="二〇一九年 六月 十日" class="md-nav__link">二〇一九年 六月 十日</a></li><li class="md-nav__item"><a href="../../sketch/20190619/" title="二〇一九年 六月 十九日" class="md-nav__link">二〇一九年 六月 十九日</a></li><li class="md-nav__item"><a href="../../sketch/20190727/" title="二〇一九年 七月 二十七日" class="md-nav__link">二〇一九年 七月 二十七日</a></li></ul></nav></li></ul></nav></div></div></div><div class="md-sidebar md-sidebar--secondary" data-md-component="toc"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><nav class="md-nav md-nav--secondary"><label class="md-nav__title" for="__toc">Table of contents</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="#_1" title="指令" class="md-nav__link">指令</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#from" title="FROM" class="md-nav__link">FROM</a></li><li class="md-nav__item"><a href="#label" title="LABEL" class="md-nav__link">LABEL</a></li><li class="md-nav__item"><a href="#arg-env" title="ARG 和 ENV" class="md-nav__link">ARG 和 ENV</a></li><li class="md-nav__item"><a href="#workdir-user" title="WORKDIR 和 USER" class="md-nav__link">WORKDIR 和 USER</a></li><li class="md-nav__item"><a href="#run" title="RUN" class="md-nav__link">RUN</a></li><li class="md-nav__item"><a href="#copy-add" title="COPY 和 ADD" class="md-nav__link">COPY 和 ADD</a></li><li class="md-nav__item"><a href="#expose" title="EXPOSE" class="md-nav__link">EXPOSE</a></li><li class="md-nav__item"><a href="#volume" title="VOLUME" class="md-nav__link">VOLUME</a></li><li class="md-nav__item"><a href="#healthcheck-stopsignal" title="HEALTHCHECK 和 STOPSIGNAL" class="md-nav__link">HEALTHCHECK 和 STOPSIGNAL</a></li><li class="md-nav__item"><a href="#onbuild" title="ONBUILD" class="md-nav__link">ONBUILD</a></li><li class="md-nav__item"><a href="#cmd-entrypoint" title="CMD 和 ENTRYPOINT" class="md-nav__link">CMD 和 ENTRYPOINT</a></li></ul></nav></li><li class="md-nav__item"><a href="#nvidiacuda" title="nvidia/cuda" class="md-nav__link">nvidia/cuda</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#101-cudnn7-devel-ubuntu1804" title="10.1-cudnn7-devel-ubuntu18.04" class="md-nav__link">10.1-cudnn7-devel-ubuntu18.04</a></li><li class="md-nav__item"><a href="#101-devel-ubuntu1804" title="10.1-devel-ubuntu18.04" class="md-nav__link">10.1-devel-ubuntu18.04</a></li><li class="md-nav__item"><a href="#101-runtime-ubuntu1804" title="10.1-runtime-ubuntu18.04" class="md-nav__link">10.1-runtime-ubuntu18.04</a></li><li class="md-nav__item"><a href="#101-base-ubuntu1804" title="10.1-base-ubuntu18.04" class="md-nav__link">10.1-base-ubuntu18.04</a></li><li class="md-nav__item"><a href="#ubuntu1804" title="ubuntu:18.04" class="md-nav__link">ubuntu:18.04</a></li></ul></nav></li><li class="md-nav__item"><a href="#__comments" title="Comments" class="md-nav__link md-nav__link--active">Comments</a></li></ul></nav></div></div></div><div class="md-content"><article class="md-content__inner md-typeset"><a href="https://github.com/yc-zc/web/edit/master/docs/docker/dockerfile.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a><h1 id="dockerfile">Dockerfile<a class="headerlink" href="#dockerfile" title="Permanent link">#</a></h1>
+<p>Dockerfile可以说是Docker最重要的一部分。Docker依据Dockerfile的描述构建出一个又一个Docker镜像，使之得以运行。也是因此，我们可以将软件交付从数十GiB的代码缩减到数百KiB。</p>
+<p>本文将简要介绍Dockerfile的内容，并将提供nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04的Dockerfile供大家分析。</p>
+<h2 id="_1">指令<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
+<p>首先，我们从Dockerfile的指令开始。Dockerfile有十几种指令，只有其中四种指令会创建一个新的层。他们是**FROM**、<strong>COPY</strong>、<strong>ADD</strong>、<strong>RUN**和**CMD</strong>、<strong>ENTRYPOINT</strong>。对于其他所有指令，Docker都将会构建一个中间镜像，这既不会增加容器的大小，也不会对容器的性能产生任何影响。但是这四个指令在运行当中会创建新的层，在实践过程当中我们需要特别关注这些指令，错误的使用这些指令将可能造成容器未按期待运行。</p>
+<h3 id="from">FROM<a class="headerlink" href="#from" title="Permanent link">#</a></h3>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>FROM &lt;image&gt;[:&lt;tag&gt;] [AS &lt;name&gt;]
+FROM &lt;image&gt;[@&lt;digest&gt;] [AS &lt;name&gt;]
+</pre></div>
+
+
+<p>通常情况下，Dockerfile的第一行是FROM，也即代表其将基于一个另一个Docker（当然，极少数情况下也可能是scratch）构建。你可以将其理解为继承--子类将实现父类的全部功能。如果你希望对你的容器具有完全的掌控的话，你也可以省略掉FROM或者直接FROM scratch来构建一个基镜像。这将很可能耗去你大量的精力却无法带来任何收益，我们强烈推荐你不要这么做，除非你很确定你自己想做些什么。</p>
+<p>在上古时代（Docker 17.05之前），Docker是不支持多个FROM语句的。即Docker是单一继承的。但Docker 17.05添加了多阶段构建（multi-stage builds）。如果你在容器当中需要编译什么东西的话，使用多阶段构建创建一个新的容器进行编译并将结果复制到本容器当中将对于降低容器大小非常有利。我们会在稍后的例子当中进行演示。</p>
+<h3 id="label">LABEL<a class="headerlink" href="#label" title="Permanent link">#</a></h3>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>LABEL &lt;key&gt;=&lt;value&gt;
+</pre></div>
+
+
+<p>LABEL对镜像进行标签，这个似乎没什么需要多说的。</p>
+<h3 id="arg-env">ARG 和 ENV<a class="headerlink" href="#arg-env" title="Permanent link">#</a></h3>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>ARG &lt;name&gt;[=&lt;default value&gt;]
+
+ENV &lt;key&gt; &lt;value&gt;
+ENV &lt;key&gt;=&lt;value&gt;
+</pre></div>
+
+
+<p>ARG指令设置参数，参数只能在构建镜像时使用，镜像创建完毕即丢失。ENV指令设置的则是环境变量，在容器创建好后仍然存在。这两个指令都对接下来的ADD、CMD、COPY、ENV、EXPOSE、ENTRYPOINT、FROM、LABEL、RUN、STOPSIGNAL、USER、VOLUME和WORKDIR生效。此外，对于Docker 1.4之后的版本来说，如果ONBUILD与上述十个指令联用，那他们也将对ONBUILD指令生效。对于Docker 1.13之后的版本来说，如果 docker build --build-arg 传递的参数在Dockerfile当中没有使用，Docker将会产生如下警告：</p>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>[Warning] One or more build-args [foo] were not consumed.
+</pre></div>
+
+
+<p>这两个指令的区别主要在于作用域。如果需要在构建镜像时创建环境变量，也可这么写：</p>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>ARG ZC=&quot;Zhiyuan Chen&quot;
+ENV ${ZC}
+</pre></div>
+
+
+<p>Docker有如下的预定义参数，可以直接调用：
+    HTTP_PROXY
+    http_proxy
+    HTTPS_PROXY
+    https_proxy
+    FTP_PROXY
+    ftp_proxy
+    NO_PROXY
+    no_proxy</p>
+<p>此外，ARG是唯一一个允许在第一个 FROM 指令之前出现的指令。</p>
+<h3 id="workdir-user">WORKDIR 和 USER<a class="headerlink" href="#workdir-user" title="Permanent link">#</a></h3>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>WORKDIR /path/to/workdir
+
+USER &lt;user&gt;[:&lt;group&gt;]
+USER &lt;UID&gt;[:&lt;GID&gt;]
+</pre></div>
+
+
+<p>WORKDIR指令设置当前的工作目录。该指令将对接下来的ADD、CMD、COPY、ENTRYPOINT和RUN指令产生影响。</p>
+<p>USER指令设置当前的操作用户。该指令将对接下来的RUN、CMD和ENTRYPOINT指令产生影响。</p>
+<h3 id="run">RUN<a class="headerlink" href="#run" title="Permanent link">#</a></h3>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>RUN &lt;command&gt;
+RUN [&quot;executable&quot;, &quot;param1&quot;, &quot;param2&quot;]
+</pre></div>
+
+
+<p>RUN指令有两种格式，第一种是shell格式，在Linux系统下默认使用 <strong>/bin/sh -c</strong> ， 在Windows系统下则默认使用 <strong>cmd /S /C</strong> 。第二种则是exec格式。需要注意的是，在exec格式之下，将由shell来处理环境变量而不是Docker，所以在Dockerfile当中定义的环境变量通常无效。一般情况下，我们不会使用第二种格式，除非必须显式指定shell。</p>
+<p>RUN应该是使用最多的Dockerfile指令了，无论是下载还是运行，一切都少不了RUN的幕后黑手。这也导致RUN成了最容易出错的地方。</p>
+<p>**&amp;&amp;**关键字允许你在一个RUN当中执行多条命令。由于RUN指令执行的过程当中会创建一个新的层，所以我们需要按照需求对指令进行合并或者拆分。</p>
+<p>比如说在初始的apt-get当中，如果我们错误的将指令拆分成：</p>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>RUN apt-get update          # layer x
+RUN apt-get install -y git  # layer x + 1
+</pre></div>
+
+
+<p>那么在执行完第一个指令之后，x层就会被缓存下来，随后倘若我们对第二行指令进行更改，那他可能就会获取到过时的软件。因此，apt-get一定要写成如下形式：</p>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>RUN apt-get update &amp;&amp; apt-get install -y \
+    git
+</pre></div>
+
+
+<h3 id="copy-add">COPY 和 ADD<a class="headerlink" href="#copy-add" title="Permanent link">#</a></h3>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>COPY [--chown=&lt;user&gt;:&lt;group&gt;] &lt;src&gt;... &lt;dest&gt;
+COPY &lt;src&gt; &lt;dest&gt;
+</pre></div>
+
+
+<p>这两个指令的功能非常相似，都是将文件从容器之外复制到容器之内。但COPY指令更简单也更透明一些，也更经常被使用。ADD指令增加了对url的支持使得其可以从网上下载文件，同时它也可以直接将文件解压。但是由于ADD指令从网上下载的文件会自动设置权限为600，而调整权限还需要一个RUN指令。不如直接通过RUN下载文件来的方便。因此，请只在需要解压文件的时候才使用ADD指令。</p>
+<p>需要注意的是，<src>为源于Dockfile所在文件夹的相对路径，<dest>则是目标容器内的绝对路径。此外，这两个指令同时支持通配符，即</p>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>COPY zc* /usr/local/docker
+</pre></div>
+
+
+<p>将会把当前目录下所有以zc开头的文件复制到容器的/usr/local/docker目录当中。</p>
+<h3 id="expose">EXPOSE<a class="headerlink" href="#expose" title="Permanent link">#</a></h3>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>EXPOSE &lt;port&gt; [&lt;port&gt;/&lt;protocol&gt;...]
+</pre></div>
+
+
+<p>EXPOSE指令暴露容器对应的端口。默认情况下，EXPOSE指令将假设TCP协议，如果使用UDP协议需要显式声明。</p>
+<h3 id="volume">VOLUME<a class="headerlink" href="#volume" title="Permanent link">#</a></h3>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>VOLUME [&quot;/zc&quot;]
+</pre></div>
+
+
+<p>VOLUME指令和前文所述的使用 docker run -v 但只指定容器内目录完全一样。他会给这个挂载随机一个名字，然后再本机/var/lib/docker/volumes目录之下创建一个与挂载名字相同的文件夹。也就是说，虽然它的名字叫卷，但创建的实际上是一个捆绑挂载……这个指令我从来没有用过，还专门为这篇文章查了半天资料顺带做了两个实验。我完全无法理解这种设计的用意，也强烈建议大家都不要使用。docker run命令多打两句能实现的要比他优雅的多，建议使用。值得一提的是，如果在VOLUME里和在 docker run 里同时挂载了目录，则只有 docker run 挂载的目录会生效。</p>
+<h3 id="healthcheck-stopsignal">HEALTHCHECK 和 STOPSIGNAL<a class="headerlink" href="#healthcheck-stopsignal" title="Permanent link">#</a></h3>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>HEALTHCHECK [OPTIONS] CMD command
+HEALTHCHECK NONE
+
+STOPSIGNAL signal
+</pre></div>
+
+
+<p>HEALTHCHECK指令告诉容器如何运行健康检查。如果容器的Dockerfile中指定了HEALTHCHECK方法，在运行 docker ps 命令时，容器的状态一栏中会显示容器当前是否健康。</p>
+<p>STOPSIGNAL指令重写在 docker stop 命令执行时发送给容器的信号。</p>
+<p>HEALTHCHECK指令有如下参数：</p>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>--interval=DURATION     # 两次健康检查的间隔，默认30秒。
+--timeout=DURATION      # 健康检查的超时，默认30秒。
+--start-period=DURATION # 容器启动多久之后开始健康检查，默认0秒。
+--retries=N             # 健康检查失败之后显示容器不健康时经过多少次重试，默认3次。
+</pre></div>
+
+
+<h3 id="onbuild">ONBUILD<a class="headerlink" href="#onbuild" title="Permanent link">#</a></h3>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>ONBUILD [INSTRUCTION]
+</pre></div>
+
+
+<p>ONBUILD指令后跟其他指令。ONBUILD指令的内容将不会在这个Docker构建的时候执行，但是如果其他Docker继承这个Docker，ONBUILD后跟的指令会在FROM结束之后立即执行。</p>
+<h3 id="cmd-entrypoint">CMD 和 ENTRYPOINT<a class="headerlink" href="#cmd-entrypoint" title="Permanent link">#</a></h3>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>CMD [&quot;executable&quot;,&quot;param1&quot;,&quot;param2&quot;]
+CMD command param1 param2
+CMD [&quot;param1&quot;,&quot;param2&quot;]
+
+ENTRYPOINT [&quot;executable&quot;, &quot;param1&quot;, &quot;param2&quot;]
+ENTRYPOINT command param1 param2
+</pre></div>
+
+
+<p>CMD指令和ENTRYPOINT指令几乎没有区别，他们的作用都是在容器构建之后执行其中的命令。他们也都有两种格式--shell和exec，正如RUN指令一样。区别在于CMD指令多一种参数模式，在参数模式下，CMD指令后跟的参数将作为默认参数传递给ENTRYPOINT指令执行。即下列两个命令在实际上是等价的：</p>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>ENTRYPOINT [&quot;/start.sh&quot;]
+CMD [&quot;aptly&quot;, &quot;api&quot;, &quot;serve&quot;]
+
+ENTRYPOINT[&quot;/start.sh&quot;, &quot;aptly&quot;, &quot;api&quot;, &quot;serve&quot;]
+</pre></div>
+
+
+<p>他们的区别除此之外主要在于CMD指令会更容易的在 docker run 命令当中被重写，而ENTRYPOINT需要显式指定 --entrypoint 参数才能重写。</p>
+<p>ENTRYPOINT指令和CMD指令之间的具体区别在网上五花八门，却很少有正确的。可以肯定的是，ENTRYPOINT指令的优先级要比CMD指令更高。这里按照Docker官方的说法：</p>
+<p><strong>使用容器作为可执行文件时，应使用ENTRYPOINT指令。CMD应当被用于为ENTRYPOINT指令提供默认参数，或在容器中执行ad-hoc命令。</strong></p>
+<p>下表列出了ENTRYPOINT指令和CMD指令不同组合时的实际执行情况：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>No ENTRYPOINT</th>
+<th>ENTRYPOINT exec_entry p1_entry</th>
+<th>ENTRYPOINT [“exec_entry”, “p1_entry”]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No CMD</td>
+<td>error, not allowed</td>
+<td>/bin/sh -c exec_entry p1_entry</td>
+<td>exec_entry p1_entry</td>
+</tr>
+<tr>
+<td>CMD [“exec_cmd”, “p1_cmd”]</td>
+<td>exec_cmd p1_cmd</td>
+<td>/bin/sh -c exec_entry p1_entry</td>
+<td>exec_entry p1_entry exec_cmd p1_cmd</td>
+</tr>
+<tr>
+<td>CMD [“p1_cmd”, “p2_cmd”]</td>
+<td>p1_cmd p2_cmd</td>
+<td>/bin/sh -c exec_entry p1_entry</td>
+<td>exec_entry p1_entry p1_cmd p2_cmd</td>
+</tr>
+<tr>
+<td>CMD exec_cmd p1_cmd</td>
+<td>/bin/sh -c exec_cmd p1_cmd</td>
+<td>/bin/sh -c exec_entry p1_entry</td>
+<td>exec_entry p1_entry /bin/sh -c exec_cmd p1_cmd</td>
+</tr>
+</tbody>
+</table>
+<p>最后，还有一点需要强调：</p>
+<p><strong>Dockerfile应至少指定一个CMD或ENTRYPOINT命令！</strong></p>
+<h2 id="nvidiacuda">nvidia/cuda<a class="headerlink" href="#nvidiacuda" title="Permanent link">#</a></h2>
+<p>了解了Docerfile的组成部分，让我们看看别人家都是怎么写Dockerfile的。以下是nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04及其继承的Dockerfile。</p>
+<h3 id="101-cudnn7-devel-ubuntu1804">10.1-cudnn7-devel-ubuntu18.04<a class="headerlink" href="#101-cudnn7-devel-ubuntu1804" title="Permanent link">#</a></h3>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>ARG IMAGE_NAME
+FROM ${IMAGE_NAME}:10.1-devel-ubuntu18.04
+LABEL maintainer &quot;NVIDIA CORPORATION &lt;cudatools@nvidia.com&gt;&quot;
+
+ENV CUDNN_VERSION 7.6.3.30
+LABEL com.nvidia.cudnn.version=&quot;${CUDNN_VERSION}&quot;
+
+RUN apt-get update &amp;&amp; apt-get install -y --no-install-recommends \
+    libcudnn7=$CUDNN_VERSION-1+cuda10.1 \
+libcudnn7-dev=$CUDNN_VERSION-1+cuda10.1 \
+&amp;&amp; \
+    apt-mark hold libcudnn7 &amp;&amp; \
+    rm -rf /var/lib/apt/lists/*
+</pre></div>
+
+
+<h3 id="101-devel-ubuntu1804">10.1-devel-ubuntu18.04<a class="headerlink" href="#101-devel-ubuntu1804" title="Permanent link">#</a></h3>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>ARG IMAGE_NAME
+FROM ${IMAGE_NAME}:10.1-runtime-ubuntu18.04
+LABEL maintainer &quot;NVIDIA CORPORATION &lt;cudatools@nvidia.com&gt;&quot;
+
+RUN apt-get update &amp;&amp; apt-get install -y --no-install-recommends \
+        cuda-nvml-dev-$CUDA_PKG_VERSION \
+        cuda-command-line-tools-$CUDA_PKG_VERSION \
+cuda-libraries-dev-$CUDA_PKG_VERSION \
+        cuda-minimal-build-$CUDA_PKG_VERSION \
+        libnccl-dev=$NCCL_VERSION-1+cuda10.1 \
+&amp;&amp; \
+    rm -rf /var/lib/apt/lists/*
+
+ENV LIBRARY_PATH /usr/local/cuda/lib64/stubs
+</pre></div>
+
+
+<h3 id="101-runtime-ubuntu1804">10.1-runtime-ubuntu18.04<a class="headerlink" href="#101-runtime-ubuntu1804" title="Permanent link">#</a></h3>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>ARG IMAGE_NAME
+FROM ${IMAGE_NAME}:10.1-base-ubuntu18.04
+LABEL maintainer &quot;NVIDIA CORPORATION &lt;cudatools@nvidia.com&gt;&quot;
+
+ENV NCCL_VERSION 2.4.8
+
+RUN apt-get update &amp;&amp; apt-get install -y --no-install-recommends \
+    cuda-libraries-$CUDA_PKG_VERSION \
+cuda-nvtx-$CUDA_PKG_VERSION \
+libnccl2=$NCCL_VERSION-1+cuda10.1 &amp;&amp; \
+    apt-mark hold libnccl2 &amp;&amp; \
+    rm -rf /var/lib/apt/lists/*
+</pre></div>
+
+
+<h3 id="101-base-ubuntu1804">10.1-base-ubuntu18.04<a class="headerlink" href="#101-base-ubuntu1804" title="Permanent link">#</a></h3>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>FROM ubuntu:18.04
+LABEL maintainer &quot;NVIDIA CORPORATION &lt;cudatools@nvidia.com&gt;&quot;
+
+RUN apt-get update &amp;&amp; apt-get install -y --no-install-recommends \
+gnupg2 curl ca-certificates &amp;&amp; \
+    curl -fsSL https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub | apt-key add - &amp;&amp; \
+    echo &quot;deb https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64 /&quot; &gt; /etc/apt/sources.list.d/cuda.list &amp;&amp; \
+    echo &quot;deb https://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1804/x86_64 /&quot; &gt; /etc/apt/sources.list.d/nvidia-ml.list &amp;&amp; \
+    apt-get purge --autoremove -y curl &amp;&amp; \
+rm -rf /var/lib/apt/lists/*
+
+ENV CUDA_VERSION 10.1.243
+
+ENV CUDA_PKG_VERSION 10-1=$CUDA_VERSION-1
+
+# For libraries in the cuda-compat-* package: https://docs.nvidia.com/cuda/eula/index.html#attachment-a
+RUN apt-get update &amp;&amp; apt-get install -y --no-install-recommends \
+        cuda-cudart-$CUDA_PKG_VERSION \
+cuda-compat-10-1 &amp;&amp; \
+ln -s cuda-10.1 /usr/local/cuda &amp;&amp; \
+    rm -rf /var/lib/apt/lists/*
+
+# Required for nvidia-docker v1
+RUN echo &quot;/usr/local/nvidia/lib&quot; &gt;&gt; /etc/ld.so.conf.d/nvidia.conf &amp;&amp; \
+    echo &quot;/usr/local/nvidia/lib64&quot; &gt;&gt; /etc/ld.so.conf.d/nvidia.conf
+
+ENV PATH /usr/local/nvidia/bin:/usr/local/cuda/bin:${PATH}
+ENV LD_LIBRARY_PATH /usr/local/nvidia/lib:/usr/local/nvidia/lib64
+
+# nvidia-container-runtime
+ENV NVIDIA_VISIBLE_DEVICES all
+ENV NVIDIA_DRIVER_CAPABILITIES compute,utility
+ENV NVIDIA_REQUIRE_CUDA &quot;cuda&gt;=10.1 brand=tesla,driver&gt;=384,driver&lt;385 brand=tesla,driver&gt;=396,driver&lt;397 brand=tesla,driver&gt;=410,driver&lt;411&quot;
+</pre></div>
+
+
+<h3 id="ubuntu1804">ubuntu:18.04<a class="headerlink" href="#ubuntu1804" title="Permanent link">#</a></h3>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>FROM scratch
+ADD ubuntu-bionic-core-cloudimg-amd64-root.tar.gz /
+# verify that the APT lists files do not exist
+RUN [ -z &quot;$(apt-get indextargets)&quot; ]
+# (see https://bugs.launchpad.net/cloud-images/+bug/1699913)
+
+# a few minor docker-specific tweaks
+# see https://github.com/docker/docker/blob/9a9fc01af8fb5d98b8eec0740716226fadb3735c/contrib/mkimage/debootstrap
+RUN set -xe \
+    \
+# https://github.com/docker/docker/blob/9a9fc01af8fb5d98b8eec0740716226fadb3735c/contrib/mkimage/debootstrap#L40-L48
+    &amp;&amp; echo &#39;#!/bin/sh&#39; &gt; /usr/sbin/policy-rc.d \
+    &amp;&amp; echo &#39;exit 101&#39; &gt;&gt; /usr/sbin/policy-rc.d \
+    &amp;&amp; chmod +x /usr/sbin/policy-rc.d \
+    \
+# https://github.com/docker/docker/blob/9a9fc01af8fb5d98b8eec0740716226fadb3735c/contrib/mkimage/debootstrap#L54-L56
+    &amp;&amp; dpkg-divert --local --rename --add /sbin/initctl \
+    &amp;&amp; cp -a /usr/sbin/policy-rc.d /sbin/initctl \
+    &amp;&amp; sed -i &#39;s/^exit.*/exit 0/&#39; /sbin/initctl \
+    \
+# https://github.com/docker/docker/blob/9a9fc01af8fb5d98b8eec0740716226fadb3735c/contrib/mkimage/debootstrap#L71-L78
+    &amp;&amp; echo &#39;force-unsafe-io&#39; &gt; /etc/dpkg/dpkg.cfg.d/docker-apt-speedup \
+    \
+# https://github.com/docker/docker/blob/9a9fc01af8fb5d98b8eec0740716226fadb3735c/contrib/mkimage/debootstrap#L85-L105
+    &amp;&amp; echo &#39;DPkg::Post-Invoke { &quot;rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true&quot;; };&#39; &gt; /etc/apt/apt.conf.d/docker-clean \
+    &amp;&amp; echo &#39;APT::Update::Post-Invoke { &quot;rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true&quot;; };&#39; &gt;&gt; /etc/apt/apt.conf.d/docker-clean \
+    &amp;&amp; echo &#39;Dir::Cache::pkgcache &quot;&quot;; Dir::Cache::srcpkgcache &quot;&quot;;&#39; &gt;&gt; /etc/apt/apt.conf.d/docker-clean \
+    \
+# https://github.com/docker/docker/blob/9a9fc01af8fb5d98b8eec0740716226fadb3735c/contrib/mkimage/debootstrap#L109-L115
+    &amp;&amp; echo &#39;Acquire::Languages &quot;none&quot;;&#39; &gt; /etc/apt/apt.conf.d/docker-no-languages \
+    \
+# https://github.com/docker/docker/blob/9a9fc01af8fb5d98b8eec0740716226fadb3735c/contrib/mkimage/debootstrap#L118-L130
+    &amp;&amp; echo &#39;Acquire::GzipIndexes &quot;true&quot;; Acquire::CompressionTypes::Order:: &quot;gz&quot;;&#39; &gt; /etc/apt/apt.conf.d/docker-gzip-indexes \
+    \
+# https://github.com/docker/docker/blob/9a9fc01af8fb5d98b8eec0740716226fadb3735c/contrib/mkimage/debootstrap#L134-L151
+    &amp;&amp; echo &#39;Apt::AutoRemove::SuggestsImportant &quot;false&quot;;&#39; &gt; /etc/apt/apt.conf.d/docker-autoremove-suggests
+
+# make systemd-detect-virt return &quot;docker&quot;
+# See: https://github.com/systemd/systemd/blob/aa0c34279ee40bce2f9681b496922dedbadfca19/src/basic/virt.c#L434
+RUN mkdir -p /run/systemd &amp;&amp; echo &#39;docker&#39; &gt; /run/systemd/container
+
+# overwrite this with &#39;CMD []&#39; in a dependent Dockerfile
+CMD [&quot;/bin/bash&quot;]
+</pre></div><h2 id="__comments">Comments</h2><div id="disqus_thread"></div><script>var disqus_config = function () {
+      this.page.url = "https://zc.int.xyz/docker/dockerfile/";
+      this.page.identifier =
+        "/docker/dockerfile/";
+    };
+    (function() {
+      var d = document, s = d.createElement("script");
+      s.src = "//intzc.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();</script></article></div></div></main><footer class="md-footer"><div class="md-footer-nav"><nav class="md-footer-nav__inner md-grid"><a href="../command_line_interface/" title="命令行接口" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev"><div class="md-flex__cell md-flex__cell--shrink"><i class="md-icon md-icon--arrow-back md-footer-nav__button"></i></div><div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span class="md-flex__ellipsis"><span class="md-footer-nav__direction">Previous</span>命令行接口</span></div></a><a href="../../CppCoreGuidelines/CppCoreGuidelines/" title="原文" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next"><div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span class="md-flex__ellipsis"><span class="md-footer-nav__direction">Next</span>原文</span></div><div class="md-flex__cell md-flex__cell--shrink"><i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i></div></a></nav></div><div class="md-footer-meta md-typeset"><div class="md-footer-meta__inner md-grid"><div class="md-footer-copyright"><div class="md-footer-copyright__highlight">All rights reserved © Zhiyuan Chen 2019</div>powered by <a href="https://www.mkdocs.org">MkDocs</a> and <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a></div><div class="md-footer-social"><link rel="stylesheet" href="../../assets/fonts/font-awesome.css"> <a href="https://github.com/int-zc" class="md-footer-social__link fa fa-github"></a>  <a href="https://www.linkedin.com/in/%E9%99%9F%E5%8E%9F-%E9%99%88-0b473aa9/" class="md-footer-social__link fa fa-linkedin"></a> </div></div></div></footer></div><script src="../../assets/javascripts/application.b260a35d.js"></script><script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script></body></html>
