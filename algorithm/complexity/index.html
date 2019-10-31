@@ -610,6 +610,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../recurrence_relation/" title="递推方程" class="md-nav__link">
+      递推方程
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -978,17 +990,17 @@
 <p class="admonition-title">大Ω</p>
 <p>对于两个在任意正实数的无界子集上定义的关于<span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span>的实数或复数函数<span><span class="MathJax_Preview">f(n)</span><script type="math/tex">f(n)</script></span>和实数函数<span><span class="MathJax_Preview">g(n)</span><script type="math/tex">g(n)</script></span></p>
 <p>当且仅当存在正实数<span><span class="MathJax_Preview">c</span><script type="math/tex">c</script></span>和<span><span class="MathJax_Preview">n_0</span><script type="math/tex">n_0</script></span>，使得对于所有<span><span class="MathJax_Preview">n, n &gt; n_0</span><script type="math/tex">n, n > n_0</script></span>都有<span><span class="MathJax_Preview">0 \leq c g(n) \leq f(n)</span><script type="math/tex">0 \leq c g(n) \leq f(n)</script></span></p>
-<p>则我们称<span><span class="MathJax_Preview">f(n)</span><script type="math/tex">f(n)</script></span>的渐进下界为<span><span class="MathJax_Preview">g(n)</span><script type="math/tex">g(n)</script></span>，记作<span><span class="MathJax_Preview">f(n) = Ω(g(n))</span><script type="math/tex">f(n) = Ω(g(n))</script></span>。</p>
-<p>一般而言，<span><span class="MathJax_Preview">Ω(g(n))</span><script type="math/tex">Ω(g(n))</script></span>表示算法<span><span class="MathJax_Preview">f(n)</span><script type="math/tex">f(n)</script></span>的最好情况运行时间。</p>
+<p>则我们称<span><span class="MathJax_Preview">f(n)</span><script type="math/tex">f(n)</script></span>的渐进下界为<span><span class="MathJax_Preview">g(n)</span><script type="math/tex">g(n)</script></span>，记作<span><span class="MathJax_Preview">f(n) = \Omega(g(n))</span><script type="math/tex">f(n) = \Omega(g(n))</script></span>。</p>
+<p>一般而言，<span><span class="MathJax_Preview">\Omega(g(n))</span><script type="math/tex">\Omega(g(n))</script></span>表示算法<span><span class="MathJax_Preview">f(n)</span><script type="math/tex">f(n)</script></span>的最好情况运行时间。</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">大Θ</p>
 <p>对于两个在任意正实数的无界子集上定义的关于<span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span>的实数或复数函数<span><span class="MathJax_Preview">f(n)</span><script type="math/tex">f(n)</script></span><span><span class="MathJax_Preview">和实数函数g(n)</span><script type="math/tex">和实数函数g(n)</script></span></p>
 <p>当且仅当存在正实数<span><span class="MathJax_Preview">c_1</span><script type="math/tex">c_1</script></span>、<span><span class="MathJax_Preview">c_2</span><script type="math/tex">c_2</script></span>和<span><span class="MathJax_Preview">n_0</span><script type="math/tex">n_0</script></span>，使得对于所有<span><span class="MathJax_Preview">n, n&gt;n_0</span><script type="math/tex">n, n>n_0</script></span>都有<span><span class="MathJax_Preview">0 \leq c_1 g(n) \leq f(n) \leq c_2 g(n)</span><script type="math/tex">0 \leq c_1 g(n) \leq f(n) \leq c_2 g(n)</script></span>，即<span><span class="MathJax_Preview">O(g(n)) = f(n) = Ω(g(n))</span><script type="math/tex">O(g(n)) = f(n) = Ω(g(n))</script></span></p>
 <p>则记作<span><span class="MathJax_Preview">f(n) = Θ(g(n))</span><script type="math/tex">f(n) = Θ(g(n))</script></span>。</p>
-<p>一般而言，<span><span class="MathJax_Preview">Θ(g(n))</span><script type="math/tex">Θ(g(n))</script></span>表示算法<span><span class="MathJax_Preview">f(n)</span><script type="math/tex">f(n)</script></span>的运行时间。</p>
+<p>一般而言，<span><span class="MathJax_Preview">\Theta(g(n))</span><script type="math/tex">\Theta(g(n))</script></span>表示算法<span><span class="MathJax_Preview">f(n)</span><script type="math/tex">f(n)</script></span>的运行时间。</p>
 </div>
-<p>算法是多样的，同一个算法在不同情况下的复杂度一般不同（比如快速排序和归并排序最好情况都为<span><span class="MathJax_Preview">Ω(n \log n)</span><script type="math/tex">Ω(n \log n)</script></span>，但快速排序最坏情况是<span><span class="MathJax_Preview">O(n^2)</span><script type="math/tex">O(n^2)</script></span>，而归并排序则是<span><span class="MathJax_Preview">O(n \log n)</span><script type="math/tex">O(n \log n)</script></span>），Θ在实际当中很少应用。此外，一个算法的最坏情况要比最好情况更有价值。所以一般情况下，我们说到复杂度的时候都会使用O，甚至有些时候我们会说某个算法的最好情况是<span><span class="MathJax_Preview">O(n \log n)</span><script type="math/tex">O(n \log n)</script></span>，而不使用Ω。</p>
+<p>算法是多样的，同一个算法在不同情况下的复杂度一般不同（比如快速排序和归并排序最好情况都为<span><span class="MathJax_Preview">\Omega(n \log n)</span><script type="math/tex">\Omega(n \log n)</script></span>，但快速排序最坏情况是<span><span class="MathJax_Preview">O(n^2)</span><script type="math/tex">O(n^2)</script></span>，而归并排序则是<span><span class="MathJax_Preview">O(n \log n)</span><script type="math/tex">O(n \log n)</script></span>），Θ在实际当中很少应用。此外，一个算法的最坏情况要比最好情况更有价值。所以一般情况下，我们说到复杂度的时候都会使用O，甚至有些时候我们会说某个算法的最好情况是<span><span class="MathJax_Preview">O(n \log n)</span><script type="math/tex">O(n \log n)</script></span>，而不使用Ω。</p>
 <p>有了大O和大Ω，自然就有小o和小ω。</p>
 <div class="admonition note">
 <p class="admonition-title">小o</p>
@@ -1002,7 +1014,11 @@
 <p>当且仅当对于任意正实数<span><span class="MathJax_Preview">c</span><script type="math/tex">c</script></span>都存在<span><span class="MathJax_Preview">n_0</span><script type="math/tex">n_0</script></span>，使得对于所有的<span><span class="MathJax_Preview">n, n &gt; n_0</span><script type="math/tex">n, n > n_0</script></span>都有<span><span class="MathJax_Preview">0 \leq c g(n) &lt; f(n)</span><script type="math/tex">0 \leq c g(n) < f(n)</script></span></p>
 <p>则记作<span><span class="MathJax_Preview">f(n) = ω(g(n))</span><script type="math/tex">f(n) = ω(g(n))</script></span>。</p>
 </div>
-<p>小o和小ω表示的是绝对大于，譬如说当<span><span class="MathJax_Preview">f(n) = n^2 + n</span><script type="math/tex">f(n) = n^2 + n</script></span>时，<span><span class="MathJax_Preview">f(n) = Ω(n^2)</span><script type="math/tex">f(n) = Ω(n^2)</script></span>但<span><span class="MathJax_Preview">f(n) \neq ω(n^2)</span><script type="math/tex">f(n) \neq ω(n^2)</script></span>。函数<span><span class="MathJax_Preview">f(n)</span><script type="math/tex">f(n)</script></span>的复杂度可能既为<span><span class="MathJax_Preview">O(g(n))</span><script type="math/tex">O(g(n))</script></span>也为<span><span class="MathJax_Preview">Ω(g(n))</span><script type="math/tex">Ω(g(n))</script></span>（此时即为<span><span class="MathJax_Preview">Θ(g(n))</span><script type="math/tex">Θ(g(n))</script></span>，但不可能同时为<span><span class="MathJax_Preview">o(g(n))</span><script type="math/tex">o(g(n))</script></span>和<span><span class="MathJax_Preview">Ω(g(n))</span><script type="math/tex">Ω(g(n))</script></span>或者<span><span class="MathJax_Preview">O(g(n))</span><script type="math/tex">O(g(n))</script></span>和<span><span class="MathJax_Preview">ω(g(n))</span><script type="math/tex">ω(g(n))</script></span>。小o和小ω仅在这里列出以供读者了解，现实当中几乎没有人使用这些符号。</p>
+<p>小o和小ω表示的是绝对大于，譬如说当<span><span class="MathJax_Preview">f(n) = n^2 + n</span><script type="math/tex">f(n) = n^2 + n</script></span>时，<span><span class="MathJax_Preview">f(n) = Ω(n^2)</span><script type="math/tex">f(n) = Ω(n^2)</script></span>但<span><span class="MathJax_Preview">f(n) \neq ω(n^2)</span><script type="math/tex">f(n) \neq ω(n^2)</script></span>。函数<span><span class="MathJax_Preview">f(n)</span><script type="math/tex">f(n)</script></span>的复杂度可能既为<span><span class="MathJax_Preview">O(g(n))</span><script type="math/tex">O(g(n))</script></span>也为<span><span class="MathJax_Preview">\Omega(g(n))</span><script type="math/tex">\Omega(g(n))</script></span>（此时即为<span><span class="MathJax_Preview">\Theta(g(n))</span><script type="math/tex">\Theta(g(n))</script></span>，但不可能同时为<span><span class="MathJax_Preview">o(g(n))</span><script type="math/tex">o(g(n))</script></span>和<span><span class="MathJax_Preview">\Omega(g(n))</span><script type="math/tex">\Omega(g(n))</script></span>或者<span><span class="MathJax_Preview">O(g(n))</span><script type="math/tex">O(g(n))</script></span>和<span><span class="MathJax_Preview">\Omega(g(n))</span><script type="math/tex">\Omega(g(n))</script></span>。小o和小ω仅在这里列出以供读者了解，现实当中几乎没有人使用这些符号。</p>
+<div class="admonition warning">
+<p class="admonition-title"><span><span class="MathJax_Preview">\log</span><script type="math/tex">\log</script></span></p>
+<p>在计算机科学当中，除非特别声明，否则我们会默认<span><span class="MathJax_Preview">\log</span><script type="math/tex">\log</script></span>的底数为2。</p>
+</div>
 <h2 id="_2">时间<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
 <p>我们通常会按照复杂度称这个算法是某某时间的。</p>
 <div class="admonition note">
@@ -1058,7 +1074,7 @@
 <p>用我们之前的Karatsuba算法举例来说：</p>
 <div class="admonition success">
 <p class="admonition-title">Karatsuba</p>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #66d9ef">def</span> <span style="color: #a6e22e">karatsuba</span><span style="color: #f8f8f2">(x,y):</span>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #66d9ef">def</span> <span style="color: #a6e22e">karatsuba</span><span style="color: #f8f8f2">(x,</span> <span style="color: #f8f8f2">y):</span>
   <span style="color: #f8f8f2">x_len</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">len(str(x))</span>
   <span style="color: #f8f8f2">y_len</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">len(str(y))</span>
 
@@ -1066,16 +1082,16 @@
     <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">x</span> <span style="color: #f92672">*</span> <span style="color: #f8f8f2">y</span>
 
   <span style="color: #66d9ef">else</span><span style="color: #f8f8f2">:</span>
-    <span style="color: #f8f8f2">n</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">max(len_x,</span> <span style="color: #f8f8f2">len_y)</span> <span style="color: #f92672">/</span> <span style="color: #ae81ff">2</span>
-    <span style="color: #f8f8f2">a</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">x</span> <span style="color: #f92672">/</span> <span style="color: #ae81ff">10</span><span style="color: #f92672">**</span><span style="color: #f8f8f2">n</span>
+    <span style="color: #f8f8f2">n</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">ceil(max(len_x,</span> <span style="color: #f8f8f2">len_y)</span> <span style="color: #f92672">/</span> <span style="color: #ae81ff">2</span><span style="color: #f8f8f2">)</span>
+    <span style="color: #f8f8f2">a</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">floor(x</span> <span style="color: #f92672">/</span> <span style="color: #ae81ff">10</span><span style="color: #f92672">**</span><span style="color: #f8f8f2">n)</span>
     <span style="color: #f8f8f2">b</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">x</span> <span style="color: #f92672">%</span> <span style="color: #ae81ff">10</span><span style="color: #f92672">**</span><span style="color: #f8f8f2">n</span>
-    <span style="color: #f8f8f2">c</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">y</span> <span style="color: #f92672">/</span> <span style="color: #ae81ff">10</span><span style="color: #f92672">**</span><span style="color: #f8f8f2">n</span>
+    <span style="color: #f8f8f2">c</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">floor(y</span> <span style="color: #f92672">/</span> <span style="color: #ae81ff">10</span><span style="color: #f92672">**</span><span style="color: #f8f8f2">n)</span>
     <span style="color: #f8f8f2">d</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">y</span> <span style="color: #f92672">%</span> <span style="color: #ae81ff">10</span><span style="color: #f92672">**</span><span style="color: #f8f8f2">n</span>
-    <span style="color: #f8f8f2">ac</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">karatsuba(a,c)</span>                         <span style="color: #75715e"># Repeat</span>
-    <span style="color: #f8f8f2">bd</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">karatsuba(b,d)</span>                         <span style="color: #75715e"># Repeat</span>
-    <span style="color: #f8f8f2">ad_plus_bc</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">karatsuba(a</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">b,</span> <span style="color: #f8f8f2">c</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">d)</span> <span style="color: #f92672">-</span> <span style="color: #f8f8f2">ac</span> <span style="color: #f92672">-</span> <span style="color: #f8f8f2">bd</span>  <span style="color: #75715e"># Repeat</span>
+    <span style="color: #f8f8f2">ac</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">karatsuba(a,c)</span>
+    <span style="color: #f8f8f2">bd</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">karatsuba(b,d)</span>
+    <span style="color: #f8f8f2">e</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">karatsuba(a</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">b,</span> <span style="color: #f8f8f2">c</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">d)</span> <span style="color: #f92672">-</span> <span style="color: #f8f8f2">ac</span> <span style="color: #f92672">-</span> <span style="color: #f8f8f2">bd</span>
 
-    <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">ac</span> <span style="color: #f92672">*</span> <span style="color: #ae81ff">10</span><span style="color: #f92672">**</span><span style="color: #f8f8f2">(</span><span style="color: #ae81ff">2</span><span style="color: #f92672">*</span><span style="color: #f8f8f2">n)</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">(ad_plus_bc</span> <span style="color: #f92672">*</span> <span style="color: #ae81ff">10</span><span style="color: #f92672">**</span><span style="color: #f8f8f2">n)</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">bd</span>
+    <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">ac</span> <span style="color: #f92672">*</span> <span style="color: #ae81ff">10</span><span style="color: #f92672">**</span><span style="color: #f8f8f2">(n</span><span style="color: #f92672">*</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">)</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">(e</span> <span style="color: #f92672">*</span> <span style="color: #ae81ff">10</span><span style="color: #f92672">**</span><span style="color: #f8f8f2">n)</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">bd</span>
 </pre></div>
 
 <p>我们可以观察到，注释注明Repeat的三行代码是不断重复的，即每次分治将一个问题变成三个问题，同时每次分治问题的大小变为原来的一半。</p>
