@@ -42,7 +42,7 @@
     
     
       
-        <title>Kubernetes导论</title>
+        <title>Kubernetes</title>
       
     
     
@@ -122,10 +122,6 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#kubernetes" tabindex="1" class="md-skip">
-        跳转至
-      </a>
-    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -148,7 +144,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Kubernetes导论
+                Kubernetes
               
             </span>
           
@@ -605,55 +601,23 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        导论
-      </label>
     
     <a href="./" title="导论" class="md-nav__link md-nav__link--active">
       导论
     </a>
     
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">目录</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#kubernetes_1" class="md-nav__link">
-    Kubernetes架构
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#kubernetes_2" class="md-nav__link">
-    Kubernetes组件
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-        <li class="md-nav__item">
-          <a href="#__comments" class="md-nav__link md-nav__link--active">
-            评论
-          </a>
-        </li>
-      
-    </ul>
-  
-</nav>
-    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../component/" title="组件" class="md-nav__link">
+      组件
+    </a>
   </li>
 
         
@@ -921,50 +885,6 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">目录</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#kubernetes_1" class="md-nav__link">
-    Kubernetes架构
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#kubernetes_2" class="md-nav__link">
-    Kubernetes组件
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-        <li class="md-nav__item">
-          <a href="#__comments" class="md-nav__link md-nav__link--active">
-            评论
-          </a>
-        </li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
@@ -973,27 +893,11 @@
                   <a href="https://github.com/yc-zc/web/edit/master/docs/kubernetes/introduction.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="kubernetes">Kubernetes<a class="headerlink" href="#kubernetes" title="Permanent link">#</a></h1>
-<p>Kubernetes，作为Google在运行多年的Borg基础上开发的开源容器编排系统，在部署、伸缩及管理方面具有强大的能力。</p>
+                  <h1>导论</h1>
+                
+                <p>Kubernetes，作为Google在运行多年的Borg基础上开发的开源容器编排系统，在部署、伸缩及管理方面具有强大的能力。</p>
 <p>和很多初学者所想的不一样，kubernetes并非是为Docker而生的。事实上，他还支持Rocket这样的容器技术。但在本站当中，我们将不会讨论kubernetes在其他容器技术上的应用。我们鼓励您在网上寻找其他信息，如果您有这方面的需求，我们同时很欢迎您将您所找到的内容整理成文章并提交在本站当中。</p>
-<h2 id="kubernetes_1">Kubernetes架构<a class="headerlink" href="#kubernetes_1" title="Permanent link">#</a></h2>
-<p>Kuberenetes由五层结构构成。</p>
-<h2 id="kubernetes_2">Kubernetes组件<a class="headerlink" href="#kubernetes_2" title="Permanent link">#</a></h2>
-<p>基础的kubernetes由七个组件构成，他们是：</p>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>- etcd                  集群信息保存（集群）
-
-- apiserver             集群操作入口（主机）
-
-- scheduler             集群资源调度（主机）
-
-- controller manager    集群状态维护（主机）
-
-- kubelet               镜像、容器、数据卷（CVI）、网络（CNI）等的管理（从机）
-
-- container runtime     镜像和Pod（CRI）的管理（从机）
-
-- kube-proxy            集群的服务发现和负载均衡（从机）
-</pre></div>
+<p>当你部署Kubernetes的时候，你部署的实际上是一整个集群。</p>
                 
                   
                 
@@ -1045,13 +949,13 @@
           </a>
         
         
-          <a href="../installation/" title="安装" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../component/" title="组件" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   下一页
                 </span>
-                安装
+                组件
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
