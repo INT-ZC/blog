@@ -2,132 +2,137 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>https://zc.int.xyz/</loc>
-     <lastmod>2019-12-15</lastmod>
+     <lastmod>2019-12-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://zc.int.xyz/master/donate/</loc>
-     <lastmod>2019-12-15</lastmod>
+     <lastmod>2019-12-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://zc.int.xyz/master/contribute/</loc>
-     <lastmod>2019-12-15</lastmod>
+     <lastmod>2019-12-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://zc.int.xyz/master/policy/</loc>
-     <lastmod>2019-12-15</lastmod>
+     <lastmod>2019-12-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://zc.int.xyz/master/license/</loc>
-     <lastmod>2019-12-15</lastmod>
+     <lastmod>2019-12-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://zc.int.xyz/document/design_pattern/</loc>
-     <lastmod>2019-12-15</lastmod>
+     <lastmod>2019-12-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://zc.int.xyz/document/jetbrains/</loc>
-     <lastmod>2019-12-15</lastmod>
+     <lastmod>2019-12-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://zc.int.xyz/cv/SiamRPN/</loc>
+     <lastmod>2019-12-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://zc.int.xyz/algorithm/introduction/</loc>
-     <lastmod>2019-12-15</lastmod>
+     <lastmod>2019-12-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://zc.int.xyz/algorithm/complexity/</loc>
-     <lastmod>2019-12-15</lastmod>
+     <lastmod>2019-12-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://zc.int.xyz/algorithm/tree/</loc>
-     <lastmod>2019-12-15</lastmod>
+     <lastmod>2019-12-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://zc.int.xyz/algorithm/recurrence_relation/</loc>
-     <lastmod>2019-12-15</lastmod>
+     <lastmod>2019-12-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://zc.int.xyz/kubernetes/introduction/</loc>
-     <lastmod>2019-12-15</lastmod>
+     <lastmod>2019-12-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://zc.int.xyz/kubernetes/component/</loc>
-     <lastmod>2019-12-15</lastmod>
+     <lastmod>2019-12-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://zc.int.xyz/kubernetes/installation/</loc>
-     <lastmod>2019-12-15</lastmod>
+     <lastmod>2019-12-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://zc.int.xyz/kubernetes/pods/</loc>
-     <lastmod>2019-12-15</lastmod>
+     <lastmod>2019-12-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://zc.int.xyz/kubernetes/deployments/</loc>
-     <lastmod>2019-12-15</lastmod>
+     <lastmod>2019-12-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://zc.int.xyz/docker/introduction/</loc>
-     <lastmod>2019-12-15</lastmod>
+     <lastmod>2019-12-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://zc.int.xyz/docker/installation/</loc>
-     <lastmod>2019-12-15</lastmod>
+     <lastmod>2019-12-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://zc.int.xyz/docker/command_line_interface/</loc>
-     <lastmod>2019-12-15</lastmod>
+     <lastmod>2019-12-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://zc.int.xyz/docker/dockerfile/</loc>
-     <lastmod>2019-12-15</lastmod>
+     <lastmod>2019-12-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://zc.int.xyz/cntk/introduction/</loc>
-     <lastmod>2019-12-15</lastmod>
+     <lastmod>2019-12-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://zc.int.xyz/cntk/200/</loc>
-     <lastmod>2019-12-15</lastmod>
+     <lastmod>2019-12-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://zc.int.xyz/CppCoreGuidelines/CppCoreGuidelines/</loc>
-     <lastmod>2019-12-15</lastmod>
+     <lastmod>2019-12-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://zc.int.xyz/CppCoreGuidelines/abstract/</loc>
-     <lastmod>2019-12-15</lastmod>
+     <lastmod>2019-12-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://zc.int.xyz/sketch/20190610/</loc>
-     <lastmod>2019-12-15</lastmod>
+     <lastmod>2019-12-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://zc.int.xyz/sketch/20191108/</loc>
-     <lastmod>2019-12-15</lastmod>
+     <lastmod>2019-12-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
