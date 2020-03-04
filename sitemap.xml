@@ -36,12 +36,12 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://zyc.ai/ml/statistics/</loc>
+     <loc>https://zyc.ai/machine_learning/statistics/</loc>
      <lastmod>2020-03-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://zyc.ai/cv/siamrpn/</loc>
+     <loc>https://zyc.ai/computer_vision/siamrpn/</loc>
      <lastmod>2020-03-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
