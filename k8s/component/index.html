@@ -1,0 +1,156 @@
+<!doctype html><html lang="zh" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="description" content="The website of Zhiyuan Chen"><link rel="canonical" href="https://zyc.ai/k8s/component/"><meta name="author" content="Zhiyuan Chen"><meta name="lang:clipboard.copy" content="复制"><meta name="lang:clipboard.copied" content="已复制"><meta name="lang:search.language" content="ja"><meta name="lang:search.pipeline.stopwords" content="True"><meta name="lang:search.pipeline.trimmer" content="True"><meta name="lang:search.result.none" content="没有找到符合条件的结果"><meta name="lang:search.result.one" content="找到 1 个符合条件的结果"><meta name="lang:search.result.other" content="# 个符合条件的结果"><meta name="lang:search.tokenizer" content="[\uff0c\u3002]+"><link rel="shortcut icon" href="../../images/favicon.ico"><meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.3.1"><title>组件</title><link rel="stylesheet" href="../../assets/stylesheets/application.4031d38b.css"><link rel="stylesheet" href="../../assets/stylesheets/application-palette.224b79ff.css"><meta name="theme-color" content="#7e57c2"><script src="../../assets/javascripts/modernizr.74668098.js"></script><link href="https://fonts.gstatic.com" rel="preconnect" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:300,400,400i,700|Cascadia+Code&display=swap"><style>body,input{font-family:"Noto Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Cascadia Code","Courier New",Courier,monospace}</style><link rel="stylesheet" href="../../assets/fonts/material-icons.css"><link rel="manifest" href="../../manifest.webmanifest"><link rel="stylesheet" href="../../css/css.css"><link rel="stylesheet" href="../../css/extra.css"><script>window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-104387513-1", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })</script><script async src="https://www.google-analytics.com/analytics.js"></script></head><body dir="ltr" data-md-color-primary="deep-purple" data-md-color-accent="amber"><svg class="md-svg"><defs><svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg></defs></svg> <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off"> <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off"> <label class="md-overlay" data-md-component="overlay" for="__drawer"></label><a href="#master-components" tabindex="1" class="md-skip">跳转至 </a><header class="md-header" data-md-component="header"><nav class="md-header-nav md-grid"><div class="md-flex"><div class="md-flex__cell md-flex__cell--shrink"><a href="https://zyc.ai" title="Zhiyuan Chen" class="md-header-nav__button md-logo"><img src="../../images/zc.png" width="24" height="24"></a></div><div class="md-flex__cell md-flex__cell--shrink"><label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label></div><div class="md-flex__cell md-flex__cell--stretch"><div class="md-flex__ellipsis md-header-nav__title" data-md-component="title"><span class="md-header-nav__topic">Zhiyuan Chen</span><span class="md-header-nav__topic">组件</span></div></div><div class="md-flex__cell md-flex__cell--shrink"><label class="md-icon md-icon--search md-header-nav__button" for="__search"></label><div class="md-search" data-md-component="search" role="dialog"><label class="md-search__overlay" for="__search"></label><div class="md-search__inner" role="search"><form class="md-search__form" name="search"><input type="text" class="md-search__input" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active"> <label class="md-icon md-search__icon" for="__search"></label> <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">&#xE5CD;</button></form><div class="md-search__output"><div class="md-search__scrollwrap" data-md-scrollfix><div class="md-search-result" data-md-component="result"><div class="md-search-result__meta">键入以开始搜索</div><ol class="md-search-result__list"></ol></div></div></div></div></div></div><div class="md-flex__cell md-flex__cell--shrink"><div class="md-header-nav__source"><a href="https://github.com/zyc-ai/" title="前往 Github 仓库" class="md-source" data-md-source="github"><div class="md-source__icon"><svg viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#__github" width="24" height="24"></use></svg></div><div class="md-source__repository">Zhiyuan Chen</div></a></div></div></div></nav></header><div class="md-container"><nav class="md-tabs md-tabs--active" data-md-component="tabs"><div class="md-tabs__inner md-grid"><ul class="md-tabs__list"><li class="md-tabs__item"><a href="../.." title="Master" class="md-tabs__link">Master</a></li><li class="md-tabs__item"><a href="../../document/design_pattern/" title="文档" class="md-tabs__link">文档</a></li><li class="md-tabs__item"><a href="../../ml/statistics/" title="机器学习" class="md-tabs__link">机器学习</a></li><li class="md-tabs__item"><a href="../../cv/siamrpn/" title="计算机视觉" class="md-tabs__link">计算机视觉</a></li><li class="md-tabs__item"><a href="../../algorithm/introduction/" title="算法" class="md-tabs__link">算法</a></li><li class="md-tabs__item"><a href="../introduction/" title="Kubernetes" class="md-tabs__link md-tabs__link--active">Kubernetes</a></li><li class="md-tabs__item"><a href="../../docker/introduction/" title="Docker" class="md-tabs__link">Docker</a></li><li class="md-tabs__item"><a href="../../cntk/introduction/" title="CNTK" class="md-tabs__link">CNTK</a></li><li class="md-tabs__item"><a href="../../cppcg/CppCoreGuidelines/" title="C++核心指南" class="md-tabs__link">C++核心指南</a></li><li class="md-tabs__item"><a href="../../sketch/20190610/" title="随笔" class="md-tabs__link">随笔</a></li></ul></div></nav><main class="md-main"><div class="md-main__inner md-grid" data-md-component="container"><div class="md-sidebar md-sidebar--primary" data-md-component="navigation"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><nav class="md-nav md-nav--primary" data-md-level="0"><label class="md-nav__title md-nav__title--site" for="__drawer"><a href="https://zyc.ai" title="Zhiyuan Chen" class="md-nav__button md-logo"><img src="../../images/zc.png" width="48" height="48"></a>Zhiyuan Chen</label><div class="md-nav__source"><a href="https://github.com/zyc-ai/" title="前往 Github 仓库" class="md-source" data-md-source="github"><div class="md-source__icon"><svg viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#__github" width="24" height="24"></use></svg></div><div class="md-source__repository">Zhiyuan Chen</div></a></div><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1"><label class="md-nav__link" for="nav-1">Master</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-1">Master</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../.." title="首页" class="md-nav__link">首页</a></li><li class="md-nav__item"><a href="../../master/donate/" title="捐赠" class="md-nav__link">捐赠</a></li><li class="md-nav__item"><a href="../../master/contribute/" title="贡献" class="md-nav__link">贡献</a></li><li class="md-nav__item"><a href="../../master/policy/" title="政策" class="md-nav__link">政策</a></li><li class="md-nav__item"><a href="../../master/license/" title="许可" class="md-nav__link">许可</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2"><label class="md-nav__link" for="nav-2">文档</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-2">文档</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../document/design_pattern/" title="设计模式" class="md-nav__link">设计模式</a></li><li class="md-nav__item"><a href="../../document/jetbrains/" title="JetBrains使用指南" class="md-nav__link">JetBrains使用指南</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3"><label class="md-nav__link" for="nav-3">机器学习</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-3">机器学习</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../ml/statistics/" title="统计" class="md-nav__link">统计</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4"><label class="md-nav__link" for="nav-4">计算机视觉</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-4">计算机视觉</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../cv/siamrpn/" title="SiamRPN" class="md-nav__link">SiamRPN</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5"><label class="md-nav__link" for="nav-5">算法</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-5">算法</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../algorithm/introduction/" title="算法导论" class="md-nav__link">算法导论</a></li><li class="md-nav__item"><a href="../../algorithm/complexity/" title="复杂度" class="md-nav__link">复杂度</a></li><li class="md-nav__item"><a href="../../algorithm/tree/" title="树" class="md-nav__link">树</a></li><li class="md-nav__item"><a href="../../algorithm/recurrence_relation/" title="递推方程" class="md-nav__link">递推方程</a></li></ul></nav></li><li class="md-nav__item md-nav__item--active md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked><label class="md-nav__link" for="nav-6">Kubernetes</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-6">Kubernetes</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../introduction/" title="导论" class="md-nav__link">导论</a></li><li class="md-nav__item md-nav__item--active"><input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc"><label class="md-nav__link md-nav__link--active" for="__toc">组件</label><a href="./" title="组件" class="md-nav__link md-nav__link--active">组件</a><nav class="md-nav md-nav--secondary"><label class="md-nav__title" for="__toc">目录</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="#master-components" title="管理组件（Master Components）" class="md-nav__link">管理组件（Master Components）</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#apikube-apiserver" title="API服务器（kube-apiserver）" class="md-nav__link">API服务器（kube-apiserver）</a></li><li class="md-nav__item"><a href="#etcd" title="etcd" class="md-nav__link">etcd</a></li><li class="md-nav__item"><a href="#kube-scheduler" title="调度器（kube-scheduler）" class="md-nav__link">调度器（kube-scheduler）</a></li><li class="md-nav__item"><a href="#kube-controller-manager" title="控制器管理器（kube-controller-manager）" class="md-nav__link">控制器管理器（kube-controller-manager）</a></li><li class="md-nav__item"><a href="#cloud-controller-manager" title="云控制器管理器（cloud-controller-manager）" class="md-nav__link">云控制器管理器（cloud-controller-manager）</a></li></ul></nav></li><li class="md-nav__item"><a href="#nodes-components" title="节点组件（Nodes Components）" class="md-nav__link">节点组件（Nodes Components）</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#kubelet" title="kubelet" class="md-nav__link">kubelet</a></li><li class="md-nav__item"><a href="#kube-proxy" title="kube-proxy" class="md-nav__link">kube-proxy</a></li><li class="md-nav__item"><a href="#container-runtime" title="容器运行时（Container Runtime）" class="md-nav__link">容器运行时（Container Runtime）</a></li></ul></nav></li><li class="md-nav__item"><a href="#addons" title="插件（Addons）" class="md-nav__link">插件（Addons）</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#dns" title="DNS" class="md-nav__link">DNS</a></li><li class="md-nav__item"><a href="#web-ui" title="Web UI（仪表板）" class="md-nav__link">Web UI（仪表板）</a></li><li class="md-nav__item"><a href="#container-resource-monitoring" title="容器资源监控（Container Resource Monitoring）" class="md-nav__link">容器资源监控（Container Resource Monitoring）</a></li><li class="md-nav__item"><a href="#cluster-level-logging" title="集群级日志（Cluster-level Logging）" class="md-nav__link">集群级日志（Cluster-level Logging）</a></li></ul></nav></li><li class="md-nav__item"><a href="#__comments" title="评论" class="md-nav__link md-nav__link--active">评论</a></li></ul></nav></li><li class="md-nav__item"><a href="../installation/" title="安装" class="md-nav__link">安装</a></li><li class="md-nav__item"><a href="../pods/" title="Pods" class="md-nav__link">Pods</a></li><li class="md-nav__item"><a href="../deployments/" title="Deployments" class="md-nav__link">Deployments</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7"><label class="md-nav__link" for="nav-7">Docker</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-7">Docker</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../docker/introduction/" title="导论" class="md-nav__link">导论</a></li><li class="md-nav__item"><a href="../../docker/installation/" title="安装" class="md-nav__link">安装</a></li><li class="md-nav__item"><a href="../../docker/command_line_interface/" title="命令行接口" class="md-nav__link">命令行接口</a></li><li class="md-nav__item"><a href="../../docker/dockerfile/" title="Dockerfile" class="md-nav__link">Dockerfile</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8"><label class="md-nav__link" for="nav-8">CNTK</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-8">CNTK</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../cntk/introduction/" title="导论" class="md-nav__link">导论</a></li><li class="md-nav__item"><a href="../../cntk/200/" title="200" class="md-nav__link">200</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9"><label class="md-nav__link" for="nav-9">C++核心指南</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-9">C++核心指南</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../cppcg/CppCoreGuidelines/" title="原文" class="md-nav__link">原文</a></li><li class="md-nav__item"><a href="../../cppcg/abstract/" title="摘要" class="md-nav__link">摘要</a></li></ul></nav></li><li class="md-nav__item md-nav__item--nested"><input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10"><label class="md-nav__link" for="nav-10">随笔</label><nav class="md-nav" data-md-component="collapsible" data-md-level="1"><label class="md-nav__title" for="nav-10">随笔</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="../../sketch/20190610/" title="二〇一九年 六月 十日" class="md-nav__link">二〇一九年 六月 十日</a></li><li class="md-nav__item"><a href="../../sketch/20191108/" title="二〇一九年 十一月 八日" class="md-nav__link">二〇一九年 十一月 八日</a></li><li class="md-nav__item"><a href="../../sketch/20200404/" title="二〇二〇年 四月 四日" class="md-nav__link">二〇二〇年 四月 四日</a></li></ul></nav></li></ul></nav></div></div></div><div class="md-sidebar md-sidebar--secondary" data-md-component="toc"><div class="md-sidebar__scrollwrap"><div class="md-sidebar__inner"><nav class="md-nav md-nav--secondary"><label class="md-nav__title" for="__toc">目录</label><ul class="md-nav__list" data-md-scrollfix><li class="md-nav__item"><a href="#master-components" title="管理组件（Master Components）" class="md-nav__link">管理组件（Master Components）</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#apikube-apiserver" title="API服务器（kube-apiserver）" class="md-nav__link">API服务器（kube-apiserver）</a></li><li class="md-nav__item"><a href="#etcd" title="etcd" class="md-nav__link">etcd</a></li><li class="md-nav__item"><a href="#kube-scheduler" title="调度器（kube-scheduler）" class="md-nav__link">调度器（kube-scheduler）</a></li><li class="md-nav__item"><a href="#kube-controller-manager" title="控制器管理器（kube-controller-manager）" class="md-nav__link">控制器管理器（kube-controller-manager）</a></li><li class="md-nav__item"><a href="#cloud-controller-manager" title="云控制器管理器（cloud-controller-manager）" class="md-nav__link">云控制器管理器（cloud-controller-manager）</a></li></ul></nav></li><li class="md-nav__item"><a href="#nodes-components" title="节点组件（Nodes Components）" class="md-nav__link">节点组件（Nodes Components）</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#kubelet" title="kubelet" class="md-nav__link">kubelet</a></li><li class="md-nav__item"><a href="#kube-proxy" title="kube-proxy" class="md-nav__link">kube-proxy</a></li><li class="md-nav__item"><a href="#container-runtime" title="容器运行时（Container Runtime）" class="md-nav__link">容器运行时（Container Runtime）</a></li></ul></nav></li><li class="md-nav__item"><a href="#addons" title="插件（Addons）" class="md-nav__link">插件（Addons）</a><nav class="md-nav"><ul class="md-nav__list"><li class="md-nav__item"><a href="#dns" title="DNS" class="md-nav__link">DNS</a></li><li class="md-nav__item"><a href="#web-ui" title="Web UI（仪表板）" class="md-nav__link">Web UI（仪表板）</a></li><li class="md-nav__item"><a href="#container-resource-monitoring" title="容器资源监控（Container Resource Monitoring）" class="md-nav__link">容器资源监控（Container Resource Monitoring）</a></li><li class="md-nav__item"><a href="#cluster-level-logging" title="集群级日志（Cluster-level Logging）" class="md-nav__link">集群级日志（Cluster-level Logging）</a></li></ul></nav></li><li class="md-nav__item"><a href="#__comments" title="评论" class="md-nav__link md-nav__link--active">评论</a></li></ul></nav></div></div></div><div class="md-content"><article class="md-content__inner md-typeset"><a href="https://github.com/zyc-ai/edit/master/docs/k8s/component.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a><h1>组件</h1><p>Kubernetes的组件可以分为三类--管理组件（Master Components）、节点组件（Nodes Components）和插件（Addons）。</p>
+<div class="admonition tip">
+<p class="admonition-title">主节点（Master Node）和从节点（Worker Node）</p>
+<p>管理组件可以运行在集群当中的任何一个节点之上，但我们通常会将所有管理组件运行在某一个或多个节点之上，并且不在这些节点上运行任何用户容器。对于这一个或几个节点，我们将其称为主节点（Master Node）。对于其他所有节点，我们将其称为从节点或者工作节点（Worker Node）。</p>
+<p>一般而言，一个Kubernetes集群至少需要一个主节点和一个从节点。</p>
+</div>
+<h2 id="master-components">管理组件（Master Components）<a class="headerlink" href="#master-components" title="Permanent link">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">管理组件</p>
+<p>管理组件可以在任何一个节点上运行，它为集群提供控制平面，包括做出全局性决策以及检测和响应集群事件</p>
+<p>管理组件由包括以下五个组件：</p>
+<ul>
+<li>API服务器（kube-apiserver）</li>
+<li>etcd</li>
+<li>调度器（kube-scheduler）</li>
+<li>控制器管理器（kube-controller-manager）</li>
+<li>云控制器管理器（cloud-controller-manager）</li>
+</ul>
+</div>
+<h3 id="apikube-apiserver">API服务器（kube-apiserver）<a class="headerlink" href="#apikube-apiserver" title="Permanent link">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">API服务器</p>
+<p>API服务器负责将Kubernetes API对外暴露。</p>
+<p>Kubernetes API 服务器的主要实现是<a href="/api-server">kube-apiserver</a>。 kube-apiserver 被设计为水平扩展--即通过部署更多实例来实现伸缩。你可以运行多个 kube-apiserver 实例并且均衡每个实例的流量。</p>
+</div>
+<h3 id="etcd">etcd<a class="headerlink" href="#etcd" title="Permanent link">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">etcd</p>
+<p><a href="https://github.com/etcd-io/etcd">etcd</a>是一个分布式的高可用键值存储。etcd被Kubernetes用于存储所有数据。</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">备份</p>
+<p>etcd一般会被定期备份，以便于在灾难性情况下恢复Kubernetes集群。</p>
+</div>
+<p>您可以在<a href="https://etcd.io/docs/">etcd官方文档</a>中找到有关etcd的详细信息。</p>
+<h3 id="kube-scheduler">调度器（kube-scheduler）<a class="headerlink" href="#kube-scheduler" title="Permanent link">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">调度器</p>
+<p>调度器负责监视所有新创建的pods，并对其分配一个节点来运行。</p>
+</div>
+<h3 id="kube-controller-manager">控制器管理器（kube-controller-manager）<a class="headerlink" href="#kube-controller-manager" title="Permanent link">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">控制器管理器</p>
+<p>控制器管理器负责运行<a href="/controller">管理器</a>。</p>
+<p>逻辑上，每一个控制器都是一个单独的进程。但出于降低复杂性的考虑，他们都被编译成一个单独的二进制文件并且在一个单独的进程当中运行。</p>
+</div>
+<p>这些控制器包括：</p>
+<ul>
+<li>节点控制器：负责节点发现并在节点下线时响应。</li>
+<li>副本控制器：负责根据副本控制器对象维护pods的数量。</li>
+<li>端点控制器：负责填充端点对象（即加入服务和pods）。</li>
+<li>服务账户与标识控制器：负责为新的名称空间创建默认帐户和API访问标识。</li>
+</ul>
+<h3 id="cloud-controller-manager">云控制器管理器（cloud-controller-manager）<a class="headerlink" href="#cloud-controller-manager" title="Permanent link">#</a></h3>
+<p>云控制器管理器是Kubernetes 1.6版中引入的alpha功能。</p>
+<div class="admonition note">
+<p class="admonition-title">云控制器管理器</p>
+<p>云控制器管理器负责运行与底层云提供商交互的控制器。</p>
+<p>云控制器管理器仅运行特定于云提供商的控制器循环。您必须在控制器管理器中禁用这些控制器循环。您可以通过在启动控制器管理器时将--cloud-provider标志设置为external来禁用控制器循环。</p>
+<p>云控制器管理器允许云供应商的代码和Kubernetes代码彼此独立地发展。在以前的版本中，核心的Kubernetes代码依赖于特定于云提供商的代码来实现功能。在将来的版本中，应由云供应商自己维护特定于云供应商的代码，并在运行Kubernetes时将其链接到云控制器管理器。</p>
+</div>
+<p>以下控制器具有云提供程序依赖：</p>
+<ul>
+<li>节点控制器：负责检查云提供者以确定节点停止响应后是否已在云中删除该节点</li>
+<li>路由控制器：负责在基础云基础架构中设置路由</li>
+<li>服务控制器：负责创建，更新和删除云提供商负载平衡器</li>
+<li>卷控制器：负责创建，附加和安装卷，以及与云提供商交互以编排卷</li>
+</ul>
+<h2 id="nodes-components">节点组件（Nodes Components）<a class="headerlink" href="#nodes-components" title="Permanent link">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">节点组件</p>
+<p>节点组件则需要在每一个节点上运行，它维护运行的Pod并提供Kubernetes运行时环境</p>
+<p>节点组件包括以下三个组件：</p>
+<ul>
+<li>kubelet</li>
+<li>kube-proxy</li>
+<li>容器运行时（Container Runtime）</li>
+</ul>
+</div>
+<h3 id="kubelet">kubelet<a class="headerlink" href="#kubelet" title="Permanent link">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">kubelet</p>
+<p>kubelet是一个代理，负责确保容器在容器中运行。</p>
+<p>kubelet包含通过各种机制提供的一组PodSpecs（pod参数），并确保这些PodSpecs中描述的容器运行正常。 Kubelet不管理非Kubernetes创建的容器。</p>
+</div>
+<h3 id="kube-proxy">kube-proxy<a class="headerlink" href="#kube-proxy" title="Permanent link">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">kube-proxy</p>
+<p>kube-proxy是一个网络代理，实现了Kubernetes服务概念的一部分。</p>
+<p>kube-proxy维护节点上的网络规则。这些网络规则允许从集群内部或外部的网络会话与pod进行网络通信。</p>
+<p>如果有kube-proxy，则kube-proxy使用操作系统的数据包过滤层。否则，kube-proxy会转发流量本身。</p>
+</div>
+<h3 id="container-runtime">容器运行时（Container Runtime）<a class="headerlink" href="#container-runtime" title="Permanent link">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">容器运行时</p>
+<p>容器运行时是负责运行容器的软件。</p>
+</div>
+<p>Kubernetes支持多种容器运行时：<a href="http://www.docker.com/">Docker</a>，<a href="https://containerd.io/">containerd</a>，<a href="https://cri-o.io/">cri-o</a>，<a href="https://github.com/kubernetes-incubator/rktlet">rktlet</a>以及<a href="https://github.com/kubernetes/community/blob/master/contributors/devel/sig-node/container-runtime-interface.md">Kubernetes CRI（容器运行时接口）</a>的任何实现。</p>
+<h2 id="addons">插件（Addons）<a class="headerlink" href="#addons" title="Permanent link">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">插件</p>
+<p>插件为Kubernetes集群提供附加特性。</p>
+<p>由于插件提供的特性是集群等级的，插件的命名空间资源属于<code>kube-system</code>命名空间。</p>
+</div>
+<p>本节提供一部分插件的描述，有关具体的内容，敬请参阅<a href="addons">插件</a>。</p>
+<h3 id="dns">DNS<a class="headerlink" href="#dns" title="Permanent link">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">DNS</p>
+<p>几乎所有的插件都是选装的，但DNS是一个例外。每一个Kubernetes集群都应该有<a href="/cluster-dns">Cluster DNS</a>。</p>
+<p>Cluster DNS是一个DNS服务器，和您部署环境中的其他DNS服务器一起工作，为Kubernetes服务提供DNS记录。</p>
+<p>Kubernetes会自动将这个DNS服务器包含在由其启动的容器的DNS搜索中。</p>
+</div>
+<h3 id="web-ui">Web UI（仪表板）<a class="headerlink" href="#web-ui" title="Permanent link">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">仪表板</p>
+<p>仪表板是Kubernetes集群的通用基于Web的UI。它允许用户管理集群中运行的应用程序以及集群本身并进行故障排除。</p>
+</div>
+<h3 id="container-resource-monitoring">容器资源监控（Container Resource Monitoring）<a class="headerlink" href="#container-resource-monitoring" title="Permanent link">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">容器资源监控</p>
+<p><a href="https://kubernetes.io/docs/tasks/debug-application-cluster/resource-usage-monitoring/">容器资源监控</a>在中央数据库中记录有关容器的一般时间序列指标，并提供用于浏览该数据的UI。</p>
+</div>
+<h3 id="cluster-level-logging">集群级日志（Cluster-level Logging）<a class="headerlink" href="#cluster-level-logging" title="Permanent link">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">集群级日志</p>
+<p><a href="https://kubernetes.io/docs/concepts/cluster-administration/logging/">集群级日志</a>机制负责通过搜索/浏览接口将容器日志保存到中央日志存储中。</p>
+</div><h2 id="__comments">评论</h2><div id="disqus_thread"></div><script>var disqus_config = function () {
+      this.page.url = "https://zyc.ai/k8s/component/";
+      this.page.identifier =
+        "/k8s/component/";
+    };
+    (function() {
+      var d = document, s = d.createElement("script");
+      s.src = "//intzc.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();</script></article></div></div></main><footer class="md-footer"><div class="md-footer-nav"><nav class="md-footer-nav__inner md-grid"><a href="../introduction/" title="导论" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev"><div class="md-flex__cell md-flex__cell--shrink"><i class="md-icon md-icon--arrow-back md-footer-nav__button"></i></div><div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span class="md-flex__ellipsis"><span class="md-footer-nav__direction">后退</span>导论</span></div></a><a href="../installation/" title="安装" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next"><div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span class="md-flex__ellipsis"><span class="md-footer-nav__direction">前进</span>安装</span></div><div class="md-flex__cell md-flex__cell--shrink"><i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i></div></a></nav></div><div class="md-footer-meta md-typeset"><div class="md-footer-meta__inner md-grid"><div class="md-footer-copyright"><div class="md-footer-copyright__highlight">All rights reserved © Zhiyuan Chen 2017-2020</div>powered by <a href="https://www.mkdocs.org">MkDocs</a> and <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a></div><div class="md-footer-social"><link rel="stylesheet" href="../../assets/fonts/font-awesome.css"> <a href="https://github.com/zyc-ai" class="md-footer-social__link fa fa-github"></a>  <a href="https://www.linkedin.com/in/%E9%99%9F%E5%8E%9F-%E9%99%88-0b473aa9/" class="md-footer-social__link fa fa-linkedin"></a> </div></div></div></footer></div><script src="../../assets/javascripts/application.b260a35d.js"></script><script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script><script src="../../assets/javascripts/lunr/tinyseg.js"></script><script src="../../assets/javascripts/lunr/lunr.ja.js"></script><script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script></body></html>

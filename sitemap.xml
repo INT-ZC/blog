@@ -2,142 +2,147 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>https://zyc.ai/</loc>
-     <lastmod>2020-03-04</lastmod>
+     <lastmod>2020-04-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://zyc.ai/master/donate/</loc>
-     <lastmod>2020-03-04</lastmod>
+     <lastmod>2020-04-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://zyc.ai/master/contribute/</loc>
-     <lastmod>2020-03-04</lastmod>
+     <lastmod>2020-04-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://zyc.ai/master/policy/</loc>
-     <lastmod>2020-03-04</lastmod>
+     <lastmod>2020-04-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://zyc.ai/master/license/</loc>
-     <lastmod>2020-03-04</lastmod>
+     <lastmod>2020-04-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://zyc.ai/document/design_pattern/</loc>
-     <lastmod>2020-03-04</lastmod>
+     <lastmod>2020-04-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://zyc.ai/document/jetbrains/</loc>
-     <lastmod>2020-03-04</lastmod>
+     <lastmod>2020-04-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://zyc.ai/machine_learning/statistics/</loc>
-     <lastmod>2020-03-04</lastmod>
+     <loc>https://zyc.ai/ml/statistics/</loc>
+     <lastmod>2020-04-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://zyc.ai/computer_vision/siamrpn/</loc>
-     <lastmod>2020-03-04</lastmod>
+     <loc>https://zyc.ai/cv/siamrpn/</loc>
+     <lastmod>2020-04-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://zyc.ai/algorithm/introduction/</loc>
-     <lastmod>2020-03-04</lastmod>
+     <lastmod>2020-04-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://zyc.ai/algorithm/complexity/</loc>
-     <lastmod>2020-03-04</lastmod>
+     <lastmod>2020-04-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://zyc.ai/algorithm/tree/</loc>
-     <lastmod>2020-03-04</lastmod>
+     <lastmod>2020-04-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://zyc.ai/algorithm/recurrence_relation/</loc>
-     <lastmod>2020-03-04</lastmod>
+     <lastmod>2020-04-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://zyc.ai/kubernetes/introduction/</loc>
-     <lastmod>2020-03-04</lastmod>
+     <loc>https://zyc.ai/k8s/introduction/</loc>
+     <lastmod>2020-04-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://zyc.ai/kubernetes/component/</loc>
-     <lastmod>2020-03-04</lastmod>
+     <loc>https://zyc.ai/k8s/component/</loc>
+     <lastmod>2020-04-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://zyc.ai/kubernetes/installation/</loc>
-     <lastmod>2020-03-04</lastmod>
+     <loc>https://zyc.ai/k8s/installation/</loc>
+     <lastmod>2020-04-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://zyc.ai/kubernetes/pods/</loc>
-     <lastmod>2020-03-04</lastmod>
+     <loc>https://zyc.ai/k8s/pods/</loc>
+     <lastmod>2020-04-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://zyc.ai/kubernetes/deployments/</loc>
-     <lastmod>2020-03-04</lastmod>
+     <loc>https://zyc.ai/k8s/deployments/</loc>
+     <lastmod>2020-04-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://zyc.ai/docker/introduction/</loc>
-     <lastmod>2020-03-04</lastmod>
+     <lastmod>2020-04-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://zyc.ai/docker/installation/</loc>
-     <lastmod>2020-03-04</lastmod>
+     <lastmod>2020-04-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://zyc.ai/docker/command_line_interface/</loc>
-     <lastmod>2020-03-04</lastmod>
+     <lastmod>2020-04-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://zyc.ai/docker/dockerfile/</loc>
-     <lastmod>2020-03-04</lastmod>
+     <lastmod>2020-04-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://zyc.ai/cntk/introduction/</loc>
-     <lastmod>2020-03-04</lastmod>
+     <lastmod>2020-04-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://zyc.ai/cntk/200/</loc>
-     <lastmod>2020-03-04</lastmod>
+     <lastmod>2020-04-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://zyc.ai/CppCoreGuidelines/CppCoreGuidelines/</loc>
-     <lastmod>2020-03-04</lastmod>
+     <loc>https://zyc.ai/cppcg/CppCoreGuidelines/</loc>
+     <lastmod>2020-04-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://zyc.ai/CppCoreGuidelines/abstract/</loc>
-     <lastmod>2020-03-04</lastmod>
+     <loc>https://zyc.ai/cppcg/abstract/</loc>
+     <lastmod>2020-04-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://zyc.ai/sketch/20190610/</loc>
-     <lastmod>2020-03-04</lastmod>
+     <lastmod>2020-04-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://zyc.ai/sketch/20191108/</loc>
-     <lastmod>2020-03-04</lastmod>
+     <lastmod>2020-04-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://zyc.ai/sketch/20200404/</loc>
+     <lastmod>2020-04-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
