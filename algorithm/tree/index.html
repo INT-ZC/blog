@@ -27,9 +27,9 @@
 <p>通常，我们提到树或者二叉树时，我们指的其实是二叉搜索树，其影响力之大可见一斑。在本章当中，除非特别声明，否则当我们提到树时，我们指的也是二叉搜索树。二叉搜索树是一种二叉（即每个节点都有最多两个子节点）的有序树。他的实现非常简单：</p>
 <div class="admonition success">
 <p class="admonition-title">二叉搜索树</p>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #a6e22e">@functools.total_ordering</span>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #a6e22e">@functools</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">total_ordering</span>
 <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">Data</span><span style="color: #f8f8f2">(object):</span>
-  <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">__init__</span><span style="color: #f8f8f2">(self,</span> <span style="color: #f8f8f2">value</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">None):</span>
+  <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">__init__</span><span style="color: #f8f8f2">(self,</span> <span style="color: #f8f8f2">value</span><span style="color: #f92672">=</span><span style="color: #66d9ef">None</span><span style="color: #f8f8f2">):</span>
     <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">value</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">value</span>
 
   <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">__eq__</span><span style="color: #f8f8f2">(self,</span> <span style="color: #f8f8f2">other):</span>
@@ -39,7 +39,7 @@
     <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">value</span> <span style="color: #f92672">&lt;</span> <span style="color: #f8f8f2">other</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">value</span>
 
 <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">Node</span><span style="color: #f8f8f2">(object):</span>
-  <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">__init__</span><span style="color: #f8f8f2">(self,</span> <span style="color: #f8f8f2">parent</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">None,</span> <span style="color: #f8f8f2">value</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">None,</span> <span style="color: #f8f8f2">left_child</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">None,</span> <span style="color: #f8f8f2">right_child</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">None):</span>
+  <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">__init__</span><span style="color: #f8f8f2">(self,</span> <span style="color: #f8f8f2">parent</span><span style="color: #f92672">=</span><span style="color: #66d9ef">None</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">value</span><span style="color: #f92672">=</span><span style="color: #66d9ef">None</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">left_child</span><span style="color: #f92672">=</span><span style="color: #66d9ef">None</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">right_child</span><span style="color: #f92672">=</span><span style="color: #66d9ef">None</span><span style="color: #f8f8f2">):</span>
     <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">parent</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">parent</span>
     <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">data</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">Data(value)</span>
     <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">left_child</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">left_child</span>
@@ -69,7 +69,7 @@
 <p class="admonition-title">插入</p>
 <p>插入对于一棵自平衡二叉树来说挺难，但对一棵二叉搜索树来说还是很简单的。我们只需要根据新值的大小找到一个合适的位置即可。</p>
 <div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>  <span style="color: #a6e22e">@staticmethod</span>
-  <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">insert_node</span><span style="color: #f8f8f2">(node,</span> <span style="color: #f8f8f2">value,</span> <span style="color: #f8f8f2">parent</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">None):</span>
+  <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">insert_node</span><span style="color: #f8f8f2">(node,</span> <span style="color: #f8f8f2">value,</span> <span style="color: #f8f8f2">parent</span><span style="color: #f92672">=</span><span style="color: #66d9ef">None</span><span style="color: #f8f8f2">):</span>
     <span style="color: #66d9ef">if</span> <span style="color: #f92672">not</span> <span style="color: #f8f8f2">node:</span>
       <span style="color: #f8f8f2">node</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">Node(parent,</span> <span style="color: #f8f8f2">value)</span>
     <span style="color: #66d9ef">else</span><span style="color: #f8f8f2">:</span>
@@ -142,7 +142,7 @@
 <p class="admonition-title">广度优先搜索</p>
 <div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>  <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">bredth_first</span><span style="color: #f8f8f2">():</span>
     <span style="color: #66d9ef">if</span> <span style="color: #f92672">not</span> <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">root:</span>
-      <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">False</span>
+      <span style="color: #66d9ef">return</span> <span style="color: #66d9ef">False</span>
     <span style="color: #f8f8f2">queue</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">[]</span>
     <span style="color: #f8f8f2">queue</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">append(self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">root)</span>
     <span style="color: #66d9ef">while</span><span style="color: #f8f8f2">(len(queue)</span> <span style="color: #f92672">&gt;</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">):</span>
@@ -176,13 +176,13 @@
       <span style="color: #f8f8f2">delete_node(node</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">right_child,</span> <span style="color: #f8f8f2">value)</span>
     <span style="color: #66d9ef">else</span><span style="color: #f8f8f2">:</span>
       <span style="color: #66d9ef">if</span> <span style="color: #f92672">not</span> <span style="color: #f8f8f2">node</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">left_child:</span>
-        <span style="color: #f8f8f2">node</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">node</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">right_child</span> <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">node</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">right_child</span> <span style="color: #66d9ef">else</span> <span style="color: #f8f8f2">None</span>
+        <span style="color: #f8f8f2">node</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">node</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">right_child</span> <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">node</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">right_child</span> <span style="color: #66d9ef">else</span> <span style="color: #66d9ef">None</span>
       <span style="color: #66d9ef">elif</span> <span style="color: #f92672">not</span> <span style="color: #f8f8f2">node</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">right_child:</span>
         <span style="color: #f8f8f2">node</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">node</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">left_child</span>
       <span style="color: #66d9ef">else</span><span style="color: #f8f8f2">:</span>
         <span style="color: #f8f8f2">right_minimum</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">minumum_node(node</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">right_child)</span>
         <span style="color: #f8f8f2">node</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">data</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">value</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">right_minimum</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">data</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">value</span>
-        <span style="color: #f8f8f2">right_minimum</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">None</span>
+        <span style="color: #f8f8f2">right_minimum</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">None</span>
 </pre></div>
 
 </div>

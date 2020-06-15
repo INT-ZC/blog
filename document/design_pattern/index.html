@@ -46,21 +46,21 @@
 
 <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">FriedChickenCooker</span><span style="color: #f8f8f2">(ChickenCooker):</span>    <span style="color: #75715e"># 具体策略1</span>
   <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">cook</span><span style="color: #f8f8f2">(self):</span>
-    <span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;Cooking fried chicken!&quot;</span><span style="color: #f8f8f2">)</span>
+    <span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;Cooking fried chicken!&quot;</span><span style="color: #f8f8f2">)</span>
 
 <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">GrilledChickenCooker</span><span style="color: #f8f8f2">(ChickenCooker):</span>  <span style="color: #75715e"># 具体策略2</span>
   <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">cook</span><span style="color: #f8f8f2">(self):</span>
-    <span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;Cooking grilled chicken!&quot;</span><span style="color: #f8f8f2">)</span>
+    <span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;Cooking grilled chicken!&quot;</span><span style="color: #f8f8f2">)</span>
 
 <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">Kitchen</span><span style="color: #f8f8f2">(object):</span>  <span style="color: #75715e"># 上下文</span>
   <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">__init__</span><span style="color: #f8f8f2">(self):</span>
-    <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">_strategy</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">None</span>
+    <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">_strategy</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">None</span>
 
   <span style="color: #a6e22e">@property</span>
   <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">strategy</span><span style="color: #f8f8f2">(self):</span>
     <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">_strategy</span>
 
-  <span style="color: #a6e22e">@strategy.setter</span>
+  <span style="color: #a6e22e">@strategy</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">setter</span>
   <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">strategy</span><span style="color: #f8f8f2">(self,</span> <span style="color: #f8f8f2">strategy):</span>
     <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">_strategy</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">strategy</span>
 
@@ -116,7 +116,7 @@
     <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">status</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">WaiterStatus</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">Free</span>
 
   <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">collect_order</span><span style="color: #f8f8f2">(self):</span>
-    <span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;Coming&#39;</span><span style="color: #f8f8f2">)</span> <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">status</span> <span style="color: #f92672">!=</span> <span style="color: #f8f8f2">WaiterStatus</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">Busy</span> <span style="color: #66d9ef">else</span> <span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;Busy&#39;</span><span style="color: #f8f8f2">)</span>
+    <span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&#39;Coming&#39;</span><span style="color: #f8f8f2">)</span> <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">status</span> <span style="color: #f92672">!=</span> <span style="color: #f8f8f2">WaiterStatus</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">Busy</span> <span style="color: #66d9ef">else</span> <span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&#39;Busy&#39;</span><span style="color: #f8f8f2">)</span>
 
 <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">WaiterStatus</span><span style="color: #f8f8f2">(Enum):</span>
   <span style="color: #f8f8f2">Free</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span>
@@ -206,7 +206,7 @@
 <div class="admonition success">
 <p class="admonition-title">单例模式</p>
 <div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #66d9ef">class</span> <span style="color: #a6e22e">ChiefHeadChef</span><span style="color: #f8f8f2">(object):</span>
-  <span style="color: #f8f8f2">__chief_head_chef</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">None</span>
+  <span style="color: #f8f8f2">__chief_head_chef</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">None</span>
   <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">__new__</span><span style="color: #f8f8f2">(cls):</span>
     <span style="color: #66d9ef">if</span> <span style="color: #f92672">not</span> <span style="color: #f8f8f2">cls</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">__chief_head_chef:</span>
       <span style="color: #f8f8f2">cls</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">__chief_head_chef</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">object</span><span style="color: #f92672">.</span><span style="color: #a6e22e">__new__</span><span style="color: #f8f8f2">(cls)</span>
