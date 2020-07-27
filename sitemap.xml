@@ -1,34 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
-     <loc>https://zyc.ai/</loc>
-     <lastmod>2020-07-27</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://zyc.ai/about/donate/</loc>
-     <lastmod>2020-07-27</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://zyc.ai/about/contribute/</loc>
-     <lastmod>2020-07-27</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://zyc.ai/about/eula/</loc>
-     <lastmod>2020-07-27</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://zyc.ai/about/privacy/</loc>
-     <lastmod>2020-07-27</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://zyc.ai/about/comment/</loc>
-     <lastmod>2020-07-27</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://zyc.ai/about/license/</loc>
-     <lastmod>2020-07-27</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://zyc.ai/about/zhiyuan_chen/</loc>
+     <loc>https://zyc.ai/zyc.ai/</loc>
      <lastmod>2020-07-27</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
@@ -121,6 +93,34 @@
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://zyc.ai/sketch/20200404/</loc>
+     <lastmod>2020-07-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://zyc.ai/about/donate/</loc>
+     <lastmod>2020-07-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://zyc.ai/about/contribute/</loc>
+     <lastmod>2020-07-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://zyc.ai/about/eula/</loc>
+     <lastmod>2020-07-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://zyc.ai/about/privacy/</loc>
+     <lastmod>2020-07-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://zyc.ai/about/comment/</loc>
+     <lastmod>2020-07-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://zyc.ai/about/license/</loc>
+     <lastmod>2020-07-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://zyc.ai/about/zhiyuan_chen/</loc>
      <lastmod>2020-07-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
