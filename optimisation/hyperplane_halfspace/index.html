@@ -11,7 +11,7 @@
         <meta name="description" content="The website of Zhiyuan Chen">
       
       
-        <link rel="canonical" href="https://zyc.ai/optimisation/affine_convex/">
+        <link rel="canonical" href="https://zyc.ai/optimisation/hyperplane_halfspace/">
       
       
         <meta name="author" content="Zhiyuan Chen">
@@ -21,7 +21,7 @@
     
     
       
-        <title>仿射与凸</title>
+        <title>超平面与半空间</title>
       
     
     
@@ -94,7 +94,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              仿射与凸
+              超平面与半空间
             
           </span>
         </div>
@@ -326,6 +326,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../affine_convex_cone/" title="仿射、凸与锥" class="md-nav__link">
+      仿射、凸与锥
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -334,22 +346,10 @@
     <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
     
-    <a href="./" title="仿射与凸" class="md-nav__link md-nav__link--active">
-      仿射与凸
+    <a href="./" title="超平面与半空间" class="md-nav__link md-nav__link--active">
+      超平面与半空间
     </a>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../cone_ball/" title="锥与球" class="md-nav__link">
-      锥与球
-    </a>
   </li>
 
         
@@ -814,7 +814,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/zyc-ai/edit/master/docs/optimisation/affine_convex.md" title="编辑此页" class="md-content__button md-icon">
+                  <a href="https://github.com/zyc-ai/edit/master/docs/optimisation/hyperplane_halfspace.md" title="编辑此页" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -822,71 +822,9 @@
                   
                 
                 
-                  <h1>仿射与凸</h1>
+                  <h1>超平面与半空间</h1>
                 
-                <div class="admonition abstract">
-<p class="admonition-title">前言</p>
-<p>据说从事凸优化的人都秃了。所以，看到这一篇文章的你，确定要凸吗？</p>
-</div>
-<p>直线的定义想必初中都已经学过，这里我们简单复习一下：</p>
-<div class="admonition important">
-<p class="admonition-title">直线（line）</p>
-<p>空间<span><span class="MathJax_Preview">\mathbb{R}^n</span><script type="math/tex">\mathbb{R}^n</script></span>中的两个点<span><span class="MathJax_Preview">x_1, x_2, x_1 \neq x_2</span><script type="math/tex">x_1, x_2, x_1 \neq x_2</script></span>可以唯一确定一条直线。这条直线可以被参数化的描述为<span><span class="MathJax_Preview">x = \lambda x_1 + (1 - \lambda) x_2 \ s.t. \ \lambda \in \mathbb{R}</span><script type="math/tex">x = \lambda x_1 + (1 - \lambda) x_2 \ s.t. \ \lambda \in \mathbb{R}</script></span>。</p>
-</div>
-<p>我们很容易发现，<span><span class="MathJax_Preview">x = x_1</span><script type="math/tex">x = x_1</script></span>时，<span><span class="MathJax_Preview">\lambda = 1</span><script type="math/tex">\lambda = 1</script></span>；<span><span class="MathJax_Preview">x = x_2</span><script type="math/tex">x = x_2</script></span>时，<span><span class="MathJax_Preview">\lambda = 0</span><script type="math/tex">\lambda = 0</script></span>。由此，我们知道了线段被如何描述：</p>
-<div class="admonition important">
-<p class="admonition-title">线段（line segment）</p>
-<p>穿过两点<span><span class="MathJax_Preview">x_1, x_2 \in \mathbb{R}^n, x_1 \neq x_2</span><script type="math/tex">x_1, x_2 \in \mathbb{R}^n, x_1 \neq x_2</script></span>的线段可以被参数化的描述为<span><span class="MathJax_Preview">x = \lambda x_1 + (1 - \lambda) x_2 \ s.t. \ 0 \leq \lambda \leq 1</span><script type="math/tex">x = \lambda x_1 + (1 - \lambda) x_2 \ s.t. \ 0 \leq \lambda \leq 1</script></span></p>
-</div>
-<p>通过变化，直线还可以被表达为<span><span class="MathJax_Preview">x = x_2 + \lambda (x_1 - x_2) \ s.t. \ \lambda \in \mathbb{R}</span><script type="math/tex">x = x_2 + \lambda (x_1 - x_2) \ s.t. \ \lambda \in \mathbb{R}</script></span>。这给了我们另一种解读--<span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>是 <em>基点</em> <span><span class="MathJax_Preview">x_2</span><script type="math/tex">x_2</script></span>与 <em>方向</em> <span><span class="MathJax_Preview">x_1 - x_2</span><script type="math/tex">x_1 - x_2</script></span>按参数<span><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span>缩放之和。 因此，<span><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span>给出了从<span><span class="MathJax_Preview">x_2</span><script type="math/tex">x_2</script></span>到<span><span class="MathJax_Preview">x_1</span><script type="math/tex">x_1</script></span>的分数。当<span><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span>从0增大到1时，点<span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>从<span><span class="MathJax_Preview">x_2</span><script type="math/tex">x_2</script></span>移动到<span><span class="MathJax_Preview">x_1</span><script type="math/tex">x_1</script></span>；当<span><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span>在此区间以外时，点<span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>位于<span><span class="MathJax_Preview">x_1</span><script type="math/tex">x_1</script></span>到<span><span class="MathJax_Preview">x_2</span><script type="math/tex">x_2</script></span>以外的线上。</p>
-<p>在复习了直线之后，我们可以给仿射集做一个定义：</p>
-<div class="admonition important">
-<p class="admonition-title">仿射集</p>
-<p>对于集合<span><span class="MathJax_Preview">C \subseteq \mathbb{R}</span><script type="math/tex">C \subseteq \mathbb{R}</script></span>，若经过该集合上任意两点<span><span class="MathJax_Preview">x_1, x_2 \in C, x_1 \neq x_2</span><script type="math/tex">x_1, x_2 \in C, x_1 \neq x_2</script></span>的直线上的点都在该集合中，那么我们称集合<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>为一个仿射集。</p>
-</div>
-<p>线性方程<span><span class="MathJax_Preview">\{x \mid Ax = b\}</span><script type="math/tex">\{x \mid Ax = b\}</script></span>的解即是一个仿射集，反过来每一个仿射集也都可以表示为一个线性方程系统的解集。因此，我们有时候将仿射集成为线性（linear）。</p>
-<p>有同学可以发现，仿射集与线性子空间非常相似。事实上，我们可以将一个仿射集看作是一个线性子空间根据一个固定向量平移而得到的。对于仿射集<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>与其上一点<span><span class="MathJax_Preview">x_0</span><script type="math/tex">x_0</script></span>，集合<span><span class="MathJax_Preview">V = C - x_0 = \{x - x_0 \mid x \in C\}</span><script type="math/tex">V = C - x_0 = \{x - x_0 \mid x \in C\}</script></span>是一个子空间。</p>
-<details class="help"><summary>证明<span><span class="MathJax_Preview">V = C - x_0</span><script type="math/tex">V = C - x_0</script></span>对于向量加法与标量乘法闭合</summary><p>对于<span><span class="MathJax_Preview">v_1, v_2 \in V, \alpha, \beta \in \mathbb{R}</span><script type="math/tex">v_1, v_2 \in V, \alpha, \beta \in \mathbb{R}</script></span>，我们有<span><span class="MathJax_Preview">v_1 + x_0, v_2 + x_0 \in C</span><script type="math/tex">v_1 + x_0, v_2 + x_0 \in C</script></span>，所以<span><span class="MathJax_Preview">\alpha v_1 + \beta v_2 + x_0 = \alpha (v_1 + x_0) + \beta (v_2 + x_0) + (1 -\alpha - \beta) x_0 \in C</span><script type="math/tex">\alpha v_1 + \beta v_2 + x_0 = \alpha (v_1 + x_0) + \beta (v_2 + x_0) + (1 -\alpha - \beta) x_0 \in C</script></span>，由于<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>是仿射集、<span><span class="MathJax_Preview">\alpha + \beta + (1 -\alpha - \beta) = 1, \alpha v_1 + \beta v_2 + x_0 \in C</span><script type="math/tex">\alpha + \beta + (1 -\alpha - \beta) = 1, \alpha v_1 + \beta v_2 + x_0 \in C</script></span>，易得<span><span class="MathJax_Preview">\alpha v_1 + \beta v_2 \in V</span><script type="math/tex">\alpha v_1 + \beta v_2 \in V</script></span>。</p>
-</details>
-<p>因此，我们可以将仿射集<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>表述为<span><span class="MathJax_Preview">C = V + x_0 = \{v + x_0 \mid v \in V\}</span><script type="math/tex">C = V + x_0 = \{v + x_0 \mid v \in V\}</script></span>， <span><span class="MathJax_Preview">x_0</span><script type="math/tex">x_0</script></span>为<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>上任意一点。我们将子空间<span><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span>称作仿射集<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>相关的子空间，将子空间<span><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span>的维度称作仿射集<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>的维度。</p>
-<p>简单了解了直线与仿射集之后，我们可以延伸出仿射组合：</p>
-<div class="admonition important">
-<p class="admonition-title">仿射组合（affine combination）</p>
-<p>对于线性组合<span><span class="MathJax_Preview">\sum_{i=1}^n \lambda_i x_i</span><script type="math/tex">\sum_{i=1}^n \lambda_i x_i</script></span>，若其满足<span><span class="MathJax_Preview">\sum_{i=1}^n \lambda_i = 1</span><script type="math/tex">\sum_{i=1}^n \lambda_i = 1</script></span>，则我们称其为仿射组合。</p>
-</div>
-<p>仿射集<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>包含了该集合中任意点的仿射组合，也就是说，对于<span><span class="MathJax_Preview">x_1, x_2, x_n \in C, \sum_{i=1}^n \lambda_i = 1</span><script type="math/tex">x_1, x_2, x_n \in C, \sum_{i=1}^n \lambda_i = 1</script></span>，<span><span class="MathJax_Preview">\sum_{i=1}^n \lambda_i x_i \in C</span><script type="math/tex">\sum_{i=1}^n \lambda_i x_i \in C</script></span>。</p>
-<p>我们可以发现，仿射组合其实可以被看成一个所有系数之和为1的特殊的线性组合。这样的特性使得我们可以抛弃原点，而将任意的点视为原点，我们都可以使用同样的线性组合去描述同一个点。</p>
-<div class="admonition example">
-<p class="admonition-title">🌰</p>
-<p>对于原点以及空间上任意一点<span><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span>，我们可以将向量<span><span class="MathJax_Preview">a,\ b</span><script type="math/tex">a,\ b</script></span>分别表述为<span><span class="MathJax_Preview">a + b</span><script type="math/tex">a + b</script></span>与<span><span class="MathJax_Preview">p + (a - p) + (b - p)</span><script type="math/tex">p + (a - p) + (b - p)</script></span>。由此，我们通过仿射组合去描述另一点时，两个描述分别为<span><span class="MathJax_Preview">\lambda a + (1 - \lambda) b</span><script type="math/tex">\lambda a + (1 - \lambda) b</script></span>与<span><span class="MathJax_Preview">p + \lambda (a - p) + (1 - \lambda) (b - p) = p + \lambda a - \lambda p + (1 - \lambda) b - (1 - \lambda) p = \lambda a + (1 - \lambda) b</span><script type="math/tex">p + \lambda (a - p) + (1 - \lambda) (b - p) = p + \lambda a - \lambda p + (1 - \lambda) b - (1 - \lambda) p = \lambda a + (1 - \lambda) b</script></span>；我们很容易发现两个描述与其起始点没有关系。</p>
-</div>
-<p>集合<span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>的仿射包<span><span class="MathJax_Preview">aff(S)</span><script type="math/tex">aff(S)</script></span>指的是包含集合<span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>的最小仿射集，它被定义为:</p>
-<div class="admonition important">
-<p class="admonition-title">仿射包（affine hull）</p>
-<p><span><span class="MathJax_Preview">aff(S) = \{\sum_{i=1}^k \lambda_i x_i \mid k &gt; 0, x_i \in S, \lambda_i \in \mathbb{R}, \sum_{i=1}^n \lambda_i = 1\}</span><script type="math/tex">aff(S) = \{\sum_{i=1}^k \lambda_i x_i \mid k > 0, x_i \in S, \lambda_i \in \mathbb{R}, \sum_{i=1}^n \lambda_i = 1\}</script></span>。</p>
-</div>
-<p>也就是说，如果仿射集<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>有<span><span class="MathJax_Preview">S \subseteq C</span><script type="math/tex">S \subseteq C</script></span>，那么<span><span class="MathJax_Preview">aff(S) \subseteq C</span><script type="math/tex">aff(S) \subseteq C</script></span>。</p>
-<p>我们注意到到现在为止我们一直在讨论仿射，而没有进入真正的主题--凸。事实上，我们已经差不多学习了凸的所有概念了--仅仅将仿射的直线换成线段，我们就能得到凸。</p>
-<div class="admonition important">
-<p class="admonition-title">凸集</p>
-<p>对于集合<span><span class="MathJax_Preview">C \subseteq \mathbb{R}</span><script type="math/tex">C \subseteq \mathbb{R}</script></span>，若经过该集合上任意两点<span><span class="MathJax_Preview">x_1, x_2 \in C, x_1 \neq x_2</span><script type="math/tex">x_1, x_2 \in C, x_1 \neq x_2</script></span>的<span style="color:green">线段</span>上的点都在该集合中，那么我们称集合<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>为一个凸集。</p>
-</div>
-<div class="admonition important">
-<p class="admonition-title">凸组合（convex combination）</p>
-<p>对于线性组合<span><span class="MathJax_Preview">\sum_{i=1}^n \lambda_i x_i</span><script type="math/tex">\sum_{i=1}^n \lambda_i x_i</script></span>，若其满足<span><span class="MathJax_Preview">\sum_{i=1}^n \lambda_i = 1</span><script type="math/tex">\sum_{i=1}^n \lambda_i = 1</script></span><span style="color:green">并且<span><span class="MathJax_Preview">\forall x_i, x_i \geq 0</span><script type="math/tex">\forall x_i, x_i \geq 0</script></span></span>，则我们称其为凸组合。</p>
-</div>
-<div class="admonition important">
-<p class="admonition-title">凸包（convex hull）</p>
-<p><span><span class="MathJax_Preview">conv(S) = \{\sum_{i=1}^k \lambda_i x_i \mid k &gt; 0,</span><script type="math/tex">conv(S) = \{\sum_{i=1}^k \lambda_i x_i \mid k > 0,</script></span> <span style="color:green"><span><span class="MathJax_Preview">x_i \geq 0</span><script type="math/tex">x_i \geq 0</script></span></span><span><span class="MathJax_Preview">, \lambda_i \in \mathbb{R}, \sum_{i=1}^n \lambda_i = 1\}</span><script type="math/tex">, \lambda_i \in \mathbb{R}, \sum_{i=1}^n \lambda_i = 1\}</script></span>。</p>
-</div>
-<p>|
-我们很容易想到，常见的三角形、方形、圆形都是凸的；而星形则是非凸的，因为任意两点之间存在有些点不在集合之内。</p>
-<details class="help"><summary>非凸集五角星的凸包是</summary><p>凸集五边形。</p>
-</details>
-<div class="admonition abstract">
-<p class="admonition-title">后记</p>
-<p>在下一节，我们将引入锥与球的概念。</p>
-</div>
+                <p>超平面将一个空间划分成两个半空间。</p>
                 
                   
                 
@@ -897,7 +835,7 @@
 
   <h2 id="__comments">评论</h2>
   <div id="disqus_thread"></div>
-  <script>var disqus_config=function(){this.page.url="https://zyc.ai/optimisation/affine_convex/",this.page.identifier="/optimisation/affine_convex/"};!function(){var e=document,i=e.createElement("script");i.src="//zycai.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)}()</script>
+  <script>var disqus_config=function(){this.page.url="https://zyc.ai/optimisation/hyperplane_halfspace/",this.page.identifier="/optimisation/hyperplane_halfspace/"};!function(){var e=document,i=e.createElement("script");i.src="//zycai.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)}()</script>
 
               
             </article>
@@ -911,7 +849,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../../stat/probability/" title="概率论" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../affine_convex_cone/" title="仿射、凸与锥" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -920,19 +858,19 @@
                 <span class="md-footer-nav__direction">
                   上一页
                 </span>
-                概率论
+                仿射、凸与锥
               </div>
             </div>
           </a>
         
         
-          <a href="../cone_ball/" title="锥与球" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../k8s/introduction/" title="导论" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   下一页
                 </span>
-                锥与球
+                导论
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
