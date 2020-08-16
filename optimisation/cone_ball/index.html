@@ -11,7 +11,7 @@
         <meta name="description" content="The website of Zhiyuan Chen">
       
       
-        <link rel="canonical" href="https://zyc.ai/document/literature_management/">
+        <link rel="canonical" href="https://zyc.ai/optimisation/cone_ball/">
       
       
         <meta name="author" content="Zhiyuan Chen">
@@ -21,7 +21,7 @@
     
     
       
-        <title>文献管理</title>
+        <title>锥与球</title>
       
     
     
@@ -71,11 +71,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#strategy-pattern-policy-pattern" class="md-skip">
-          跳转至
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -99,7 +94,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              文献管理
+              锥与球
             
           </span>
         </div>
@@ -235,7 +230,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../design_pattern/" title="设计模式" class="md-nav__link">
+    <a href="../../document/design_pattern/" title="设计模式" class="md-nav__link">
       设计模式
     </a>
   </li>
@@ -247,7 +242,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../jetbrains/" title="JetBrains使用指南" class="md-nav__link">
+    <a href="../../document/jetbrains/" title="JetBrains使用指南" class="md-nav__link">
       JetBrains使用指南
     </a>
   </li>
@@ -304,10 +299,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
       优化
@@ -331,7 +328,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../optimisation/affine_convex/" title="仿射与凸" class="md-nav__link">
+    <a href="../affine_convex/" title="仿射与凸" class="md-nav__link">
       仿射与凸
     </a>
   </li>
@@ -341,11 +338,18 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../optimisation/cone_ball/" title="锥与球" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+    <a href="./" title="锥与球" class="md-nav__link md-nav__link--active">
       锥与球
     </a>
+    
   </li>
 
         
@@ -805,63 +809,12 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#strategy-pattern-policy-pattern" class="md-nav__link">
-    策略模式（Strategy Pattern, Policy Pattern）
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#observer-pattern" class="md-nav__link">
-    观察者模式（Observer Pattern）
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#facade-pattern" class="md-nav__link">
-    外观模式（Facade Pattern）
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#singleton-pattern" class="md-nav__link">
-    单例模式（Singleton Pattern）
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/zyc-ai/edit/master/docs/document/literature_management.md" title="编辑此页" class="md-content__button md-icon">
+                  <a href="https://github.com/zyc-ai/edit/master/docs/optimisation/cone_ball.md" title="编辑此页" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -869,217 +822,20 @@
                   
                 
                 
-                  <h1>文献管理</h1>
+                  <h1>锥与球</h1>
                 
-                <div class="admonition abstract">
-<p class="admonition-title">前言</p>
-<p>最近来西湖大学做访问学生，正儿八经过上了一天到晚搞研究的学术生活（其实还是有两门课要修但是毕竟压力小了很多）。随之而来的</p>
+                <p>在上一章，我们已经了解了仿射与凸，现在，我们介绍要给全新的概念--锥：</p>
+<div class="admonition important">
+<p class="admonition-title">锥组合（conic combination）</p>
+<p>空间<span><span class="MathJax_Preview">\mathbb{R}^n</span><script type="math/tex">\mathbb{R}^n</script></span>中的点<span><span class="MathJax_Preview">x \in \mathbb{R}</span><script type="math/tex">x \in \mathbb{R}</script></span>如果满足<span><span class="MathJax_Preview">x = \sum_{i=1}^n \lambda_i x_i \ s.t. \ \forall \lambda_i, \lambda_i \geq 0</span><script type="math/tex">x = \sum_{i=1}^n \lambda_i x_i \ s.t. \ \forall \lambda_i, \lambda_i \geq 0</script></span>，则我们将其成为锥组合（非负线性组合）。</p>
 </div>
-<h2 id="strategy-pattern-policy-pattern">策略模式（Strategy Pattern, Policy Pattern）<a class="headerlink" href="#strategy-pattern-policy-pattern" title="Permanent link">#</a></h2>
-<div class="admonition note">
-<p class="admonition-title">策略模式</p>
-<p>策略模式在运行时选择算法。代码并不直接实现单个算法，而是接收运行时指令，以指示在一系列算法中要使用哪个。</p>
-<p>策略模式当中的接口是固定的，因此调用时不许更改方法。</p>
+<div class="admonition important">
+<p class="admonition-title">锥集（conic set）</p>
+<p>对于集合<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>，如果其中每一点<span><span class="MathJax_Preview">x \in C</span><script type="math/tex">x \in C</script></span>并且<span><span class="MathJax_Preview">\lambda \geq 0</span><script type="math/tex">\lambda \geq 0</script></span>，都有<span><span class="MathJax_Preview">\lambda x \in C</span><script type="math/tex">\lambda x \in C</script></span>，那么我们将这个集合<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>称作一个锥（非负齐次）。</p>
 </div>
-<div class="admonition tips">
-<p class="admonition-title">结构</p>
-<p>策略模式由以下三种角色构成：</p>
-<ul>
-<li>上下文（Context）：引用策略的对象</li>
-<li>策略（Strategy）：策略的公共接口，具体策略都将实现这个接口</li>
-<li>具体策略（Concrete Strategy）：策略的具体实现，包含了具体的算法代码</li>
-</ul>
-</div>
-<div class="admonition success">
-<p class="admonition-title">策略模式</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
-
-<span class="k">class</span> <span class="nc">ChickenCooker</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>   <span class="c1"># 策略</span>
-  <span class="nd">@abstractmethod</span>
-  <span class="k">def</span> <span class="nf">cook</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="k">pass</span>
-
-<span class="k">class</span> <span class="nc">FriedChickenCooker</span><span class="p">(</span><span class="n">ChickenCooker</span><span class="p">):</span>    <span class="c1"># 具体策略1</span>
-  <span class="k">def</span> <span class="nf">cook</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cooking fried chicken!&quot;</span><span class="p">)</span>
-
-<span class="k">class</span> <span class="nc">GrilledChickenCooker</span><span class="p">(</span><span class="n">ChickenCooker</span><span class="p">):</span>  <span class="c1"># 具体策略2</span>
-  <span class="k">def</span> <span class="nf">cook</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cooking grilled chicken!&quot;</span><span class="p">)</span>
-
-<span class="k">class</span> <span class="nc">Kitchen</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>  <span class="c1"># 上下文</span>
-  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">_strategy</span> <span class="o">=</span> <span class="kc">None</span>
-
-  <span class="nd">@property</span>
-  <span class="k">def</span> <span class="nf">strategy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_strategy</span>
-
-  <span class="nd">@strategy</span><span class="o">.</span><span class="n">setter</span>
-  <span class="k">def</span> <span class="nf">strategy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">strategy</span><span class="p">):</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">_strategy</span> <span class="o">=</span> <span class="n">strategy</span>
-
-  <span class="k">def</span> <span class="nf">cook</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">_strategy</span><span class="o">.</span><span class="n">cook</span><span class="p">()</span>
-</code></pre></div>
-
-</div>
-<div class="admonition success">
-<p class="admonition-title">优点</p>
-<ul>
-<li>通过把算法的调用放到上下文当中，把实现放到了策略当中而实现了两者的分离</li>
-<li>提供相同行为的不同实现：同样是做鸡，有很多种不同的做法</li>
-<li>可以简单的添加新的策略：仅需创建一个新的Beggar Chicken就可以实现叫花鸡</li>
-<li>可以将部分代码放到策略当中而避免重复代码：无论是炸鸡还是烤鸡，你都先要切鸡</li>
-</ul>
-</div>
-<div class="admonition failure">
-<p class="admonition-title">缺点</p>
-<ul>
-<li>上下文需要对实现有足够的了解来选择恰当的方法：你要知道做出来是什么鸡</li>
-<li>会造成很多的具体策略类：这对Python可能不是什么问题，但对于Java这样每一个类都需要一个文件的语言来说……</li>
-</ul>
-</div>
-<h2 id="observer-pattern">观察者模式（Observer Pattern）<a class="headerlink" href="#observer-pattern" title="Permanent link">#</a></h2>
-<div class="admonition note">
-<p class="admonition-title">观察者模式</p>
-<p>观察者模式中一个对象（主体（Subject）或可观察（Observable））维护一个列表的对象（观察者（Observer）），并在自身的状态发生改变时通知观察者。</p>
-<p>观察者模式容易和发布/订阅模式（Publish/Subscribe Pattern）混淆，两者的区别主要在于发布/订阅模式有一个中间件负责消息的转发，因此发布者和订阅者不需要对彼此有任何了解。但在观察者模式中，主体需要对观察者的通知方法有所了解。</p>
-</div>
-<div class="admonition tips">
-<p class="admonition-title">结构</p>
-<p>观察者模式由以下两种角色构成：</p>
-<ul>
-<li>主体（Subject）或可观察（Observable）</li>
-<li>观察者（Observer）</li>
-</ul>
-</div>
-<div class="admonition success">
-<p class="admonition-title">观察者模式</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
-
-<span class="k">class</span> <span class="nc">Kitchen</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>  <span class="c1"># 主体</span>
-  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">_waiters</span> <span class="o">=</span> <span class="p">[</span><span class="n">Waiter</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
-
-  <span class="k">def</span> <span class="nf">collect_order</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="p">[</span><span class="n">waiter</span><span class="o">.</span><span class="n">collect_order</span><span class="p">()</span> <span class="k">for</span> <span class="n">waiter</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_waiters</span><span class="p">]</span>
-
-<span class="k">class</span> <span class="nc">Waiter</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>   <span class="c1"># 观察者</span>
-  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span><span class="nb">int</span><span class="p">):</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">i</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">WaiterStatus</span><span class="o">.</span><span class="n">Free</span>
-
-  <span class="k">def</span> <span class="nf">collect_order</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Coming&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">!=</span> <span class="n">WaiterStatus</span><span class="o">.</span><span class="n">Busy</span> <span class="k">else</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Busy&#39;</span><span class="p">)</span>
-
-<span class="k">class</span> <span class="nc">WaiterStatus</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
-  <span class="n">Free</span> <span class="o">=</span> <span class="mi">0</span>
-  <span class="n">Busy</span> <span class="o">=</span> <span class="mi">1</span>
-</code></pre></div>
-
-</div>
-<div class="admonition success">
-<p class="admonition-title">优点</p>
-<ul>
-<li>降低了主体和观察者之间的耦合</li>
-</ul>
-</div>
-<div class="admonition failure">
-<p class="admonition-title">缺点</p>
-<ul>
-<li>主体和观察者之间仍存在耦合</li>
-<li>观察者较多时通知发布会影响性能</li>
-</ul>
-</div>
-<h2 id="facade-pattern">外观模式（Facade Pattern）<a class="headerlink" href="#facade-pattern" title="Permanent link">#</a></h2>
-<div class="admonition note">
-<p class="admonition-title">外观模式</p>
-<p>类似于建筑中的外墙，一个外观是掩盖了更复杂的基础或结构代码而充当对外接口的对象。</p>
-<p>一个大型厨房由很多子部分构成--打荷、冷菜、蒸菜、面案、水台、砧板、热灶，而对于负责下单的服务员来说，它并不需要了解这许多。</p>
-</div>
-<div class="admonition tips">
-<p class="admonition-title">结构</p>
-<p>外观模式由以下三种角色构成：</p>
-<ul>
-<li>客户（Client）：访问外观的对象</li>
-<li>外观（Facade）：将子系统包装的公共接口</li>
-<li>子系统（Subsystem）：子系统的具体实现</li>
-</ul>
-</div>
-<div class="admonition success">
-<p class="admonition-title">外观模式</p>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Kitchen</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>  <span class="c1"># 外观</span>
-  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">prepare</span> <span class="o">=</span> <span class="n">Prepare</span><span class="p">()</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">cold</span> <span class="o">=</span> <span class="n">Cold</span><span class="p">()</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">steam</span> <span class="o">=</span> <span class="n">Steam</span><span class="p">()</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">noodles</span> <span class="o">=</span> <span class="n">Noodles</span><span class="p">()</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">wash</span> <span class="o">=</span> <span class="n">Wash</span><span class="p">()</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">chop</span> <span class="o">=</span> <span class="n">Chop</span><span class="p">()</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">stove</span> <span class="o">=</span> <span class="n">Stove</span><span class="p">()</span>
-
-  <span class="k">def</span> <span class="nf">add_order</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">prepare</span><span class="o">.</span><span class="n">prepare</span><span class="p">()</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">cold</span><span class="o">.</span><span class="n">cook</span><span class="p">()</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">steam</span><span class="o">.</span><span class="n">cook</span><span class="p">()</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">noodles</span><span class="o">.</span><span class="n">cook</span><span class="p">()</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">wash</span><span class="o">.</span><span class="n">wash</span><span class="p">()</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">chop</span><span class="o">.</span><span class="n">chop</span><span class="p">()</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">stove</span><span class="o">.</span><span class="n">cook</span><span class="p">()</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">collect_order</span><span class="p">()</span>
-</code></pre></div>
-
-</div>
-<div class="admonition success">
-<p class="admonition-title">优点</p>
-<ul>
-<li>对客户屏蔽了子系统，降低了耦合</li>
-</ul>
-</div>
-<div class="admonition failure">
-<p class="admonition-title">缺点</p>
-<ul>
-<li>难以对客户定制需求</li>
-<li>新增子系统可能会需要外观和客户作出修改</li>
-</ul>
-</div>
-<h2 id="singleton-pattern">单例模式（Singleton Pattern）<a class="headerlink" href="#singleton-pattern" title="Permanent link">#</a></h2>
-<div class="admonition note">
-<p class="admonition-title">单例模式</p>
-<p>将类的实例化限制为唯一的单个实例。</p>
-<p>一个大型酒店可能拥有很多员工甚至多个厨房，但他永远只有一个总厨师长。</p>
-</div>
-<div class="admonition tips">
-<p class="admonition-title">结构</p>
-<p>单例模式由以下三种角色构成：</p>
-<ul>
-<li>客户（Client）：访问单例的对象</li>
-<li>单例（Singleton）：包含一个实例且会自动创建该实例的类</li>
-</ul>
-</div>
-<div class="admonition success">
-<p class="admonition-title">单例模式</p>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">ChiefHeadChef</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-  <span class="n">__chief_head_chef</span> <span class="o">=</span> <span class="kc">None</span>
-  <span class="k">def</span> <span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__chief_head_chef</span><span class="p">:</span>
-      <span class="bp">cls</span><span class="o">.</span><span class="n">__chief_head_chef</span> <span class="o">=</span> <span class="nb">object</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
-    <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__chief_head_chef</span>
-</code></pre></div>
-
-</div>
-<div class="admonition success">
-<p class="admonition-title">优点</p>
-<ul>
-<li>单例和客户高度耦合，每个客户对单例做出的修改都将影响其他客户</li>
-</ul>
-</div>
-<div class="admonition failure">
-<p class="admonition-title">缺点</p>
-<ul>
-<li>单例和客户高度耦合，每个客户对单例做出的修改都将影响其他客户</li>
-</ul>
+<div class="admonition important">
+<p class="admonition-title">锥包（conic hull）</p>
+<p>集合<span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>的锥包是所有该集合的点的锥组合所构成的集合，也即<span><span class="MathJax_Preview">\{\sum_{i=1}^k \lambda_i x_i \mid x_i \in S, \lambda_i \geq 0\}</span><script type="math/tex">\{\sum_{i=1}^k \lambda_i x_i \mid x_i \in S, \lambda_i \geq 0\}</script></span>。</p>
 </div>
                 
                   
@@ -1091,7 +847,7 @@
 
   <h2 id="__comments">评论</h2>
   <div id="disqus_thread"></div>
-  <script>var disqus_config=function(){this.page.url="https://zyc.ai/document/literature_management/",this.page.identifier="/document/literature_management/"};!function(){var e=document,i=e.createElement("script");i.src="//zycai.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)}()</script>
+  <script>var disqus_config=function(){this.page.url="https://zyc.ai/optimisation/cone_ball/",this.page.identifier="/optimisation/cone_ball/"};!function(){var e=document,i=e.createElement("script");i.src="//zycai.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)}()</script>
 
               
             </article>
@@ -1101,6 +857,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../affine_convex/" title="仿射与凸" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                仿射与凸
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../k8s/introduction/" title="导论" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                导论
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

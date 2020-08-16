@@ -341,6 +341,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cone_ball/" title="锥与球" class="md-nav__link">
+      锥与球
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -819,24 +831,24 @@
 <p>直线的定义想必初中都已经学过，这里我们简单复习一下：</p>
 <div class="admonition important">
 <p class="admonition-title">直线（line）</p>
-<p>空间<span><span class="MathJax_Preview">\mathbb{R}^n</span><script type="math/tex">\mathbb{R}^n</script></span>中<span><span class="MathJax_Preview">x_1, x_2 \mid x_1 \neq x_2</span><script type="math/tex">x_1, x_2 \mid x_1 \neq x_2</script></span>两个点可以唯一定义一条直线。这条直线可以被参数化的描述为<span><span class="MathJax_Preview">x = \lambda x_1 + (1 - \lambda) x_2 | \lambda \in \mathbb{R}</span><script type="math/tex">x = \lambda x_1 + (1 - \lambda) x_2 | \lambda \in \mathbb{R}</script></span>。</p>
+<p>空间<span><span class="MathJax_Preview">\mathbb{R}^n</span><script type="math/tex">\mathbb{R}^n</script></span>中的两个点<span><span class="MathJax_Preview">x_1, x_2, x_1 \neq x_2</span><script type="math/tex">x_1, x_2, x_1 \neq x_2</script></span>可以唯一确定一条直线。这条直线可以被参数化的描述为<span><span class="MathJax_Preview">x = \lambda x_1 + (1 - \lambda) x_2 \ s.t. \ \lambda \in \mathbb{R}</span><script type="math/tex">x = \lambda x_1 + (1 - \lambda) x_2 \ s.t. \ \lambda \in \mathbb{R}</script></span>。</p>
 </div>
-<p>我们很容易发现，<span><span class="MathJax_Preview">x = x_1</span><script type="math/tex">x = x_1</script></span>时，<span><span class="MathJax_Preview">\lambda = 1</span><script type="math/tex">\lambda = 1</script></span>、<span><span class="MathJax_Preview">x = x_2</span><script type="math/tex">x = x_2</script></span>时，<span><span class="MathJax_Preview">\lambda = 0</span><script type="math/tex">\lambda = 0</script></span>。由此，我们知道了线段被如何描述：</p>
+<p>我们很容易发现，<span><span class="MathJax_Preview">x = x_1</span><script type="math/tex">x = x_1</script></span>时，<span><span class="MathJax_Preview">\lambda = 1</span><script type="math/tex">\lambda = 1</script></span>；<span><span class="MathJax_Preview">x = x_2</span><script type="math/tex">x = x_2</script></span>时，<span><span class="MathJax_Preview">\lambda = 0</span><script type="math/tex">\lambda = 0</script></span>。由此，我们知道了线段被如何描述：</p>
 <div class="admonition important">
 <p class="admonition-title">线段（line segment）</p>
-<p>穿过两点<span><span class="MathJax_Preview">x_1, x_2 \in \mathbb{R}^n \mid x_1 \neq x_2</span><script type="math/tex">x_1, x_2 \in \mathbb{R}^n \mid x_1 \neq x_2</script></span>的线段可以被参数化的描述为<span><span class="MathJax_Preview">x = \lambda x_1 + (1 - \lambda) x_2 | 0 \leq \lambda \leq 1</span><script type="math/tex">x = \lambda x_1 + (1 - \lambda) x_2 | 0 \leq \lambda \leq 1</script></span></p>
+<p>穿过两点<span><span class="MathJax_Preview">x_1, x_2 \in \mathbb{R}^n, x_1 \neq x_2</span><script type="math/tex">x_1, x_2 \in \mathbb{R}^n, x_1 \neq x_2</script></span>的线段可以被参数化的描述为<span><span class="MathJax_Preview">x = \lambda x_1 + (1 - \lambda) x_2 \ s.t. \ 0 \leq \lambda \leq 1</span><script type="math/tex">x = \lambda x_1 + (1 - \lambda) x_2 \ s.t. \ 0 \leq \lambda \leq 1</script></span></p>
 </div>
-<p>通过变化，直线还可以被表达为<span><span class="MathJax_Preview">x = x_2 + \lambda (x_1 - x_2) | \lambda \in \mathbb{R}</span><script type="math/tex">x = x_2 + \lambda (x_1 - x_2) | \lambda \in \mathbb{R}</script></span>。这给了我们另一种解读--<span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>是 <em>基点</em> <span><span class="MathJax_Preview">x_2</span><script type="math/tex">x_2</script></span>与 <em>方向</em> <span><span class="MathJax_Preview">x_1 - x_2</span><script type="math/tex">x_1 - x_2</script></span>按参数<span><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span>缩放之和。 因此，<span><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span>给出了从<span><span class="MathJax_Preview">x_2</span><script type="math/tex">x_2</script></span>到<span><span class="MathJax_Preview">x_1</span><script type="math/tex">x_1</script></span>的分数。当<span><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span>从0增大到1时，点<span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>从<span><span class="MathJax_Preview">x_2</span><script type="math/tex">x_2</script></span>移动到<span><span class="MathJax_Preview">x_1</span><script type="math/tex">x_1</script></span>；当<span><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span>在此区间以外时，点<span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>位于<span><span class="MathJax_Preview">x_1</span><script type="math/tex">x_1</script></span>到<span><span class="MathJax_Preview">x_2</span><script type="math/tex">x_2</script></span>以外的线上。</p>
+<p>通过变化，直线还可以被表达为<span><span class="MathJax_Preview">x = x_2 + \lambda (x_1 - x_2) \ s.t. \ \lambda \in \mathbb{R}</span><script type="math/tex">x = x_2 + \lambda (x_1 - x_2) \ s.t. \ \lambda \in \mathbb{R}</script></span>。这给了我们另一种解读--<span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>是 <em>基点</em> <span><span class="MathJax_Preview">x_2</span><script type="math/tex">x_2</script></span>与 <em>方向</em> <span><span class="MathJax_Preview">x_1 - x_2</span><script type="math/tex">x_1 - x_2</script></span>按参数<span><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span>缩放之和。 因此，<span><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span>给出了从<span><span class="MathJax_Preview">x_2</span><script type="math/tex">x_2</script></span>到<span><span class="MathJax_Preview">x_1</span><script type="math/tex">x_1</script></span>的分数。当<span><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span>从0增大到1时，点<span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>从<span><span class="MathJax_Preview">x_2</span><script type="math/tex">x_2</script></span>移动到<span><span class="MathJax_Preview">x_1</span><script type="math/tex">x_1</script></span>；当<span><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span>在此区间以外时，点<span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>位于<span><span class="MathJax_Preview">x_1</span><script type="math/tex">x_1</script></span>到<span><span class="MathJax_Preview">x_2</span><script type="math/tex">x_2</script></span>以外的线上。</p>
 <p>在复习了直线之后，我们可以给仿射集做一个定义：</p>
 <div class="admonition important">
 <p class="admonition-title">仿射集</p>
-<p>对于集合<span><span class="MathJax_Preview">C \subseteq \mathbb{R}</span><script type="math/tex">C \subseteq \mathbb{R}</script></span>，若经过该集合上任意两点<span><span class="MathJax_Preview">x_1, x_2 \in C \mid x_1 \neq x_2</span><script type="math/tex">x_1, x_2 \in C \mid x_1 \neq x_2</script></span>的直线上的点都在该集合中，那么我们称集合<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>为一个仿射集。</p>
+<p>对于集合<span><span class="MathJax_Preview">C \subseteq \mathbb{R}</span><script type="math/tex">C \subseteq \mathbb{R}</script></span>，若经过该集合上任意两点<span><span class="MathJax_Preview">x_1, x_2 \in C, x_1 \neq x_2</span><script type="math/tex">x_1, x_2 \in C, x_1 \neq x_2</script></span>的直线上的点都在该集合中，那么我们称集合<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>为一个仿射集。</p>
 </div>
 <p>线性方程<span><span class="MathJax_Preview">\{x \mid Ax = b\}</span><script type="math/tex">\{x \mid Ax = b\}</script></span>的解即是一个仿射集，反过来每一个仿射集也都可以表示为一个线性方程系统的解集。因此，我们有时候将仿射集成为线性（linear）。</p>
-<p>有同学可以发现，仿射集与线性子空间非常相似。事实上，我们可以将一个仿射集看作是一个线性子空间根据一个固定向量平移而得到的。对于仿射集<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>与其上一点<span><span class="MathJax_Preview">x_0</span><script type="math/tex">x_0</script></span>，集合<span><span class="MathJax_Preview">V = C - x_0 = {x - x_0 \mid x \in C}</span><script type="math/tex">V = C - x_0 = {x - x_0 \mid x \in C}</script></span>是一个子空间。</p>
+<p>有同学可以发现，仿射集与线性子空间非常相似。事实上，我们可以将一个仿射集看作是一个线性子空间根据一个固定向量平移而得到的。对于仿射集<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>与其上一点<span><span class="MathJax_Preview">x_0</span><script type="math/tex">x_0</script></span>，集合<span><span class="MathJax_Preview">V = C - x_0 = \{x - x_0 \mid x \in C\}</span><script type="math/tex">V = C - x_0 = \{x - x_0 \mid x \in C\}</script></span>是一个子空间。</p>
 <details class="help"><summary>证明<span><span class="MathJax_Preview">V = C - x_0</span><script type="math/tex">V = C - x_0</script></span>对于向量加法与标量乘法闭合</summary><p>对于<span><span class="MathJax_Preview">v_1, v_2 \in V, \alpha, \beta \in \mathbb{R}</span><script type="math/tex">v_1, v_2 \in V, \alpha, \beta \in \mathbb{R}</script></span>，我们有<span><span class="MathJax_Preview">v_1 + x_0, v_2 + x_0 \in C</span><script type="math/tex">v_1 + x_0, v_2 + x_0 \in C</script></span>，所以<span><span class="MathJax_Preview">\alpha v_1 + \beta v_2 + x_0 = \alpha (v_1 + x_0) + \beta (v_2 + x_0) + (1 -\alpha - \beta) x_0 \in C</span><script type="math/tex">\alpha v_1 + \beta v_2 + x_0 = \alpha (v_1 + x_0) + \beta (v_2 + x_0) + (1 -\alpha - \beta) x_0 \in C</script></span>，由于<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>是仿射集、<span><span class="MathJax_Preview">\alpha + \beta + (1 -\alpha - \beta) = 1, \alpha v_1 + \beta v_2 + x_0 \in C</span><script type="math/tex">\alpha + \beta + (1 -\alpha - \beta) = 1, \alpha v_1 + \beta v_2 + x_0 \in C</script></span>，易得<span><span class="MathJax_Preview">\alpha v_1 + \beta v_2 \in V</span><script type="math/tex">\alpha v_1 + \beta v_2 \in V</script></span>。</p>
 </details>
-<p>因此，我们可以将仿射集<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>表述为<span><span class="MathJax_Preview">C = V + x_0 = {v + x_0 \mid v \in V}</span><script type="math/tex">C = V + x_0 = {v + x_0 \mid v \in V}</script></span>， <span><span class="MathJax_Preview">x_0</span><script type="math/tex">x_0</script></span>为<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>上任意一点。我们将子空间<span><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span>称作仿射集<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>相关的子空间，将子空间<span><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span>的维度称作仿射集<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>的维度。</p>
+<p>因此，我们可以将仿射集<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>表述为<span><span class="MathJax_Preview">C = V + x_0 = \{v + x_0 \mid v \in V\}</span><script type="math/tex">C = V + x_0 = \{v + x_0 \mid v \in V\}</script></span>， <span><span class="MathJax_Preview">x_0</span><script type="math/tex">x_0</script></span>为<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>上任意一点。我们将子空间<span><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span>称作仿射集<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>相关的子空间，将子空间<span><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span>的维度称作仿射集<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>的维度。</p>
 <p>简单了解了直线与仿射集之后，我们可以延伸出仿射组合：</p>
 <div class="admonition important">
 <p class="admonition-title">仿射组合（affine combination）</p>
@@ -857,7 +869,7 @@
 <p>我们注意到到现在为止我们一直在讨论仿射，而没有进入真正的主题--凸。事实上，我们已经差不多学习了凸的所有概念了--仅仅将仿射的直线换成线段，我们就能得到凸。</p>
 <div class="admonition important">
 <p class="admonition-title">凸集</p>
-<p>对于集合<span><span class="MathJax_Preview">C \subseteq \mathbb{R}</span><script type="math/tex">C \subseteq \mathbb{R}</script></span>，若经过该集合上任意两点<span><span class="MathJax_Preview">x_1, x_2 \in C \mid x_1 \neq x_2</span><script type="math/tex">x_1, x_2 \in C \mid x_1 \neq x_2</script></span>的<span style="color:green">线段</span>上的点都在该集合中，那么我们称集合<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>为一个凸集。</p>
+<p>对于集合<span><span class="MathJax_Preview">C \subseteq \mathbb{R}</span><script type="math/tex">C \subseteq \mathbb{R}</script></span>，若经过该集合上任意两点<span><span class="MathJax_Preview">x_1, x_2 \in C, x_1 \neq x_2</span><script type="math/tex">x_1, x_2 \in C, x_1 \neq x_2</script></span>的<span style="color:green">线段</span>上的点都在该集合中，那么我们称集合<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>为一个凸集。</p>
 </div>
 <div class="admonition important">
 <p class="admonition-title">凸组合（convex combination）</p>
@@ -867,7 +879,8 @@
 <p class="admonition-title">凸包（convex hull）</p>
 <p><span><span class="MathJax_Preview">conv(S) = \{\sum_{i=1}^k \lambda_i x_i \mid k &gt; 0,</span><script type="math/tex">conv(S) = \{\sum_{i=1}^k \lambda_i x_i \mid k > 0,</script></span> <span style="color:green"><span><span class="MathJax_Preview">x_i \geq 0</span><script type="math/tex">x_i \geq 0</script></span></span><span><span class="MathJax_Preview">, \lambda_i \in \mathbb{R}, \sum_{i=1}^n \lambda_i = 1\}</span><script type="math/tex">, \lambda_i \in \mathbb{R}, \sum_{i=1}^n \lambda_i = 1\}</script></span>。</p>
 </div>
-<p>我们很容易想到，常见的三角形、方形、圆形都是凸的；而星形则是非凸的，因为任意两点之间存在有些点不在集合之内。</p>
+<p>|
+我们很容易想到，常见的三角形、方形、圆形都是凸的；而星形则是非凸的，因为任意两点之间存在有些点不在集合之内。</p>
 <details class="help"><summary>非凸集五角星的凸包是</summary><p>凸集五边形。</p>
 </details>
 <div class="admonition abstract">
@@ -913,13 +926,13 @@
           </a>
         
         
-          <a href="../../k8s/introduction/" title="导论" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../cone_ball/" title="锥与球" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   下一页
                 </span>
-                导论
+                锥与球
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
