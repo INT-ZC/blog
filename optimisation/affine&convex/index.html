@@ -11,7 +11,7 @@
         <meta name="description" content="The website of Zhiyuan Chen">
       
       
-        <link rel="canonical" href="https://zyc.ai/optimisation/cone_ball/">
+        <link rel="canonical" href="https://zyc.ai/optimisation/affine%26convex/">
       
       
         <meta name="author" content="Zhiyuan Chen">
@@ -21,7 +21,7 @@
     
     
       
-        <title>凸优化-2</title>
+        <title>仿射与凸</title>
       
     
     
@@ -99,7 +99,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              凸优化-2
+              仿射与凸
             
           </span>
         </div>
@@ -304,12 +304,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
       优化
@@ -333,7 +331,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../affine_convex/" title="仿射与凸" class="md-nav__link">
+    <a href="../affine_convex.md" title="仿射与凸" class="md-nav__link">
       仿射与凸
     </a>
   </li>
@@ -343,60 +341,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        锥与球
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="锥与球" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../cone_ball.md" title="锥与球" class="md-nav__link">
       锥与球
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    欧几里得球与椭球
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    范式球与范式锥
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -875,8 +824,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon">
@@ -887,15 +834,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    欧几里得球与椭球
+  <a href="#_1" class="md-nav__link">
+    仿射
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    范式球与范式锥
+  <a href="#_2" class="md-nav__link">
+    凸
   </a>
   
 </li>
@@ -912,7 +859,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/zyc-ai/edit/master/docs/optimisation/cone_ball.md" title="编辑此页" class="md-content__button md-icon">
+                  <a href="https://github.com/zyc-ai/edit/master/docs/optimisation/affine&convex.md" title="编辑此页" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -920,85 +867,88 @@
                   
                 
                 
-                <p>在本节中，我们介绍锥（cone）、欧几里得球（Euclidean Ball）与椭球（Ellipsoid）。</p>
-<p>在上一节，我们首先复习了直线和线段的定义。本节，让我们从锥开始。</p>
-<h1 id="_1">锥<a class="headerlink" href="#_1" title="Permanent link">#</a></h1>
+                  <h1>仿射与凸</h1>
+                
+                <div class="admonition abstract">
+<p class="admonition-title">前言</p>
+<p>据说从事凸优化的人都秃了。所以，看到这一篇文章的你，确定要凸吗？</p>
+</div>
+<p>在本节中，我们简要介绍仿射和凸的概念。</p>
+<h2 id="_1">仿射<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
+<p>直线的定义想必初中都已经学过，这里我们简单复习一下：</p>
 <div class="admonition important">
-<p class="admonition-title">锥组合（conic combination）</p>
-<p>空间<span><span class="MathJax_Preview">\mathbb{R}^n</span><script type="math/tex">\mathbb{R}^n</script></span>中的点<span><span class="MathJax_Preview">x \in \mathbb{R}</span><script type="math/tex">x \in \mathbb{R}</script></span>如果满足</p>
+<p class="admonition-title">直线（line）</p>
+<p>空间<span><span class="MathJax_Preview">\mathbb{R}^n</span><script type="math/tex">\mathbb{R}^n</script></span>中的两个点<span><span class="MathJax_Preview">x_1, x_2, x_1 \neq x_2</span><script type="math/tex">x_1, x_2, x_1 \neq x_2</script></span>可以唯一确定一条直线。这条直线可以被参数化的描述为</p>
 <div>
-<div class="MathJax_Preview">x = \sum_{i=1}^n \theta_i x_i \ s.t. \ \forall \theta_i, \theta_i \geq 0</div>
-<script type="math/tex; mode=display">x = \sum_{i=1}^n \theta_i x_i \ s.t. \ \forall \theta_i, \theta_i \geq 0</script>
+<div class="MathJax_Preview">x = \theta x_1 + (1 - \theta) x_2 \ s.t. \ \theta \in \mathbb{R}</div>
+<script type="math/tex; mode=display">x = \theta x_1 + (1 - \theta) x_2 \ s.t. \ \theta \in \mathbb{R}</script>
 </div>
-<p>则我们将其成为锥组合（非负线性组合）。</p>
 </div>
+<p>我们很容易发现，<span><span class="MathJax_Preview">x = x_1</span><script type="math/tex">x = x_1</script></span>时，<span><span class="MathJax_Preview">\theta = 1</span><script type="math/tex">\theta = 1</script></span>；<span><span class="MathJax_Preview">x = x_2</span><script type="math/tex">x = x_2</script></span>时，<span><span class="MathJax_Preview">\theta = 0</span><script type="math/tex">\theta = 0</script></span>。由此，我们知道了线段被如何描述：</p>
 <div class="admonition important">
-<p class="admonition-title">锥集（conic set）</p>
-<p>对于集合<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>，如果其中每一点<span><span class="MathJax_Preview">x \in C</span><script type="math/tex">x \in C</script></span>并且</p>
+<p class="admonition-title">线段（line segment）</p>
+<p>穿过两点<span><span class="MathJax_Preview">x_1, x_2 \in \mathbb{R}^n, x_1 \neq x_2</span><script type="math/tex">x_1, x_2 \in \mathbb{R}^n, x_1 \neq x_2</script></span>的线段可以被参数化的描述为</p>
 <div>
-<div class="MathJax_Preview">\theta \geq 0$，都有$\theta x \in C</div>
-<script type="math/tex; mode=display">\theta \geq 0$，都有$\theta x \in C</script>
+<div class="MathJax_Preview">x = \theta x_1 + (1 - \theta) x_2 \ s.t. \ 0 \leq \theta \leq 1</div>
+<script type="math/tex; mode=display">x = \theta x_1 + (1 - \theta) x_2 \ s.t. \ 0 \leq \theta \leq 1</script>
 </div>
-<p>那么我们将这个集合<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>称作一个锥（非负齐次）。</p>
 </div>
+<p>通过变化，直线还可以被表达为<span><span class="MathJax_Preview">x = x_2 + \theta (x_1 - x_2) \ s.t. \ \theta \in \mathbb{R}</span><script type="math/tex">x = x_2 + \theta (x_1 - x_2) \ s.t. \ \theta \in \mathbb{R}</script></span>。这给了我们另一种解读--<span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>是 <em>基点</em> <span><span class="MathJax_Preview">x_2</span><script type="math/tex">x_2</script></span>与 <em>方向</em> <span><span class="MathJax_Preview">x_1 - x_2</span><script type="math/tex">x_1 - x_2</script></span>按参数<span><span class="MathJax_Preview">\theta</span><script type="math/tex">\theta</script></span>缩放之和。 因此，<span><span class="MathJax_Preview">\theta</span><script type="math/tex">\theta</script></span>给出了从<span><span class="MathJax_Preview">x_2</span><script type="math/tex">x_2</script></span>到<span><span class="MathJax_Preview">x_1</span><script type="math/tex">x_1</script></span>的分数。当<span><span class="MathJax_Preview">\theta</span><script type="math/tex">\theta</script></span>从0增大到1时，点<span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>从<span><span class="MathJax_Preview">x_2</span><script type="math/tex">x_2</script></span>移动到<span><span class="MathJax_Preview">x_1</span><script type="math/tex">x_1</script></span>；当<span><span class="MathJax_Preview">\theta</span><script type="math/tex">\theta</script></span>在此区间以外时，点<span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>位于<span><span class="MathJax_Preview">x_1</span><script type="math/tex">x_1</script></span>到<span><span class="MathJax_Preview">x_2</span><script type="math/tex">x_2</script></span>以外的线上。</p>
+<p>在复习了直线之后，我们可以给仿射集做一个定义：</p>
 <div class="admonition important">
-<p class="admonition-title">锥包（conic hull）</p>
-<p>集合<span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>的锥包是所有该集合的点的锥组合所构成的集合，也即</p>
-<div>
-<div class="MathJax_Preview">\{\sum_{i=1}^k \theta_i x_i \mid x_i \in S, \theta_i \geq 0\}</div>
-<script type="math/tex; mode=display">\{\sum_{i=1}^k \theta_i x_i \mid x_i \in S, \theta_i \geq 0\}</script>
+<p class="admonition-title">仿射集</p>
+<p>对于集合<span><span class="MathJax_Preview">C \subseteq \mathbb{R}</span><script type="math/tex">C \subseteq \mathbb{R}</script></span>，若经过该集合上任意两点<span><span class="MathJax_Preview">x_1, x_2 \in C, x_1 \neq x_2</span><script type="math/tex">x_1, x_2 \in C, x_1 \neq x_2</script></span>的直线上的点都在该集合中，那么我们称集合<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>为一个仿射集。</p>
 </div>
-</div>
-<h2 id="_2">欧几里得球与椭球<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
-<div class="admonition important">
-<p class="admonition-title">欧几里得球</p>
-<p>一个<span><span class="MathJax_Preview">\mathbb{R}^n</span><script type="math/tex">\mathbb{R}^n</script></span>上的欧几里得球满足如下形式：<span><span class="MathJax_Preview">B(x_c, r) = \{x \mid \Vert x - x_c \Vert_2 \leq r\} = \{x \mid (x - x_c)^T(x - x_c) \leq r^2\} \ s.t. \ r \in \mathbb{R}_+</span><script type="math/tex">B(x_c, r) = \{x \mid \Vert x - x_c \Vert_2 \leq r\} = \{x \mid (x - x_c)^T(x - x_c) \leq r^2\} \ s.t. \ r \in \mathbb{R}_+</script></span></p>
-</div>
-<p>在上式中，<span><span class="MathJax_Preview">x_c</span><script type="math/tex">x_c</script></span>为 <em>圆心</em> ，<span><span class="MathJax_Preview">r</span><script type="math/tex">r</script></span> 为 <em>半径</em> 。<span><span class="MathJax_Preview">B(x_c, r)</span><script type="math/tex">B(x_c, r)</script></span>包括以<span><span class="MathJax_Preview">x_c</span><script type="math/tex">x_c</script></span>为中心，距离为<span><span class="MathJax_Preview">r</span><script type="math/tex">r</script></span>内的所有点。欧几里得球还常被表示为<span><span class="MathJax_Preview">B(x_c, r) = \{x_c + ru \mid \Vert u \Vert_2 \leq 1\}</span><script type="math/tex">B(x_c, r) = \{x_c + ru \mid \Vert u \Vert_2 \leq 1\}</script></span></p>
-<details class="help"><summary>试证明欧几里得球是一个凸集</summary><p>对于欧几里得球<span><span class="MathJax_Preview">B(x_c, r)</span><script type="math/tex">B(x_c, r)</script></span>及其中两点<span><span class="MathJax_Preview">x_1, x_2 \in B</span><script type="math/tex">x_1, x_2 \in B</script></span>，我们有<span><span class="MathJax_Preview">\Vert x_1 - x_c \Vert_2 \leq r</span><script type="math/tex">\Vert x_1 - x_c \Vert_2 \leq r</script></span>与<span><span class="MathJax_Preview">\Vert x_2 - x_c \Vert_2 \leq r</span><script type="math/tex">\Vert x_2 - x_c \Vert_2 \leq r</script></span>，<span><span class="MathJax_Preview">0 \leq \   \leq 1</span><script type="math/tex">0 \leq \   \leq 1</script></span>，那么</p>
-<div>
-<div class="MathJax_Preview">\begin{align}
-\Vert \theta x_1 + (1 - \theta) x_2 - x_c \Vert_2 &amp;= 
-\Vert \theta (x_1 - x_c) + (1 - \theta) (x_2 - x_c) \Vert_2 \\ &amp;=
-\theta \Vert x_1 - x_c \Vert_2 + (1 - \theta) \Vert x_2 - x_c \Vert_2 \\ &amp;= 
-r
-\end{align}</div>
-<script type="math/tex; mode=display">\begin{align}
-\Vert \theta x_1 + (1 - \theta) x_2 - x_c \Vert_2 &= 
-\Vert \theta (x_1 - x_c) + (1 - \theta) (x_2 - x_c) \Vert_2 \\ &=
-\theta \Vert x_1 - x_c \Vert_2 + (1 - \theta) \Vert x_2 - x_c \Vert_2 \\ &= 
-r
-\end{align}</script>
-</div>
+<p>线性方程<span><span class="MathJax_Preview">\{x \mid Ax = b\}</span><script type="math/tex">\{x \mid Ax = b\}</script></span>的解即是一个仿射集，反过来每一个仿射集也都可以表示为一个线性方程系统的解集。因此，我们有时候将仿射集成为线性（linear）。</p>
+<p>有同学可以发现，仿射集与线性子空间非常相似。事实上，我们可以将一个仿射集看作是一个线性子空间根据一个固定向量平移而得到的。对于仿射集<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>与其上一点<span><span class="MathJax_Preview">x_0</span><script type="math/tex">x_0</script></span>，集合<span><span class="MathJax_Preview">V = C - x_0 = \{x - x_0 \mid x \in C\}</span><script type="math/tex">V = C - x_0 = \{x - x_0 \mid x \in C\}</script></span>是一个子空间。</p>
+<details class="help"><summary>证明<span><span class="MathJax_Preview">V = C - x_0</span><script type="math/tex">V = C - x_0</script></span>对于向量加法与标量乘法闭合</summary><p>对于<span><span class="MathJax_Preview">v_1, v_2 \in V, \alpha, \beta \in \mathbb{R}</span><script type="math/tex">v_1, v_2 \in V, \alpha, \beta \in \mathbb{R}</script></span>，我们有<span><span class="MathJax_Preview">v_1 + x_0, v_2 + x_0 \in C</span><script type="math/tex">v_1 + x_0, v_2 + x_0 \in C</script></span>，所以<span><span class="MathJax_Preview">\alpha v_1 + \beta v_2 + x_0 = \alpha (v_1 + x_0) + \beta (v_2 + x_0) + (1 -\alpha - \beta) x_0 \in C</span><script type="math/tex">\alpha v_1 + \beta v_2 + x_0 = \alpha (v_1 + x_0) + \beta (v_2 + x_0) + (1 -\alpha - \beta) x_0 \in C</script></span>，由于<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>是仿射集、<span><span class="MathJax_Preview">\alpha + \beta + (1 -\alpha - \beta) = 1, \alpha v_1 + \beta v_2 + x_0 \in C</span><script type="math/tex">\alpha + \beta + (1 -\alpha - \beta) = 1, \alpha v_1 + \beta v_2 + x_0 \in C</script></span>，易得<span><span class="MathJax_Preview">\alpha v_1 + \beta v_2 \in V</span><script type="math/tex">\alpha v_1 + \beta v_2 \in V</script></span>。</p>
 </details>
-<p>一个更一般的球被称为椭球（ellipsoid）。</p>
+<p>因此，我们可以将仿射集<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>表述为<span><span class="MathJax_Preview">C = V + x_0 = \{v + x_0 \mid v \in V\}</span><script type="math/tex">C = V + x_0 = \{v + x_0 \mid v \in V\}</script></span>， <span><span class="MathJax_Preview">x_0</span><script type="math/tex">x_0</script></span>为<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>上任意一点。我们将子空间<span><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span>称作仿射集<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>相关的子空间，将子空间<span><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span>的维度称作仿射集<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>的维度。</p>
+<p>简单了解了直线与仿射集之后，我们可以延伸出仿射组合：</p>
 <div class="admonition important">
-<p class="admonition-title">椭球</p>
+<p class="admonition-title">仿射组合（affine combination）</p>
+<p>对于线性组合<span><span class="MathJax_Preview">\sum_{i=1}^n \theta_i x_i</span><script type="math/tex">\sum_{i=1}^n \theta_i x_i</script></span>，若其满足</p>
 <div>
-<div class="MathJax_Preview">\epsilon = \{x \mid (x - x_c)^TP^{-1}(x - x_c) \leq 1\}</div>
-<script type="math/tex; mode=display">\epsilon = \{x \mid (x - x_c)^TP^{-1}(x - x_c) \leq 1\}</script>
+<div class="MathJax_Preview">\sum_{i=1}^n \theta_i = 1</div>
+<script type="math/tex; mode=display">\sum_{i=1}^n \theta_i = 1</script>
 </div>
+<p>则我们称其为仿射组合。</p>
 </div>
-<p><span><span class="MathJax_Preview">x_c \in \mathbb{R}^n</span><script type="math/tex">x_c \in \mathbb{R}^n</script></span>是椭球<span><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span>的 <em>球心</em>；<span><span class="MathJax_Preview">P \in \mathbb{S}^n_{++}</span><script type="math/tex">P \in \mathbb{S}^n_{++}</script></span>是一个对称的正定矩阵，它决定了椭球在每个方向从球心<span><span class="MathJax_Preview">x_c</span><script type="math/tex">x_c</script></span>伸张的长度。椭球<span><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span>的半轴的长度由<span><span class="MathJax_Preview">\sqrt{\lambda_i}</span><script type="math/tex">\sqrt{\lambda_i}</script></span>给出，其中<span><span class="MathJax_Preview">\lambda_i</span><script type="math/tex">\lambda_i</script></span>是<span><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span>的特征值。我们很容易发现欧几里得球是椭球的一个特殊情况--当<span><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span>为一个单位矩阵时。</p>
-<p><span><span class="MathJax_Preview">(x - x_c)^TP^{-1}(x - x_c)</span><script type="math/tex">(x - x_c)^TP^{-1}(x - x_c)</script></span>实际上是<span><span class="MathJax_Preview">x - x_c</span><script type="math/tex">x - x_c</script></span>的p-范数，因此上式有时也写作<span><span class="MathJax_Preview">\epsilon = \{x \mid \Vert x - x_c \Vert_p \leq 1\}</span><script type="math/tex">\epsilon = \{x \mid \Vert x - x_c \Vert_p \leq 1\}</script></span>。</p>
-<p>椭球还常被表达为<span><span class="MathJax_Preview">\epsilon = \{x_c + Au \mid \Vert u \Vert_2 \leq 1\}</span><script type="math/tex">\epsilon = \{x_c + Au \mid \Vert u \Vert_2 \leq 1\}</script></span>，其中<span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>是一个非奇异方阵，<span><span class="MathJax_Preview">u</span><script type="math/tex">u</script></span>是一个单位球。也就是说我们通过方阵<span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>旋转、拉伸这个单位球，最后再加上偏移量<span><span class="MathJax_Preview">x_c</span><script type="math/tex">x_c</script></span>得到椭球。在这个表达中我们可以假设<span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>是对称、正定的。<span><span class="MathJax_Preview">A = P^{1/2}</span><script type="math/tex">A = P^{1/2}</script></span>时本式与上式相同。如果<span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>是对称正定的奇异方阵，那么这个集合被称作退化椭球（degenerate ellipsoid），它的仿射维度等于<span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>的秩。退化椭球与椭球都是凸的。</p>
-<h2 id="_3">范式球与范式锥<a class="headerlink" href="#_3" title="Permanent link">#</a></h2>
-<p>对于<span><span class="MathJax_Preview">\mathbb{R}^n</span><script type="math/tex">\mathbb{R}^n</script></span>中的任意范数<span><span class="MathJax_Preview">\Vert \cdot \Vert</span><script type="math/tex">\Vert \cdot \Vert</script></span>，范式球和范式锥被定义为：</p>
+<p>仿射集<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>包含了该集合中任意点的仿射组合，也就是说，对于<span><span class="MathJax_Preview">x_1, x_2, x_n \in C, \sum_{i=1}^n \theta_i = 1</span><script type="math/tex">x_1, x_2, x_n \in C, \sum_{i=1}^n \theta_i = 1</script></span>，<span><span class="MathJax_Preview">\sum_{i=1}^n \theta_i x_i \in C</span><script type="math/tex">\sum_{i=1}^n \theta_i x_i \in C</script></span>。</p>
+<p>我们可以发现，仿射组合其实可以被看成一个所有系数之和为1的特殊的线性组合。这样的特性使得我们可以抛弃原点，而将任意的点视为原点，我们都可以使用同样的线性组合去描述同一个点。</p>
+<div class="admonition example">
+<p class="admonition-title">🌰</p>
+<p>对于原点以及空间上任意一点<span><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span>，我们可以将向量<span><span class="MathJax_Preview">a,\ b</span><script type="math/tex">a,\ b</script></span>分别表述为<span><span class="MathJax_Preview">a + b</span><script type="math/tex">a + b</script></span>与<span><span class="MathJax_Preview">p + (a - p) + (b - p)</span><script type="math/tex">p + (a - p) + (b - p)</script></span>。由此，我们通过仿射组合去描述另一点时，两个描述分别为<span><span class="MathJax_Preview">\theta a + (1 - \theta) b</span><script type="math/tex">\theta a + (1 - \theta) b</script></span>与<span><span class="MathJax_Preview">p + \theta (a - p) + (1 - \theta) (b - p) = p + \theta a - \theta p + (1 - \theta) b - (1 - \theta) p = \theta a + (1 - \theta) b</span><script type="math/tex">p + \theta (a - p) + (1 - \theta) (b - p) = p + \theta a - \theta p + (1 - \theta) b - (1 - \theta) p = \theta a + (1 - \theta) b</script></span>；我们很容易发现两个描述与其起始点没有关系。</p>
+</div>
+<p>集合<span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>的仿射包<span><span class="MathJax_Preview">aff(S)</span><script type="math/tex">aff(S)</script></span>指的是包含集合<span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>的最小仿射集，它被定义为:</p>
 <div class="admonition important">
-<p class="admonition-title">范式球</p>
+<p class="admonition-title">仿射包（affine hull）</p>
 <div>
-<div class="MathJax_Preview">B(x_c, r) = \{x \mid \Vert x - x_c \Vert \leq r\}</div>
-<script type="math/tex; mode=display">B(x_c, r) = \{x \mid \Vert x - x_c \Vert \leq r\}</script>
+<div class="MathJax_Preview">aff(S) = \{\sum_{i=1}^k \theta_i x_i \mid k &gt; 0, x_i \in S, \theta_i \in \mathbb{R}, \sum_{i=1}^n \theta_i = 1\}</div>
+<script type="math/tex; mode=display">aff(S) = \{\sum_{i=1}^k \theta_i x_i \mid k > 0, x_i \in S, \theta_i \in \mathbb{R}, \sum_{i=1}^n \theta_i = 1\}</script>
 </div>
+</div>
+<p>也就是说，如果仿射集<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>有<span><span class="MathJax_Preview">S \subseteq C</span><script type="math/tex">S \subseteq C</script></span>，那么<span><span class="MathJax_Preview">aff(S) \subseteq C</span><script type="math/tex">aff(S) \subseteq C</script></span>。</p>
+<h2 id="_2">凸<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
+<p>我们注意到到现在为止我们一直在讨论仿射，而没有进入真正的主题--凸。事实上，我们已经差不多学习了凸的所有概念了--仅仅将仿射的直线换成线段，我们就能得到凸。</p>
+<div class="admonition important">
+<p class="admonition-title">凸集</p>
+<p>对于集合<span><span class="MathJax_Preview">C \subseteq \mathbb{R}</span><script type="math/tex">C \subseteq \mathbb{R}</script></span>，若经过该集合上任意两点<span><span class="MathJax_Preview">x_1, x_2 \in C, x_1 \neq x_2</span><script type="math/tex">x_1, x_2 \in C, x_1 \neq x_2</script></span>的<span style="color:green">线段</span>上的点都在该集合中，那么我们称集合<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>为一个凸集。</p>
 </div>
 <div class="admonition important">
-<p class="admonition-title">范式锥</p>
-<div>
-<div class="MathJax_Preview">C(t) = \{(x, t) \mid \Vert x \Vert \leq t\} \subseteq \mathbb{R}^{n+1}</div>
-<script type="math/tex; mode=display">C(t) = \{(x, t) \mid \Vert x \Vert \leq t\} \subseteq \mathbb{R}^{n+1}</script>
+<p class="admonition-title">凸组合（convex combination）</p>
+<p>对于线性组合<span><span class="MathJax_Preview">\sum_{i=1}^n \theta_i x_i</span><script type="math/tex">\sum_{i=1}^n \theta_i x_i</script></span>，若其满足</p>
+<p><span><span class="MathJax_Preview">\sum_{i=1}^n \theta_i = 1</span><script type="math/tex">\sum_{i=1}^n \theta_i = 1</script></span><span style="color:green">并且<span><span class="MathJax_Preview">\forall x_i, x_i \geq 0</span><script type="math/tex">\forall x_i, x_i \geq 0</script></span></span></p>
+<p>则我们称其为凸组合。</p>
 </div>
+<div class="admonition important">
+<p class="admonition-title">凸包（convex hull）</p>
+<p><span><span class="MathJax_Preview">conv(S) = \{\sum_{i=1}^k \theta_i x_i \mid k &gt; 0,</span><script type="math/tex">conv(S) = \{\sum_{i=1}^k \theta_i x_i \mid k > 0,</script></span> <span style="color:green"><span><span class="MathJax_Preview">x_i \geq 0</span><script type="math/tex">x_i \geq 0</script></span></span><span><span class="MathJax_Preview">, \theta_i \in \mathbb{R}, \sum_{i=1}^n \theta_i = 1\}</span><script type="math/tex">, \theta_i \in \mathbb{R}, \sum_{i=1}^n \theta_i = 1\}</script></span></p>
 </div>
-<p>范式球和范式锥都是凸的。</p>
+<p>|
+我们很容易想到，常见的三角形、方形、圆形都是凸的；而星形则是非凸的，因为任意两点之间存在有些点不在集合之内。</p>
+<details class="help"><summary>非凸集五角星的凸包是</summary><p>凸集五边形。</p>
+</details>
                 
                   
                 
@@ -1009,7 +959,7 @@ r
 
   <h2 id="__comments">评论</h2>
   <div id="disqus_thread"></div>
-  <script>var disqus_config=function(){this.page.url="https://zyc.ai/optimisation/cone_ball/",this.page.identifier="/optimisation/cone_ball/"};!function(){var e=document,i=e.createElement("script");i.src="//zycai.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)}()</script>
+  <script>var disqus_config=function(){this.page.url="https://zyc.ai/optimisation/affine%26convex/",this.page.identifier="/optimisation/affine%26convex/"};!function(){var e=document,i=e.createElement("script");i.src="//zycai.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)}()</script>
 
               
             </article>
@@ -1019,41 +969,6 @@ r
       
         
 <footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
-        
-          <a href="../affine_convex/" title="仿射与凸" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-            </div>
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  上一页
-                </span>
-                仿射与凸
-              </div>
-            </div>
-          </a>
-        
-        
-          <a href="../hyperplane_halfspace/" title="超平面与半空间" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  下一页
-                </span>
-                超平面与半空间
-              </div>
-            </div>
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
