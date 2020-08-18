@@ -71,6 +71,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -299,10 +304,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
       优化
@@ -372,11 +379,49 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../complexity.md" title="凸性" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        凸性
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="凸性" class="md-nav__link md-nav__link--active">
       凸性
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    保凸运算
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -836,6 +881,36 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    保凸运算
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
@@ -853,7 +928,45 @@
                 
                 <details class="question"><summary>如何判断一个函数是否是凸的</summary><p>这个问题看似十分简单。我们只需要根据凸集的定义，选取集合中的每一个点对然后判断这两个点之间的线段上的点是否是凸的即可。对于一个有着<span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span>个点的集合，上述算法的时间复杂度仅仅为<span><span class="MathJax_Preview">O(n?n)</span><script type="math/tex">O(n?n)</script></span>，这甚至是一个多项式时间的算法。但是这明显还有很大的改进空间。</p>
 </details>
-<p>在本节中，我们介绍保留凸性的操作，这些操作有助于判定一个集合是否凸以及构建一个凸集。</p>
+<p>在本节中，我们介绍保留凸性的运算，这些运算有助于判定一个集合是否凸以及构建一个凸集。</p>
+<h2 id="_1">保凸运算<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
+<div class="admonition important">
+<p class="admonition-title">交集</p>
+<p>对于集合<span><span class="MathJax_Preview">S_1, S_2</span><script type="math/tex">S_1, S_2</script></span>，如果他们是凸集，那么<span><span class="MathJax_Preview">S_1 \cap S_2</span><script type="math/tex">S_1 \cap S_2</script></span>也是凸集。</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">仿射函数</p>
+<p>如果函数<span><span class="MathJax_Preview">f: \mathbb{R}^n \rightarrow \mathbb{R}^m</span><script type="math/tex">f: \mathbb{R}^n \rightarrow \mathbb{R}^m</script></span>是一个放射函数，那么：</p>
+<ul>
+<li><span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span>下的凸集的像也是凸的:</li>
+</ul>
+<div>
+<div class="MathJax_Preview">S \subseteq \mathbb{R}^n \text{is convex} \Rightarrow f(S) = \{f(x) \mid x \in S\} \text{is convex}</div>
+<script type="math/tex; mode=display">S \subseteq \mathbb{R}^n \text{is convex} \Rightarrow f(S) = \{f(x) \mid x \in S\} \text{is convex}</script>
+</div>
+<ul>
+<li><span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span>下的凸集的逆像也是凸的:</li>
+</ul>
+<div>
+<div class="MathJax_Preview">C \subseteq \mathbb{R}^m \text{is convex} \Rightarrow f^{-1}(C) = \{x \mid f(x) \in C\} \text{is convex}</div>
+<script type="math/tex; mode=display">C \subseteq \mathbb{R}^m \text{is convex} \Rightarrow f^{-1}(C) = \{x \mid f(x) \in C\} \text{is convex}</script>
+</div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">透视和线性分数函数</p>
+<p>透视函数 <span><span class="MathJax_Preview">P: \mathbb{R}^{n+1} \rightarrow \mathbb{R}^n</span><script type="math/tex">P: \mathbb{R}^{n+1} \rightarrow \mathbb{R}^n</script></span>：</p>
+<div>
+<div class="MathJax_Preview">P(x, t) = x / t, \quad dom(P) = \{(x, t) \mid t &gt; 0\}</div>
+<script type="math/tex; mode=display">P(x, t) = x / t, \quad dom(P) = \{(x, t) \mid t > 0\}</script>
+</div>
+<p>线性分数函数 <span><span class="MathJax_Preview">f: \mathbb{R}^n \rightarrow \mathbb{R}^m</span><script type="math/tex">f: \mathbb{R}^n \rightarrow \mathbb{R}^m</script></span>：</p>
+<div>
+<div class="MathJax_Preview">f(x) = \frac{Ax + b}{c^T + d}, \quad dom(f) = \{x \mid c^Tx + d &gt; 0\}</div>
+<script type="math/tex; mode=display">f(x) = \frac{Ax + b}{c^T + d}, \quad dom(f) = \{x \mid c^Tx + d > 0\}</script>
+</div>
+<p>透视函数与线性分数函数下的凸集的像和逆像也是凸的</p>
+</div>
+<p>这些属性扩展到无限个集合的交集中，也就是说，如果<span><span class="MathJax_Preview">S_\alpha</span><script type="math/tex">S_\alpha</script></span>是凸集对于每一个<span><span class="MathJax_Preview">\alpha \in A</span><script type="math/tex">\alpha \in A</script></span>都成立，那么<span><span class="MathJax_Preview">\cap_{\alpha \in A}S_\alpha</span><script type="math/tex">\cap_{\alpha \in A}S_\alpha</script></span>也是一个凸集。</p>
                 
                   
                 
@@ -874,6 +987,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../hyperplane_halfspace%26polyhedra/" title="超平面、半空间与多面体" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                超平面、半空间与多面体
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../k8s/introduction/" title="导论" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                导论
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
