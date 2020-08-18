@@ -11,7 +11,7 @@
         <meta name="description" content="The website of Zhiyuan Chen">
       
       
-        <link rel="canonical" href="https://zyc.ai/optimisation/cone%26ball/">
+        <link rel="canonical" href="https://zyc.ai/optimisation/ball%26cone/">
       
       
         <meta name="author" content="Zhiyuan Chen">
@@ -21,7 +21,7 @@
     
     
       
-        <title>锥与球</title>
+        <title>球与锥</title>
       
     
     
@@ -99,7 +99,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              锥与球
+              球与锥
             
           </span>
         </div>
@@ -304,10 +304,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
       优化
@@ -331,7 +333,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../affine_convex.md" title="仿射与凸" class="md-nav__link">
+    <a href="../affine%26convex/" title="仿射与凸" class="md-nav__link">
       仿射与凸
     </a>
   </li>
@@ -341,11 +343,20 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../cone_ball.md" title="锥与球" class="md-nav__link">
-      锥与球
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="球与锥" class="md-nav__link md-nav__link--active">
+      球与锥
     </a>
+    
   </li>
 
         
@@ -827,30 +838,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    欧几里得球与椭球
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    范式球与范式锥
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -861,7 +848,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/zyc-ai/edit/master/docs/optimisation/cone&ball.md" title="编辑此页" class="md-content__button md-icon">
+                  <a href="https://github.com/zyc-ai/edit/master/docs/optimisation/ball&cone.md" title="编辑此页" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -871,34 +858,7 @@
                 
                 <p>在本节中，我们介绍锥（cone）、欧几里得球（Euclidean Ball）与椭球（Ellipsoid）。</p>
 <p>在上一节，我们首先复习了直线和线段的定义。本节，让我们从锥开始。</p>
-<h1 id="_1">锥<a class="headerlink" href="#_1" title="Permanent link">#</a></h1>
-<div class="admonition important">
-<p class="admonition-title">锥组合（conic combination）</p>
-<p>空间<span><span class="MathJax_Preview">\mathbb{R}^n</span><script type="math/tex">\mathbb{R}^n</script></span>中的点<span><span class="MathJax_Preview">x \in \mathbb{R}</span><script type="math/tex">x \in \mathbb{R}</script></span>如果满足</p>
-<div>
-<div class="MathJax_Preview">x = \sum_{i=1}^n \theta_i x_i \ s.t. \ \forall \theta_i, \theta_i \geq 0</div>
-<script type="math/tex; mode=display">x = \sum_{i=1}^n \theta_i x_i \ s.t. \ \forall \theta_i, \theta_i \geq 0</script>
-</div>
-<p>则我们将其成为锥组合（非负线性组合）。</p>
-</div>
-<div class="admonition important">
-<p class="admonition-title">锥集（conic set）</p>
-<p>对于集合<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>，如果其中每一点<span><span class="MathJax_Preview">x \in C</span><script type="math/tex">x \in C</script></span>并且</p>
-<div>
-<div class="MathJax_Preview">\theta \geq 0$，都有$\theta x \in C</div>
-<script type="math/tex; mode=display">\theta \geq 0$，都有$\theta x \in C</script>
-</div>
-<p>那么我们将这个集合<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>称作一个锥（非负齐次）。</p>
-</div>
-<div class="admonition important">
-<p class="admonition-title">锥包（conic hull）</p>
-<p>集合<span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>的锥包是所有该集合的点的锥组合所构成的集合，也即</p>
-<div>
-<div class="MathJax_Preview">\{\sum_{i=1}^k \theta_i x_i \mid x_i \in S, \theta_i \geq 0\}</div>
-<script type="math/tex; mode=display">\{\sum_{i=1}^k \theta_i x_i \mid x_i \in S, \theta_i \geq 0\}</script>
-</div>
-</div>
-<h2 id="_2">欧几里得球与椭球<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
+<h2 id="_1">欧几里得球与椭球<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
 <div class="admonition important">
 <p class="admonition-title">欧几里得球</p>
 <p>一个<span><span class="MathJax_Preview">\mathbb{R}^n</span><script type="math/tex">\mathbb{R}^n</script></span>上的欧几里得球满足如下形式：<span><span class="MathJax_Preview">B(x_c, r) = \{x \mid \Vert x - x_c \Vert_2 \leq r\} = \{x \mid (x - x_c)^T(x - x_c) \leq r^2\} \ s.t. \ r \in \mathbb{R}_+</span><script type="math/tex">B(x_c, r) = \{x \mid \Vert x - x_c \Vert_2 \leq r\} = \{x \mid (x - x_c)^T(x - x_c) \leq r^2\} \ s.t. \ r \in \mathbb{R}_+</script></span></p>
@@ -931,6 +891,33 @@ r
 <p><span><span class="MathJax_Preview">x_c \in \mathbb{R}^n</span><script type="math/tex">x_c \in \mathbb{R}^n</script></span>是椭球<span><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span>的 <em>球心</em>；<span><span class="MathJax_Preview">P \in \mathbb{S}^n_{++}</span><script type="math/tex">P \in \mathbb{S}^n_{++}</script></span>是一个对称的正定矩阵，它决定了椭球在每个方向从球心<span><span class="MathJax_Preview">x_c</span><script type="math/tex">x_c</script></span>伸张的长度。椭球<span><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span>的半轴的长度由<span><span class="MathJax_Preview">\sqrt{\lambda_i}</span><script type="math/tex">\sqrt{\lambda_i}</script></span>给出，其中<span><span class="MathJax_Preview">\lambda_i</span><script type="math/tex">\lambda_i</script></span>是<span><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span>的特征值。我们很容易发现欧几里得球是椭球的一个特殊情况--当<span><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span>为一个单位矩阵时。</p>
 <p><span><span class="MathJax_Preview">(x - x_c)^TP^{-1}(x - x_c)</span><script type="math/tex">(x - x_c)^TP^{-1}(x - x_c)</script></span>实际上是<span><span class="MathJax_Preview">x - x_c</span><script type="math/tex">x - x_c</script></span>的p-范数，因此上式有时也写作<span><span class="MathJax_Preview">\epsilon = \{x \mid \Vert x - x_c \Vert_p \leq 1\}</span><script type="math/tex">\epsilon = \{x \mid \Vert x - x_c \Vert_p \leq 1\}</script></span>。</p>
 <p>椭球还常被表达为<span><span class="MathJax_Preview">\epsilon = \{x_c + Au \mid \Vert u \Vert_2 \leq 1\}</span><script type="math/tex">\epsilon = \{x_c + Au \mid \Vert u \Vert_2 \leq 1\}</script></span>，其中<span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>是一个非奇异方阵，<span><span class="MathJax_Preview">u</span><script type="math/tex">u</script></span>是一个单位球。也就是说我们通过方阵<span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>旋转、拉伸这个单位球，最后再加上偏移量<span><span class="MathJax_Preview">x_c</span><script type="math/tex">x_c</script></span>得到椭球。在这个表达中我们可以假设<span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>是对称、正定的。<span><span class="MathJax_Preview">A = P^{1/2}</span><script type="math/tex">A = P^{1/2}</script></span>时本式与上式相同。如果<span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>是对称正定的奇异方阵，那么这个集合被称作退化椭球（degenerate ellipsoid），它的仿射维度等于<span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>的秩。退化椭球与椭球都是凸的。</p>
+<h1 id="_2">锥<a class="headerlink" href="#_2" title="Permanent link">#</a></h1>
+<div class="admonition important">
+<p class="admonition-title">锥组合（conic combination）</p>
+<p>空间<span><span class="MathJax_Preview">\mathbb{R}^n</span><script type="math/tex">\mathbb{R}^n</script></span>中的点<span><span class="MathJax_Preview">x \in \mathbb{R}</span><script type="math/tex">x \in \mathbb{R}</script></span>如果满足</p>
+<div>
+<div class="MathJax_Preview">x = \sum_{i=1}^n \theta_i x_i \ s.t. \ \forall \theta_i, \theta_i \geq 0</div>
+<script type="math/tex; mode=display">x = \sum_{i=1}^n \theta_i x_i \ s.t. \ \forall \theta_i, \theta_i \geq 0</script>
+</div>
+<p>则我们将其成为锥组合（非负线性组合）。</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">锥集（conic set）</p>
+<p>对于集合<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>，如果其中每一点<span><span class="MathJax_Preview">x \in C</span><script type="math/tex">x \in C</script></span>并且</p>
+<div>
+<div class="MathJax_Preview">\theta \geq 0$，都有$\theta x \in C</div>
+<script type="math/tex; mode=display">\theta \geq 0$，都有$\theta x \in C</script>
+</div>
+<p>那么我们将这个集合<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>称作一个锥（非负齐次）。</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">锥包（conic hull）</p>
+<p>集合<span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>的锥包是所有该集合的点的锥组合所构成的集合，也即</p>
+<div>
+<div class="MathJax_Preview">\{\sum_{i=1}^k \theta_i x_i \mid x_i \in S, \theta_i \geq 0\}</div>
+<script type="math/tex; mode=display">\{\sum_{i=1}^k \theta_i x_i \mid x_i \in S, \theta_i \geq 0\}</script>
+</div>
+</div>
 <h2 id="_3">范式球与范式锥<a class="headerlink" href="#_3" title="Permanent link">#</a></h2>
 <p>对于<span><span class="MathJax_Preview">\mathbb{R}^n</span><script type="math/tex">\mathbb{R}^n</script></span>中的任意范数<span><span class="MathJax_Preview">\Vert \cdot \Vert</span><script type="math/tex">\Vert \cdot \Vert</script></span>，范式球和范式锥被定义为：</p>
 <div class="admonition important">
@@ -958,7 +945,7 @@ r
 
   <h2 id="__comments">评论</h2>
   <div id="disqus_thread"></div>
-  <script>var disqus_config=function(){this.page.url="https://zyc.ai/optimisation/cone%26ball/",this.page.identifier="/optimisation/cone%26ball/"};!function(){var e=document,i=e.createElement("script");i.src="//zycai.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)}()</script>
+  <script>var disqus_config=function(){this.page.url="https://zyc.ai/optimisation/ball%26cone/",this.page.identifier="/optimisation/ball%26cone/"};!function(){var e=document,i=e.createElement("script");i.src="//zycai.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)}()</script>
 
               
             </article>
@@ -968,6 +955,41 @@ r
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../affine%26convex/" title="仿射与凸" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                仿射与凸
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../hyperplane_halfspace/" title="超平面与半空间" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                超平面与半空间
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
