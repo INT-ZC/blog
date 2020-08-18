@@ -11,7 +11,7 @@
         <meta name="description" content="The website of Zhiyuan Chen">
       
       
-        <link rel="canonical" href="https://zyc.ai/optimisation/hyperplane_halfspace/">
+        <link rel="canonical" href="https://zyc.ai/optimisation/introduction/">
       
       
         <meta name="author" content="Zhiyuan Chen">
@@ -21,7 +21,7 @@
     
     
       
-        <title>凸优化-3</title>
+        <title>优化</title>
       
     
     
@@ -71,11 +71,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#_1" class="md-skip">
-          跳转至
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -99,7 +94,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              凸优化-3
+              优化
             
           </span>
         </div>
@@ -331,6 +326,25 @@
           
           
 
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+    <a href="./" title="优化" class="md-nav__link md-nav__link--active">
+      优化
+    </a>
+    
+  </li>
+
+        
+          
+          
+          
+
 
   <li class="md-nav__item">
     <a href="../affine%26convex/" title="仿射与凸" class="md-nav__link">
@@ -355,49 +369,23 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        超平面与半空间
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="超平面与半空间" class="md-nav__link md-nav__link--active">
-      超平面与半空间
+  <li class="md-nav__item">
+    <a href="../hyperplane_halfspace%26polyhedra/" title="超平面、半空间与多面体" class="md-nav__link">
+      超平面、半空间与多面体
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    超平面与半空间
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../complexity.md" title="凸性" class="md-nav__link">
+      凸性
+    </a>
   </li>
 
         
@@ -857,42 +845,12 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    超平面与半空间
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/zyc-ai/edit/master/docs/optimisation/hyperplane_halfspace.md" title="编辑此页" class="md-content__button md-icon">
+                  <a href="https://github.com/zyc-ai/edit/master/docs/optimisation/introduction.md" title="编辑此页" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -900,35 +858,14 @@
                   
                 
                 
-                  <h1>超平面与半空间</h1>
+                  <h1>优化</h1>
                 
-                <p>在本节中，我们介绍超平面、半空间与多面体。</p>
-<h2 id="_1">超平面与半空间<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
-<p>有了这些基础知识之后，我们可以给超平面与半空间一个定义：</p>
-<div class="admonition important">
-<p class="admonition-title">超平面</p>
-<p>如果一个集合满足</p>
-<div>
-<div class="MathJax_Preview">\{x \mid a^Tx = b\} \ s.t. \  a \in \mathbb{R}^n, a \neq 0, b \in \mathbb{R}</div>
-<script type="math/tex; mode=display">\{x \mid a^Tx = b\} \ s.t. \  a \in \mathbb{R}^n, a \neq 0, b \in \mathbb{R}</script>
+                <p>优化问题一直以来都是一个很重要的问题。令人遗憾的是，我们现有的知识对于非凸优化问题还处于儿童水准--大多数求解非凸优化问题的方法也只是利用凸优化的思路去求解，或者直接将其松弛成为一个凸优化问题。</p>
+<p>在本章，我们首先介绍什么是凸、什么是凸函数，随后我们将介绍凸优化的方法。</p>
+<div class="admonition abstract">
+<p class="admonition-title">后记</p>
+<p>据说从事凸优化的人都秃了。所以，看到这一篇文章的你，确定要凸吗？</p>
 </div>
-<p>那么我们将其称为一个超平面。</p>
-</div>
-<p>从解析来看，超平面是<span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>分量中线性不定方程的解集；从几何来说，超平面也可以被解释为与给定向量<span><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span>的内积为一特定值的点集；由于内积可以被看作是一个向量在另一个向量的投影，我们也可以将<span><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span>理解为一个有超平面的 <em>法向向量</em>，那么常数<span><span class="MathJax_Preview">b</span><script type="math/tex">b</script></span>就是确定超平面距离原点的偏移量。将上式做一个简单的形变，我们可以得到<span><span class="MathJax_Preview">\{x \mid a^T (x - x_0) = 0\} = a^\perp + x_0</span><script type="math/tex">\{x \mid a^T (x - x_0) = 0\} = a^\perp + x_0</script></span></p>
-<details class="help"><summary>超平面是凸还是仿射</summary><p>仿射</p>
-</details>
-<p>空间<span><span class="MathJax_Preview">S \subseteq \mathbb{R}^n</span><script type="math/tex">S \subseteq \mathbb{R}^n</script></span>中的超平面将该空间划分成两个半空间。</p>
-<div class="admonition important">
-<p class="admonition-title">半空间</p>
-<p>如果一个集合满足</p>
-<div>
-<div class="MathJax_Preview">\{x \mid a^Tx \leq b\} \ s.t. \ a \neq 0</div>
-<script type="math/tex; mode=display">\{x \mid a^Tx \leq b\} \ s.t. \ a \neq 0</script>
-</div>
-<p>那么我们将其称为一个半空间。</p>
-</div>
-<details class="help"><summary>半空间是凸还是仿射</summary><p>凸</p>
-</details>
                 
                   
                 
@@ -939,7 +876,7 @@
 
   <h2 id="__comments">评论</h2>
   <div id="disqus_thread"></div>
-  <script>var disqus_config=function(){this.page.url="https://zyc.ai/optimisation/hyperplane_halfspace/",this.page.identifier="/optimisation/hyperplane_halfspace/"};!function(){var e=document,i=e.createElement("script");i.src="//zycai.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)}()</script>
+  <script>var disqus_config=function(){this.page.url="https://zyc.ai/optimisation/introduction/",this.page.identifier="/optimisation/introduction/"};!function(){var e=document,i=e.createElement("script");i.src="//zycai.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)}()</script>
 
               
             </article>
@@ -953,7 +890,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../ball%26cone/" title="球与锥" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../stat/probability/" title="概率论" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -962,19 +899,19 @@
                 <span class="md-footer-nav__direction">
                   上一页
                 </span>
-                球与锥
+                概率论
               </div>
             </div>
           </a>
         
         
-          <a href="../../k8s/introduction/" title="导论" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../affine%26convex/" title="仿射与凸" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   下一页
                 </span>
-                导论
+                仿射与凸
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

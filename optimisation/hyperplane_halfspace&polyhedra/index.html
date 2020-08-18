@@ -11,7 +11,7 @@
         <meta name="description" content="The website of Zhiyuan Chen">
       
       
-        <link rel="canonical" href="https://zyc.ai/stat/statistics/">
+        <link rel="canonical" href="https://zyc.ai/optimisation/hyperplane_halfspace%26polyhedra/">
       
       
         <meta name="author" content="Zhiyuan Chen">
@@ -21,7 +21,7 @@
     
     
       
-        <title>统计</title>
+        <title>超平面、半空间与多面体</title>
       
     
     
@@ -99,7 +99,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              统计
+              超平面、半空间与多面体
             
           </span>
         </div>
@@ -289,7 +289,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../probability/" title="概率论" class="md-nav__link">
+    <a href="../../stat/probability/" title="概率论" class="md-nav__link">
       概率论
     </a>
   </li>
@@ -304,10 +304,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
       优化
@@ -331,7 +333,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../optimisation/introduction/" title="优化" class="md-nav__link">
+    <a href="../introduction/" title="优化" class="md-nav__link">
       优化
     </a>
   </li>
@@ -343,7 +345,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../optimisation/affine%26convex/" title="仿射与凸" class="md-nav__link">
+    <a href="../affine%26convex/" title="仿射与凸" class="md-nav__link">
       仿射与凸
     </a>
   </li>
@@ -355,7 +357,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../optimisation/ball%26cone/" title="球与锥" class="md-nav__link">
+    <a href="../ball%26cone/" title="球与锥" class="md-nav__link">
       球与锥
     </a>
   </li>
@@ -365,11 +367,56 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../optimisation/hyperplane_halfspace%26polyhedra/" title="超平面、半空间与多面体" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        超平面、半空间与多面体
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="超平面、半空间与多面体" class="md-nav__link md-nav__link--active">
       超平面、半空间与多面体
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    超平面与半空间
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    多面体
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -379,7 +426,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../optimisation/complexity.md" title="凸性" class="md-nav__link">
+    <a href="../complexity.md" title="凸性" class="md-nav__link">
       凸性
     </a>
   </li>
@@ -859,14 +906,14 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    频率学派
+    超平面与半空间
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    贝叶斯学派
+    多面体
   </a>
   
 </li>
@@ -883,7 +930,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/zyc-ai/edit/master/docs/stat/statistics.md" title="编辑此页" class="md-content__button md-icon">
+                  <a href="https://github.com/zyc-ai/edit/master/docs/optimisation/hyperplane_halfspace&polyhedra.md" title="编辑此页" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -891,30 +938,52 @@
                   
                 
                 
-                  <h1>统计</h1>
+                  <h1>超平面、半空间与多面体</h1>
                 
-                <div class="admonition abstract">
-<p>不管是回归还是分类，机器学习几乎处处都应用到了统计学知识。</p>
-<p>本文旨在简要的对统计学的两大学派--贝叶斯学派与频率学派进行介绍。</p>
+                <p>在本节中，我们介绍超平面、半空间与多面体。</p>
+<h2 id="_1">超平面与半空间<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
+<p>有了这些基础知识之后，我们可以给超平面与半空间一个定义：</p>
+<div class="admonition important">
+<p class="admonition-title">超平面</p>
+<p>如果一个集合满足</p>
+<div>
+<div class="MathJax_Preview">\{x \mid a^Tx = b\} \ s.t. \  a \in \mathbb{R}^n, a \neq 0, b \in \mathbb{R}</div>
+<script type="math/tex; mode=display">\{x \mid a^Tx = b\} \ s.t. \  a \in \mathbb{R}^n, a \neq 0, b \in \mathbb{R}</script>
 </div>
-<p>统计学从某种意义上来说可以分成频率与贝叶斯两大学派，他们之间的最大差别产生于对参数空间<span><span class="MathJax_Preview">\theta</span><script type="math/tex">\theta</script></span>的不同看法。</p>
-<div class="admonition tip">
-<p>参数指事情发生的背景情况。</p>
+<p>那么我们将其称为一个超平面。</p>
 </div>
-<h2 id="_1">频率学派<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
-<p>频率学派认为参数是一个客观存在，它虽未知但却是固定的。因此，频率学派所关注的是 <strong>哪个值最有可能是参数的真值</strong> 。所以频率学派关心<code>似然（likelihood）</code>、<code>置信区间（confidence interval）</code>。</p>
-<h2 id="_2">贝叶斯学派<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
-<p>贝叶斯学派认为参数空间里的每个值都有可能是参数的真值，区别只是概率不同。所以贝叶斯学派引入了<code>先验信念（prior belief）</code>和<code>后验信念（posterior belief）</code>这样的概念来设法找出参数空间上的每个值的概率。</p>
-<div class="admonition example">
-<p class="admonition-title">例子</p>
-<p>当你在你女朋友的包里发现了一条不属于你且被使用过的男士内裤时，你该如何判断你是不是有了一（或多）顶绿帽子的概率？在收集到十万个结果之后，频率学派告诉你你被绿了的可能是x%。但贝叶斯学派还需要一个证据（evidence），比如样貌或者专业，最后再告诉你根据你女朋友的样貌或者专业，你被绿了的可能性是y%。</p>
-<div class="admonition danger">
-<p>如果你真的在你女朋友的包里发现了一条不属于你且被使用过的男士内裤，那么你被绿了。</p>
+<p>从解析来看，超平面是<span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>分量中线性不定方程的解集；从几何来说，超平面也可以被解释为与给定向量<span><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span>的内积为一特定值的点集；由于内积可以被看作是一个向量在另一个向量的投影，我们也可以将<span><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span>理解为一个有超平面的 <em>法向向量</em>，那么常数<span><span class="MathJax_Preview">b</span><script type="math/tex">b</script></span>就是确定超平面距离原点的偏移量。将上式做一个简单的形变，我们可以得到<span><span class="MathJax_Preview">\{x \mid a^T (x - x_0) = 0\} = a^\perp + x_0</span><script type="math/tex">\{x \mid a^T (x - x_0) = 0\} = a^\perp + x_0</script></span></p>
+<details class="help"><summary>超平面是凸还是仿射</summary><p>仿射</p>
+</details>
+<p>空间<span><span class="MathJax_Preview">S \subseteq \mathbb{R}^n</span><script type="math/tex">S \subseteq \mathbb{R}^n</script></span>中的超平面将该空间划分成两个半空间。</p>
+<div class="admonition important">
+<p class="admonition-title">半空间</p>
+<p>如果一个集合满足</p>
+<div>
+<div class="MathJax_Preview">\{x \mid a^Tx \leq b\} \ s.t. \ a \neq 0</div>
+<script type="math/tex; mode=display">\{x \mid a^Tx \leq b\} \ s.t. \ a \neq 0</script>
+</div>
+<p>那么我们将其称为一个半空间。</p>
+</div>
+<details class="help"><summary>半空间是凸还是仿射</summary><p>凸</p>
+</details>
+<h2 id="_2">多面体<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
+<p>一个 <em>多面体（polyhedra）</em> 指的是一个有限数目的线性等式与不等式的解集：</p>
+<div class="admonition important">
+<p class="admonition-title">多面体</p>
+<div>
+<div class="MathJax_Preview">P = \{x \mid a^T_jx \leq b_j,\ j = 1, 2, ..., m,\ c^T_jx = d_j,\ j = 1, 2, ..., p\}</div>
+<script type="math/tex; mode=display">P = \{x \mid a^T_jx \leq b_j,\ j = 1, 2, ..., m,\ c^T_jx = d_j,\ j = 1, 2, ..., p\}</script>
 </div>
 </div>
-<div class="admonition abstract">
-<p>由于贝叶斯方法本身存在很多问题，比如当先验选的不好时你甚至都很难写出后验的具体形式，故虽然贝叶斯学派有着更为久远的历史，但是频率学派发展一直要好很多。近年来，得益于计算机等的高速发展，贝叶斯学派也受到了越来越多的关注。在下一篇文章当中，我们将对贝叶斯定理进行简单介绍。</p>
-</div>
+<p>我们可以发现，一个多面体实际上是一个有限数量的超平面与半空间的交集。仿射集（比如子空间、超平面、线）、射线、线段、半空间等都是多面体。</p>
+<p>上式常被化简为<span><span class="MathJax_Preview">P = \{x \mid Ax \preceq b, Cx = d\}</span><script type="math/tex">P = \{x \mid Ax \preceq b, Cx = d\}</script></span>。</p>
+<details class="hint"><summary><span><span class="MathJax_Preview">\preceq</span><script type="math/tex">\preceq</script></span></summary><p>符号<span><span class="MathJax_Preview">\preceq</span><script type="math/tex">\preceq</script></span>表示<span><span class="MathJax_Preview">\mathbb{R}^n</span><script type="math/tex">\mathbb{R}^n</script></span>中的 <em>向量不等（vector inequality）</em> 或者 <em>分量不等（componentwise inequality）</em>：<span><span class="MathJax_Preview">u \preceq v</span><script type="math/tex">u \preceq v</script></span>表示<span><span class="MathJax_Preview">u_i \leq v_i \ s.t. \ i = 1, 2, ..., m</span><script type="math/tex">u_i \leq v_i \ s.t. \ i = 1, 2, ..., m</script></span></p>
+</details>
+<details class="help"><summary>多面体凸吗</summary><p>凸</p>
+</details>
+<p>一个有边界的多面体有时被称为 <em>多胞形（polytope）</em><span><span class="MathJax_Preview">^\star</span><script type="math/tex">^\star</script></span>。</p>
+<p><span><span class="MathJax_Preview">^\star</span><script type="math/tex">^\star</script></span>：有些人倾向于将多胞形与多面体反过来叫。</p>
                 
                   
                 
@@ -925,7 +994,7 @@
 
   <h2 id="__comments">评论</h2>
   <div id="disqus_thread"></div>
-  <script>var disqus_config=function(){this.page.url="https://zyc.ai/stat/statistics/",this.page.identifier="/stat/statistics/"};!function(){var e=document,i=e.createElement("script");i.src="//zycai.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)}()</script>
+  <script>var disqus_config=function(){this.page.url="https://zyc.ai/optimisation/hyperplane_halfspace%26polyhedra/",this.page.identifier="/optimisation/hyperplane_halfspace%26polyhedra/"};!function(){var e=document,i=e.createElement("script");i.src="//zycai.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)}()</script>
 
               
             </article>
@@ -935,6 +1004,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../ball%26cone/" title="球与锥" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                球与锥
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../k8s/introduction/" title="导论" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                导论
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
