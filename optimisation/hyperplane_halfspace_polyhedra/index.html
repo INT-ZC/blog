@@ -11,7 +11,7 @@
         <meta name="description" content="The website of Zhiyuan Chen">
       
       
-        <link rel="canonical" href="https://zyc.ai/optimisation/ball%26cone/">
+        <link rel="canonical" href="https://zyc.ai/optimisation/hyperplane_halfspace_polyhedra/">
       
       
         <meta name="author" content="Zhiyuan Chen">
@@ -21,7 +21,7 @@
     
     
       
-        <title>球与锥</title>
+        <title>超平面、半空间与多面体</title>
       
     
     
@@ -99,7 +99,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              球与锥
+              超平面、半空间与多面体
             
           </span>
         </div>
@@ -345,8 +345,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../affine%26convex/" title="仿射与凸" class="md-nav__link">
+    <a href="../affine_convex/" title="仿射与凸" class="md-nav__link">
       仿射与凸
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ball_cone/" title="球与锥" class="md-nav__link">
+      球与锥
     </a>
   </li>
 
@@ -364,14 +376,14 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        球与锥
+        超平面、半空间与多面体
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
         </span>
       </label>
     
-    <a href="./" title="球与锥" class="md-nav__link md-nav__link--active">
-      球与锥
+    <a href="./" title="超平面、半空间与多面体" class="md-nav__link md-nav__link--active">
+      超平面、半空间与多面体
     </a>
     
       
@@ -389,54 +401,14 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    欧几里得球与椭球
+    超平面与半空间
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    锥
-  </a>
-  
-    <nav class="md-nav" aria-label="锥">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    半正定锥
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    正常锥
-  </a>
-  
-    <nav class="md-nav" aria-label="正常锥">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    广义不等式
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    范式球与范式锥
+    多面体
   </a>
   
 </li>
@@ -445,18 +417,6 @@
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../hyperplane_halfspace%26polyhedra/" title="超平面、半空间与多面体" class="md-nav__link">
-      超平面、半空间与多面体
-    </a>
   </li>
 
         
@@ -946,54 +906,14 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    欧几里得球与椭球
+    超平面与半空间
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    锥
-  </a>
-  
-    <nav class="md-nav" aria-label="锥">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    半正定锥
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    正常锥
-  </a>
-  
-    <nav class="md-nav" aria-label="正常锥">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    广义不等式
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    范式球与范式锥
+    多面体
   </a>
   
 </li>
@@ -1010,7 +930,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/zyc-ai/edit/master/docs/optimisation/ball&cone.md" title="编辑此页" class="md-content__button md-icon">
+                  <a href="https://github.com/zyc-ai/edit/master/docs/optimisation/hyperplane_halfspace_polyhedra.md" title="编辑此页" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -1018,136 +938,52 @@
                   
                 
                 
-                  <h1>球与锥</h1>
+                  <h1>超平面、半空间与多面体</h1>
                 
-                <p>在本节中，我们介绍锥（cone）、欧几里得球（Euclidean Ball）与椭球（Ellipsoid）。</p>
-<p>在上一节，我们首先复习了直线和线段的定义。本节，让我们从锥开始。</p>
-<h2 id="_1">欧几里得球与椭球<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
+                <p>在本节中，我们介绍超平面、半空间与多面体。</p>
+<h2 id="_1">超平面与半空间<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
+<p>有了这些基础知识之后，我们可以给超平面与半空间一个定义：</p>
 <div class="admonition important">
-<p class="admonition-title">欧几里得球</p>
-<p>一个<span><span class="MathJax_Preview">\mathbb{R}^n</span><script type="math/tex">\mathbb{R}^n</script></span>上的欧几里得球满足如下形式：<span><span class="MathJax_Preview">B(x_c, r) = \{x \mid \Vert x - x_c \Vert_2 \leq r\} = \{x \mid (x - x_c)^T(x - x_c) \leq r^2\} \ s.t. \ r \in \mathbb{R}_+</span><script type="math/tex">B(x_c, r) = \{x \mid \Vert x - x_c \Vert_2 \leq r\} = \{x \mid (x - x_c)^T(x - x_c) \leq r^2\} \ s.t. \ r \in \mathbb{R}_+</script></span></p>
-</div>
-<p>在上式中，<span><span class="MathJax_Preview">x_c</span><script type="math/tex">x_c</script></span>为 <em>圆心</em> ，<span><span class="MathJax_Preview">r</span><script type="math/tex">r</script></span> 为 <em>半径</em> 。<span><span class="MathJax_Preview">B(x_c, r)</span><script type="math/tex">B(x_c, r)</script></span>包括以<span><span class="MathJax_Preview">x_c</span><script type="math/tex">x_c</script></span>为中心，距离为<span><span class="MathJax_Preview">r</span><script type="math/tex">r</script></span>内的所有点。欧几里得球还常被表示为<span><span class="MathJax_Preview">B(x_c, r) = \{x_c + ru \mid \Vert u \Vert_2 \leq 1\}</span><script type="math/tex">B(x_c, r) = \{x_c + ru \mid \Vert u \Vert_2 \leq 1\}</script></span></p>
-<details class="help"><summary>试证明欧几里得球是一个凸集</summary><p>对于欧几里得球<span><span class="MathJax_Preview">B(x_c, r)</span><script type="math/tex">B(x_c, r)</script></span>及其中两点<span><span class="MathJax_Preview">x_1, x_2 \in B</span><script type="math/tex">x_1, x_2 \in B</script></span>，我们有<span><span class="MathJax_Preview">\Vert x_1 - x_c \Vert_2 \leq r</span><script type="math/tex">\Vert x_1 - x_c \Vert_2 \leq r</script></span>与<span><span class="MathJax_Preview">\Vert x_2 - x_c \Vert_2 \leq r</span><script type="math/tex">\Vert x_2 - x_c \Vert_2 \leq r</script></span>，<span><span class="MathJax_Preview">0 \leq \   \leq 1</span><script type="math/tex">0 \leq \   \leq 1</script></span>，那么</p>
+<p class="admonition-title">超平面</p>
+<p>如果一个集合满足</p>
 <div>
-<div class="MathJax_Preview">\begin{align}
-\Vert \theta x_1 + (1 - \theta) x_2 - x_c \Vert_2 &amp;= 
-\Vert \theta (x_1 - x_c) + (1 - \theta) (x_2 - x_c) \Vert_2 \\ &amp;=
-\theta \Vert x_1 - x_c \Vert_2 + (1 - \theta) \Vert x_2 - x_c \Vert_2 \\ &amp;= 
-r
-\end{align}</div>
-<script type="math/tex; mode=display">\begin{align}
-\Vert \theta x_1 + (1 - \theta) x_2 - x_c \Vert_2 &= 
-\Vert \theta (x_1 - x_c) + (1 - \theta) (x_2 - x_c) \Vert_2 \\ &=
-\theta \Vert x_1 - x_c \Vert_2 + (1 - \theta) \Vert x_2 - x_c \Vert_2 \\ &= 
-r
-\end{align}</script>
+<div class="MathJax_Preview">\{x \mid a^Tx = b\} \ s.t. \  a \in \mathbb{R}^n, a \neq 0, b \in \mathbb{R}</div>
+<script type="math/tex; mode=display">\{x \mid a^Tx = b\} \ s.t. \  a \in \mathbb{R}^n, a \neq 0, b \in \mathbb{R}</script>
 </div>
+<p>那么我们将其称为一个超平面。</p>
+</div>
+<p>从解析来看，超平面是<span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>分量中线性不定方程的解集；从几何来说，超平面也可以被解释为与给定向量<span><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span>的内积为一特定值的点集；由于内积可以被看作是一个向量在另一个向量的投影，我们也可以将<span><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span>理解为一个有超平面的 <em>法向向量</em>，那么常数<span><span class="MathJax_Preview">b</span><script type="math/tex">b</script></span>就是确定超平面距离原点的偏移量。将上式做一个简单的形变，我们可以得到<span><span class="MathJax_Preview">\{x \mid a^T (x - x_0) = 0\} = a^\perp + x_0</span><script type="math/tex">\{x \mid a^T (x - x_0) = 0\} = a^\perp + x_0</script></span></p>
+<details class="help"><summary>超平面是凸还是仿射</summary><p>仿射</p>
 </details>
-<p>一个更一般的球被称为椭球（ellipsoid）。</p>
+<p>空间<span><span class="MathJax_Preview">S \subseteq \mathbb{R}^n</span><script type="math/tex">S \subseteq \mathbb{R}^n</script></span>中的超平面将该空间划分成两个半空间。</p>
 <div class="admonition important">
-<p class="admonition-title">椭球</p>
+<p class="admonition-title">半空间</p>
+<p>如果一个集合满足</p>
 <div>
-<div class="MathJax_Preview">\epsilon = \{x \mid (x - x_c)^TP^{-1}(x - x_c) \leq 1\}</div>
-<script type="math/tex; mode=display">\epsilon = \{x \mid (x - x_c)^TP^{-1}(x - x_c) \leq 1\}</script>
+<div class="MathJax_Preview">\{x \mid a^Tx \leq b\} \ s.t. \ a \neq 0</div>
+<script type="math/tex; mode=display">\{x \mid a^Tx \leq b\} \ s.t. \ a \neq 0</script>
 </div>
+<p>那么我们将其称为一个半空间。</p>
 </div>
-<p><span><span class="MathJax_Preview">x_c \in \mathbb{R}^n</span><script type="math/tex">x_c \in \mathbb{R}^n</script></span>是椭球<span><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span>的 <em>球心</em>；<span><span class="MathJax_Preview">P \in \mathbb{S}^n_<ins class="critic">}</span><script type="math/tex">P \in \mathbb{S}^n_<ins class="critic">}</script></span>是一个对称的正定矩阵，它决定了椭球在每个方向从球心<span><span class="MathJax_Preview">x_c</span><script type="math/tex">x_c</script></span>伸张的长度。椭球<span><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span>的半轴的长度由<span><span class="MathJax_Preview">\sqrt{\lambda_i}</span><script type="math/tex">\sqrt{\lambda_i}</script></span>给出，其中<span><span class="MathJax_Preview">\lambda_i</span><script type="math/tex">\lambda_i</script></span>是<span><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span>的特征值。我们很容易发现欧几里得球是椭球的一个特殊情况--当<span><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span>为一个单位矩阵时。</p>
-<p><span><span class="MathJax_Preview">(x - x_c)^TP^{-1}(x - x_c)</span><script type="math/tex">(x - x_c)^TP^{-1}(x - x_c)</script></span>实际上是<span><span class="MathJax_Preview">x - x_c</span><script type="math/tex">x - x_c</script></span>的p-范数，因此上式有时也写作<span><span class="MathJax_Preview">\epsilon = \{x \mid \Vert x - x_c \Vert_p \leq 1\}</span><script type="math/tex">\epsilon = \{x \mid \Vert x - x_c \Vert_p \leq 1\}</script></span>。</p>
-<p>椭球还常被表达为<span><span class="MathJax_Preview">\epsilon = \{x_c + Au \mid \Vert u \Vert_2 \leq 1\}</span><script type="math/tex">\epsilon = \{x_c + Au \mid \Vert u \Vert_2 \leq 1\}</script></span>，其中<span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>是一个非奇异方阵，<span><span class="MathJax_Preview">u</span><script type="math/tex">u</script></span>是一个单位球。也就是说我们通过方阵<span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>旋转、拉伸这个单位球，最后再加上偏移量<span><span class="MathJax_Preview">x_c</span><script type="math/tex">x_c</script></span>得到椭球。在这个表达中我们可以假设<span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>是对称、正定的。<span><span class="MathJax_Preview">A = P^{1/2}</span><script type="math/tex">A = P^{1/2}</script></span>时本式与上式相同。如果<span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>是对称正定的奇异方阵，那么这个集合被称作退化椭球（degenerate ellipsoid），它的仿射维度等于<span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>的秩。退化椭球与椭球都是凸的。</p>
-<h2 id="_2">锥<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
-<div class="admonition important">
-<p class="admonition-title">锥组合（conic combination）</p>
-<p>空间<span><span class="MathJax_Preview">\mathbb{R}^n</span><script type="math/tex">\mathbb{R}^n</script></span>中的点<span><span class="MathJax_Preview">x \in \mathbb{R}</span><script type="math/tex">x \in \mathbb{R}</script></span>如果满足</p>
-<div>
-<div class="MathJax_Preview">x = \sum_{i=1}^n \theta_i x_i \ s.t. \ \forall \theta_i, \theta_i \geq 0</div>
-<script type="math/tex; mode=display">x = \sum_{i=1}^n \theta_i x_i \ s.t. \ \forall \theta_i, \theta_i \geq 0</script>
-</div>
-<p>则我们将其成为锥组合（非负线性组合）。</p>
-</div>
-<div class="admonition important">
-<p class="admonition-title">锥集（conic set）</p>
-<p>对于集合<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>，如果其中每一点<span><span class="MathJax_Preview">x \in C</span><script type="math/tex">x \in C</script></span>并且</p>
-<div>
-<div class="MathJax_Preview">\theta \geq 0$，都有$\theta x \in C</div>
-<script type="math/tex; mode=display">\theta \geq 0$，都有$\theta x \in C</script>
-</div>
-<p>那么我们将这个集合<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>称作一个锥（非负齐次）。</p>
-</div>
-<div class="admonition important">
-<p class="admonition-title">锥包（conic hull）</p>
-<p>集合<span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>的锥包是所有该集合的点的锥组合所构成的集合，也即</p>
-<div>
-<div class="MathJax_Preview">\{\sum_{i=1}^k \theta_i x_i \mid x_i \in S, \theta_i \geq 0\}</div>
-<script type="math/tex; mode=display">\{\sum_{i=1}^k \theta_i x_i \mid x_i \in S, \theta_i \geq 0\}</script>
-</div>
-</div>
-<h3 id="_3">半正定锥<a class="headerlink" href="#_3" title="Permanent link">#</a></h3>
-<div class="admonition important">
-<p class="admonition-title">对称矩阵</p>
-<div>
-<div class="MathJax_Preview">\mathbb{S}^n = \{X \in \mathbb{R}^{n \times n} \mid X = X^T\}</div>
-<script type="math/tex; mode=display">\mathbb{S}^n = \{X \in \mathbb{R}^{n \times n} \mid X = X^T\}</script>
-</div>
-</div>
-<div class="admonition important">
-<p class="admonition-title">对称半正定矩阵</p>
-<div>
-<div class="MathJax_Preview">\mathbb{S}^n_+ = \{X \in \mathbb{S}^n \mid X  \succeq 0\}</div>
-<script type="math/tex; mode=display">\mathbb{S}^n_+ = \{X \in \mathbb{S}^n \mid X  \succeq 0\}</script>
-</div>
-</div>
-<div class="admonition important">
-<p class="admonition-title">对称正定矩阵</p>
-<div>
-<div class="MathJax_Preview">\mathbb{S}^n_{</ins> = \{X \in \mathbb{S}^n \mid X  \succ 0\}</div>
-<script type="math/tex; mode=display">\mathbb{S}^n_{</ins> = \{X \in \mathbb{S}^n \mid X  \succ 0\}</script>
-</div>
-</div>
-<details class="help"><summary>试证明<span><span class="MathJax_Preview">\mathbb{S}^n_+</span><script type="math/tex">\mathbb{S}^n_+</script></span>是一个凸锥</summary><p>如果<span><span class="MathJax_Preview">\theta_1, \theta_2 \in \mathbb{R}_+</span><script type="math/tex">\theta_1, \theta_2 \in \mathbb{R}_+</script></span>，<span><span class="MathJax_Preview">A, B \in \mathbb{S}^n_+</span><script type="math/tex">A, B \in \mathbb{S}^n_+</script></span>，那么<span><span class="MathJax_Preview">\theta_1 A + \theta_2 B \in \mathbb{S}^n_+</span><script type="math/tex">\theta_1 A + \theta_2 B \in \mathbb{S}^n_+</script></span>。</p>
+<details class="help"><summary>半空间是凸还是仿射</summary><p>凸</p>
 </details>
-<h3 id="_4">正常锥<a class="headerlink" href="#_4" title="Permanent link">#</a></h3>
+<h2 id="_2">多面体<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
+<p>一个 <em>多面体（polyhedra）</em> 指的是一个有限数目的线性等式与不等式的解集：</p>
 <div class="admonition important">
-<p class="admonition-title">正常锥（proper cone）</p>
-<p>一个锥<span><span class="MathJax_Preview">K \subseteq \mathbb{R}^n</span><script type="math/tex">K \subseteq \mathbb{R}^n</script></span>被称作一个正常锥，当：</p>
-<ul>
-<li><span><span class="MathJax_Preview">K</span><script type="math/tex">K</script></span>闭合：包括他的边界</li>
-<li><span><span class="MathJax_Preview">K</span><script type="math/tex">K</script></span>是实锥（solid）：包括非空内部（interior）</li>
-<li><span><span class="MathJax_Preview">K</span><script type="math/tex">K</script></span>是尖锥（pointed）：不包括线（line）</li>
-</ul>
+<p class="admonition-title">多面体</p>
+<div>
+<div class="MathJax_Preview">P = \{x \mid a^T_jx \leq b_j,\ j = 1, 2, ..., m,\ c^T_jx = d_j,\ j = 1, 2, ..., p\}</div>
+<script type="math/tex; mode=display">P = \{x \mid a^T_jx \leq b_j,\ j = 1, 2, ..., m,\ c^T_jx = d_j,\ j = 1, 2, ..., p\}</script>
 </div>
-<details class="question"><summary>正定锥是一个正常锥吗</summary><p>是的</p>
+</div>
+<p>我们可以发现，一个多面体实际上是一个有限数量的超平面与半空间的交集。仿射集（比如子空间、超平面、线）、射线、线段、半空间等都是多面体。</p>
+<p>上式常被化简为<span><span class="MathJax_Preview">P = \{x \mid Ax \preceq b, Cx = d\}</span><script type="math/tex">P = \{x \mid Ax \preceq b, Cx = d\}</script></span>。</p>
+<details class="hint"><summary><span><span class="MathJax_Preview">\preceq</span><script type="math/tex">\preceq</script></span></summary><p>符号<span><span class="MathJax_Preview">\preceq</span><script type="math/tex">\preceq</script></span>表示<span><span class="MathJax_Preview">\mathbb{R}^n</span><script type="math/tex">\mathbb{R}^n</script></span>中的 <em>向量不等（vector inequality）</em> 或者 <em>分量不等（componentwise inequality）</em>：<span><span class="MathJax_Preview">u \preceq v</span><script type="math/tex">u \preceq v</script></span>表示<span><span class="MathJax_Preview">u_i \leq v_i \ s.t. \ i = 1, 2, ..., m</span><script type="math/tex">u_i \leq v_i \ s.t. \ i = 1, 2, ..., m</script></span></p>
 </details>
-<h4 id="_5">广义不等式<a class="headerlink" href="#_5" title="Permanent link">#</a></h4>
-<div class="admonition important">
-<p class="admonition-title">广义不等式</p>
-<p>一个由正常锥<span><span class="MathJax_Preview">K</span><script type="math/tex">K</script></span>定义的广义不等式满足：</p>
-<div>
-<div class="MathJax_Preview">x \preceq_K y \frac \Longleftrightarrow \frac y - k \in K</div>
-<script type="math/tex; mode=display">x \preceq_K y \frac \Longleftrightarrow \frac y - k \in K</script>
-</div>
-<div>
-<div class="MathJax_Preview">x \prec_K y \frac \Longleftrightarrow \frac y - k \in int(K)</div>
-<script type="math/tex; mode=display">x \prec_K y \frac \Longleftrightarrow \frac y - k \in int(K)</script>
-</div>
-</div>
-<h2 id="_6">范式球与范式锥<a class="headerlink" href="#_6" title="Permanent link">#</a></h2>
-<p>对于<span><span class="MathJax_Preview">\mathbb{R}^n</span><script type="math/tex">\mathbb{R}^n</script></span>中的任意范数<span><span class="MathJax_Preview">\Vert \cdot \Vert</span><script type="math/tex">\Vert \cdot \Vert</script></span>，范式球和范式锥被定义为：</p>
-<div class="admonition important">
-<p class="admonition-title">范式球</p>
-<div>
-<div class="MathJax_Preview">B(x_c, r) = \{x \mid \Vert x - x_c \Vert \leq r\}</div>
-<script type="math/tex; mode=display">B(x_c, r) = \{x \mid \Vert x - x_c \Vert \leq r\}</script>
-</div>
-</div>
-<div class="admonition important">
-<p class="admonition-title">范式锥</p>
-<div>
-<div class="MathJax_Preview">C(t) = \{(x, t) \mid \Vert x \Vert \leq t\} \subseteq \mathbb{R}^{n+1}</div>
-<script type="math/tex; mode=display">C(t) = \{(x, t) \mid \Vert x \Vert \leq t\} \subseteq \mathbb{R}^{n+1}</script>
-</div>
-</div>
-<p>范式球和范式锥都是凸的。</p>
+<details class="help"><summary>多面体凸吗</summary><p>凸</p>
+</details>
+<p>一个有边界的多面体有时被称为 <em>多胞形（polytope）</em><span><span class="MathJax_Preview">^\star</span><script type="math/tex">^\star</script></span>。</p>
+<p><span><span class="MathJax_Preview">^\star</span><script type="math/tex">^\star</script></span>：有些人倾向于将多胞形与多面体反过来叫。</p>
                 
                   
                 
@@ -1158,7 +994,7 @@ r
 
   <h2 id="__comments">评论</h2>
   <div id="disqus_thread"></div>
-  <script>var disqus_config=function(){this.page.url="https://zyc.ai/optimisation/ball%26cone/",this.page.identifier="/optimisation/ball%26cone/"};!function(){var e=document,i=e.createElement("script");i.src="//zycai.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)}()</script>
+  <script>var disqus_config=function(){this.page.url="https://zyc.ai/optimisation/hyperplane_halfspace_polyhedra/",this.page.identifier="/optimisation/hyperplane_halfspace_polyhedra/"};!function(){var e=document,i=e.createElement("script");i.src="//zycai.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)}()</script>
 
               
             </article>
@@ -1172,7 +1008,7 @@ r
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../affine%26convex/" title="仿射与凸" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../ball_cone/" title="球与锥" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -1181,19 +1017,19 @@ r
                 <span class="md-footer-nav__direction">
                   上一页
                 </span>
-                仿射与凸
+                球与锥
               </div>
             </div>
           </a>
         
         
-          <a href="../hyperplane_halfspace%26polyhedra/" title="超平面、半空间与多面体" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../convexity/" title="凸性" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   下一页
                 </span>
-                超平面、半空间与多面体
+                凸性
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
