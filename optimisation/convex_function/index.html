@@ -11,7 +11,7 @@
         <meta name="description" content="The website of Zhiyuan Chen">
       
       
-        <link rel="canonical" href="https://zyc.ai/nlp/introduction/">
+        <link rel="canonical" href="https://zyc.ai/optimisation/convex_function/">
       
       
         <meta name="author" content="Zhiyuan Chen">
@@ -21,7 +21,7 @@
     
     
       
-        <title>自然语言处理</title>
+        <title>凸函数</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#nature-language-processing-nlp" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -99,7 +99,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              自然语言处理
+              凸函数
             
           </span>
         </div>
@@ -304,10 +304,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
       优化
@@ -331,7 +333,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../optimisation/introduction/" title="优化" class="md-nav__link">
+    <a href="../introduction/" title="优化" class="md-nav__link">
       优化
     </a>
   </li>
@@ -343,7 +345,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../optimisation/affine_convex/" title="仿射与凸" class="md-nav__link">
+    <a href="../affine_convex/" title="仿射与凸" class="md-nav__link">
       仿射与凸
     </a>
   </li>
@@ -355,7 +357,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../optimisation/ball_cone/" title="球与锥" class="md-nav__link">
+    <a href="../ball_cone/" title="球与锥" class="md-nav__link">
       球与锥
     </a>
   </li>
@@ -367,7 +369,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../optimisation/hyperplane_halfspace_polyhedra/" title="超平面、半空间与多面体" class="md-nav__link">
+    <a href="../hyperplane_halfspace_polyhedra/" title="超平面、半空间与多面体" class="md-nav__link">
       超平面、半空间与多面体
     </a>
   </li>
@@ -379,7 +381,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../optimisation/dual_cone_generalized_inequality/" title="对偶锥与广义不等式" class="md-nav__link">
+    <a href="../dual_cone_generalized_inequality/" title="对偶锥与广义不等式" class="md-nav__link">
       对偶锥与广义不等式
     </a>
   </li>
@@ -389,11 +391,49 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../optimisation/convex_function/" title="凸函数" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        凸函数
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="凸函数" class="md-nav__link md-nav__link--active">
       凸函数
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    凸函数
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -860,8 +900,23 @@
 <nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    凸函数
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -873,7 +928,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/zyc-ai/edit/master/docs/nlp/introduction.md" title="编辑此页" class="md-content__button md-icon">
+                  <a href="https://github.com/zyc-ai/edit/master/docs/optimisation/convex_function.md" title="编辑此页" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -881,12 +936,31 @@
                   
                 
                 
-                <h1 id="nature-language-processing-nlp">自然语言处理（Nature Language Processing (NLP)）<a class="headerlink" href="#nature-language-processing-nlp" title="Permanent link">#</a></h1>
-<p>自然语言处理是计算机科学与语言学的交叉学科，它主要包括认知、理解和生成。</p>
-<p>"自然语言处理人工智能皇冠上的明珠"</p>
-<p>-- 周明</p>
-<p>自然语言处理相信无需我再赘述，广为人知的图灵测试实际上就是有关自然语言处理。相比于其他领域，在自然语言处理方面我们还没有很大的进展，但从Siri到现在的小爱，自然语言处理也已经越来越多的进入我们的生活当中。</p>
-<p>与往常一样，本章节将从传统的检索开始逐渐深入，最终到达深度神经网络。</p>
+                  <h1>凸函数</h1>
+                
+                <p>ok，在了解了基础知识之后，让我们开始我们的重点：凸函数</p>
+<h2 id="_1">凸函数<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
+<div class="admonition important">
+<p class="admonition-title">凸函数</p>
+<p>函数<span><span class="MathJax_Preview">f: \mathbb{R}^n \rightarrow \mathbb{R}</span><script type="math/tex">f: \mathbb{R}^n \rightarrow \mathbb{R}</script></span>是一个凸函数，如果他的取值范围<span><span class="MathJax_Preview">\mathrm{dom} f</span><script type="math/tex">\mathrm{dom} f</script></span>是一个凸集，并且</p>
+<div>
+<div class="MathJax_Preview">f(\theta x + (1 - \theta) y) \leq \theta f(x) + (1 - \theta) f(y)</div>
+<script type="math/tex; mode=display">f(\theta x + (1 - \theta) y) \leq \theta f(x) + (1 - \theta) f(y)</script>
+</div>
+<p>对于所有<span><span class="MathJax_Preview">x, y \in \mathrm{dom} f, \ 0 \leq \theta \leq 1</span><script type="math/tex">x, y \in \mathrm{dom} f, \ 0 \leq \theta \leq 1</script></span>都成立</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">凹函数</p>
+<p>函数<span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span>是凸函数，当且仅当<span><span class="MathJax_Preview">-f</span><script type="math/tex">-f</script></span>是一个凹函数。</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">严格凸函数</p>
+<p>函数<span><span class="MathJax_Preview">f: \mathbb{R}^n \rightarrow \mathbb{R}</span><script type="math/tex">f: \mathbb{R}^n \rightarrow \mathbb{R}</script></span>是一个严格凸函数，如果他的取值范围<span><span class="MathJax_Preview">\mathrm{dom} f</span><script type="math/tex">\mathrm{dom} f</script></span>是一个凸集，并且</p>
+<div>
+<div class="MathJax_Preview">f(\theta x + (1 - \theta) y) &lt; \theta f(x) + (1 - \theta) f(y)</div>
+<script type="math/tex; mode=display">f(\theta x + (1 - \theta) y) < \theta f(x) + (1 - \theta) f(y)</script>
+</div>
+</div>
                 
                   
                 
@@ -897,7 +971,7 @@
 
   <h2 id="__comments">评论</h2>
   <div id="disqus_thread"></div>
-  <script>var disqus_config=function(){this.page.url="https://zyc.ai/nlp/introduction/",this.page.identifier="/nlp/introduction/"};!function(){var e=document,i=e.createElement("script");i.src="//zycai.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)}()</script>
+  <script>var disqus_config=function(){this.page.url="https://zyc.ai/optimisation/convex_function/",this.page.identifier="/optimisation/convex_function/"};!function(){var e=document,i=e.createElement("script");i.src="//zycai.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)}()</script>
 
               
             </article>
@@ -907,6 +981,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../dual_cone_generalized_inequality/" title="对偶锥与广义不等式" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                对偶锥与广义不等式
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../k8s/introduction/" title="导论" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                导论
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
