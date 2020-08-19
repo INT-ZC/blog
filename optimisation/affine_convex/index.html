@@ -389,6 +389,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    保凸运算
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -426,8 +433,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../convexity/" title="凸性" class="md-nav__link">
-      凸性
+    <a href="../dual_cone_generalized_inequality/" title="对偶锥与广义不等式" class="md-nav__link">
+      对偶锥与广义不等式
     </a>
   </li>
 
@@ -918,6 +925,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    保凸运算
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1016,6 +1030,47 @@
 我们很容易想到，常见的三角形、方形、圆形都是凸的；而星形则是非凸的，因为任意两点之间存在有些点不在集合之内。</p>
 <details class="help"><summary>非凸集五角星的凸包是</summary><p>凸集五边形。</p>
 </details>
+<details class="help"><summary>如何判断一个函数是否是凸的</summary><p>这个问题看似十分简单。我们只需要根据凸集的定义，选取集合中的每一个点对然后判断这两个点之间的线段上的点是否是凸的即可。对于一个有着<span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span>个点的集合，上述算法的时间复杂度仅仅为<span><span class="MathJax_Preview">O(n?n)</span><script type="math/tex">O(n?n)</script></span>，这甚至是一个多项式时间的算法。但是这明显还有很大的改进空间。</p>
+</details>
+<p>在本节中，我们介绍保留凸性的运算，这些运算有助于判定一个集合是否凸以及构建一个凸集。</p>
+<h2 id="_3">保凸运算<a class="headerlink" href="#_3" title="Permanent link">#</a></h2>
+<div class="admonition important">
+<p class="admonition-title">交集</p>
+<p>对于集合<span><span class="MathJax_Preview">S_1, S_2</span><script type="math/tex">S_1, S_2</script></span>，如果他们是凸集，那么<span><span class="MathJax_Preview">S_1 \cap S_2</span><script type="math/tex">S_1 \cap S_2</script></span>也是凸集。</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">仿射函数</p>
+<p>如果函数<span><span class="MathJax_Preview">f: \mathbb{R}^n \rightarrow \mathbb{R}^m</span><script type="math/tex">f: \mathbb{R}^n \rightarrow \mathbb{R}^m</script></span>是一个放射函数，那么：</p>
+<ul>
+<li><span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span>下的凸集的像也是凸的:</li>
+</ul>
+<div>
+<div class="MathJax_Preview">S \subseteq \mathbb{R}^n \text{is convex} \Rightarrow f(S) = \{f(x) \mid x \in S\} \text{is convex}</div>
+<script type="math/tex; mode=display">S \subseteq \mathbb{R}^n \text{is convex} \Rightarrow f(S) = \{f(x) \mid x \in S\} \text{is convex}</script>
+</div>
+<ul>
+<li><span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span>下的凸集的逆像也是凸的:</li>
+</ul>
+<div>
+<div class="MathJax_Preview">C \subseteq \mathbb{R}^m \text{is convex} \Rightarrow f^{-1}(C) = \{x \mid f(x) \in C\} \text{is convex}</div>
+<script type="math/tex; mode=display">C \subseteq \mathbb{R}^m \text{is convex} \Rightarrow f^{-1}(C) = \{x \mid f(x) \in C\} \text{is convex}</script>
+</div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">透视和线性分数函数</p>
+<p>透视函数 <span><span class="MathJax_Preview">P: \mathbb{R}^{n+1} \rightarrow \mathbb{R}^n</span><script type="math/tex">P: \mathbb{R}^{n+1} \rightarrow \mathbb{R}^n</script></span>：</p>
+<div>
+<div class="MathJax_Preview">P(x, t) = x / t, \quad dom(P) = \{(x, t) \mid t &gt; 0\}</div>
+<script type="math/tex; mode=display">P(x, t) = x / t, \quad dom(P) = \{(x, t) \mid t > 0\}</script>
+</div>
+<p>线性分数函数 <span><span class="MathJax_Preview">f: \mathbb{R}^n \rightarrow \mathbb{R}^m</span><script type="math/tex">f: \mathbb{R}^n \rightarrow \mathbb{R}^m</script></span>：</p>
+<div>
+<div class="MathJax_Preview">f(x) = \frac{Ax + b}{c^T + d}, \quad dom(f) = \{x \mid c^Tx + d &gt; 0\}</div>
+<script type="math/tex; mode=display">f(x) = \frac{Ax + b}{c^T + d}, \quad dom(f) = \{x \mid c^Tx + d > 0\}</script>
+</div>
+<p>透视函数与线性分数函数下的凸集的像和逆像也是凸的</p>
+</div>
+<p>这些属性扩展到无限个集合的交集中，也就是说，如果<span><span class="MathJax_Preview">S_\alpha</span><script type="math/tex">S_\alpha</script></span>是凸集对于每一个<span><span class="MathJax_Preview">\alpha \in A</span><script type="math/tex">\alpha \in A</script></span>都成立，那么<span><span class="MathJax_Preview">\cap_{\alpha \in A}S_\alpha</span><script type="math/tex">\cap_{\alpha \in A}S_\alpha</script></span>也是一个凸集。</p>
                 
                   
                 

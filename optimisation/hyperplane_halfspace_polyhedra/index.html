@@ -401,13 +401,40 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    超平面与半空间
+    超平面
+  </a>
+  
+    <nav class="md-nav" aria-label="超平面">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    分割超平面
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    支持超平面
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    半空间
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     多面体
   </a>
   
@@ -426,8 +453,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../convexity/" title="凸性" class="md-nav__link">
-      凸性
+    <a href="../dual_cone_generalized_inequality/" title="对偶锥与广义不等式" class="md-nav__link">
+      对偶锥与广义不等式
     </a>
   </li>
 
@@ -906,13 +933,40 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    超平面与半空间
+    超平面
+  </a>
+  
+    <nav class="md-nav" aria-label="超平面">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    分割超平面
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    支持超平面
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    半空间
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     多面体
   </a>
   
@@ -941,8 +995,7 @@
                   <h1>超平面、半空间与多面体</h1>
                 
                 <p>在本节中，我们介绍超平面、半空间与多面体。</p>
-<h2 id="_1">超平面与半空间<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
-<p>有了这些基础知识之后，我们可以给超平面与半空间一个定义：</p>
+<h2 id="_1">超平面<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
 <div class="admonition important">
 <p class="admonition-title">超平面</p>
 <p>如果一个集合满足</p>
@@ -955,6 +1008,32 @@
 <p>从解析来看，超平面是<span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>分量中线性不定方程的解集；从几何来说，超平面也可以被解释为与给定向量<span><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span>的内积为一特定值的点集；由于内积可以被看作是一个向量在另一个向量的投影，我们也可以将<span><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span>理解为一个有超平面的 <em>法向向量</em>，那么常数<span><span class="MathJax_Preview">b</span><script type="math/tex">b</script></span>就是确定超平面距离原点的偏移量。将上式做一个简单的形变，我们可以得到<span><span class="MathJax_Preview">\{x \mid a^T (x - x_0) = 0\} = a^\perp + x_0</span><script type="math/tex">\{x \mid a^T (x - x_0) = 0\} = a^\perp + x_0</script></span></p>
 <details class="help"><summary>超平面是凸还是仿射</summary><p>仿射</p>
 </details>
+<h3 id="_2">分割超平面<a class="headerlink" href="#_2" title="Permanent link">#</a></h3>
+<div class="admonition important">
+<p class="admonition-title">分割超平面</p>
+<p>对于不相交的非空凸集<span><span class="MathJax_Preview">C, D</span><script type="math/tex">C, D</script></span>，存在<span><span class="MathJax_Preview">a \neq 0, b</span><script type="math/tex">a \neq 0, b</script></span>使得：</p>
+<div>
+<div class="MathJax_Preview">a^Tx \leq b \text{for} x \in C, \ a^Tx \geq b \text{for} x \in D</div>
+<script type="math/tex; mode=display">a^Tx \leq b \text{for} x \in C, \ a^Tx \geq b \text{for} x \in D</script>
+</div>
+<p>那么我们称超平面<span><span class="MathJax_Preview">\{x \mid a^Tx = b\}</span><script type="math/tex">\{x \mid a^Tx = b\}</script></span>为<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>和<span><span class="MathJax_Preview">D</span><script type="math/tex">D</script></span>的分割超平面。</p>
+<p>严格分割超平面需要更多假设（比如<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>闭合，<span><span class="MathJax_Preview">D</span><script type="math/tex">D</script></span>是单元素集（singleton set））</p>
+</div>
+<h3 id="_3">支持超平面<a class="headerlink" href="#_3" title="Permanent link">#</a></h3>
+<div class="admonition important">
+<p class="admonition-title">支持超平面</p>
+<p>集合<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>在边界点<span><span class="MathJax_Preview">x_0</span><script type="math/tex">x_0</script></span>的支持超平面是</p>
+<div>
+<div class="MathJax_Preview">\{x \mid a^tx = a^tx_0\}</div>
+<script type="math/tex; mode=display">\{x \mid a^tx = a^tx_0\}</script>
+</div>
+<p>其中<span><span class="MathJax_Preview">a \neq 0, \ \forall x \in C, a^T \leq a^Tx_0</span><script type="math/tex">a \neq 0, \ \forall x \in C, a^T \leq a^Tx_0</script></span></p>
+</div>
+<div class="admonition error">
+<p class="admonition-title">支持超平面定理</p>
+<p>支持超平面只在凸的边界点存在</p>
+</div>
+<h2 id="_4">半空间<a class="headerlink" href="#_4" title="Permanent link">#</a></h2>
 <p>空间<span><span class="MathJax_Preview">S \subseteq \mathbb{R}^n</span><script type="math/tex">S \subseteq \mathbb{R}^n</script></span>中的超平面将该空间划分成两个半空间。</p>
 <div class="admonition important">
 <p class="admonition-title">半空间</p>
@@ -967,7 +1046,7 @@
 </div>
 <details class="help"><summary>半空间是凸还是仿射</summary><p>凸</p>
 </details>
-<h2 id="_2">多面体<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
+<h2 id="_5">多面体<a class="headerlink" href="#_5" title="Permanent link">#</a></h2>
 <p>一个 <em>多面体（polyhedra）</em> 指的是一个有限数目的线性等式与不等式的解集：</p>
 <div class="admonition important">
 <p class="admonition-title">多面体</p>
@@ -1023,13 +1102,13 @@
           </a>
         
         
-          <a href="../convexity/" title="凸性" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../dual_cone_generalized_inequality/" title="对偶锥与广义不等式" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   下一页
                 </span>
-                凸性
+                对偶锥与广义不等式
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

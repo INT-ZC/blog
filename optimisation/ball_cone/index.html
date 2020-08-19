@@ -409,33 +409,13 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    正常锥
-  </a>
-  
-    <nav class="md-nav" aria-label="正常锥">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    广义不等式
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     范式球与范式锥
   </a>
   
@@ -466,8 +446,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../convexity/" title="凸性" class="md-nav__link">
-      凸性
+    <a href="../dual_cone_generalized_inequality/" title="对偶锥与广义不等式" class="md-nav__link">
+      对偶锥与广义不等式
     </a>
   </li>
 
@@ -966,33 +946,13 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    正常锥
-  </a>
-  
-    <nav class="md-nav" aria-label="正常锥">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    广义不等式
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     范式球与范式锥
   </a>
   
@@ -1020,7 +980,7 @@
                 
                   <h1>球与锥</h1>
                 
-                <p>在本节中，我们介绍锥（cone）、欧几里得球（Euclidean Ball）与椭球（Ellipsoid）。</p>
+                <p>在本节中，我们介绍欧几里得球（Euclidean Ball）、椭球（Ellipsoid）与锥（cone）。</p>
 <p>在上一节，我们首先复习了直线和线段的定义。本节，让我们从锥开始。</p>
 <h2 id="_1">欧几里得球与椭球<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
 <div class="admonition important">
@@ -1052,7 +1012,7 @@ r
 <script type="math/tex; mode=display">\epsilon = \{x \mid (x - x_c)^TP^{-1}(x - x_c) \leq 1\}</script>
 </div>
 </div>
-<p><span><span class="MathJax_Preview">x_c \in \mathbb{R}^n</span><script type="math/tex">x_c \in \mathbb{R}^n</script></span>是椭球<span><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span>的 <em>球心</em>；<span><span class="MathJax_Preview">P \in \mathbb{S}^n_<ins class="critic">}</span><script type="math/tex">P \in \mathbb{S}^n_<ins class="critic">}</script></span>是一个对称的正定矩阵，它决定了椭球在每个方向从球心<span><span class="MathJax_Preview">x_c</span><script type="math/tex">x_c</script></span>伸张的长度。椭球<span><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span>的半轴的长度由<span><span class="MathJax_Preview">\sqrt{\lambda_i}</span><script type="math/tex">\sqrt{\lambda_i}</script></span>给出，其中<span><span class="MathJax_Preview">\lambda_i</span><script type="math/tex">\lambda_i</script></span>是<span><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span>的特征值。我们很容易发现欧几里得球是椭球的一个特殊情况--当<span><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span>为一个单位矩阵时。</p>
+<p><span><span class="MathJax_Preview">x_c \in \mathbb{R}^n</span><script type="math/tex">x_c \in \mathbb{R}^n</script></span>是椭球<span><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span>的 <em>球心</em>；<span><span class="MathJax_Preview">P \in \mathbb{S}^n_{++}</span><script type="math/tex">P \in \mathbb{S}^n_{++}</script></span>是一个对称的正定矩阵，它决定了椭球在每个方向从球心<span><span class="MathJax_Preview">x_c</span><script type="math/tex">x_c</script></span>伸张的长度。椭球<span><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span>的半轴的长度由<span><span class="MathJax_Preview">\sqrt{\lambda_i}</span><script type="math/tex">\sqrt{\lambda_i}</script></span>给出，其中<span><span class="MathJax_Preview">\lambda_i</span><script type="math/tex">\lambda_i</script></span>是<span><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span>的特征值。我们很容易发现欧几里得球是椭球的一个特殊情况--当<span><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span>为一个单位矩阵时。</p>
 <p><span><span class="MathJax_Preview">(x - x_c)^TP^{-1}(x - x_c)</span><script type="math/tex">(x - x_c)^TP^{-1}(x - x_c)</script></span>实际上是<span><span class="MathJax_Preview">x - x_c</span><script type="math/tex">x - x_c</script></span>的p-范数，因此上式有时也写作<span><span class="MathJax_Preview">\epsilon = \{x \mid \Vert x - x_c \Vert_p \leq 1\}</span><script type="math/tex">\epsilon = \{x \mid \Vert x - x_c \Vert_p \leq 1\}</script></span>。</p>
 <p>椭球还常被表达为<span><span class="MathJax_Preview">\epsilon = \{x_c + Au \mid \Vert u \Vert_2 \leq 1\}</span><script type="math/tex">\epsilon = \{x_c + Au \mid \Vert u \Vert_2 \leq 1\}</script></span>，其中<span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>是一个非奇异方阵，<span><span class="MathJax_Preview">u</span><script type="math/tex">u</script></span>是一个单位球。也就是说我们通过方阵<span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>旋转、拉伸这个单位球，最后再加上偏移量<span><span class="MathJax_Preview">x_c</span><script type="math/tex">x_c</script></span>得到椭球。在这个表达中我们可以假设<span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>是对称、正定的。<span><span class="MathJax_Preview">A = P^{1/2}</span><script type="math/tex">A = P^{1/2}</script></span>时本式与上式相同。如果<span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>是对称正定的奇异方阵，那么这个集合被称作退化椭球（degenerate ellipsoid），它的仿射维度等于<span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>的秩。退化椭球与椭球都是凸的。</p>
 <h2 id="_2">锥<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
@@ -1100,39 +1060,13 @@ r
 <div class="admonition important">
 <p class="admonition-title">对称正定矩阵</p>
 <div>
-<div class="MathJax_Preview">\mathbb{S}^n_{</ins> = \{X \in \mathbb{S}^n \mid X  \succ 0\}</div>
-<script type="math/tex; mode=display">\mathbb{S}^n_{</ins> = \{X \in \mathbb{S}^n \mid X  \succ 0\}</script>
+<div class="MathJax_Preview">\mathbb{S}^n_{+ +} = \{X \in \mathbb{S}^n \mid X  \succ 0\}</div>
+<script type="math/tex; mode=display">\mathbb{S}^n_{+ +} = \{X \in \mathbb{S}^n \mid X  \succ 0\}</script>
 </div>
 </div>
 <details class="help"><summary>试证明<span><span class="MathJax_Preview">\mathbb{S}^n_+</span><script type="math/tex">\mathbb{S}^n_+</script></span>是一个凸锥</summary><p>如果<span><span class="MathJax_Preview">\theta_1, \theta_2 \in \mathbb{R}_+</span><script type="math/tex">\theta_1, \theta_2 \in \mathbb{R}_+</script></span>，<span><span class="MathJax_Preview">A, B \in \mathbb{S}^n_+</span><script type="math/tex">A, B \in \mathbb{S}^n_+</script></span>，那么<span><span class="MathJax_Preview">\theta_1 A + \theta_2 B \in \mathbb{S}^n_+</span><script type="math/tex">\theta_1 A + \theta_2 B \in \mathbb{S}^n_+</script></span>。</p>
 </details>
-<h3 id="_4">正常锥<a class="headerlink" href="#_4" title="Permanent link">#</a></h3>
-<div class="admonition important">
-<p class="admonition-title">正常锥（proper cone）</p>
-<p>一个锥<span><span class="MathJax_Preview">K \subseteq \mathbb{R}^n</span><script type="math/tex">K \subseteq \mathbb{R}^n</script></span>被称作一个正常锥，当：</p>
-<ul>
-<li><span><span class="MathJax_Preview">K</span><script type="math/tex">K</script></span>是凸集</li>
-<li><span><span class="MathJax_Preview">K</span><script type="math/tex">K</script></span>闭合：包括他的边界</li>
-<li><span><span class="MathJax_Preview">K</span><script type="math/tex">K</script></span>是实锥（solid）：包括非空内部（interior）</li>
-<li><span><span class="MathJax_Preview">K</span><script type="math/tex">K</script></span>是尖锥（pointed）：不包括线（line）</li>
-</ul>
-</div>
-<details class="question"><summary>正定锥是一个正常锥吗</summary><p>是的</p>
-</details>
-<h4 id="_5">广义不等式<a class="headerlink" href="#_5" title="Permanent link">#</a></h4>
-<div class="admonition important">
-<p class="admonition-title">广义不等式</p>
-<p>一个由正常锥<span><span class="MathJax_Preview">K</span><script type="math/tex">K</script></span>定义的广义不等式满足：</p>
-<div>
-<div class="MathJax_Preview">x \preceq_K y \frac \Longleftrightarrow \frac y - k \in K</div>
-<script type="math/tex; mode=display">x \preceq_K y \frac \Longleftrightarrow \frac y - k \in K</script>
-</div>
-<div>
-<div class="MathJax_Preview">x \prec_K y \frac \Longleftrightarrow \frac y - k \in int(K)</div>
-<script type="math/tex; mode=display">x \prec_K y \frac \Longleftrightarrow \frac y - k \in int(K)</script>
-</div>
-</div>
-<h2 id="_6">范式球与范式锥<a class="headerlink" href="#_6" title="Permanent link">#</a></h2>
+<h2 id="_4">范式球与范式锥<a class="headerlink" href="#_4" title="Permanent link">#</a></h2>
 <p>对于<span><span class="MathJax_Preview">\mathbb{R}^n</span><script type="math/tex">\mathbb{R}^n</script></span>中的任意范数<span><span class="MathJax_Preview">\Vert \cdot \Vert</span><script type="math/tex">\Vert \cdot \Vert</script></span>，范式球和范式锥被定义为：</p>
 <div class="admonition important">
 <p class="admonition-title">范式球</p>

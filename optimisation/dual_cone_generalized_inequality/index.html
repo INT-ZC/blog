@@ -11,7 +11,7 @@
         <meta name="description" content="The website of Zhiyuan Chen">
       
       
-        <link rel="canonical" href="https://zyc.ai/optimisation/convexity/">
+        <link rel="canonical" href="https://zyc.ai/optimisation/dual_cone_generalized_inequality/">
       
       
         <meta name="author" content="Zhiyuan Chen">
@@ -21,7 +21,7 @@
     
     
       
-        <title>凸性</title>
+        <title>对偶锥与广义不等式</title>
       
     
     
@@ -99,7 +99,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              凸性
+              对偶锥与广义不等式
             
           </span>
         </div>
@@ -388,14 +388,14 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        凸性
+        对偶锥与广义不等式
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
         </span>
       </label>
     
-    <a href="./" title="凸性" class="md-nav__link md-nav__link--active">
-      凸性
+    <a href="./" title="对偶锥与广义不等式" class="md-nav__link md-nav__link--active">
+      对偶锥与广义不等式
     </a>
     
       
@@ -413,7 +413,21 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    保凸运算
+    正常锥
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    广义不等式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    全局最小与局部最小元素
   </a>
   
 </li>
@@ -899,7 +913,21 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    保凸运算
+    正常锥
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    广义不等式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    全局最小与局部最小元素
   </a>
   
 </li>
@@ -916,7 +944,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/zyc-ai/edit/master/docs/optimisation/convexity.md" title="编辑此页" class="md-content__button md-icon">
+                  <a href="https://github.com/zyc-ai/edit/master/docs/optimisation/dual_cone_generalized_inequality.md" title="编辑此页" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -924,49 +952,98 @@
                   
                 
                 
-                  <h1>凸性</h1>
+                  <h1>对偶锥与广义不等式</h1>
                 
-                <details class="question"><summary>如何判断一个函数是否是凸的</summary><p>这个问题看似十分简单。我们只需要根据凸集的定义，选取集合中的每一个点对然后判断这两个点之间的线段上的点是否是凸的即可。对于一个有着<span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span>个点的集合，上述算法的时间复杂度仅仅为<span><span class="MathJax_Preview">O(n?n)</span><script type="math/tex">O(n?n)</script></span>，这甚至是一个多项式时间的算法。但是这明显还有很大的改进空间。</p>
+                <h2 id="_1">正常锥<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
+<div class="admonition important">
+<p class="admonition-title">正常锥（proper cone）</p>
+<p>一个锥<span><span class="MathJax_Preview">K \subseteq \mathbb{R}^n</span><script type="math/tex">K \subseteq \mathbb{R}^n</script></span>被称作一个正常锥，当：</p>
+<ul>
+<li><span><span class="MathJax_Preview">K</span><script type="math/tex">K</script></span>是凸集</li>
+<li><span><span class="MathJax_Preview">K</span><script type="math/tex">K</script></span>闭合：包括他的边界</li>
+<li><span><span class="MathJax_Preview">K</span><script type="math/tex">K</script></span>是实锥（solid）：包括非空内部（interior）</li>
+<li><span><span class="MathJax_Preview">K</span><script type="math/tex">K</script></span>是尖锥（pointed）：不包括线（line）</li>
+</ul>
+</div>
+<details class="question"><summary>正定锥是一个正常锥吗</summary><p>是的</p>
 </details>
-<p>在本节中，我们介绍保留凸性的运算，这些运算有助于判定一个集合是否凸以及构建一个凸集。</p>
-<h2 id="_1">保凸运算<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
-<div class="admonition important">
-<p class="admonition-title">交集</p>
-<p>对于集合<span><span class="MathJax_Preview">S_1, S_2</span><script type="math/tex">S_1, S_2</script></span>，如果他们是凸集，那么<span><span class="MathJax_Preview">S_1 \cap S_2</span><script type="math/tex">S_1 \cap S_2</script></span>也是凸集。</p>
-</div>
-<div class="admonition important">
-<p class="admonition-title">仿射函数</p>
-<p>如果函数<span><span class="MathJax_Preview">f: \mathbb{R}^n \rightarrow \mathbb{R}^m</span><script type="math/tex">f: \mathbb{R}^n \rightarrow \mathbb{R}^m</script></span>是一个放射函数，那么：</p>
+<div class="admonition example">
+<p class="admonition-title">正常锥</p>
 <ul>
-<li><span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span>下的凸集的像也是凸的:</li>
+<li>非负象限</li>
 </ul>
 <div>
-<div class="MathJax_Preview">S \subseteq \mathbb{R}^n \text{is convex} \Rightarrow f(S) = \{f(x) \mid x \in S\} \text{is convex}</div>
-<script type="math/tex; mode=display">S \subseteq \mathbb{R}^n \text{is convex} \Rightarrow f(S) = \{f(x) \mid x \in S\} \text{is convex}</script>
+<div class="MathJax_Preview">K = \mathbb{R}^n_+</div>
+<script type="math/tex; mode=display">K = \mathbb{R}^n_+</script>
 </div>
 <ul>
-<li><span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span>下的凸集的逆像也是凸的:</li>
+<li>半正定锥</li>
 </ul>
 <div>
-<div class="MathJax_Preview">C \subseteq \mathbb{R}^m \text{is convex} \Rightarrow f^{-1}(C) = \{x \mid f(x) \in C\} \text{is convex}</div>
-<script type="math/tex; mode=display">C \subseteq \mathbb{R}^m \text{is convex} \Rightarrow f^{-1}(C) = \{x \mid f(x) \in C\} \text{is convex}</script>
+<div class="MathJax_Preview">K = \mathbb{S}^n_+</div>
+<script type="math/tex; mode=display">K = \mathbb{S}^n_+</script>
+</div>
+<ul>
+<li><span><span class="MathJax_Preview">[0, 1]</span><script type="math/tex">[0, 1]</script></span>上的非负多项式</li>
+</ul>
+<div>
+<div class="MathJax_Preview">K = \{x \in \mathbb{R}^n \mid \sum_{i=1}^n x_nt^{n-1} \text{for} t \in [0, 1\}</div>
+<script type="math/tex; mode=display">K = \{x \in \mathbb{R}^n \mid \sum_{i=1}^n x_nt^{n-1} \text{for} t \in [0, 1\}</script>
+</div>
+</div>
+<h2 id="_2">广义不等式<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
+<div class="admonition important">
+<p class="admonition-title">广义不等式（generalised inequality）</p>
+<p>一个由正常锥<span><span class="MathJax_Preview">K</span><script type="math/tex">K</script></span>定义的广义不等式满足：</p>
+<div>
+<div class="MathJax_Preview">x \preceq_K y \quad \Longleftrightarrow \quad y - k \in K</div>
+<script type="math/tex; mode=display">x \preceq_K y \quad \Longleftrightarrow \quad y - k \in K</script>
+</div>
+<div>
+<div class="MathJax_Preview">x \prec_K y \quad \Longleftrightarrow \quad y - k \in int(K)</div>
+<script type="math/tex; mode=display">x \prec_K y \quad \Longleftrightarrow \quad y - k \in int(K)</script>
+</div>
+</div>
+<div class="admonition error">
+<p class="admonition-title">广义不等式是非线性的</p>
+<p>我们可以有<span><span class="MathJax_Preview">x \preceq_K y</span><script type="math/tex">x \preceq_K y</script></span>和<span><span class="MathJax_Preview">y \preceq_K x</span><script type="math/tex">y \preceq_K x</script></span>同时成立</p>
+<p>但是其他属性都很相似，如<span><span class="MathJax_Preview">x \preceq_K y, u \preceq_K v \quad \Rightarrow x + u \preceq_K y + v</span><script type="math/tex">x \preceq_K y, u \preceq_K v \quad \Rightarrow x + u \preceq_K y + v</script></span></p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">广义不等式</p>
+<ul>
+<li>分量不等式（<span><span class="MathJax_Preview">K = \mathbb{R}^n_+</span><script type="math/tex">K = \mathbb{R}^n_+</script></span>）</li>
+</ul>
+<div>
+<div class="MathJax_Preview">x \preceq_{\mathbb{R}^n_+} y \quad \Longleftrightarrow \quad \forall i, x_i \leq y_i</div>
+<script type="math/tex; mode=display">x \preceq_{\mathbb{R}^n_+} y \quad \Longleftrightarrow \quad \forall i, x_i \leq y_i</script>
+</div>
+<ul>
+<li>矩阵不等式（<span><span class="MathJax_Preview">K = \mathbb{S}^n_+</span><script type="math/tex">K = \mathbb{S}^n_+</script></span>）</li>
+</ul>
+<div>
+<div class="MathJax_Preview">X \preceq_{\mathbb{S}^n_+} Y \quad \Longleftrightarrow \quad Y - X \text{半正定}</div>
+<script type="math/tex; mode=display">X \preceq_{\mathbb{S}^n_+} Y \quad \Longleftrightarrow \quad Y - X \text{半正定}</script>
+</div>
+</div>
+<h2 id="_3">全局最小与局部最小元素<a class="headerlink" href="#_3" title="Permanent link">#</a></h2>
+<p>对于集合<span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>与广义不等式<span><span class="MathJax_Preview">\preceq_K</span><script type="math/tex">\preceq_K</script></span>，<span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>的最小元素<span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>被定义为：</p>
+<div class="admonition important">
+<p class="admonition-title">全局最小元素（minimum element）</p>
+<div>
+<div class="MathJax_Preview">\forall y \in S, \ x \preceq_K y</div>
+<script type="math/tex; mode=display">\forall y \in S, \ x \preceq_K y</script>
 </div>
 </div>
 <div class="admonition important">
-<p class="admonition-title">透视和线性分数函数</p>
-<p>透视函数 <span><span class="MathJax_Preview">P: \mathbb{R}^{n+1} \rightarrow \mathbb{R}^n</span><script type="math/tex">P: \mathbb{R}^{n+1} \rightarrow \mathbb{R}^n</script></span>：</p>
+<p class="admonition-title">局部最小元素（minimal element）</p>
 <div>
-<div class="MathJax_Preview">P(x, t) = x / t, \quad dom(P) = \{(x, t) \mid t &gt; 0\}</div>
-<script type="math/tex; mode=display">P(x, t) = x / t, \quad dom(P) = \{(x, t) \mid t > 0\}</script>
+<div class="MathJax_Preview">\forall y \in S, \ y \preceq_K x \Rightarror y = x</div>
+<script type="math/tex; mode=display">\forall y \in S, \ y \preceq_K x \Rightarror y = x</script>
 </div>
-<p>线性分数函数 <span><span class="MathJax_Preview">f: \mathbb{R}^n \rightarrow \mathbb{R}^m</span><script type="math/tex">f: \mathbb{R}^n \rightarrow \mathbb{R}^m</script></span>：</p>
-<div>
-<div class="MathJax_Preview">f(x) = \frac{Ax + b}{c^T + d}, \quad dom(f) = \{x \mid c^Tx + d &gt; 0\}</div>
-<script type="math/tex; mode=display">f(x) = \frac{Ax + b}{c^T + d}, \quad dom(f) = \{x \mid c^Tx + d > 0\}</script>
 </div>
-<p>透视函数与线性分数函数下的凸集的像和逆像也是凸的</p>
-</div>
-<p>这些属性扩展到无限个集合的交集中，也就是说，如果<span><span class="MathJax_Preview">S_\alpha</span><script type="math/tex">S_\alpha</script></span>是凸集对于每一个<span><span class="MathJax_Preview">\alpha \in A</span><script type="math/tex">\alpha \in A</script></span>都成立，那么<span><span class="MathJax_Preview">\cap_{\alpha \in A}S_\alpha</span><script type="math/tex">\cap_{\alpha \in A}S_\alpha</script></span>也是一个凸集。</p>
+<details class="help"><summary>一个集合必定有全局最小元素吗</summary><p>不是</p>
+</details>
                 
                   
                 
@@ -977,7 +1054,7 @@
 
   <h2 id="__comments">评论</h2>
   <div id="disqus_thread"></div>
-  <script>var disqus_config=function(){this.page.url="https://zyc.ai/optimisation/convexity/",this.page.identifier="/optimisation/convexity/"};!function(){var e=document,i=e.createElement("script");i.src="//zycai.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)}()</script>
+  <script>var disqus_config=function(){this.page.url="https://zyc.ai/optimisation/dual_cone_generalized_inequality/",this.page.identifier="/optimisation/dual_cone_generalized_inequality/"};!function(){var e=document,i=e.createElement("script");i.src="//zycai.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)}()</script>
 
               
             </article>
