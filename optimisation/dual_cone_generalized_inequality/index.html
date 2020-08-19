@@ -430,6 +430,19 @@
     全局最小与局部最小元素
   </a>
   
+    <nav class="md-nav" aria-label="全局最小与局部最小元素">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    对偶锥
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -930,6 +943,19 @@
     全局最小与局部最小元素
   </a>
   
+    <nav class="md-nav" aria-label="全局最小与局部最小元素">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    对偶锥
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -954,7 +980,8 @@
                 
                   <h1>对偶锥与广义不等式</h1>
                 
-                <h2 id="_1">正常锥<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
+                <p>在了解了锥后，我们对锥做更进一步的讨论。</p>
+<h2 id="_1">正常锥<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
 <div class="admonition important">
 <p class="admonition-title">正常锥（proper cone）</p>
 <p>一个锥<span><span class="MathJax_Preview">K \subseteq \mathbb{R}^n</span><script type="math/tex">K \subseteq \mathbb{R}^n</script></span>被称作一个正常锥，当：</p>
@@ -1038,12 +1065,39 @@
 <div class="admonition important">
 <p class="admonition-title">局部最小元素（minimal element）</p>
 <div>
-<div class="MathJax_Preview">\forall y \in S, \ y \preceq_K x \Rightarror y = x</div>
-<script type="math/tex; mode=display">\forall y \in S, \ y \preceq_K x \Rightarror y = x</script>
+<div class="MathJax_Preview">\forall y \in S, \ y \preceq_K x \Rightarrorw y = x</div>
+<script type="math/tex; mode=display">\forall y \in S, \ y \preceq_K x \Rightarrorw y = x</script>
 </div>
 </div>
 <details class="help"><summary>一个集合必定有全局最小元素吗</summary><p>不是</p>
 </details>
+<h3 id="_4">对偶锥<a class="headerlink" href="#_4" title="Permanent link">#</a></h3>
+<div class="admonition important">
+<p class="admonition-title">对偶锥</p>
+<p>一个锥<span><span class="MathJax_Preview">K</span><script type="math/tex">K</script></span>的对偶锥是</p>
+<div>
+<div class="MathJax_Preview">K^\star = \{y \mid \forall x \in K, y^Tx \geq 0\}</div>
+<script type="math/tex; mode=display">K^\star = \{y \mid \forall x \in K, y^Tx \geq 0\}</script>
+</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">对偶锥</p>
+<ul>
+<li><span><span class="MathJax_Preview">K = \mathbb{R}^n_+</span><script type="math/tex">K = \mathbb{R}^n_+</script></span>: <span><span class="MathJax_Preview">K^\star = \mathbb{R}^n_+</span><script type="math/tex">K^\star = \mathbb{R}^n_+</script></span></li>
+<li><span><span class="MathJax_Preview">K = \mathbb{S}^n_+</span><script type="math/tex">K = \mathbb{S}^n_+</script></span>: <span><span class="MathJax_Preview">K^\star = \mathbb{S}^n_+</span><script type="math/tex">K^\star = \mathbb{S}^n_+</script></span></li>
+<li><span><span class="MathJax_Preview">K = \{(x, t) \mid \Vert x \Vert_2 \leq t\}</span><script type="math/tex">K = \{(x, t) \mid \Vert x \Vert_2 \leq t\}</script></span>: <span><span class="MathJax_Preview">K^\star = \{(x, t) \mid \Vert x \Vert_2 \leq t\}</span><script type="math/tex">K^\star = \{(x, t) \mid \Vert x \Vert_2 \leq t\}</script></span></li>
+<li><span><span class="MathJax_Preview">K = \{(x, t) \mid \Vert x \Vert_1 \leq t\}</span><script type="math/tex">K = \{(x, t) \mid \Vert x \Vert_1 \leq t\}</script></span>: <span><span class="MathJax_Preview">K^\star = \{(x, t) \mid \Vert x \Vert_\inf \leq t\}</span><script type="math/tex">K^\star = \{(x, t) \mid \Vert x \Vert_\inf \leq t\}</script></span></li>
+</ul>
+<p>其中，前三个锥的对偶锥与其本身一致，我们将其称为自对偶锥。</p>
+</div>
+<div class="admonition error">
+<p class="admonition-title">对偶正常锥</p>
+<p>正常锥的对偶锥也正常，者可以定义广义不等式：</p>
+<div>
+<div class="MathJax_Preview">y \preceq_{K^\star} 0, \quad \Longleftrightarrow \quad \forall x \succeq_K 0, y^x \geq 0</div>
+<script type="math/tex; mode=display">y \preceq_{K^\star} 0, \quad \Longleftrightarrow \quad \forall x \succeq_K 0, y^x \geq 0</script>
+</div>
+</div>
                 
                   
                 
