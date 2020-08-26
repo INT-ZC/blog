@@ -423,26 +423,19 @@
     广义不等式
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    全局最小与局部最小元素
-  </a>
-  
-    <nav class="md-nav" aria-label="全局最小与局部最小元素">
+    <nav class="md-nav" aria-label="广义不等式">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     对偶锥
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    对偶不等的全局最小与局部最小
+  <a href="#_4" class="md-nav__link">
+    对偶不等的最小与极小
   </a>
   
 </li>
@@ -465,8 +458,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../convex_function/" title="凸函数" class="md-nav__link">
-      凸函数
+    <a href="../convex_concave/" title="凸凹" class="md-nav__link">
+      凸凹
     </a>
   </li>
 
@@ -955,26 +948,19 @@
     广义不等式
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    全局最小与局部最小元素
-  </a>
-  
-    <nav class="md-nav" aria-label="全局最小与局部最小元素">
+    <nav class="md-nav" aria-label="广义不等式">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     对偶锥
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    对偶不等的全局最小与局部最小
+  <a href="#_4" class="md-nav__link">
+    对偶不等的最小与极小
   </a>
   
 </li>
@@ -1079,25 +1065,7 @@
 <script type="math/tex; mode=display">X \preceq_{\mathbb{S}^n_+} Y \quad \Longleftrightarrow \quad Y - X \text{半正定}</script>
 </div>
 </div>
-<h2 id="_3">全局最小与局部最小元素<a class="headerlink" href="#_3" title="Permanent link">#</a></h2>
-<p>对于集合<span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>与广义不等式<span><span class="MathJax_Preview">\preceq_K</span><script type="math/tex">\preceq_K</script></span>，<span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>的最小元素<span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>被定义为：</p>
-<div class="admonition important">
-<p class="admonition-title">全局最小元素（minimum element）</p>
-<div>
-<div class="MathJax_Preview">\forall y \in S, \ x \preceq_K y</div>
-<script type="math/tex; mode=display">\forall y \in S, \ x \preceq_K y</script>
-</div>
-</div>
-<div class="admonition important">
-<p class="admonition-title">局部最小元素（minimal element）</p>
-<div>
-<div class="MathJax_Preview">\forall y \in S, \ y \preceq_K x \Rightarrorw y = x</div>
-<script type="math/tex; mode=display">\forall y \in S, \ y \preceq_K x \Rightarrorw y = x</script>
-</div>
-</div>
-<details class="help"><summary>一个集合必定有全局最小元素吗</summary><p>不是</p>
-</details>
-<h3 id="_4">对偶锥<a class="headerlink" href="#_4" title="Permanent link">#</a></h3>
+<h3 id="_3">对偶锥<a class="headerlink" href="#_3" title="Permanent link">#</a></h3>
 <div class="admonition important">
 <p class="admonition-title">对偶锥</p>
 <p>一个锥<span><span class="MathJax_Preview">K</span><script type="math/tex">K</script></span>的对偶锥是</p>
@@ -1114,26 +1082,36 @@
 <li><span><span class="MathJax_Preview">K = \{(x, t) \mid \Vert x \Vert_2 \leq t\}</span><script type="math/tex">K = \{(x, t) \mid \Vert x \Vert_2 \leq t\}</script></span>: <span><span class="MathJax_Preview">K^\star = \{(x, t) \mid \Vert x \Vert_2 \leq t\}</span><script type="math/tex">K^\star = \{(x, t) \mid \Vert x \Vert_2 \leq t\}</script></span></li>
 <li><span><span class="MathJax_Preview">K = \{(x, t) \mid \Vert x \Vert_1 \leq t\}</span><script type="math/tex">K = \{(x, t) \mid \Vert x \Vert_1 \leq t\}</script></span>: <span><span class="MathJax_Preview">K^\star = \{(x, t) \mid \Vert x \Vert_\inf \leq t\}</span><script type="math/tex">K^\star = \{(x, t) \mid \Vert x \Vert_\inf \leq t\}</script></span></li>
 </ul>
-<p>其中，前三个锥的对偶锥与其本身一致，我们将其称为自对偶锥。</p>
+<p>其中，前三个锥的对偶锥与其本身一致，我们将其称为自对偶锥（self-dual cone）。</p>
 </div>
 <div class="admonition error">
 <p class="admonition-title">对偶正常锥</p>
-<p>正常锥的对偶锥也正常，者可以定义广义不等式：</p>
+<p>正常锥的对偶锥也正常，因此可以定义广义不等式：</p>
 <div>
-<div class="MathJax_Preview">y \preceq_{K^\star} 0, \quad \Longleftrightarrow \quad \forall x \succeq_K 0, y^x \geq 0</div>
-<script type="math/tex; mode=display">y \preceq_{K^\star} 0, \quad \Longleftrightarrow \quad \forall x \succeq_K 0, y^x \geq 0</script>
+<div class="MathJax_Preview">y \preceq_{K^\star} 0, \quad \Longleftrightarrow \quad \forall x \succeq_K 0, y^Tx \geq 0</div>
+<script type="math/tex; mode=display">y \preceq_{K^\star} 0, \quad \Longleftrightarrow \quad \forall x \succeq_K 0, y^Tx \geq 0</script>
 </div>
 </div>
-<h3 id="_5">对偶不等的全局最小与局部最小<a class="headerlink" href="#_5" title="Permanent link">#</a></h3>
+<h3 id="_4">对偶不等的最小与极小<a class="headerlink" href="#_4" title="Permanent link">#</a></h3>
 <div class="admonition important">
-<p class="admonition-title">对偶不等的全局最小</p>
-<p><span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>是集合<span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>的全局最小元素，当且仅当对于所有<span><span class="MathJax_Preview">\lambda \succ_{K^\star} 0</span><script type="math/tex">\lambda \succ_{K^\star} 0</script></span>，<span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>唯一最小化<span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>上<span><span class="MathJax_Preview">\lambda^Tz</span><script type="math/tex">\lambda^Tz</script></span>。</p>
+<p class="admonition-title">对偶不等的最小</p>
+<p><span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>是集合<span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>的最小元，当且仅当对于所有<span><span class="MathJax_Preview">\lambda \succ_{K^\star} 0</span><script type="math/tex">\lambda \succ_{K^\star} 0</script></span>，<span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>唯一最小化<span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>上<span><span class="MathJax_Preview">\lambda^Tz</span><script type="math/tex">\lambda^Tz</script></span>。</p>
+<div>
+<div class="MathJax_Preview">\forall y \in S, \ x \preceq_K y</div>
+<script type="math/tex; mode=display">\forall y \in S, \ x \preceq_K y</script>
+</div>
 </div>
 <div class="admonition important">
-<p class="admonition-title">对偶不等的局部最小</p>
-<p><span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>是集合<span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>的局部最小元素，当且仅当对于某些<span><span class="MathJax_Preview">\lambda \succ_{K^\star} 0</span><script type="math/tex">\lambda \succ_{K^\star} 0</script></span>，<span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>最小化<span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>上<span><span class="MathJax_Preview">\lambda^Tz</span><script type="math/tex">\lambda^Tz</script></span>。</p>
+<p class="admonition-title">对偶不等的极小</p>
+<p><span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>是集合<span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>的极小元，当且仅当对于某些<span><span class="MathJax_Preview">\lambda \succ_{K^\star} 0</span><script type="math/tex">\lambda \succ_{K^\star} 0</script></span>，<span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>最小化<span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>上<span><span class="MathJax_Preview">\lambda^Tz</span><script type="math/tex">\lambda^Tz</script></span>。</p>
+<div>
+<div class="MathJax_Preview">\forall y \in S, \ y \preceq_K x \Rightarrorw y = x</div>
+<script type="math/tex; mode=display">\forall y \in S, \ y \preceq_K x \Rightarrorw y = x</script>
 </div>
-<p>如果<span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>是凸集<span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>的一个局部最小元素，那么存在一个不为零的<span><span class="MathJax_Preview">\lambda \succ_{K^\star} 0</span><script type="math/tex">\lambda \succ_{K^\star} 0</script></span>使得<span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>最小化<span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>上<span><span class="MathJax_Preview">\lambda^Tz</span><script type="math/tex">\lambda^Tz</script></span>。</p>
+</div>
+<p>如果集合<span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>的一个极小元，那么存在一个不为零的<span><span class="MathJax_Preview">\lambda \succ_{K^\star} 0</span><script type="math/tex">\lambda \succ_{K^\star} 0</script></span>使得<span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>最小化<span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>上<span><span class="MathJax_Preview">\lambda^Tz</span><script type="math/tex">\lambda^Tz</script></span>。</p>
+<details class="help"><summary>一个集合必定有最小元吗</summary><p>不是</p>
+</details>
                 
                   
                 
@@ -1173,13 +1151,13 @@
           </a>
         
         
-          <a href="../convex_function/" title="凸函数" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../convex_concave/" title="凸凹" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   下一页
                 </span>
-                凸函数
+                凸凹
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
