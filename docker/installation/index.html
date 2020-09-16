@@ -17,17 +17,17 @@
         <meta name="author" content="Zhiyuan Chen">
       
       <link rel="shortcut icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.6">
     
     
       
-        <title>安装Docker</title>
+        <title>安装Docker - Zhiyuan Chen</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.b5d04df8.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.63b94e9e.min.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.9ab2c1f8.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.7f672a1f.min.css">
       
       
         
@@ -248,6 +248,18 @@
 
   <li class="md-nav__item">
     <a href="../../document/jetbrains/" title="JetBrains使用指南" class="md-nav__link">
+      JetBrains使用指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../document/torch.distributed/" title="JetBrains使用指南" class="md-nav__link">
       JetBrains使用指南
     </a>
   </li>
@@ -895,7 +907,7 @@
                 <h1 id="_1">安装<a class="headerlink" href="#_1" title="Permanent link">#</a></h1>
 <p>Docker的安装非常简单，apt-get/yum两分钟就好，Windows上的Docker更加简单，他还附带了Kubernetes。为节约篇幅，本文只讨论在ubuntu系统下的安装。如果你在（其他系统上）安装时遇到任何问题，欢迎留言。</p>
 <p>由于我们会用到nvidia-docker2，所以这里同时也有nvidia-docker2的安装内容。如果你不需要在容器当中使用Nvidia GPU，那么可以直接跳过相关内容。</p>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span># 安装依赖
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><code># 安装依赖
 apt-get install \
     apt-transport-https \
     ca-certificates \
@@ -929,12 +941,12 @@ curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.li
 # 安装nvidia-docker2
 apt-get install nvidia-docker2
 pkill -SIGHUP dockerd
-</pre></div>
+</code></pre></div>
 
 
 <p>将nvidia-docker2修改为docker的默认运行时环境</p>
 <p><em>如果你不需要在容器当中使用Nvidia GPU，以下步骤无需执行</em></p>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>vim /etc/docker/daemon.json
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><code>vim /etc/docker/daemon.json
     {
         &quot;default-runtime&quot;: &quot;nvidia&quot;,
         &quot;runtimes&quot;: {
@@ -945,17 +957,17 @@ pkill -SIGHUP dockerd
         }
     }
 sudo service docker restart
-</pre></div>
+</code></pre></div>
 
 
 <p>至此，Docker已经成功在您的机器上安装，运行</p>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>docker run hello-world
-</pre></div>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><code>docker run hello-world
+</code></pre></div>
 
 
 <p>测试结果。</p>
 <p>Docker可能会提示没有找到这个镜像。这没有关系，他很快就会自动拉取。几十秒后，你将看到如下内容：</p>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>Hello from Docker!
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><code>Hello from Docker!
 This message shows that your installation appears to be working correctly.
 
 To generate this message, Docker took the following steps:
@@ -980,7 +992,7 @@ https://docs.docker.com/get-started/
 $ docker images hello-world
 REPOSITORY   TAG     IMAGE ID      SIZE
 hello-world  latest  fce289e99eb9  1.84kB
-</pre></div>
+</code></pre></div>
 
 
 <p>在下一篇文章当中，我们将会讨论Docker的命令行接口（Command Line Interface）</p>
@@ -1073,15 +1085,15 @@ hello-world  latest  fce289e99eb9  1.84kB
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.92ffa368.min.js"></script>
-      <script src="../../assets/javascripts/bundle.5123e3d4.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
+      <script src="../../assets/javascripts/vendor.d1f5a259.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
       
       <script>
         app = initialize({
           base: "../..",
           features: [],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.a68abb33.min.js"
+            worker: "../../assets/javascripts/worker/search.fae956e7.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

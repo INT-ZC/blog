@@ -17,17 +17,17 @@
         <meta name="author" content="Zhiyuan Chen">
       
       <link rel="shortcut icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.6">
     
     
       
-        <title>球与锥</title>
+        <title>球与锥 - Zhiyuan Chen</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.b5d04df8.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.63b94e9e.min.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.9ab2c1f8.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.7f672a1f.min.css">
       
       
         
@@ -248,6 +248,18 @@
 
   <li class="md-nav__item">
     <a href="../../document/jetbrains/" title="JetBrains使用指南" class="md-nav__link">
+      JetBrains使用指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../document/torch.distributed/" title="JetBrains使用指南" class="md-nav__link">
       JetBrains使用指南
     </a>
   </li>
@@ -1024,7 +1036,7 @@ r
 <script type="math/tex; mode=display">\epsilon = \{x \mid (x - x_c)^TP^{-1}(x - x_c) \leq 1\}</script>
 </div>
 </div>
-<p><span><span class="MathJax_Preview">x_c \in \mathbb{R}^n</span><script type="math/tex">x_c \in \mathbb{R}^n</script></span>是椭球<span><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span>的 <em>球心</em>；<span><span class="MathJax_Preview">P \in \mathbb{S}^n_{++}</span><script type="math/tex">P \in \mathbb{S}^n_{++}</script></span>是一个对称的正定矩阵，它决定了椭球在每个方向从球心<span><span class="MathJax_Preview">x_c</span><script type="math/tex">x_c</script></span>伸张的长度。椭球<span><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span>的半轴的长度由<span><span class="MathJax_Preview">\sqrt{\lambda_i}</span><script type="math/tex">\sqrt{\lambda_i}</script></span>给出，其中<span><span class="MathJax_Preview">\lambda_i</span><script type="math/tex">\lambda_i</script></span>是<span><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span>的特征值。我们很容易发现欧几里得球是椭球的一个特殊情况--当<span><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span>为一个单位矩阵时。</p>
+<p><span><span class="MathJax_Preview">x_c \in \mathbb{R}^n</span><script type="math/tex">x_c \in \mathbb{R}^n</script></span>是椭球<span><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span>的 <em>球心</em>；<span><span class="MathJax_Preview">P \in \mathbb{S}^n_{++}</span><script type="math/tex">P \in \mathbb{S}^n_{++}</script></span>是一个对称的正定矩阵，它决定了椭球在每个方向从球心<span><span class="MathJax_Preview">x_c</span><script type="math/tex">x_c</script></span>伸张的长度。椭球<span><span class="MathJax_Preview">\epsilon</span><script type="math/tex">\epsilon</script></span>的半轴的长度由<span><span class="MathJax_Preview">\sqrt{\lambda_i}</span><script type="math/tex">\sqrt{\lambda_i}</script></span>给出，其中<span><span class="MathJax_Preview">\lambda_i</span><script type="math/tex">\lambda_i</script></span>是<span><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span>的特征值。我们很容易发现欧几里得球是椭球的一个特殊情况&ndash;当<span><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span>为一个单位矩阵时。</p>
 <p><span><span class="MathJax_Preview">(x - x_c)^TP^{-1}(x - x_c)</span><script type="math/tex">(x - x_c)^TP^{-1}(x - x_c)</script></span>实际上是<span><span class="MathJax_Preview">x - x_c</span><script type="math/tex">x - x_c</script></span>的p-范数，因此上式有时也写作<span><span class="MathJax_Preview">\epsilon = \{x \mid \Vert x - x_c \Vert_p \leq 1\}</span><script type="math/tex">\epsilon = \{x \mid \Vert x - x_c \Vert_p \leq 1\}</script></span>。</p>
 <p>椭球还常被表达为<span><span class="MathJax_Preview">\epsilon = \{x_c + Au \mid \Vert u \Vert_2 \leq 1\}</span><script type="math/tex">\epsilon = \{x_c + Au \mid \Vert u \Vert_2 \leq 1\}</script></span>，其中<span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>是一个非奇异方阵，<span><span class="MathJax_Preview">u</span><script type="math/tex">u</script></span>是一个单位球。也就是说我们通过方阵<span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>旋转、拉伸这个单位球，最后再加上偏移量<span><span class="MathJax_Preview">x_c</span><script type="math/tex">x_c</script></span>得到椭球。在这个表达中我们可以假设<span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>是对称、正定的。<span><span class="MathJax_Preview">A = P^{1/2}</span><script type="math/tex">A = P^{1/2}</script></span>时本式与上式相同。如果<span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>是对称正定的奇异方阵，那么这个集合被称作退化椭球（degenerate ellipsoid），它的仿射维度等于<span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>的秩。退化椭球与椭球都是凸的。</p>
 <h2 id="_2">锥<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
@@ -1184,15 +1196,15 @@ r
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.92ffa368.min.js"></script>
-      <script src="../../assets/javascripts/bundle.5123e3d4.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
+      <script src="../../assets/javascripts/vendor.d1f5a259.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
       
       <script>
         app = initialize({
           base: "../..",
           features: [],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.a68abb33.min.js"
+            worker: "../../assets/javascripts/worker/search.fae956e7.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

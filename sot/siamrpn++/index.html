@@ -17,17 +17,17 @@
         <meta name="author" content="Zhiyuan Chen">
       
       <link rel="shortcut icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.6">
     
     
       
-        <title>SiamRPN++</title>
+        <title>SiamRPN++ - Zhiyuan Chen</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.b5d04df8.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.63b94e9e.min.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.9ab2c1f8.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.7f672a1f.min.css">
       
       
         
@@ -248,6 +248,18 @@
 
   <li class="md-nav__item">
     <a href="../../document/jetbrains/" title="JetBrains使用指南" class="md-nav__link">
+      JetBrains使用指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../document/torch.distributed/" title="JetBrains使用指南" class="md-nav__link">
       JetBrains使用指南
     </a>
   </li>
@@ -914,7 +926,7 @@
                 
                 <p>SiamRPN++是商汤科技的李博等提出的单目标跟踪算法。</p>
 <h2 id="_1">简介<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
-<p>尽管SiamRPN已经取得了较好的成绩，尤其是在准确率和速度的平衡上。但是，尽管是性能最好的孪生跟踪器（Siamese Trackers）也与SOTA的传统方法有着相较而言十分明显的性能差距。孪生跟踪器大都基于较浅的AlexNet，且在换用深度的ResNet等之后没有性能提升，甚至还有所下降。本文对孪生跟踪器进行分析，发现前述的性能下降是由于严格平移不变性被破坏所导致的。本文进一步发现只有零填充（zero-padding）的AlexNet满足该空间不变性的限制。为了越过这个限制，并使孪生跟踪器得以与深度神经网络配合，本文提出了一个简单高效的采样方法来突破孪生跟踪器的空间不变性限制。本文成功的训练了一个使用ResNet作为骨干网络的基于SiamRPN的跟踪器。得益于ResNet的架构，本文提出了一个互相关运算（cross-correlations operation）的逐层特征聚合结构（layer-wise feature aggravation structure）。通过对孪生网络的互相关性进行分析，本文发现他两个网络分支的参数存在很大的不平衡。因此，本文进一步提出了一个逐深度可分离的相关结构（depth-wise separable correlation structure）。它不但极大程度上的降低了目标模板分支的参数数量，并且稳定了整个模型的训练过程。此外，一个有趣的发现被观察到--属于相同类别的对象在同一通道（channel）上有较高的响应（response），而在其他通道上的响应则被抑制。正交属性也可能提升跟踪的性能。本文的贡献可以被划分为四类：</p>
+<p>尽管SiamRPN已经取得了较好的成绩，尤其是在准确率和速度的平衡上。但是，尽管是性能最好的孪生跟踪器（Siamese Trackers）也与SOTA的传统方法有着相较而言十分明显的性能差距。孪生跟踪器大都基于较浅的AlexNet，且在换用深度的ResNet等之后没有性能提升，甚至还有所下降。本文对孪生跟踪器进行分析，发现前述的性能下降是由于严格平移不变性被破坏所导致的。本文进一步发现只有零填充（zero-padding）的AlexNet满足该空间不变性的限制。为了越过这个限制，并使孪生跟踪器得以与深度神经网络配合，本文提出了一个简单高效的采样方法来突破孪生跟踪器的空间不变性限制。本文成功的训练了一个使用ResNet作为骨干网络的基于SiamRPN的跟踪器。得益于ResNet的架构，本文提出了一个互相关运算（cross-correlations operation）的逐层特征聚合结构（layer-wise feature aggravation structure）。通过对孪生网络的互相关性进行分析，本文发现他两个网络分支的参数存在很大的不平衡。因此，本文进一步提出了一个逐深度可分离的相关结构（depth-wise separable correlation structure）。它不但极大程度上的降低了目标模板分支的参数数量，并且稳定了整个模型的训练过程。此外，一个有趣的发现被观察到&ndash;属于相同类别的对象在同一通道（channel）上有较高的响应（response），而在其他通道上的响应则被抑制。正交属性也可能提升跟踪的性能。本文的贡献可以被划分为四类：</p>
 <ol>
 <li>
 <p>本文提供了一个对孪生跟踪器的深度分析，并证明使用深度网络时的准确率降低来自于严格平移不变性的破坏。</p>
@@ -990,15 +1002,15 @@
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.92ffa368.min.js"></script>
-      <script src="../../assets/javascripts/bundle.5123e3d4.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
+      <script src="../../assets/javascripts/vendor.d1f5a259.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
       
       <script>
         app = initialize({
           base: "../..",
           features: [],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.a68abb33.min.js"
+            worker: "../../assets/javascripts/worker/search.fae956e7.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

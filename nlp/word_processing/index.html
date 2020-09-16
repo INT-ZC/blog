@@ -17,17 +17,17 @@
         <meta name="author" content="Zhiyuan Chen">
       
       <link rel="shortcut icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.6">
     
     
       
-        <title>文本处理</title>
+        <title>文本处理 - Zhiyuan Chen</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.b5d04df8.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.63b94e9e.min.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.9ab2c1f8.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.7f672a1f.min.css">
       
       
         
@@ -248,6 +248,18 @@
 
   <li class="md-nav__item">
     <a href="../../document/jetbrains/" title="JetBrains使用指南" class="md-nav__link">
+      JetBrains使用指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../document/torch.distributed/" title="JetBrains使用指南" class="md-nav__link">
       JetBrains使用指南
     </a>
   </li>
@@ -931,7 +943,7 @@
 <p>我们会在接下来逐个讨论。</p>
 <h2 id="tokenization">分词（Tokenization）<a class="headerlink" href="#tokenization" title="Permanent link">#</a></h2>
 <p>分词指的是将字符串的序列分割成一个一个单词。</p>
-<p>听起来这个很简单，尤其是针对英语这样最小单位为单词的语言来说。<code>str.split()</code>了不就得了么？但这样的分词会导致词序的丢失，我们也将这样分词的结果称为词袋模型（bag-of-words model）--装满一堆单词的袋子，非常形象。这个模型对于信息检索来说还很有用，但对于自然语言处理来说，还差了些什么。</p>
+<p>听起来这个很简单，尤其是针对英语这样最小单位为单词的语言来说。<code>str.split()</code>了不就得了么？但这样的分词会导致词序的丢失，我们也将这样分词的结果称为词袋模型（bag-of-words model）&ndash;装满一堆单词的袋子，非常形象。这个模型对于信息检索来说还很有用，但对于自然语言处理来说，还差了些什么。</p>
 <h2 id="normalization">归一化（Normalization）<a class="headerlink" href="#normalization" title="Permanent link">#</a></h2>
 <p>归一化指的是将单词的不同形态甚至于同义的不同单词进行合并。</p>
 <h2 id="stemminglemmatization">词干提取（Stemming）和词形还原（Lemmatization）<a class="headerlink" href="#stemminglemmatization" title="Permanent link">#</a></h2>
@@ -1000,15 +1012,15 @@
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.92ffa368.min.js"></script>
-      <script src="../../assets/javascripts/bundle.5123e3d4.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
+      <script src="../../assets/javascripts/vendor.d1f5a259.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
       
       <script>
         app = initialize({
           base: "../..",
           features: [],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.a68abb33.min.js"
+            worker: "../../assets/javascripts/worker/search.fae956e7.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

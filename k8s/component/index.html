@@ -17,17 +17,17 @@
         <meta name="author" content="Zhiyuan Chen">
       
       <link rel="shortcut icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.6">
     
     
       
-        <title>组件</title>
+        <title>组件 - Zhiyuan Chen</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.b5d04df8.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.63b94e9e.min.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.9ab2c1f8.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.7f672a1f.min.css">
       
       
         
@@ -248,6 +248,18 @@
 
   <li class="md-nav__item">
     <a href="../../document/jetbrains/" title="JetBrains使用指南" class="md-nav__link">
+      JetBrains使用指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../document/torch.distributed/" title="JetBrains使用指南" class="md-nav__link">
       JetBrains使用指南
     </a>
   </li>
@@ -1170,7 +1182,7 @@
                 
                   <h1>组件</h1>
                 
-                <p>Kubernetes的组件可以分为三类--管理组件（Master Components）、节点组件（Nodes Components）和插件（Addons）。</p>
+                <p>Kubernetes的组件可以分为三类&ndash;管理组件（Master Components）、节点组件（Nodes Components）和插件（Addons）。</p>
 <div class="admonition tip">
 <p class="admonition-title">主节点（Master Node）和从节点（Worker Node）</p>
 <p>管理组件可以运行在集群当中的任何一个节点之上，但我们通常会将所有管理组件运行在某一个或多个节点之上，并且不在这些节点上运行任何用户容器。对于这一个或几个节点，我们将其称为主节点（Master Node）。对于其他所有节点，我们将其称为从节点或者工作节点（Worker Node）。</p>
@@ -1193,7 +1205,7 @@
 <div class="admonition note">
 <p class="admonition-title">API服务器</p>
 <p>API服务器负责将Kubernetes API对外暴露。</p>
-<p>Kubernetes API 服务器的主要实现是<a href="/api-server">kube-apiserver</a>。 kube-apiserver 被设计为水平扩展--即通过部署更多实例来实现伸缩。你可以运行多个 kube-apiserver 实例并且均衡每个实例的流量。</p>
+<p>Kubernetes API 服务器的主要实现是<a href="/api-server">kube-apiserver</a>。 kube-apiserver 被设计为水平扩展&ndash;即通过部署更多实例来实现伸缩。你可以运行多个 kube-apiserver 实例并且均衡每个实例的流量。</p>
 </div>
 <h3 id="etcd">etcd<a class="headerlink" href="#etcd" title="Permanent link">#</a></h3>
 <div class="admonition note">
@@ -1228,7 +1240,7 @@
 <div class="admonition note">
 <p class="admonition-title">云控制器管理器</p>
 <p>云控制器管理器负责运行与底层云提供商交互的控制器。</p>
-<p>云控制器管理器仅运行特定于云提供商的控制器循环。您必须在控制器管理器中禁用这些控制器循环。您可以通过在启动控制器管理器时将--cloud-provider标志设置为external来禁用控制器循环。</p>
+<p>云控制器管理器仅运行特定于云提供商的控制器循环。您必须在控制器管理器中禁用这些控制器循环。您可以通过在启动控制器管理器时将&ndash;cloud-provider标志设置为external来禁用控制器循环。</p>
 <p>云控制器管理器允许云供应商的代码和Kubernetes代码彼此独立地发展。在以前的版本中，核心的Kubernetes代码依赖于特定于云提供商的代码来实现功能。在将来的版本中，应由云供应商自己维护特定于云供应商的代码，并在运行Kubernetes时将其链接到云控制器管理器。</p>
 </div>
 <p>以下控制器具有云提供程序依赖：</p>
@@ -1386,15 +1398,15 @@
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.92ffa368.min.js"></script>
-      <script src="../../assets/javascripts/bundle.5123e3d4.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
+      <script src="../../assets/javascripts/vendor.d1f5a259.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
       
       <script>
         app = initialize({
           base: "../..",
           features: [],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.a68abb33.min.js"
+            worker: "../../assets/javascripts/worker/search.fae956e7.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

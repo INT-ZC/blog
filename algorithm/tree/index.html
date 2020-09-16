@@ -17,17 +17,17 @@
         <meta name="author" content="Zhiyuan Chen">
       
       <link rel="shortcut icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.6">
     
     
       
-        <title>树（Tree）</title>
+        <title>树（Tree） - Zhiyuan Chen</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.b5d04df8.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.63b94e9e.min.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.9ab2c1f8.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.7f672a1f.min.css">
       
       
         
@@ -248,6 +248,18 @@
 
   <li class="md-nav__item">
     <a href="../../document/jetbrains/" title="JetBrains使用指南" class="md-nav__link">
+      JetBrains使用指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../document/torch.distributed/" title="JetBrains使用指南" class="md-nav__link">
       JetBrains使用指南
     </a>
   </li>
@@ -970,7 +982,7 @@
 <p class="admonition-title">树</p>
 </div>
 <p>树是一种由n个节点构成的树形结构。</p>
-<p>与生物学意义上的树不太相同，对于数据结构意义上的树来说，树的根在顶部，叶子则在底部。数据都存储在树的节点当中，节点除了数据之外还存储指向其父节点和子节点的指针--这和双向链表非常相似。通常，一个树只有一个父节点，但可能有多个子节点。我们将每个节点都有不超过m个子结点的树称之为m叉树。此外，倘若一个树的节点之间存在顺序关系，我们称其为有序树，反之则称其为无序树。对于一个树而言，我们将其第一个节点称作根节点（root node）；将没有任何子节点的节点成为叶节点（leaf node）；将由根节点到叶节点的最长距离称为树的高度h。下图是一个典型的高度为4的二叉搜索树：</p>
+<p>与生物学意义上的树不太相同，对于数据结构意义上的树来说，树的根在顶部，叶子则在底部。数据都存储在树的节点当中，节点除了数据之外还存储指向其父节点和子节点的指针&ndash;这和双向链表非常相似。通常，一个树只有一个父节点，但可能有多个子节点。我们将每个节点都有不超过m个子结点的树称之为m叉树。此外，倘若一个树的节点之间存在顺序关系，我们称其为有序树，反之则称其为无序树。对于一个树而言，我们将其第一个节点称作根节点（root node）；将没有任何子节点的节点成为叶节点（leaf node）；将由根节点到叶节点的最长距离称为树的高度h。下图是一个典型的高度为4的二叉搜索树：</p>
 <p><img alt="Binary Search Tree" src="../../images/algorithm/tree/bst.png" /></p>
 <h2 id="binary-search-tree-bst">二叉搜索树（Binary Search Tree, BST）<a class="headerlink" href="#binary-search-tree-bst" title="Permanent link">#</a></h2>
 <p>通常，我们提到树或者二叉树时，我们指的其实是二叉搜索树，其影响力之大可见一斑。在本章当中，除非特别声明，否则当我们提到树时，我们指的也是二叉搜索树。二叉搜索树是一种二叉（即每个节点都有最多两个子节点）的有序树。他的实现非常简单：</p>
@@ -1030,7 +1042,7 @@
 <div class="admonition abstract">
 <p class="admonition-title">树的遍历</p>
 <p>作为一种非线性数据结构，从树的任一节点出发都有多个可以前往的下一节点，因此，树的遍历自然也比线性数据结构的遍历要高大上许多。</p>
-<p>通常来说，我们有两种遍历思想--深度优先搜索和广度优先搜索。</p>
+<p>通常来说，我们有两种遍历思想&ndash;深度优先搜索和广度优先搜索。</p>
 </div>
 <h3 id="depth-first-search-dfs">深度优先搜索（Depth-First Search, DFS）<a class="headerlink" href="#depth-first-search-dfs" title="Permanent link">#</a></h3>
 <p>深度优先搜索先访问子节点，再访问父节点，随后再访问下一个子节点。</p>
@@ -1201,15 +1213,15 @@
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.92ffa368.min.js"></script>
-      <script src="../../assets/javascripts/bundle.5123e3d4.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
+      <script src="../../assets/javascripts/vendor.d1f5a259.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
       
       <script>
         app = initialize({
           base: "../..",
           features: [],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.a68abb33.min.js"
+            worker: "../../assets/javascripts/worker/search.fae956e7.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

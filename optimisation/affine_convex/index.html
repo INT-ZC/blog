@@ -17,17 +17,17 @@
         <meta name="author" content="Zhiyuan Chen">
       
       <link rel="shortcut icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.6">
     
     
       
-        <title>仿射与凸</title>
+        <title>仿射与凸 - Zhiyuan Chen</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.b5d04df8.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.63b94e9e.min.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.9ab2c1f8.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.7f672a1f.min.css">
       
       
         
@@ -248,6 +248,18 @@
 
   <li class="md-nav__item">
     <a href="../../document/jetbrains/" title="JetBrains使用指南" class="md-nav__link">
+      JetBrains使用指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../document/torch.distributed/" title="JetBrains使用指南" class="md-nav__link">
       JetBrains使用指南
     </a>
   </li>
@@ -986,7 +998,7 @@
 <script type="math/tex; mode=display">x = \theta x_1 + (1 - \theta) x_2 \ s.t. \ 0 \leq \theta \leq 1</script>
 </div>
 </div>
-<p>通过变化，直线还可以被表达为<span><span class="MathJax_Preview">x = x_2 + \theta (x_1 - x_2) \ s.t. \ \theta \in \mathbb{R}</span><script type="math/tex">x = x_2 + \theta (x_1 - x_2) \ s.t. \ \theta \in \mathbb{R}</script></span>。这给了我们另一种解读--<span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>是 <em>基点</em> <span><span class="MathJax_Preview">x_2</span><script type="math/tex">x_2</script></span>与 <em>方向</em> <span><span class="MathJax_Preview">x_1 - x_2</span><script type="math/tex">x_1 - x_2</script></span>按参数<span><span class="MathJax_Preview">\theta</span><script type="math/tex">\theta</script></span>缩放之和。 因此，<span><span class="MathJax_Preview">\theta</span><script type="math/tex">\theta</script></span>给出了从<span><span class="MathJax_Preview">x_2</span><script type="math/tex">x_2</script></span>到<span><span class="MathJax_Preview">x_1</span><script type="math/tex">x_1</script></span>的分数。当<span><span class="MathJax_Preview">\theta</span><script type="math/tex">\theta</script></span>从0增大到1时，点<span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>从<span><span class="MathJax_Preview">x_2</span><script type="math/tex">x_2</script></span>移动到<span><span class="MathJax_Preview">x_1</span><script type="math/tex">x_1</script></span>；当<span><span class="MathJax_Preview">\theta</span><script type="math/tex">\theta</script></span>在此区间以外时，点<span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>位于<span><span class="MathJax_Preview">x_1</span><script type="math/tex">x_1</script></span>到<span><span class="MathJax_Preview">x_2</span><script type="math/tex">x_2</script></span>以外的线上。</p>
+<p>通过变化，直线还可以被表达为<span><span class="MathJax_Preview">x = x_2 + \theta (x_1 - x_2) \ s.t. \ \theta \in \mathbb{R}</span><script type="math/tex">x = x_2 + \theta (x_1 - x_2) \ s.t. \ \theta \in \mathbb{R}</script></span>。这给了我们另一种解读&ndash;<span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>是 <em>基点</em> <span><span class="MathJax_Preview">x_2</span><script type="math/tex">x_2</script></span>与 <em>方向</em> <span><span class="MathJax_Preview">x_1 - x_2</span><script type="math/tex">x_1 - x_2</script></span>按参数<span><span class="MathJax_Preview">\theta</span><script type="math/tex">\theta</script></span>缩放之和。 因此，<span><span class="MathJax_Preview">\theta</span><script type="math/tex">\theta</script></span>给出了从<span><span class="MathJax_Preview">x_2</span><script type="math/tex">x_2</script></span>到<span><span class="MathJax_Preview">x_1</span><script type="math/tex">x_1</script></span>的分数。当<span><span class="MathJax_Preview">\theta</span><script type="math/tex">\theta</script></span>从0增大到1时，点<span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>从<span><span class="MathJax_Preview">x_2</span><script type="math/tex">x_2</script></span>移动到<span><span class="MathJax_Preview">x_1</span><script type="math/tex">x_1</script></span>；当<span><span class="MathJax_Preview">\theta</span><script type="math/tex">\theta</script></span>在此区间以外时，点<span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>位于<span><span class="MathJax_Preview">x_1</span><script type="math/tex">x_1</script></span>到<span><span class="MathJax_Preview">x_2</span><script type="math/tex">x_2</script></span>以外的线上。</p>
 <p>在复习了直线之后，我们可以给仿射集做一个定义：</p>
 <div class="admonition important">
 <p class="admonition-title">仿射集</p>
@@ -1023,7 +1035,7 @@
 </div>
 <p>也就是说，如果仿射集<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>有<span><span class="MathJax_Preview">S \subseteq C</span><script type="math/tex">S \subseteq C</script></span>，那么<span><span class="MathJax_Preview">aff(S) \subseteq C</span><script type="math/tex">aff(S) \subseteq C</script></span>。</p>
 <h2 id="_2">凸<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
-<p>我们注意到到现在为止我们一直在讨论仿射，而没有进入真正的主题--凸。事实上，我们已经差不多学习了凸的所有概念了--仅仅将仿射的直线换成线段，我们就能得到凸。</p>
+<p>我们注意到到现在为止我们一直在讨论仿射，而没有进入真正的主题&ndash;凸。事实上，我们已经差不多学习了凸的所有概念了&ndash;仅仅将仿射的直线换成线段，我们就能得到凸。</p>
 <div class="admonition important">
 <p class="admonition-title">凸集</p>
 <p>对于集合<span><span class="MathJax_Preview">C \subseteq \mathbb{R}</span><script type="math/tex">C \subseteq \mathbb{R}</script></span>，若经过该集合上任意两点<span><span class="MathJax_Preview">x_1, x_2 \in C, x_1 \neq x_2</span><script type="math/tex">x_1, x_2 \in C, x_1 \neq x_2</script></span>的<span style="color:green">线段</span>上的点都在该集合中，那么我们称集合<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>为一个凸集。</p>
@@ -1031,7 +1043,7 @@
 <div class="admonition important">
 <p class="admonition-title">凸组合（convex combination）</p>
 <p>对于线性组合<span><span class="MathJax_Preview">\sum_{i=1}^n \theta_i x_i</span><script type="math/tex">\sum_{i=1}^n \theta_i x_i</script></span>，若其满足</p>
-<p><span><span class="MathJax_Preview">\sum_{i=1}^n \theta_i = 1</span><script type="math/tex">\sum_{i=1}^n \theta_i = 1</script></span><span style="color:green">并且<span><span class="MathJax_Preview">\forall x_i, x_i \geq 0</span><script type="math/tex">\forall x_i, x_i \geq 0</script></span></span></p>
+<p><span><span class="MathJax_Preview">\sum_{i=1}^n \theta_i = 1</span><script type="math/tex">\sum_{i=1}^n \theta_i = 1</script></span><span style="color:green">并且<span><span class="MathJax_Preview">\forall \theta_i, \theta_i \geq 0</span><script type="math/tex">\forall \theta_i, \theta_i \geq 0</script></span></span></p>
 <p>则我们称其为凸组合。</p>
 </div>
 <div class="admonition important">
@@ -1172,15 +1184,15 @@
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.92ffa368.min.js"></script>
-      <script src="../../assets/javascripts/bundle.5123e3d4.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
+      <script src="../../assets/javascripts/vendor.d1f5a259.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
       
       <script>
         app = initialize({
           base: "../..",
           features: [],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.a68abb33.min.js"
+            worker: "../../assets/javascripts/worker/search.fae956e7.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

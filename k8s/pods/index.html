@@ -17,17 +17,17 @@
         <meta name="author" content="Zhiyuan Chen">
       
       <link rel="shortcut icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.6">
     
     
       
-        <title>Kubernetes Pods</title>
+        <title>Kubernetes Pods - Zhiyuan Chen</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.b5d04df8.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.63b94e9e.min.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.9ab2c1f8.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.7f672a1f.min.css">
       
       
         
@@ -248,6 +248,18 @@
 
   <li class="md-nav__item">
     <a href="../../document/jetbrains/" title="JetBrains使用指南" class="md-nav__link">
+      JetBrains使用指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../document/torch.distributed/" title="JetBrains使用指南" class="md-nav__link">
       JetBrains使用指南
     </a>
   </li>
@@ -959,10 +971,10 @@
                 <h1 id="pods">Pods<a class="headerlink" href="#pods" title="Permanent link">#</a></h1>
 <p>对于Kubernetes来说，最小的部署单元是一个Pod。</p>
 <p>正如他的名字（豆荚）那样，一个Pod可以包含多个容器，他们共享命名空间、数据卷、网络并可以进行进程间通信。</p>
-<p>相比容器，Pods在这里更像一个虚拟机--如果你把完成一个任务所需的所有容器都放在一个Pod当中，那这就相当于一个独立的节点了！</p>
+<p>相比容器，Pods在这里更像一个虚拟机&ndash;如果你把完成一个任务所需的所有容器都放在一个Pod当中，那这就相当于一个独立的节点了！</p>
 <h2 id="_1">描述文件<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
 <p>一个简单的Pod的描述文件如下所示：</p>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>apiVersion: v1
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><code>apiVersion: v1
 kind: Pod
 metadata:
 name: demo
@@ -988,12 +1000,12 @@ volumes:
     - name: logs
     hostPath:
         path: /usr/local/demo/logs
-</pre></div>
+</code></pre></div>
 
 
 <h2 id="_2">完成部署<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
 <p>对上面的内容做出少许修改（比如你可能不需要挂载日志文件，也不需要使用GPU）并在本地应用，你的第一个应用就完成部署了。</p>
-<p>但是，作为最小的部署单元，我们仅仅是将几个容器合并在了一个单元当中，而并没有实现其他的功能--比如说，最重要的，容器调度。</p>
+<p>但是，作为最小的部署单元，我们仅仅是将几个容器合并在了一个单元当中，而并没有实现其他的功能&ndash;比如说，最重要的，容器调度。</p>
 <p>在下一篇文章当中我们将会简要介绍Deployments，完成一个真正的应用部署。</p>
                 
                   
@@ -1084,15 +1096,15 @@ volumes:
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.92ffa368.min.js"></script>
-      <script src="../../assets/javascripts/bundle.5123e3d4.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
+      <script src="../../assets/javascripts/vendor.d1f5a259.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
       
       <script>
         app = initialize({
           base: "../..",
           features: [],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.a68abb33.min.js"
+            worker: "../../assets/javascripts/worker/search.fae956e7.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

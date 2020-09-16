@@ -17,17 +17,17 @@
         <meta name="author" content="Zhiyuan Chen">
       
       <link rel="shortcut icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.6">
     
     
       
-        <title>Docker命令行接口</title>
+        <title>Docker命令行接口 - Zhiyuan Chen</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.b5d04df8.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.63b94e9e.min.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.9ab2c1f8.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.7f672a1f.min.css">
       
       
         
@@ -248,6 +248,18 @@
 
   <li class="md-nav__item">
     <a href="../../document/jetbrains/" title="JetBrains使用指南" class="md-nav__link">
+      JetBrains使用指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../document/torch.distributed/" title="JetBrains使用指南" class="md-nav__link">
       JetBrains使用指南
     </a>
   </li>
@@ -1016,7 +1028,7 @@
 <p>在前一篇文章当中，我们运行了最简单的hello-world程序。在本文当中，我将介绍常用的Docker命令。需要注意的是，为了避免重复的讨论，我们将会在一个命令当中使用尽可能多的参数。实际生产环境当中，这些参数可能无需用到。</p>
 <h2 id="_2">创建容器<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
 <p>首先，让我们再创建一个容器。</p>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>docker run -dit \
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><code>docker run -dit \
     --name=test \
     --label color=blue \
     -v &lt;HOST-PATH&gt;:&lt;CONTAINER-PATH&gt; \
@@ -1029,7 +1041,7 @@
     -e AUTHOR=&quot;Zhiyuan Chen&quot; \
     --net=&quot;bridge&quot;
     10.1-cudnn7-devel-ubuntu18.04:latest
-</pre></div>
+</code></pre></div>
 
 
 <p>不要担心，正如我们之前说的，本文撰写过程当中使用了尽可能多的常用参数，以免重复讨论。实际应用当中的Docker命令要比这小许多。接下来，让我们一个一个解释参数的意思。</p>
@@ -1038,53 +1050,53 @@
 <p>-i 让容器的标准输入保持常开</p>
 <p>-t 让docker为容器分配一个虚拟终端（pseudo-tty），并绑定到容器的标准输入上</p>
 <p>通常情况下，我们都会使用 -dit 选项。当然，开发阶段如果需要对容器进行一些调整的话，我们可能会省略 -d 而直接使用 -it。</p>
-<p>--name 指定这个容器的名字。</p>
-<p>--label 指定这个容器的标签。我们通常会根据容器类型或者其他来给容器设置标签，方便日后查找。标签看似简单实则很深。无论是一个容器、一个镜像还是一个数据卷，甚至是一个守护进程都可以被打上标签。想象一下，当你有数万个容器运行的时候，没有正确的分组一定会让你疯掉的。我们会视情况单开一章进行讨论。</p>
-<p>-v 和 --mount 都表示挂载。由于一些历史原因，这两个东西代表的功能完全相同，但语法略有差异。在本例当中，我们分别通过 -v 和 --mount 挂在了一个本地文件和一个数据卷到容器当中，其中数据卷均被设置成只读。可以看到，相较而言 -v 要更简洁一些，也是我更推荐大家使用的。有关数据卷的更多内容，我们将会在其他章节讨论。</p>
+<p>&ndash;name 指定这个容器的名字。</p>
+<p>&ndash;label 指定这个容器的标签。我们通常会根据容器类型或者其他来给容器设置标签，方便日后查找。标签看似简单实则很深。无论是一个容器、一个镜像还是一个数据卷，甚至是一个守护进程都可以被打上标签。想象一下，当你有数万个容器运行的时候，没有正确的分组一定会让你疯掉的。我们会视情况单开一章进行讨论。</p>
+<p>-v 和 &ndash;mount 都表示挂载。由于一些历史原因，这两个东西代表的功能完全相同，但语法略有差异。在本例当中，我们分别通过 -v 和 &ndash;mount 挂在了一个本地文件和一个数据卷到容器当中，其中数据卷均被设置成只读。可以看到，相较而言 -v 要更简洁一些，也是我更推荐大家使用的。有关数据卷的更多内容，我们将会在其他章节讨论。</p>
 <p>-p 将容器的80端口绑定到主机127.0.0.1地址的81端口。</p>
-<p>--cpuset 指定了容器只使用前两个处理器内核。需要注意的是，和其他程序一样，Docker看到的也是逻辑内核。</p>
-<p>-m 或者 --memory 设置了这个容器能使用的最大的内存大小，结尾一般是m或者g。一个容器允许设置的最小内存是4m。有关内存的设置其实有不少，比如 --memory-swap、--memory-reservation 等等。我们会视情况单开一章进行讨论。</p>
+<p>&ndash;cpuset 指定了容器只使用前两个处理器内核。需要注意的是，和其他程序一样，Docker看到的也是逻辑内核。</p>
+<p>-m 或者 &ndash;memory 设置了这个容器能使用的最大的内存大小，结尾一般是m或者g。一个容器允许设置的最小内存是4m。有关内存的设置其实有不少，比如 &ndash;memory-swap、&ndash;memory-reservation 等等。我们会视情况单开一章进行讨论。</p>
 <p>-e 指定环境变量。</p>
-<p>--net 指定网络类型，本选项在绝大多数情况下无需设置，默认为"bridge"。我们也会视情况单开一章进行讨论。</p>
+<p>&ndash;net 指定网络类型，本选项在绝大多数情况下无需设置，默认为&rdquo;bridge&rdquo;。我们也会视情况单开一章进行讨论。</p>
 <p>最后的最后，我们运行了一个预装CUDA 10.1、cuDNN 7的ubuntu 18.04镜像。如果你不打算在你的容器里运行显卡的话，我强烈建议你把这一行替换成alpine:lates。Ubuntu实在是太大了，如果没有特殊需要的话，还是alpine这种小家伙更适合容器一些。我们会在随后单开一章进行讨论。</p>
 <p>此时，由于我们之前指定了 -d，什么都不会发生，除了一个返回的容器ID。</p>
 <h2 id="_3">查看容器列表<a class="headerlink" href="#_3" title="Permanent link">#</a></h2>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>docker ps -a -f since=hello-world -n 5
-</pre></div>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><code>docker ps -a -f since=hello-world -n 5
+</code></pre></div>
 
 
-<p>-a 或者 --all 显示所有容器，默认只显示运行当中的容器。</p>
-<p>-f 或者 --filter 根据指定条件筛选容器。这个内容有点儿多，我们会看情况单开一章进行讨论，或者在日后补充。</p>
-<p>-n 或者 --lat 只显示最近创建的五个容器。考虑到这个教程的进度，你应该只能看见一个，所以加与不加也没什么区别。</p>
-<p>此外还有一些其他参数，比如 --format 修改展示格式、-s 显示文件大小、-q 只显示容器ID等等，此处不再赘述。</p>
+<p>-a 或者 &ndash;all 显示所有容器，默认只显示运行当中的容器。</p>
+<p>-f 或者 &ndash;filter 根据指定条件筛选容器。这个内容有点儿多，我们会看情况单开一章进行讨论，或者在日后补充。</p>
+<p>-n 或者 &ndash;lat 只显示最近创建的五个容器。考虑到这个教程的进度，你应该只能看见一个，所以加与不加也没什么区别。</p>
+<p>此外还有一些其他参数，比如 &ndash;format 修改展示格式、-s 显示文件大小、-q 只显示容器ID等等，此处不再赘述。</p>
 <h2 id="_4">进入容器<a class="headerlink" href="#_4" title="Permanent link">#</a></h2>
 <p>综合考虑到我们创建一个容器之后总要做些什么，那么我们首先需要进入容器。</p>
-<p>进入容器有很多很多方法，考虑到要紧跟时代的潮流，我们将只讨论目前进入容器的方法--exec。</p>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>docker exec -it test /bin/bash
-</pre></div>
+<p>进入容器有很多很多方法，考虑到要紧跟时代的潮流，我们将只讨论目前进入容器的方法&ndash;exec。</p>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><code>docker exec -it test /bin/bash
+</code></pre></div>
 
 
 <p>需要注意的是，如果你之前选择了alpine的话，由于alpine并没有内置bash这种高端的东西（他真的真的很小），你应该把最后一段替换成 /bin/sh。</p>
 <p>此外，或许会有些人告诉你最后一段只需要 bash 就好，但我们提倡 <strong>不要这么做</strong> ！！不要在无所谓的东西上省略，就跟变量名长点儿并没有什么关系，但重点是能让人理解这个变量里存的是什么。</p>
 <p>接下来，在容器里稍微玩玩，毕竟，这个容器马上就要被杀掉了。</p>
 <h2 id="_5">检视容器情况<a class="headerlink" href="#_5" title="Permanent link">#</a></h2>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>docker stats
-</pre></div>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><code>docker stats
+</code></pre></div>
 
 
 <p>监视容器运行消耗了多少资源。这个没什么好说的，当然也不怎么常用，一笔带过吧。</p>
 <h2 id="_6">检查点<a class="headerlink" href="#_6" title="Permanent link">#</a></h2>
 <p><strong>这是一个实验性功能，请不要在生产环境当中使用！</strong> 使用本命令之前需先打开Docker的实验性功能，我们会看情况单开一章进行讨论。</p>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>docker checkpoint create --checkpoint-dir &lt;CHECKPOINT_DIR&gt; --leave-running test CHECKPOINT
-</pre></div>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><code>docker checkpoint create --checkpoint-dir &lt;CHECKPOINT_DIR&gt; --leave-running test CHECKPOINT
+</code></pre></div>
 
 
 <h2 id="_7">启停容器<a class="headerlink" href="#_7" title="Permanent link">#</a></h2>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>docker stop test -t 10
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><code>docker stop test -t 10
 docker start test --checkpoint-dir &lt;CHECKPOINT_DIR&gt;
 docker restart test -t 10
 docker rm -f -v
-</pre></div>
+</code></pre></div>
 
 
 <p>在十秒钟之后关闭容器，加载检查点启动容器，在十秒钟之后重启容器，然后彻底删掉容器及其所挂载的数据卷（需要注意的是，如果这个数据卷仍挂载在其他容器上，那他并不会被删除）。</p>
@@ -1182,15 +1194,15 @@ docker rm -f -v
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.92ffa368.min.js"></script>
-      <script src="../../assets/javascripts/bundle.5123e3d4.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
+      <script src="../../assets/javascripts/vendor.d1f5a259.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
       
       <script>
         app = initialize({
           base: "../..",
           features: [],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.a68abb33.min.js"
+            worker: "../../assets/javascripts/worker/search.fae956e7.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

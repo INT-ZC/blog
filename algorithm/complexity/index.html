@@ -17,17 +17,17 @@
         <meta name="author" content="Zhiyuan Chen">
       
       <link rel="shortcut icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.6">
     
     
       
-        <title>复杂度</title>
+        <title>复杂度 - Zhiyuan Chen</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.b5d04df8.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.63b94e9e.min.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.9ab2c1f8.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.7f672a1f.min.css">
       
       
         
@@ -248,6 +248,18 @@
 
   <li class="md-nav__item">
     <a href="../../document/jetbrains/" title="JetBrains使用指南" class="md-nav__link">
+      JetBrains使用指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../document/torch.distributed/" title="JetBrains使用指南" class="md-nav__link">
       JetBrains使用指南
     </a>
   </li>
@@ -914,7 +926,7 @@
                 
                 <p>算法复杂度是衡量一个算法优劣的金标准。它可以分为 <strong>时间复杂度</strong> 和 <strong>空间复杂度</strong> 。时间复杂度表示需要多久去计算，空间复杂度则表示需要多少内存来完成计算。由于目前计算机技术的发展，空间复杂度的重要性越来越低，而时间复杂度的重要性越来越高，所以当我们提到复杂度的时候，一般都表示时间复杂度。我们通常通过 <strong>渐进分析（Asymptotic Analysis）</strong> 来分析算法的复杂度。</p>
 <p>让我们从一个简单的<span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span>位数乘法运算例子来开始这一章。</p>
-<p>传统计算机是如何进行乘法运算的呢？按位相乘？不，这有些太传统了。分治法（Divide and Conquer）？对，没有什么比分治法最简单得了，将一个复杂的大问题转换成多个简单的小问题，多么美妙！对于<span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span>位数<span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>和<span><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span>，我们可以将它们之间的乘法运算<span><span class="MathJax_Preview">x \times y</span><script type="math/tex">x \times y</script></span>转换为<span><span class="MathJax_Preview">(a \times 10^\frac{n}{2} + b) \times (c \times 10^\frac{n}{2} + d)</span><script type="math/tex">(a \times 10^\frac{n}{2} + b) \times (c \times 10^\frac{n}{2} + d)</script></span> = <span><span class="MathJax_Preview">(ac) \cdot 10^n + (ad + bc) \cdot 10^\frac{n}{2} + bd</span><script type="math/tex">(ac) \cdot 10^n + (ad + bc) \cdot 10^\frac{n}{2} + bd</script></span>。就这样，通过几步简单的操作，我们就将一个<span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span>位数相乘问题转换成了四个<span><span class="MathJax_Preview">\frac{n}{2}</span><script type="math/tex">\frac{n}{2}</script></span>位数相乘问题。只是，他的复杂度稍微高了一些，有<span><span class="MathJax_Preview">O(n{^2})</span><script type="math/tex">O(n{^2})</script></span>。那么，我们如何能优化他呢？通过观察，我们可以发现<span><span class="MathJax_Preview">ad + bc = (a + b) \cdot (c + d) - ac - bd</span><script type="math/tex">ad + bc = (a + b) \cdot (c + d) - ac - bd</script></span>。由于<span><span class="MathJax_Preview">ac</span><script type="math/tex">ac</script></span>、<span><span class="MathJax_Preview">bd</span><script type="math/tex">bd</script></span>都是我们计算所需要的，我们可以通过替代来将这里的两个乘法缩减到一个新乘法，最终转换为：<span><span class="MathJax_Preview">(ac) \cdot 10^n + ((a + b) \cdot (c + d) - ac - bd) \cdot 10^\frac{n}{2} + bd</span><script type="math/tex">(ac) \cdot 10^n + ((a + b) \cdot (c + d) - ac - bd) \cdot 10^\frac{n}{2} + bd</script></span>。这个式子看起来要更复杂一些，但实际上我们将这个<span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span>位数相乘问题转换成了三个<span><span class="MathJax_Preview">\frac{n}{2}</span><script type="math/tex">\frac{n}{2}</script></span>位数相乘问题，使得时间复杂度降低到了<span><span class="MathJax_Preview">O(n^{\log_2 3})</span><script type="math/tex">O(n^{\log_2 3})</script></span>（如果你在这里还一头雾水的话，请不要担心，我们稍后会详细解释）。这个算法也被称作Karatsuba算法，与之类似的还有Toom-Cook算法，他将这个<span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span>位数相乘问题转换成了五个<span><span class="MathJax_Preview">\frac{n}{3}</span><script type="math/tex">\frac{n}{3}</script></span>位数相乘问题，使得时间复杂度进一步降低到了<span><span class="MathJax_Preview">O(n^{\log_3 5})</span><script type="math/tex">O(n^{\log_3 5})</script></span>。我们强烈建议你试试能不能自己去找到如何完成这样的分解。此外，如果你有志于算法的话，Arnold Schönhage和Volker Strassen于1971年提出使用快速傅里叶变换（FFT）进行乘法运算的SSA（Schönhage-Strassen algorithm）将乘法运算提升到了多项式时间，今年早些时候，David Harvey和Joris van der Hoeven发布的论文<a href="https://hal.archives-ouvertes.fr/hal-02070778/document">Integer multiplication in time O(n log n)</a>将乘法运算的速度提升到了目前的理论极限 -- <span><span class="MathJax_Preview">O(n log n)</span><script type="math/tex">O(n log n)</script></span>。</p>
+<p>传统计算机是如何进行乘法运算的呢？按位相乘？不，这有些太传统了。分治法（Divide and Conquer）？对，没有什么比分治法最简单得了，将一个复杂的大问题转换成多个简单的小问题，多么美妙！对于<span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span>位数<span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>和<span><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span>，我们可以将它们之间的乘法运算<span><span class="MathJax_Preview">x \times y</span><script type="math/tex">x \times y</script></span>转换为<span><span class="MathJax_Preview">(a \times 10^\frac{n}{2} + b) \times (c \times 10^\frac{n}{2} + d)</span><script type="math/tex">(a \times 10^\frac{n}{2} + b) \times (c \times 10^\frac{n}{2} + d)</script></span> = <span><span class="MathJax_Preview">(ac) \cdot 10^n + (ad + bc) \cdot 10^\frac{n}{2} + bd</span><script type="math/tex">(ac) \cdot 10^n + (ad + bc) \cdot 10^\frac{n}{2} + bd</script></span>。就这样，通过几步简单的操作，我们就将一个<span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span>位数相乘问题转换成了四个<span><span class="MathJax_Preview">\frac{n}{2}</span><script type="math/tex">\frac{n}{2}</script></span>位数相乘问题。只是，他的复杂度稍微高了一些，有<span><span class="MathJax_Preview">O(n{^2})</span><script type="math/tex">O(n{^2})</script></span>。那么，我们如何能优化他呢？通过观察，我们可以发现<span><span class="MathJax_Preview">ad + bc = (a + b) \cdot (c + d) - ac - bd</span><script type="math/tex">ad + bc = (a + b) \cdot (c + d) - ac - bd</script></span>。由于<span><span class="MathJax_Preview">ac</span><script type="math/tex">ac</script></span>、<span><span class="MathJax_Preview">bd</span><script type="math/tex">bd</script></span>都是我们计算所需要的，我们可以通过替代来将这里的两个乘法缩减到一个新乘法，最终转换为：<span><span class="MathJax_Preview">(ac) \cdot 10^n + ((a + b) \cdot (c + d) - ac - bd) \cdot 10^\frac{n}{2} + bd</span><script type="math/tex">(ac) \cdot 10^n + ((a + b) \cdot (c + d) - ac - bd) \cdot 10^\frac{n}{2} + bd</script></span>。这个式子看起来要更复杂一些，但实际上我们将这个<span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span>位数相乘问题转换成了三个<span><span class="MathJax_Preview">\frac{n}{2}</span><script type="math/tex">\frac{n}{2}</script></span>位数相乘问题，使得时间复杂度降低到了<span><span class="MathJax_Preview">O(n^{\log_2 3})</span><script type="math/tex">O(n^{\log_2 3})</script></span>（如果你在这里还一头雾水的话，请不要担心，我们稍后会详细解释）。这个算法也被称作Karatsuba算法，与之类似的还有Toom-Cook算法，他将这个<span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span>位数相乘问题转换成了五个<span><span class="MathJax_Preview">\frac{n}{3}</span><script type="math/tex">\frac{n}{3}</script></span>位数相乘问题，使得时间复杂度进一步降低到了<span><span class="MathJax_Preview">O(n^{\log_3 5})</span><script type="math/tex">O(n^{\log_3 5})</script></span>。我们强烈建议你试试能不能自己去找到如何完成这样的分解。此外，如果你有志于算法的话，Arnold Schönhage和Volker Strassen于1971年提出使用快速傅里叶变换（FFT）进行乘法运算的SSA（Schönhage-Strassen algorithm）将乘法运算提升到了多项式时间，今年早些时候，David Harvey和Joris van der Hoeven发布的论文<a href="https://hal.archives-ouvertes.fr/hal-02070778/document">Integer multiplication in time O(n log n)</a>将乘法运算的速度提升到了目前的理论极限 &ndash; <span><span class="MathJax_Preview">O(n log n)</span><script type="math/tex">O(n log n)</script></span>。</p>
 <h2 id="_1">符号<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
 <p>我们刚才提到了算法的复杂度是<span><span class="MathJax_Preview">O(n log n)</span><script type="math/tex">O(n log n)</script></span>，这又是什么意思呢？</p>
 <p>大O符号，又称渐进符号，是德国数学家1892年引入的。除此之外还有大Ω符号与大Θ符号（一个有趣的事实，大O符号其实应该是大Ο符号（希腊字母，Omicron，但是因为Ο和O没什么视觉区别，所以一般会直接说O。</p>
@@ -982,7 +994,7 @@
 <div class="admonition note">
 <p class="admonition-title">多项式时间</p>
 <p>我们将复杂度为<span><span class="MathJax_Preview">O(n^c), c &gt; 1</span><script type="math/tex">O(n^c), c > 1</script></span>或更低的称作多项式时间。</p>
-<p>多项式时间包含了此前提到的线性时间、对数时间和常数时间--事实上，多项式时间这个名词出现的概率也会比此前的三个要广泛得多。我们将可以在多项式时间内求解的问题称作多项式时间可解的问题，即P（polynomial）问题；将可以在多项式时间内验证一个解是否正确的问题称为非决定性多项式时间可解问题，即NP（nondeterministic polynomial）问题。有关这些问题的具体描述及NP困难（NP-hardness）问题和NP完全（NP-complete）问题，我们将在专门的章节进行讨论。</p>
+<p>多项式时间包含了此前提到的线性时间、对数时间和常数时间&ndash;事实上，多项式时间这个名词出现的概率也会比此前的三个要广泛得多。我们将可以在多项式时间内求解的问题称作多项式时间可解的问题，即P（polynomial）问题；将可以在多项式时间内验证一个解是否正确的问题称为非决定性多项式时间可解问题，即NP（nondeterministic polynomial）问题。有关这些问题的具体描述及NP困难（NP-hardness）问题和NP完全（NP-complete）问题，我们将在专门的章节进行讨论。</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">指数时间和阶乘时间</p>
@@ -1095,15 +1107,15 @@
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.92ffa368.min.js"></script>
-      <script src="../../assets/javascripts/bundle.5123e3d4.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
+      <script src="../../assets/javascripts/vendor.d1f5a259.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
       
       <script>
         app = initialize({
           base: "../..",
           features: [],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.a68abb33.min.js"
+            worker: "../../assets/javascripts/worker/search.fae956e7.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

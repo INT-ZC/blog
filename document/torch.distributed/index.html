@@ -11,23 +11,23 @@
         <meta name="description" content="The website of Zhiyuan Chen">
       
       
-        <link rel="canonical" href="https://zyc.ai/cntk/introduction/">
+        <link rel="canonical" href="https://zyc.ai/document/torch.distributed/">
       
       
         <meta name="author" content="Zhiyuan Chen">
       
       <link rel="shortcut icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.6">
     
     
       
-        <title>CNTK导论</title>
+        <title>PyTorch分布式 - Zhiyuan Chen</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.b5d04df8.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.63b94e9e.min.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.9ab2c1f8.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.7f672a1f.min.css">
       
       
         
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cntk" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -99,7 +99,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              CNTK导论
+              PyTorch分布式
             
           </span>
         </div>
@@ -208,10 +208,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       文档
@@ -235,7 +237,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../document/design_pattern/" title="设计模式" class="md-nav__link">
+    <a href="../design_pattern/" title="设计模式" class="md-nav__link">
       设计模式
     </a>
   </li>
@@ -247,9 +249,133 @@
 
 
   <li class="md-nav__item">
-    <a href="../../document/jetbrains/" title="JetBrains使用指南" class="md-nav__link">
+    <a href="../jetbrains/" title="JetBrains使用指南" class="md-nav__link">
       JetBrains使用指南
     </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        JetBrains使用指南
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="JetBrains使用指南" class="md-nav__link md-nav__link--active">
+      JetBrains使用指南
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    历史
+  </a>
+  
+    <nav class="md-nav" aria-label="历史">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pytorch" class="md-nav__link">
+    PyTorch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytorch_1" class="md-nav__link">
+    PyTorch并行训练
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    结构
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ddp" class="md-nav__link">
+    分布式数据并行（DDP）
+  </a>
+  
+    <nav class="md-nav" aria-label="分布式数据并行（DDP）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    梯度规约
+  </a>
+  
+    <nav class="md-nav" aria-label="梯度规约">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bucketing-gradients" class="md-nav__link">
+    梯度合桶（bucketing gradients）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overlapping-computation-with-communication" class="md-nav__link">
+    计算通信重叠（overlapping computation with communication）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skipping-gradient-synchronization" class="md-nav__link">
+    梯度同步跳过（skipping gradient synchronization）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -860,8 +986,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon">
@@ -873,15 +997,82 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    学习
+    历史
   </a>
+  
+    <nav class="md-nav" aria-label="历史">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pytorch" class="md-nav__link">
+    PyTorch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytorch_1" class="md-nav__link">
+    PyTorch并行训练
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    后记
+    结构
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ddp" class="md-nav__link">
+    分布式数据并行（DDP）
+  </a>
+  
+    <nav class="md-nav" aria-label="分布式数据并行（DDP）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    梯度规约
+  </a>
+  
+    <nav class="md-nav" aria-label="梯度规约">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bucketing-gradients" class="md-nav__link">
+    梯度合桶（bucketing gradients）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overlapping-computation-with-communication" class="md-nav__link">
+    计算通信重叠（overlapping computation with communication）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skipping-gradient-synchronization" class="md-nav__link">
+    梯度同步跳过（skipping gradient synchronization）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -897,7 +1088,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/zyc-ai/edit/master/docs/cntk/introduction.md" title="编辑此页" class="md-content__button md-icon">
+                  <a href="https://github.com/zyc-ai/edit/master/docs/document/torch.distributed.md" title="编辑此页" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -905,24 +1096,67 @@
                   
                 
                 
-                <h1 id="cntk">CNTK<a class="headerlink" href="#cntk" title="Permanent link">#</a></h1>
-<p>在Google推出TensorFlow的N年之后，微软，终于发布了自家的机器学习工具集--微软认知工具集（Microsoft Cognitive Toolkit）。</p>
-<p>你很可能想知道，在TensorFlow已经出到2.0，PyTorch等如火如荼的今天，为什么要去学习CNTK。</p>
-<p>因为更高的性能？</p>
-<p><img alt="机器学习工具集性能对比" src="../../images/CNTK/cntk-speed-comparison-1.png" title="机器学习工具集性能对比" /></p>
-<p>你真的拥有八块GPU嘛？</p>
-<p>以及CNTK其实也并没有在学习率上碾压其他平台：</p>
-<p><img alt="机器学习工具集性能对比" src="../../images/CNTK/cntk-speed-comparison-2.png" title="机器学习工具集性能对比" /></p>
-<p>那么为什么呢？</p>
-<p>我不知道你有没有注意到他的开发厂商，微软。</p>
-<p>没错，微软（不是巨硬</p>
-<p>Come on，难道你还需要其他的理由吗？</p>
-<h2 id="_1">学习<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
-<p>本系列文章假设你对机器学习拥有一定基础知识。并将直接从CNTK 200系列的教程开始。如果你还不理解机器学习是什么的话，我们在此强烈推荐你先看看由Andrew Ng先生执教的<a href="https://www.coursera.org/learn/machine-learning/home/welcome">机器学习</a>。</p>
-<h2 id="_2">后记<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
-<p>有人可能注意到这篇文章其实已经挂在这里半年多了，但是我一直没动笔去写……</p>
-<p>我当时选择了计算机视觉的课程，并期望使用CNTK作为框架。但后来发现我完全没有时间从零开始学习一门新的框架并用于实际课程当中。</p>
-<p>现在，是时候开始新的征程了。</p>
+                  <h1>JetBrains使用指南</h1>
+                
+                <div class="admonition abstract">
+<p class="admonition-title">前言</p>
+<p>我还记得PyTorch 1.4发布时，看到PyTorch的分布式有新的改动后还专门浪费了一个下午的时间去查DDP，研究NCCL等等。然鹅，一知半解的我在面试时被问到PyTorch的分布式通信之后瞬间败下阵来555555（其实下来想想还是可以苟苟的……）。商汤的面试，总能带给你无尽的惊吓。崩完找我廖哥求安慰时才发现他也没搞清嘿嘿，瞬间轻松了不少。所以，就有了我们今天的这篇文章~</p>
+</div>
+<p>本文对PyTorch 1.6.0的<code>torch.distributed</code>进行简要描述。</p>
+<h2 id="_1">历史<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
+<p>在开始正文之前我们先简要回顾一下PyTorch的历史。</p>
+<h3 id="pytorch">PyTorch<a class="headerlink" href="#pytorch" title="Permanent link">#</a></h3>
+<p>PyTorch将数据组织为张量（也就是一个n维数组）；而模块定义了将输入到输出的转换，其中模块的前向传播过程在他的成员函数<code>forward</code>中定义。一个应用由他的模块通过在<code>forward</code>函数中定义的多个原生模块（<code>nn.Linear</code>、<code>nn.Conv2d</code>）、用户自定义的模块（<code>backbone</code>、<code>neck</code>、<code>head</code>）和函数（<code>nn.ReLU</code>）的组合而构成。典型的训练迭代包括使用输入和标签产生损失的前向传播，计算参数的梯度的反向传播以及使用梯度更新参数的优化器步进。更具体地说，在前向传播中PyTorch会构建一个自动梯度图来记录所执行的动作。然后在反向传播中，它使用自动梯度图进行反向传播以生成梯度。最后，优化器将梯度应用于更新参数。训练反复重复这三个步骤直到模型收敛。</p>
+<h3 id="pytorch_1">PyTorch并行训练<a class="headerlink" href="#pytorch_1" title="Permanent link">#</a></h3>
+<p>随着训练数据的增广以及模型规模的扩大，分布式训练的重要性也越来越强。PyTorch首先在<code>multiprocessing</code>的基础上提出了<code>torch.multiprocessing</code>，但由于进程间通信的限制而带来了种种局限（如CUDA API要求导出到其他进程的分配在仍被使用时保持有效）。随后，PyTorch在0.1中提出了改进的<code>nn.DataParallel</code>，它使用单进程多线程的方式，在每次前向过程中通过<code>scatter</code>将数据分配给GPUs，调用<code>replica</code>函数在各个GPU上创建模型的副本，然后使用<code>parallel_apply</code>在各个GPU上完成前向传播，并通过<code>gather</code>将所有输出聚集到首张GPU上得到损失，接着损失被<code>scatter</code>到GPUs上进行反向传播得到梯度，最后梯度被<code>all_reduce</code>到GPU0上更新权重。我们可以发现，这种方式会对GPU0产生巨大的压力，而单进程多线程的方式也不允许在多台机器上分布式的训练。随后，PyTorch在0.3.0中引入了<code>nn.DistributedDataParallel</code>以解决这些问题，并在1.0中引入了c10d模块来替代传统的THD以大幅提升通信效率。但随着模型的增大，单台机器已经不能容下整个模型，而且<code>nn.DistributedDataParallel</code>并不适合参数服务器，PyTorch又在1.3中引入了<code>distributed.rpc</code>来解决这些问题。</p>
+<h2 id="_2">结构<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
+<p>对于现行版本，<code>torch.distributed</code>由以下三个重要组成部分构成。</p>
+<div class="admonition success">
+<p class="admonition-title">分布式数据并行 - Distributed Data-Parallel (DDP)</p>
+<p>DDP是最常见的多GPU训练范式，它支持多机多卡训练，并允许将模型分布在同一主机的多张显卡中。</p>
+</div>
+<div class="admonition success">
+<p class="admonition-title">远程过程调用 - RPC-Based Distributed (RPC)</p>
+<p>RPC旨在支持不适用于数据并行训练的常规训练结构，例如分布式管道并行（模型分布于多台主机上），参数服务器范式（模型参数与训练器位于不同机器上）以及DDP与其他训练范式的组合。</p>
+</div>
+<div class="admonition success">
+<p class="admonition-title">聚合通信 - Collective Communication (c10d)</p>
+<p>C10d库支持组内进程间的张量发送。他提供聚合通信API（如<code>all_reduce</code>和<code>all_gather</code>）以及P2P通信API（如<code>send</code>和<code>isend</code>）。DDP和RPC（进程组后端）在v1.6.0中都基于c10d，其中前者使用聚合通信，而后者使用P2P通信。C10d是一个低级的通信API，仅对后端的原语进行封装，而在此基础上的DDP和RPC能满足大多数分布式训练方案的需求，因此开发人员通常无需使用这个API。事实上，直接调用这个API也是被不建议的，因为手动调用此API进行通信和计算将无法应用到DDP和RPC的性能优化。但在某些情况下，此API仍然很有帮助。一个示例是分布式参数平均，其中应用程序希望在反向传播之后计算所有模型参数的平均值，而不是使用DDP来传递梯度。这可以使通信与计算脱钩，并允许对通信内容进行更细粒度的控制。<a href="https://pytorch.org/tutorials/intermediate/dist_tuto.html">使用PyTorch编写分布式应用程序</a>提供了使用c10d API通信的示例。</p>
+</div>
+<h2 id="ddp">分布式数据并行（DDP）<a class="headerlink" href="#ddp" title="Permanent link">#</a></h2>
+<p>DDP在每个计算资源（GPU）上创建模型副本来独立的生成梯度，然后在每个迭代中交流这些梯度使得模型副本一致。PyTorch使用了多种技术来加速并行运算，包括梯度合桶（bucketing gradients）、计算通信重叠（overlapping computation with communication）以及梯度同步跳过（skipping gradient synchronization）。评估表明，PyTorch可以在256个GPU上达到接近线性的可扩展性。</p>
+<p><img align="right" alt="DistributedDataParallel" loading="lazy" src="../../images/document/torch.distributed/ddp.png" style="width:40%" title="DistributedDataParallel" />
+DDP的每一个进程都对应一个独立的训练过程，它拥有自己的模型副本，自己的优化器，当然也控制一张GPU。DDP通过确保以下两点来确保算法的正确性（即其训练结果与单卡训练结果一致）。</p>
+<ol>
+<li>所有模型副本的初始状态相同</li>
+<li>所有优化器每次步进使用的参数梯度相同</li>
+</ol>
+<p>DDP的结构如右图所示，它主要包括了Python API和C++的梯度下降算法。所有的通信通过c10d调用底层通信框架。</p>
+<p>DDP的API与DP类似，均是一个模组。在本文中，我们将忽略接口的设计而关注底层的运算流程。如果你对其感兴趣，我们鼓励你阅读<a href="https://arxiv.org/pdf/2006.15704.pdf">PyTorch Distributed: Experiences on Accelerating Data Parallel Training</a>的第3.1节以获得更多细节。</p>
+<h3 id="_3">梯度规约<a class="headerlink" href="#_3" title="Permanent link">#</a></h3>
+<p>DDP的梯度规约一直在进化，让我们从一个简单的算法开始并逐步理解现行版本中的算法。</p>
+<p>回顾我们之前提到的，DDP通过确保所有模型副本的初始状态相同和所有优化器每次步进使用的参数梯度相同来确保算法的正确性。我们很容易想到，前者可以很简单的通过在构建DDP时将模型母本广播到所有进程来实现。后者则可以通过在反向传播与优化器步进之间插入一个梯度同步阶段，通过<code>AllReduce</code>聚合通信来计算每个参数的梯度的平均值并将结果同步给每个进程以实现。但这样会带来两个问题：</p>
+<ol>
+<li>聚合通信在小张量上的表现不佳，这在带有大量小参数的大型模型上尤为突出。</li>
+<li>梯度的计算与同步被分为两个阶段，这使得我们无法通过计算通信重叠来提高模型效率。</li>
+</ol>
+<h4 id="bucketing-gradients">梯度合桶（bucketing gradients）<a class="headerlink" href="#bucketing-gradients" title="Permanent link">#</a></h4>
+<p><img align="right" alt="Collective Communication" loading="lazy" src="../../images/document/torch.distributed/cc.png" style="width:60%" title="DistributedDataParallel" />
+聚合通信在小张量传输上的表现欠佳，但它的性能随着张量的尺寸增大而提升。右图的a、b子图展示了一个60MiB大小的<code>torch.float32</code>参数相对于每次<code>AllReduce</code>不同数量的参数的总运行时间。为了最大化带宽利用，<code>AllReduce</code>操作被设计为异步调用，并在反向传播时阻塞。我们可以发现，DDP等待较短时间后将多个梯度存储到一个桶里后执行一个<code>AllReduce</code>操作可以显著降低通信延迟。右图的c、d子图展示了一个包含大约60M个参数的ResNet152网络的反向传播计算时间，其中x轴代表就虚的梯度的数量。GPU上的反向传播大约需要250毫秒以完成，这与NVLink上的NCCL数量级相同。这些实验表明，如果参数桶相对小，DDP可以在反向传播的同时启动<code>AllReduce</code>操作，使通信与计算重叠。</p>
+<h4 id="overlapping-computation-with-communication">计算通信重叠（overlapping computation with communication）<a class="headerlink" href="#overlapping-computation-with-communication" title="Permanent link">#</a></h4>
+<p><img align="right" alt="Collective Communication" loading="lazy" src="../../images/document/torch.distributed/gsf.png" style="width:60%" title="DistributedDataParallel" />
+通过合桶，DDP仅需要在启动通信之前等待桶中所有的梯度完成计算。此时，在整个网络完成反向传播后再进行<code>AllReduce</code>操作便不再足够，而应该在每一个桶完成反向传播后都进行<code>AllReduce</code>操作。DDP为每一个梯度累加器注册一个自动求导钩子，并在相应的累加器更新梯度后激活。当一个桶内的所有钩子都被激活时，最后一个被激活的钩子会触发<code>AllReduce</code>操作。</p>
+<div class="admonition warning">
+<p class="admonition-title">进程的规约顺序重要</p>
+<p>所有进程必须按照相同的顺序进行规约，否则<code>AllReduce</code>的结果可能不匹配。如上图的a子图所示，进程2的g2参数在最后被计算出，使得g1&amp;2参数桶在g3&amp;4参数桶后规约，导致两个进程的<code>AllReduce</code>错位。因此，所有进程都使用相同的存储顺序，并且i号桶启动AllReduce之前i+1号桶无法启动规约。在PyTorch 1.6中，<code>model.parameters()</code>的相反顺序被用作参数桶顺序。假设层以与前向传播中相近的顺序被注册，那么它的反向也即是反向传播中梯度的计算顺序。</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">每一个迭代中参与训练的网络可能不同</p>
+<p>一个迭代可能只训练一个模型的子图（比如预热时我们常常固定backbone），并且该子图也可能随着迭代而发生变化。这意味着某些梯度在某些迭代中可能被跳过。但是，梯度到桶的映射是在构建时即被建立的。这使得被跳过的梯度将让某些桶永远无法准备，从而阻塞反向传播过程。如上图的b子图所示，g3参数在某次迭代中被跳过，因此g3&amp;4参数桶无法准备。为了解决此问题，DDP遍历从前向传播的输出张量得到的自动求导图来找到所有的参与参数，然后将未参与的参数直接标记为就绪。</p>
+</div>
+<h4 id="skipping-gradient-synchronization">梯度同步跳过（skipping gradient synchronization）<a class="headerlink" href="#skipping-gradient-synchronization" title="Permanent link">#</a></h4>
+<p>并行训练的最大延迟来源是同步。那么，我们一定要每个迭代都执行同步么？答案自然是否定的。在局部执行n次训练迭代之后再执行一次<code>AllReduce</code>可以在很大程度上减少梯度同步。这同时有助于训练一个超大的，无法一次性放入显存的输入批&ndash;我们可以将这个批划分成几个小批，然后在这些小批上进行前向与反向传播，再当整个批训练完成之后发起梯度同步。</p>
+<p>理论上来说，梯度同步跳过的计算结果与不跳过的结果是相同的，因为梯度只是单纯的被累加到了同一个张量上。但上一节提到，每一个迭代中参与训练的网络可能不同，梯度同步跳过与之前提到的措施相冲突。此外，DDP也无法知道接下来的反向传播应当进行梯度累加还是同步，因此PyTorch使用<code>ddp.no_sync()</code>以作为累加的标识。</p>
                 
                   
                 
@@ -933,7 +1167,7 @@
 
   <h2 id="__comments">评论</h2>
   <div id="disqus_thread"></div>
-  <script>var disqus_config=function(){this.page.url="https://zyc.ai/cntk/introduction/",this.page.identifier="/cntk/introduction/"};!function(){var e=document,i=e.createElement("script");i.src="//zycai.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)}()</script>
+  <script>var disqus_config=function(){this.page.url="https://zyc.ai/document/torch.distributed/",this.page.identifier="/document/torch.distributed/"};!function(){var e=document,i=e.createElement("script");i.src="//zycai.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)}()</script>
 
               
             </article>
@@ -943,6 +1177,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../jetbrains/" title="JetBrains使用指南" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                JetBrains使用指南
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../stat/probability/" title="概率论" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                概率论
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -977,15 +1246,15 @@
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.92ffa368.min.js"></script>
-      <script src="../../assets/javascripts/bundle.5123e3d4.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
+      <script src="../../assets/javascripts/vendor.d1f5a259.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
       
       <script>
         app = initialize({
           base: "../..",
           features: [],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.a68abb33.min.js"
+            worker: "../../assets/javascripts/worker/search.fae956e7.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

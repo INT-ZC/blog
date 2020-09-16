@@ -17,17 +17,17 @@
         <meta name="author" content="Zhiyuan Chen">
       
       <link rel="shortcut icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.6">
     
     
       
-        <title>算法（Algorithm）</title>
+        <title>算法（Algorithm） - Zhiyuan Chen</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.b5d04df8.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.63b94e9e.min.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.9ab2c1f8.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.7f672a1f.min.css">
       
       
         
@@ -243,6 +243,18 @@
 
   <li class="md-nav__item">
     <a href="../../document/jetbrains/" title="JetBrains使用指南" class="md-nav__link">
+      JetBrains使用指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../document/torch.distributed/" title="JetBrains使用指南" class="md-nav__link">
       JetBrains使用指南
     </a>
   </li>
@@ -873,13 +885,13 @@
 <details class="abstract" open="open"><summary>确定</summary><p>算法的每一步计算都是确定的</p>
 </details>
 </div>
-<p>算法与程序无关。有很多程序并不是算法，譬如神经网络便并不满足以上定义。算法也与编程语言无关。使用某种语言写出一个程序只是表达算法的一种方式--你甚至可以用自然语言去表达算法，如果你愿意的话。在本章当中，我们将使用Python来实现所有算法。现实当中你可能并不想这么做--以C#、C++为代表的静态类型语言提供了方法重载等高级功能，能使你更高效的去实现某个算法。我们在这里选择Python仅仅是因为我懒得打括号。</p>
+<p>算法与程序无关。有很多程序并不是算法，譬如神经网络便并不满足以上定义。算法也与编程语言无关。使用某种语言写出一个程序只是表达算法的一种方式&ndash;你甚至可以用自然语言去表达算法，如果你愿意的话。在本章当中，我们将使用Python来实现所有算法。现实当中你可能并不想这么做&ndash;以C#、C++为代表的静态类型语言提供了方法重载等高级功能，能使你更高效的去实现某个算法。我们在这里选择Python仅仅是因为我懒得打括号。</p>
 <p>本章虽然名为算法，然而绝大多数算法都需要恰当的组织数据。因此，数据结构可以说是同等重要的。我们在此沿用《算法（第四版）》中的对数据结构的定义：</p>
 <div class="admonition quote">
 <p class="admonition-title">数据结构</p>
 <p>数据结构是算法的副产品或是最终产物</p>
 </div>
-<p>本章节内容参考了许多资料，包括Robert Sedgewick和Kevin Wayne合著的《算法（第四版）》、Jon Kleinberg和Éva Tardos的《算法设计》、邓俊辉的《数据结构》、Jeff Erickson的《算法》、Thomas H. Cormen、Charles E. Leiserson、Ronald L. Rivest、和Clifford Stein合著的《算法导论》、Mark Allen Weiss的《数据结构与算法分析》、以及Donald Knuth的《计算机程序设计艺术》（按照推荐降序排列）以及许多线上与线下课程。需要注意的是，本章并不意图成为一本新的算法教材--他们所撰写的书籍要远超我的水平。本章仅意在使用通俗易懂的语言来对其进行简单的描述以给你一个直觉。如果你有志于学习算法，我们强烈建议你从第一本书开始看起。</p>
+<p>本章节内容参考了许多资料，包括Robert Sedgewick和Kevin Wayne合著的《算法（第四版）》、Jon Kleinberg和Éva Tardos的《算法设计》、邓俊辉的《数据结构》、Jeff Erickson的《算法》、Thomas H. Cormen、Charles E. Leiserson、Ronald L. Rivest、和Clifford Stein合著的《算法导论》、Mark Allen Weiss的《数据结构与算法分析》、以及Donald Knuth的《计算机程序设计艺术》（按照推荐降序排列）以及许多线上与线下课程。需要注意的是，本章并不意图成为一本新的算法教材&ndash;他们所撰写的书籍要远超我的水平。本章仅意在使用通俗易懂的语言来对其进行简单的描述以给你一个直觉。如果你有志于学习算法，我们强烈建议你从第一本书开始看起。</p>
                 
                   
                 
@@ -934,15 +946,15 @@
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.92ffa368.min.js"></script>
-      <script src="../../assets/javascripts/bundle.5123e3d4.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
+      <script src="../../assets/javascripts/vendor.d1f5a259.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
       
       <script>
         app = initialize({
           base: "../..",
           features: [],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.a68abb33.min.js"
+            worker: "../../assets/javascripts/worker/search.fae956e7.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

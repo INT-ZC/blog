@@ -17,17 +17,17 @@
         <meta name="author" content="Zhiyuan Chen">
       
       <link rel="shortcut icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.6">
     
     
       
-        <title>安装Kubernetes</title>
+        <title>安装Kubernetes - Zhiyuan Chen</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.b5d04df8.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.63b94e9e.min.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.9ab2c1f8.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.7f672a1f.min.css">
       
       
         
@@ -248,6 +248,18 @@
 
   <li class="md-nav__item">
     <a href="../../document/jetbrains/" title="JetBrains使用指南" class="md-nav__link">
+      JetBrains使用指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../document/torch.distributed/" title="JetBrains使用指南" class="md-nav__link">
       JetBrains使用指南
     </a>
   </li>
@@ -1002,7 +1014,7 @@
 <p>网上kubernetes各种安装教程不少，但要么是上古时期的版本，要么三言两语匆匆带过。尤其是在我们还需要用到显卡的情况下…………</p>
 <p>这里总结一下自己安装kubernetes的全部过程。</p>
 <p><strong>如果你还没有安装Docker，请先参考<a href="../../docker/installation">这篇文章</a>安装Docker。</strong></p>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span># 添加kubernetes仓库
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><code># 添加kubernetes仓库
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 cat &lt;&lt;EOF &gt;/etc/apt/sources.list.d/kubernetes.list
     deb https://apt.kubernetes.io/ kubernetes-xenial main
@@ -1012,7 +1024,7 @@ cat &lt;&lt;EOF &gt;/etc/apt/sources.list.d/kubernetes.list
 # 更新仓库
 apt-get update
 apt-get install kubelet kubeadm kubectl
-</pre></div>
+</code></pre></div>
 
 
 <h2 id="_2">拉取依赖镜像<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
@@ -1079,7 +1091,7 @@ apt-get install kubelet kubeadm kubectl
 59
 60
 61
-62</pre></div></td><td class="code"><div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">#!/bin/bash</span>
+62</pre></div></td><td class="code"><div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><code><span style="color: #75715e">#!/bin/bash</span>
 <span style="color: #f8f8f2">set</span> -e    
 <span style="color: #66d9ef">if</span> <span style="color: #f92672">[</span> -n <span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">$1</span><span style="color: #e6db74">&quot;</span> <span style="color: #f92672">]</span><span style="color: #f8f8f2">;</span> <span style="color: #66d9ef">then</span>
     <span style="color: #f8f8f2">K8S_VERSION</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">$1</span>
@@ -1141,38 +1153,38 @@ docker rmi registry.cn-hangzhou.aliyuncs.com/google_containers/etcd:<span style=
 docker rmi registry.cn-hangzhou.aliyuncs.com/google_containers/pause:<span style="color: #f8f8f2">$PAUSE_VERSION</span>
 docker rmi registry.cn-hangzhou.aliyuncs.com/google_containers/coredns:<span style="color: #f8f8f2">$DNS_VERSION</span>
 docker rmi registry.cn-hangzhou.aliyuncs.com/kubernetes_containers/flannel:<span style="color: #f8f8f2">$FLANNEL_VERSION</span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <h2 id="kubernetes">初始化kubernetes<a class="headerlink" href="#kubernetes" title="Permanent link">#</a></h2>
 <p><strong>出于对网络速度的考虑，我们使用了Flannel作为网络模型，不同网络模型的初始化参数可能不一样，请依据指导初始化</strong></p>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=&lt;ip-address&gt;
-</pre></div>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><code>kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=&lt;ip-address&gt;
+</code></pre></div>
 
 
 <h2 id="_3">导出配置文件<a class="headerlink" href="#_3" title="Permanent link">#</a></h2>
 <p><strong>导出配置文件是十分必要的，kubernetes会从当前操作用户的~/.kube目录下读取配置文件</strong></p>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span># 对于普通用户
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><code># 对于普通用户
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 # 对于root用户
 export KUBECONFIG=/etc/kubernetes/admin.conf
-</pre></div>
+</code></pre></div>
 
 
 <p><strong>如果配置文件无法读取，您在接下来的操作当中可能会看到如下错误之一：</strong></p>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>Unable to connect to the server: x509: certificate signed by unknown authority (possibly because of “crypto/rsa: verification error” while trying to verify candidate authority certificate “kubernetes”)
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><code>Unable to connect to the server: x509: certificate signed by unknown authority (possibly because of “crypto/rsa: verification error” while trying to verify candidate authority certificate “kubernetes”)
 
 The connection to the server localhost:8080 was refused - did you specify the right host or port?
 
 The connection to the server localhost:6443 was refused - did you specify the right host or port?
-</pre></div>
+</code></pre></div>
 
 
 <h2 id="kubernetes_1">部署kubernetes网络模型<a class="headerlink" href="#kubernetes_1" title="Permanent link">#</a></h2>
 <p><strong>如果您选择了其他网络模型，请依据指导完成本步骤</strong></p>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>sysctl net.bridge.bridge-nf-call-iptables=1
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><code>sysctl net.bridge.bridge-nf-call-iptables=1
 kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 
 **部署NVIDIA设备插件**
@@ -1186,13 +1198,13 @@ kubectl create -f https://raw.githubusercontent.com/NVIDIA/k8s-device-plugin/v1.
 
 **部署kubernetes dashboard**
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml
-</pre></div>
+</code></pre></div>
 
 
 <h2 id="_4">安装结束<a class="headerlink" href="#_4" title="Permanent link">#</a></h2>
 <p>至此，kubernetes已经成功在您的机器上安装，运行</p>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>kubectl get pods --all-namespaces
-</pre></div>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><code>kubectl get pods --all-namespaces
+</code></pre></div>
 
 
 <p>检视所有pod的运行情况</p>
@@ -1286,15 +1298,15 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.92ffa368.min.js"></script>
-      <script src="../../assets/javascripts/bundle.5123e3d4.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
+      <script src="../../assets/javascripts/vendor.d1f5a259.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
       
       <script>
         app = initialize({
           base: "../..",
           features: [],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.a68abb33.min.js"
+            worker: "../../assets/javascripts/worker/search.fae956e7.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
