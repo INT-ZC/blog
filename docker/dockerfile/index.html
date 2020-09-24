@@ -17,17 +17,17 @@
         <meta name="author" content="Zhiyuan Chen">
       
       <link rel="shortcut icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.6">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.0">
     
     
       
-        <title>Dockerfile - Zhiyuan Chen</title>
+        <title>Dockerfile</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.63b94e9e.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.b5d04df8.min.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.7f672a1f.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.9ab2c1f8.min.css">
       
       
         
@@ -1222,36 +1222,36 @@
 <h2 id="_1">指令<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
 <p>首先，我们从Dockerfile的指令开始。Dockerfile有十几种指令，其中只有六种指令会创建一个新的层。他们是**ADD**、<strong>CMD</strong>、<strong>COPY</strong>、<strong>ENTRYPOINT</strong>、<strong>FROM**和**RUN</strong>。这六种指令在运行当中会创建新的层，在实践过程当中我们需要特别关注这些指令，错误的使用这些指令将可能造成容器未按期待运行。对于其他所有指令，Docker都将只会构建一个中间镜像，这既不会增加容器的大小，也不会对容器的性能产生任何影响。</p>
 <h3 id="from">FROM<a class="headerlink" href="#from" title="Permanent link">#</a></h3>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><code>FROM &lt;image&gt;[:&lt;tag&gt;] [AS &lt;name&gt;]
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>FROM &lt;image&gt;[:&lt;tag&gt;] [AS &lt;name&gt;]
 FROM &lt;image&gt;[@&lt;digest&gt;] [AS &lt;name&gt;]
-</code></pre></div>
+</pre></div>
 
 
 <p>通常情况下，Dockerfile的第一行是FROM，也即代表其将基于一个另一个Docker（当然，极少数情况下也可能是scratch）构建。你可以将其理解为继承&ndash;子类将实现父类的全部功能。如果你希望对你的容器具有完全的掌控的话，你也可以省略掉FROM或者直接FROM scratch来构建一个基镜像。这将很可能耗去你大量的精力却无法带来任何收益，我们强烈推荐你不要这么做，除非你很确定你自己想做些什么。</p>
 <p>在上古时代（Docker 17.05之前），Docker是不支持多个FROM语句的。即Docker是单一继承的。但Docker 17.05添加了多阶段构建（multi-stage builds）。如果你在容器当中需要编译什么东西的话，使用多阶段构建创建一个新的容器进行编译并将结果复制到本容器当中将对于降低容器大小非常有利。我们会在稍后的例子当中进行演示。</p>
 <h3 id="label">LABEL<a class="headerlink" href="#label" title="Permanent link">#</a></h3>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><code>LABEL &lt;key&gt;=&lt;value&gt;
-</code></pre></div>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>LABEL &lt;key&gt;=&lt;value&gt;
+</pre></div>
 
 
 <p>LABEL对镜像进行标签，这个似乎没什么需要多说的。</p>
 <h3 id="arg-env">ARG 和 ENV<a class="headerlink" href="#arg-env" title="Permanent link">#</a></h3>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><code>ARG &lt;name&gt;[=&lt;default value&gt;]
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>ARG &lt;name&gt;[=&lt;default value&gt;]
 
 ENV &lt;key&gt; &lt;value&gt;
 ENV &lt;key&gt;=&lt;value&gt;
-</code></pre></div>
+</pre></div>
 
 
 <p>ARG指令设置参数，参数只能在构建镜像时使用，镜像创建完毕即丢失。ENV指令设置的则是环境变量，在容器创建好后仍然存在。这两个指令都对接下来的ADD、CMD、COPY、ENV、EXPOSE、ENTRYPOINT、FROM、LABEL、RUN、STOPSIGNAL、USER、VOLUME和WORKDIR生效。此外，对于Docker 1.4之后的版本来说，如果ONBUILD与上述十个指令联用，那他们也将对ONBUILD指令生效。对于Docker 1.13之后的版本来说，如果 docker build &ndash;build-arg 传递的参数在Dockerfile当中没有使用，Docker将会产生如下警告：</p>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><code>[Warning] One or more build-args [foo] were not consumed.
-</code></pre></div>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>[Warning] One or more build-args [foo] were not consumed.
+</pre></div>
 
 
 <p>这两个指令的区别主要在于作用域。如果需要在构建镜像时创建环境变量，也可这么写：</p>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><code>ARG ZC=&quot;Zhiyuan Chen&quot;
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>ARG ZC=&quot;Zhiyuan Chen&quot;
 ENV ${ZC}
-</code></pre></div>
+</pre></div>
 
 
 <p>Docker有如下的预定义参数，可以直接调用：
@@ -1265,101 +1265,101 @@ ENV ${ZC}
     no_proxy</p>
 <p>此外，ARG是唯一一个允许在第一个 FROM 指令之前出现的指令。</p>
 <h3 id="workdir-user">WORKDIR 和 USER<a class="headerlink" href="#workdir-user" title="Permanent link">#</a></h3>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><code>WORKDIR /path/to/workdir
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>WORKDIR /path/to/workdir
 
 USER &lt;user&gt;[:&lt;group&gt;]
 USER &lt;UID&gt;[:&lt;GID&gt;]
-</code></pre></div>
+</pre></div>
 
 
 <p>WORKDIR指令设置当前的工作目录。该指令将对接下来的ADD、CMD、COPY、ENTRYPOINT和RUN指令产生影响。</p>
 <p>USER指令设置当前的操作用户。该指令将对接下来的RUN、CMD和ENTRYPOINT指令产生影响。</p>
 <h3 id="run">RUN<a class="headerlink" href="#run" title="Permanent link">#</a></h3>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><code>RUN &lt;command&gt;
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>RUN &lt;command&gt;
 RUN [&quot;executable&quot;, &quot;param1&quot;, &quot;param2&quot;]
-</code></pre></div>
+</pre></div>
 
 
 <p>RUN指令有两种格式，第一种是shell格式，在Linux系统下默认使用 <strong>/bin/sh -c</strong> ， 在Windows系统下则默认使用 <strong>cmd /S /C</strong> 。第二种则是exec格式。需要注意的是，在exec格式之下，将由shell来处理环境变量而不是Docker，所以在Dockerfile当中定义的环境变量通常无效。一般情况下，我们不会使用第二种格式，除非必须显式指定shell。</p>
 <p>RUN应该是使用最多的Dockerfile指令了，无论是下载还是运行，一切都少不了RUN的幕后黑手。这也导致RUN成了最容易出错的地方。</p>
 <p>**&amp;&amp;**关键字允许你在一个RUN当中执行多条命令。由于RUN指令执行的过程当中会创建一个新的层，所以我们需要按照需求对指令进行合并或者拆分。</p>
 <p>比如说在初始的apt-get当中，如果我们错误的将指令拆分成：</p>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><code>RUN apt-get update          # layer x
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>RUN apt-get update          # layer x
 RUN apt-get install -y git  # layer x + 1
-</code></pre></div>
+</pre></div>
 
 
 <p>那么在执行完第一个指令之后，x层就会被缓存下来，随后倘若我们对第二行指令进行更改，那他可能就会获取到过时的软件。因此，apt-get一定要写成如下形式：</p>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><code>RUN apt-get update &amp;&amp; apt-get install -y \
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>RUN apt-get update &amp;&amp; apt-get install -y \
     git
-</code></pre></div>
+</pre></div>
 
 
 <h3 id="copy-add">COPY 和 ADD<a class="headerlink" href="#copy-add" title="Permanent link">#</a></h3>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><code>COPY [--chown=&lt;user&gt;:&lt;group&gt;] &lt;src&gt;... &lt;dest&gt;
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>COPY [--chown=&lt;user&gt;:&lt;group&gt;] &lt;src&gt;... &lt;dest&gt;
 COPY &lt;src&gt; &lt;dest&gt;
-</code></pre></div>
+</pre></div>
 
 
 <p>这两个指令的功能非常相似，都是将文件从容器之外复制到容器之内。但COPY指令更简单也更透明一些，也更经常被使用。ADD指令增加了对url的支持使得其可以从网上下载文件，同时它也可以直接将文件解压。但是由于ADD指令从网上下载的文件会自动设置权限为600，而调整权限还需要一个RUN指令。不如直接通过RUN下载文件来的方便。因此，请只在需要解压文件的时候才使用ADD指令。</p>
 <p>需要注意的是，<src>为源于Dockfile所在文件夹的相对路径，<dest>则是目标容器内的绝对路径。此外，这两个指令同时支持通配符，即</p>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><code>COPY zc* /usr/local/docker
-</code></pre></div>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>COPY zc* /usr/local/docker
+</pre></div>
 
 
 <p>将会把当前目录下所有以zc开头的文件复制到容器的/usr/local/docker目录当中。</p>
 <h3 id="expose">EXPOSE<a class="headerlink" href="#expose" title="Permanent link">#</a></h3>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><code>EXPOSE &lt;port&gt; [&lt;port&gt;/&lt;protocol&gt;...]
-</code></pre></div>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>EXPOSE &lt;port&gt; [&lt;port&gt;/&lt;protocol&gt;...]
+</pre></div>
 
 
 <p>EXPOSE指令暴露容器对应的端口。默认情况下，EXPOSE指令将假设TCP协议，如果使用UDP协议需要显式声明。</p>
 <h3 id="volume">VOLUME<a class="headerlink" href="#volume" title="Permanent link">#</a></h3>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><code>VOLUME [&quot;/zc&quot;]
-</code></pre></div>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>VOLUME [&quot;/zc&quot;]
+</pre></div>
 
 
 <p>VOLUME指令和前文所述的使用 docker run -v 但只指定容器内目录完全一样。他会给这个挂载随机一个名字，然后再本机/var/lib/docker/volumes目录之下创建一个与挂载名字相同的文件夹。也就是说，虽然它的名字叫卷，但创建的实际上是一个捆绑挂载……这个指令我从来没有用过，还专门为这篇文章查了半天资料顺带做了两个实验。我完全无法理解这种设计的用意，也强烈建议大家都不要使用。docker run 命令多打两句能实现的要比他优雅的多，建议使用。值得一提的是，如果在VOLUME里和在 docker run 里同时挂载了目录，则只有 docker run 挂载的目录会生效。</p>
 <h3 id="healthcheck-stopsignal">HEALTHCHECK 和 STOPSIGNAL<a class="headerlink" href="#healthcheck-stopsignal" title="Permanent link">#</a></h3>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><code>HEALTHCHECK [OPTIONS] CMD command
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>HEALTHCHECK [OPTIONS] CMD command
 HEALTHCHECK NONE
 
 STOPSIGNAL signal
-</code></pre></div>
+</pre></div>
 
 
 <p>HEALTHCHECK指令告诉容器如何运行健康检查。如果容器的Dockerfile中指定了HEALTHCHECK方法，在运行 docker ps 命令时，容器的状态一栏中会显示容器当前是否健康。</p>
 <p>STOPSIGNAL指令重写在 docker stop 命令执行时发送给容器的信号。</p>
 <p>HEALTHCHECK指令有如下参数：</p>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><code>--interval=DURATION     # 两次健康检查的间隔，默认30秒。
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>--interval=DURATION     # 两次健康检查的间隔，默认30秒。
 --timeout=DURATION      # 健康检查的超时，默认30秒。
 --start-period=DURATION # 容器启动多久之后开始健康检查，默认0秒。
 --retries=N             # 健康检查失败之后显示容器不健康时经过多少次重试，默认3次。
-</code></pre></div>
+</pre></div>
 
 
 <h3 id="onbuild">ONBUILD<a class="headerlink" href="#onbuild" title="Permanent link">#</a></h3>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><code>ONBUILD [INSTRUCTION]
-</code></pre></div>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>ONBUILD [INSTRUCTION]
+</pre></div>
 
 
 <p>ONBUILD指令后跟其他指令。ONBUILD指令的内容将不会在这个Docker构建的时候执行，但是如果其他Docker继承这个Docker，ONBUILD后跟的指令会在FROM结束之后立即执行。</p>
 <h3 id="cmd-entrypoint">CMD 和 ENTRYPOINT<a class="headerlink" href="#cmd-entrypoint" title="Permanent link">#</a></h3>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><code>CMD [&quot;executable&quot;,&quot;param1&quot;,&quot;param2&quot;]
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>CMD [&quot;executable&quot;,&quot;param1&quot;,&quot;param2&quot;]
 CMD command param1 param2
 CMD [&quot;param1&quot;,&quot;param2&quot;]
 
 ENTRYPOINT [&quot;executable&quot;, &quot;param1&quot;, &quot;param2&quot;]
 ENTRYPOINT command param1 param2
-</code></pre></div>
+</pre></div>
 
 
 <p>CMD指令和ENTRYPOINT指令几乎没有区别，他们的作用都是在容器构建之后执行其中的命令。他们也都有两种格式&ndash;shell和exec，正如RUN指令一样。区别在于CMD指令多一种参数模式，在参数模式下，CMD指令后跟的参数将作为默认参数传递给ENTRYPOINT指令执行。即下列两个指令在实际上是等价的：</p>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><code>ENTRYPOINT [&quot;/start.sh&quot;]
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>ENTRYPOINT [&quot;/start.sh&quot;]
 CMD [&quot;aptly&quot;, &quot;api&quot;, &quot;serve&quot;]
 
 ENTRYPOINT[&quot;/start.sh&quot;, &quot;aptly&quot;, &quot;api&quot;, &quot;serve&quot;]
-</code></pre></div>
+</pre></div>
 
 
 <p>他们的区别除此之外主要在于CMD指令会更容易的在 docker run 命令当中被重写，而ENTRYPOINT需要显式指定 &ndash;entrypoint 参数才能重写。</p>
@@ -1407,7 +1407,7 @@ ENTRYPOINT[&quot;/start.sh&quot;, &quot;aptly&quot;, &quot;api&quot;, &quot;serv
 <h2 id="_2">分析<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
 <p>了解了Docerfile的组成部分，让我们来分析一下别人家都是怎么写Dockerfile的。以下是nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04及其继承的Dockerfile。</p>
 <h3 id="101-cudnn7-devel-ubuntu1804">10.1-cudnn7-devel-ubuntu18.04<a class="headerlink" href="#101-cudnn7-devel-ubuntu1804" title="Permanent link">#</a></h3>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><code>ARG IMAGE_NAME
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>ARG IMAGE_NAME
 FROM ${IMAGE_NAME}:10.1-devel-ubuntu18.04
 LABEL maintainer &quot;NVIDIA CORPORATION &lt;cudatools@nvidia.com&gt;&quot;
 
@@ -1420,13 +1420,13 @@ libcudnn7-dev=$CUDNN_VERSION-1+cuda10.1 \
 &amp;&amp; \
     apt-mark hold libcudnn7 &amp;&amp; \
     rm -rf /var/lib/apt/lists/*
-</code></pre></div>
+</pre></div>
 
 
 <p>首先，第一行ARG指令描述了镜像的名字，并在随后的FROM指令当中应用到。</p>
 <p>nvidia/cuda的Dockerfile都是层层继承的，这非常值得学习。</p>
 <h3 id="101-devel-ubuntu1804">10.1-devel-ubuntu18.04<a class="headerlink" href="#101-devel-ubuntu1804" title="Permanent link">#</a></h3>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><code>ARG IMAGE_NAME
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>ARG IMAGE_NAME
 FROM ${IMAGE_NAME}:10.1-runtime-ubuntu18.04
 LABEL maintainer &quot;NVIDIA CORPORATION &lt;cudatools@nvidia.com&gt;&quot;
 
@@ -1440,11 +1440,11 @@ cuda-libraries-dev-$CUDA_PKG_VERSION \
     rm -rf /var/lib/apt/lists/*
 
 ENV LIBRARY_PATH /usr/local/cuda/lib64/stubs
-</code></pre></div>
+</pre></div>
 
 
 <h3 id="101-runtime-ubuntu1804">10.1-runtime-ubuntu18.04<a class="headerlink" href="#101-runtime-ubuntu1804" title="Permanent link">#</a></h3>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><code>ARG IMAGE_NAME
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>ARG IMAGE_NAME
 FROM ${IMAGE_NAME}:10.1-base-ubuntu18.04
 LABEL maintainer &quot;NVIDIA CORPORATION &lt;cudatools@nvidia.com&gt;&quot;
 
@@ -1456,11 +1456,11 @@ cuda-nvtx-$CUDA_PKG_VERSION \
 libnccl2=$NCCL_VERSION-1+cuda10.1 &amp;&amp; \
     apt-mark hold libnccl2 &amp;&amp; \
     rm -rf /var/lib/apt/lists/*
-</code></pre></div>
+</pre></div>
 
 
 <h3 id="101-base-ubuntu1804">10.1-base-ubuntu18.04<a class="headerlink" href="#101-base-ubuntu1804" title="Permanent link">#</a></h3>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><code>FROM ubuntu:18.04
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>FROM ubuntu:18.04
 LABEL maintainer &quot;NVIDIA CORPORATION &lt;cudatools@nvidia.com&gt;&quot;
 
 RUN apt-get update &amp;&amp; apt-get install -y --no-install-recommends \
@@ -1493,11 +1493,11 @@ ENV LD_LIBRARY_PATH /usr/local/nvidia/lib:/usr/local/nvidia/lib64
 ENV NVIDIA_VISIBLE_DEVICES all
 ENV NVIDIA_DRIVER_CAPABILITIES compute,utility
 ENV NVIDIA_REQUIRE_CUDA &quot;cuda&gt;=10.1 brand=tesla,driver&gt;=384,driver&lt;385 brand=tesla,driver&gt;=396,driver&lt;397 brand=tesla,driver&gt;=410,driver&lt;411&quot;
-</code></pre></div>
+</pre></div>
 
 
 <h3 id="ubuntu1804">ubuntu:18.04<a class="headerlink" href="#ubuntu1804" title="Permanent link">#</a></h3>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><code>FROM scratch
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>FROM scratch
 ADD ubuntu-bionic-core-cloudimg-amd64-root.tar.gz /
 # verify that the APT lists files do not exist
 RUN [ -z &quot;$(apt-get indextargets)&quot; ]
@@ -1540,7 +1540,7 @@ RUN mkdir -p /run/systemd &amp;&amp; echo &#39;docker&#39; &gt; /run/systemd/con
 
 # overwrite this with &#39;CMD []&#39; in a dependent Dockerfile
 CMD [&quot;/bin/bash&quot;]
-</code></pre></div>
+</pre></div>
                 
                   
                 
@@ -1630,15 +1630,15 @@ CMD [&quot;/bin/bash&quot;]
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.d1f5a259.min.js"></script>
-      <script src="../../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
+      <script src="../../assets/javascripts/vendor.92ffa368.min.js"></script>
+      <script src="../../assets/javascripts/bundle.5123e3d4.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
       
       <script>
         app = initialize({
           base: "../..",
           features: [],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.fae956e7.min.js"
+            worker: "../../assets/javascripts/worker/search.a68abb33.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

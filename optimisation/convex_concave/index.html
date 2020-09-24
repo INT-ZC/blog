@@ -17,17 +17,17 @@
         <meta name="author" content="Zhiyuan Chen">
       
       <link rel="shortcut icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.6">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.0">
     
     
       
-        <title>凸凹 - Zhiyuan Chen</title>
+        <title>凸凹</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.63b94e9e.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.b5d04df8.min.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.7f672a1f.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.9ab2c1f8.min.css">
       
       
         
@@ -437,15 +437,21 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    凸函数
+    凸函数与凹函数
+  </a>
+  
+    <nav class="md-nav" aria-label="凸函数与凹函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    凸函数的判定
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    凹函数
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -930,15 +936,21 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    凸函数
+    凸函数与凹函数
+  </a>
+  
+    <nav class="md-nav" aria-label="凸函数与凹函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    凸函数的判定
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    凹函数
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -965,7 +977,7 @@
                   <h1>凸凹</h1>
                 
                 <p>ok，在了解了基础知识之后，让我们开始入门：凸函数与凹函数</p>
-<h2 id="_1">凸函数<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
+<h2 id="_1">凸函数与凹函数<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
 <div class="admonition important">
 <p class="admonition-title">凸函数</p>
 <p>函数<span><span class="MathJax_Preview">f: \mathbb{R}^n \rightarrow \mathbb{R}</span><script type="math/tex">f: \mathbb{R}^n \rightarrow \mathbb{R}</script></span>是一个凸函数，如果他的取值范围<span><span class="MathJax_Preview">\mathrm{dom} f</span><script type="math/tex">\mathrm{dom} f</script></span>是一个凸集，并且</p>
@@ -990,10 +1002,41 @@
 <script type="math/tex; mode=display">f(\sum_{i=1}^n \theta_i x_i) \lt \sum_{i=1}^n f(\theta_i x_i)</script>
 </div>
 </div>
-<h2 id="_2">凹函数<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
 <div class="admonition important">
 <p class="admonition-title">凹函数</p>
-<p>函数<span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span>是凸函数，当且仅当<span><span class="MathJax_Preview">-f</span><script type="math/tex">-f</script></span>是一个凹函数。</p>
+<p>如果函数<span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span>是个凸函数，那么函数<span><span class="MathJax_Preview">-f</span><script type="math/tex">-f</script></span>是凹函数。</p>
+<p>如果函数<span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span>是严格凸函数，那么函数<span><span class="MathJax_Preview">-f</span><script type="math/tex">-f</script></span>是严格凹函数。</p>
+</div>
+<h3 id="_2">凸函数的判定<a class="headerlink" href="#_2" title="Permanent link">#</a></h3>
+<div class="admonition important">
+<p class="admonition-title">Restriction of a Convex Function to a Line</p>
+<p>对于函数<span><span class="MathJax_Preview">f: \mathbb{R}^n \rightarrow \mathbb{R}</span><script type="math/tex">f: \mathbb{R}^n \rightarrow \mathbb{R}</script></span>，若该函数在每一个方向上<span><span class="MathJax_Preview">g(t) = f(x + tv): \mathbb{R} \rightarrow \mathbb{R}</span><script type="math/tex">g(t) = f(x + tv): \mathbb{R} \rightarrow \mathbb{R}</script></span>都是凸的，则该函数是凸的。</p>
+</div>
+<p>这个方式通过将判定一个定义域为<span><span class="MathJax_Preview">\mathbb{R}^n</span><script type="math/tex">\mathbb{R}^n</script></span>的函数的凸性的问题转换为<span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span>个定义域为<span><span class="MathJax_Preview">\mathbb{R}</span><script type="math/tex">\mathbb{R}</script></span>的问题来降低计算量，但其不适用于多变量函数。</p>
+<details class="example"><summary>f(X) = \log \det x</summary><div>
+<div class="MathJax_Preview">\begin{align} g(t) 
+&amp;= \log \det (X = tV)\\
+&amp;= \log \det X + \log \det (I + tX^{-1/2}VX^{1/2})\\
+&amp;= \log \det X + \sum^n{i=1} \log (1 + t\lambda_i)\\
+\end{align}</div>
+<script type="math/tex; mode=display">\begin{align} g(t) 
+&= \log \det (X = tV)\\
+&= \log \det X + \log \det (I + tX^{-1/2}VX^{1/2})\\
+&= \log \det X + \sum^n{i=1} \log (1 + t\lambda_i)\\
+\end{align}</script>
+</div>
+<p>其中<span><span class="MathJax_Preview">\lambda_i</span><script type="math/tex">\lambda_i</script></span>是<span><span class="MathJax_Preview">X^{-1/2}VX^{1/2}</span><script type="math/tex">X^{-1/2}VX^{1/2}</script></span>的特征值。</p>
+<p>因为<span><span class="MathJax_Preview">g</span><script type="math/tex">g</script></span>在<span><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span>中是凹的，所以f是凹函数。</p>
+</details>
+<div class="admonition important">
+<p class="admonition-title">扩展值延申</p>
+<p>函数<span><span class="MathJax_Preview">f: \mathbb{R}^n \rightarrow \mathbb{R}</span><script type="math/tex">f: \mathbb{R}^n \rightarrow \mathbb{R}</script></span>的扩展值延申<span><span class="MathJax_Preview">\tlide{f}</span><script type="math/tex">\tlide{f}</script></span>被如下定义：</p>
+<p>$$\tlide{f} = 
+<script type="math/tex; mode=display">\begin{cases}\begin{align}
+f(x), & x \in \dom f\\
+\infty, & x \not \in \dom f
+\end{align}\end{cases}</script>
+</p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">$\mathbb{R}上凸函数</p>
@@ -1012,7 +1055,7 @@
 </ul>
 <p><span><span class="MathJax_Preview">^\star</span><script type="math/tex">^\star</script></span>：<span><span class="MathJax_Preview">x &gt; 0</span><script type="math/tex">x > 0</script></span></p>
 </div>
-<p>我们可以注意到，所有的仿射函数是既凸有凹的。此外，所有的范数也都是凸函数。</p>
+<p>我们可以注意到，所有的仿射函数是既凸又凹的。</p>
                 
                   
                 
@@ -1102,15 +1145,15 @@
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.d1f5a259.min.js"></script>
-      <script src="../../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
+      <script src="../../assets/javascripts/vendor.92ffa368.min.js"></script>
+      <script src="../../assets/javascripts/bundle.5123e3d4.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
       
       <script>
         app = initialize({
           base: "../..",
           features: [],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.fae956e7.min.js"
+            worker: "../../assets/javascripts/worker/search.a68abb33.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
