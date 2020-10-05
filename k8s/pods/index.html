@@ -974,7 +974,7 @@
 <p>相比容器，Pods在这里更像一个虚拟机&ndash;如果你把完成一个任务所需的所有容器都放在一个Pod当中，那这就相当于一个独立的节点了！</p>
 <h2 id="_1">描述文件<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
 <p>一个简单的Pod的描述文件如下所示：</p>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>apiVersion: v1
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%; margin: 0;"><span></span><code>apiVersion: v1
 kind: Pod
 metadata:
 name: demo
@@ -1000,7 +1000,7 @@ volumes:
     - name: logs
     hostPath:
         path: /usr/local/demo/logs
-</pre></div>
+</code></pre></div>
 
 
 <h2 id="_2">完成部署<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>

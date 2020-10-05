@@ -907,7 +907,7 @@
                 <h1 id="_1">安装<a class="headerlink" href="#_1" title="Permanent link">#</a></h1>
 <p>Docker的安装非常简单，apt-get/yum两分钟就好，Windows上的Docker更加简单，他还附带了Kubernetes。为节约篇幅，本文只讨论在ubuntu系统下的安装。如果你在（其他系统上）安装时遇到任何问题，欢迎留言。</p>
 <p>由于我们会用到nvidia-docker2，所以这里同时也有nvidia-docker2的安装内容。如果你不需要在容器当中使用Nvidia GPU，那么可以直接跳过相关内容。</p>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span># 安装依赖
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%; margin: 0;"><span></span><code># 安装依赖
 apt-get install \
     apt-transport-https \
     ca-certificates \
@@ -941,12 +941,12 @@ curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.li
 # 安装nvidia-docker2
 apt-get install nvidia-docker2
 pkill -SIGHUP dockerd
-</pre></div>
+</code></pre></div>
 
 
 <p>将nvidia-docker2修改为docker的默认运行时环境</p>
 <p><em>如果你不需要在容器当中使用Nvidia GPU，以下步骤无需执行</em></p>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>vim /etc/docker/daemon.json
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%; margin: 0;"><span></span><code>vim /etc/docker/daemon.json
     {
         &quot;default-runtime&quot;: &quot;nvidia&quot;,
         &quot;runtimes&quot;: {
@@ -957,17 +957,17 @@ pkill -SIGHUP dockerd
         }
     }
 sudo service docker restart
-</pre></div>
+</code></pre></div>
 
 
 <p>至此，Docker已经成功在您的机器上安装，运行</p>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>docker run hello-world
-</pre></div>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%; margin: 0;"><span></span><code>docker run hello-world
+</code></pre></div>
 
 
 <p>测试结果。</p>
 <p>Docker可能会提示没有找到这个镜像。这没有关系，他很快就会自动拉取。几十秒后，你将看到如下内容：</p>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>Hello from Docker!
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%; margin: 0;"><span></span><code>Hello from Docker!
 This message shows that your installation appears to be working correctly.
 
 To generate this message, Docker took the following steps:
@@ -992,7 +992,7 @@ https://docs.docker.com/get-started/
 $ docker images hello-world
 REPOSITORY   TAG     IMAGE ID      SIZE
 hello-world  latest  fce289e99eb9  1.84kB
-</pre></div>
+</code></pre></div>
 
 
 <p>在下一篇文章当中，我们将会讨论Docker的命令行接口（Command Line Interface）</p>

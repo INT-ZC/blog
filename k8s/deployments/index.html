@@ -974,7 +974,7 @@
 <p>简而言之，完成一个Deployment，你的人生才算圆满。</p>
 <h2 id="_1">描述文件<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
 <p>Deployments的描述文件可以看作是Pods描述文件的一个父集。</p>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>apiVersion: apps/v1
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%; margin: 0;"><span></span><code>apiVersion: apps/v1
 kind: Deployment
 metadata:
 name: demo-deployment
@@ -1009,7 +1009,7 @@ template:
         - name: logs
         hostPath:
             path: /usr/local/demo/logs
-</pre></div>
+</code></pre></div>
 
 
 <h2 id="_2">完成部署<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>

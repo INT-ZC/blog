@@ -1014,7 +1014,7 @@
 <p>网上kubernetes各种安装教程不少，但要么是上古时期的版本，要么三言两语匆匆带过。尤其是在我们还需要用到显卡的情况下…………</p>
 <p>这里总结一下自己安装kubernetes的全部过程。</p>
 <p><strong>如果你还没有安装Docker，请先参考<a href="../../docker/installation">这篇文章</a>安装Docker。</strong></p>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span># 添加kubernetes仓库
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%; margin: 0;"><span></span><code># 添加kubernetes仓库
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 cat &lt;&lt;EOF &gt;/etc/apt/sources.list.d/kubernetes.list
     deb https://apt.kubernetes.io/ kubernetes-xenial main
@@ -1024,74 +1024,74 @@ cat &lt;&lt;EOF &gt;/etc/apt/sources.list.d/kubernetes.list
 # 更新仓库
 apt-get update
 apt-get install kubelet kubeadm kubectl
-</pre></div>
+</code></pre></div>
 
 
 <h2 id="_2">拉取依赖镜像<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
 <p><strong>本步骤仅适用于位于GFW影响范围内的主机</strong></p>
 <p>运行以下脚本（如果您预期安装的kubernetes版本不是v1.13.2，请运行kubeadm config images list并依据返回结果运行脚本）：</p>
-<table class="codehilitetable"><tr><td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62</pre></div></td><td class="code"><div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span><span style="color: #75715e">#!/bin/bash</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;"> 1</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;"> 2</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;"> 3</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;"> 4</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;"> 5</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;"> 6</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;"> 7</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;"> 8</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;"> 9</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">10</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">11</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">12</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">13</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">14</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">15</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">16</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">17</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">18</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">19</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">20</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">21</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">22</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">23</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">24</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">25</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">26</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">27</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">28</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">29</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">30</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">31</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">32</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">33</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">34</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">35</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">36</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">37</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">38</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">39</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">40</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">41</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">42</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">43</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">44</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">45</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">46</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">47</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">48</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">49</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">50</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">51</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">52</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">53</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">54</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">55</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">56</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">57</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">58</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">59</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">60</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">61</span>
+<span style="color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px;">62</span></pre></div></td><td class="code"><div class="codehilite" style="background: #272822"><pre style="line-height: 125%; margin: 0;"><span></span><code><span style="color: #75715e">#!/bin/bash</span>
 <span style="color: #f8f8f2">set</span> -e    
 <span style="color: #66d9ef">if</span> <span style="color: #f92672">[</span> -n <span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">$1</span><span style="color: #e6db74">&quot;</span> <span style="color: #f92672">]</span><span style="color: #f8f8f2">;</span> <span style="color: #66d9ef">then</span>
     <span style="color: #f8f8f2">K8S_VERSION</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">$1</span>
@@ -1153,38 +1153,38 @@ docker rmi registry.cn-hangzhou.aliyuncs.com/google_containers/etcd:<span style=
 docker rmi registry.cn-hangzhou.aliyuncs.com/google_containers/pause:<span style="color: #f8f8f2">$PAUSE_VERSION</span>
 docker rmi registry.cn-hangzhou.aliyuncs.com/google_containers/coredns:<span style="color: #f8f8f2">$DNS_VERSION</span>
 docker rmi registry.cn-hangzhou.aliyuncs.com/kubernetes_containers/flannel:<span style="color: #f8f8f2">$FLANNEL_VERSION</span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <h2 id="kubernetes">初始化kubernetes<a class="headerlink" href="#kubernetes" title="Permanent link">#</a></h2>
 <p><strong>出于对网络速度的考虑，我们使用了Flannel作为网络模型，不同网络模型的初始化参数可能不一样，请依据指导初始化</strong></p>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=&lt;ip-address&gt;
-</pre></div>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%; margin: 0;"><span></span><code>kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=&lt;ip-address&gt;
+</code></pre></div>
 
 
 <h2 id="_3">导出配置文件<a class="headerlink" href="#_3" title="Permanent link">#</a></h2>
 <p><strong>导出配置文件是十分必要的，kubernetes会从当前操作用户的~/.kube目录下读取配置文件</strong></p>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span># 对于普通用户
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%; margin: 0;"><span></span><code># 对于普通用户
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 # 对于root用户
 export KUBECONFIG=/etc/kubernetes/admin.conf
-</pre></div>
+</code></pre></div>
 
 
 <p><strong>如果配置文件无法读取，您在接下来的操作当中可能会看到如下错误之一：</strong></p>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>Unable to connect to the server: x509: certificate signed by unknown authority (possibly because of “crypto/rsa: verification error” while trying to verify candidate authority certificate “kubernetes”)
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%; margin: 0;"><span></span><code>Unable to connect to the server: x509: certificate signed by unknown authority (possibly because of “crypto/rsa: verification error” while trying to verify candidate authority certificate “kubernetes”)
 
 The connection to the server localhost:8080 was refused - did you specify the right host or port?
 
 The connection to the server localhost:6443 was refused - did you specify the right host or port?
-</pre></div>
+</code></pre></div>
 
 
 <h2 id="kubernetes_1">部署kubernetes网络模型<a class="headerlink" href="#kubernetes_1" title="Permanent link">#</a></h2>
 <p><strong>如果您选择了其他网络模型，请依据指导完成本步骤</strong></p>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>sysctl net.bridge.bridge-nf-call-iptables=1
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%; margin: 0;"><span></span><code>sysctl net.bridge.bridge-nf-call-iptables=1
 kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 
 **部署NVIDIA设备插件**
@@ -1198,13 +1198,13 @@ kubectl create -f https://raw.githubusercontent.com/NVIDIA/k8s-device-plugin/v1.
 
 **部署kubernetes dashboard**
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml
-</pre></div>
+</code></pre></div>
 
 
 <h2 id="_4">安装结束<a class="headerlink" href="#_4" title="Permanent link">#</a></h2>
 <p>至此，kubernetes已经成功在您的机器上安装，运行</p>
-<div class="codehilite" style="background: #272822"><pre style="line-height: 125%"><span></span>kubectl get pods --all-namespaces
-</pre></div>
+<div class="codehilite" style="background: #272822"><pre style="line-height: 125%; margin: 0;"><span></span><code>kubectl get pods --all-namespaces
+</code></pre></div>
 
 
 <p>检视所有pod的运行情况</p>
