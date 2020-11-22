@@ -112,6 +112,10 @@
      <lastmod>2020-11-22</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
+     <loc>https://zyc.ai/about/</loc>
+     <lastmod>2020-11-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
      <loc>https://zyc.ai/about/donate/</loc>
      <lastmod>2020-11-22</lastmod>
      <changefreq>daily</changefreq>
@@ -133,10 +137,6 @@
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://zyc.ai/about/license/</loc>
-     <lastmod>2020-11-22</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://zyc.ai/about/zhiyuan_chen/</loc>
      <lastmod>2020-11-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
