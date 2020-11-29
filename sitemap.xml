@@ -1,143 +1,143 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://zyc.ai/</loc>
-     <lastmod>2020-11-22</lastmod>
+     <lastmod>2020-11-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://zyc.ai/document/design_pattern/</loc>
-     <lastmod>2020-11-22</lastmod>
+     <lastmod>2020-11-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://zyc.ai/document/jetbrains/</loc>
-     <lastmod>2020-11-22</lastmod>
+     <lastmod>2020-11-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://zyc.ai/document/torch.distributed/</loc>
-     <lastmod>2020-11-22</lastmod>
+     <lastmod>2020-11-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://zyc.ai/stat/probability/</loc>
-     <lastmod>2020-11-22</lastmod>
+     <lastmod>2020-11-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://zyc.ai/optimisation/introduction/</loc>
-     <lastmod>2020-11-22</lastmod>
+     <lastmod>2020-11-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://zyc.ai/optimisation/affine_convex/</loc>
-     <lastmod>2020-11-22</lastmod>
+     <lastmod>2020-11-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://zyc.ai/optimisation/ball_cone/</loc>
-     <lastmod>2020-11-22</lastmod>
+     <lastmod>2020-11-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://zyc.ai/optimisation/hyperplane_halfspace_polyhedra/</loc>
-     <lastmod>2020-11-22</lastmod>
+     <lastmod>2020-11-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://zyc.ai/optimisation/dual_cone_generalized_inequality/</loc>
-     <lastmod>2020-11-22</lastmod>
+     <lastmod>2020-11-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://zyc.ai/optimisation/convex_concave/</loc>
-     <lastmod>2020-11-22</lastmod>
+     <lastmod>2020-11-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://zyc.ai/cv/ssl/SimCLR/</loc>
-     <lastmod>2020-11-22</lastmod>
+     <lastmod>2020-11-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://zyc.ai/k8s/introduction/</loc>
-     <lastmod>2020-11-22</lastmod>
+     <lastmod>2020-11-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://zyc.ai/k8s/component/</loc>
-     <lastmod>2020-11-22</lastmod>
+     <lastmod>2020-11-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://zyc.ai/k8s/installation/</loc>
-     <lastmod>2020-11-22</lastmod>
+     <lastmod>2020-11-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://zyc.ai/k8s/pods/</loc>
-     <lastmod>2020-11-22</lastmod>
+     <lastmod>2020-11-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://zyc.ai/k8s/deployments/</loc>
-     <lastmod>2020-11-22</lastmod>
+     <lastmod>2020-11-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://zyc.ai/docker/introduction/</loc>
-     <lastmod>2020-11-22</lastmod>
+     <lastmod>2020-11-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://zyc.ai/docker/installation/</loc>
-     <lastmod>2020-11-22</lastmod>
+     <lastmod>2020-11-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://zyc.ai/docker/command_line_interface/</loc>
-     <lastmod>2020-11-22</lastmod>
+     <lastmod>2020-11-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://zyc.ai/docker/dockerfile/</loc>
-     <lastmod>2020-11-22</lastmod>
+     <lastmod>2020-11-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://zyc.ai/cppcg/CppCoreGuidelines/</loc>
-     <lastmod>2020-11-22</lastmod>
+     <lastmod>2020-11-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://zyc.ai/cppcg/abstract/</loc>
-     <lastmod>2020-11-22</lastmod>
+     <lastmod>2020-11-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://zyc.ai/instant_food/introduction/</loc>
-     <lastmod>2020-11-22</lastmod>
+     <lastmod>2020-11-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://zyc.ai/sketch/20190610/</loc>
-     <lastmod>2020-11-22</lastmod>
+     <lastmod>2020-11-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://zyc.ai/sketch/20191108/</loc>
-     <lastmod>2020-11-22</lastmod>
+     <lastmod>2020-11-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://zyc.ai/sketch/20200404/</loc>
-     <lastmod>2020-11-22</lastmod>
+     <lastmod>2020-11-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://zyc.ai/sketch/20201006/</loc>
-     <lastmod>2020-11-22</lastmod>
+     <lastmod>2020-11-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://zyc.ai/about/</loc>
-     <lastmod>2020-11-22</lastmod>
+     <lastmod>2020-11-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://zyc.ai/about/donate/</loc>
-     <lastmod>2020-11-22</lastmod>
+     <lastmod>2020-11-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://zyc.ai/about/contribute/</loc>
-     <lastmod>2020-11-22</lastmod>
+     <lastmod>2020-11-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://zyc.ai/about/eula/</loc>
-     <lastmod>2020-11-22</lastmod>
+     <lastmod>2020-11-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://zyc.ai/about/privacy/</loc>
-     <lastmod>2020-11-22</lastmod>
+     <lastmod>2020-11-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://zyc.ai/about/comment/</loc>
-     <lastmod>2020-11-22</lastmod>
+     <lastmod>2020-11-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://zyc.ai/about/license/</loc>
-     <lastmod>2020-11-22</lastmod>
+     <lastmod>2020-11-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
