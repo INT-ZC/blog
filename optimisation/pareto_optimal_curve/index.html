@@ -1,6 +1,4 @@
 
-
-
 <!doctype html>
 <html lang="zh" class="no-js">
   <head>
@@ -11,13 +9,22 @@
         <meta name="description" content="The website of Zhiyuan Chen">
       
       
-        <link rel="canonical" href="https://zyc.ai/optimisation/pareto_optimal_curve/">
-      
       
         <meta name="author" content="Zhiyuan Chen">
       
-      <link rel="shortcut icon" href="../../favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.6">
+      
+        <link rel="canonical" href="https://zyc.ai/optimisation/pareto_optimal_curve/">
+      
+      
+        
+          <link rel="alternate" href="https://zyc.ai/en/" hreflang="en">
+        
+      
+      
+        <link rel="search" type="application/opensearchdescription+xml" href="../../search.xml" title="Zhiyuan Chen 搜索">
+      
+      <link rel="shortcut icon" href="../../assests/site/logo.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.7+insiders-1.13.0">
     
     
       
@@ -25,29 +32,25 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.63b94e9e.min.css">
-      
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.7f672a1f.min.css">
-      
+      <link rel="stylesheet" href="../../assets/stylesheets/main.3ca7bbfe.min.css">
       
         
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.47d7edde.min.css">
         
-        <meta name="theme-color" content="#009688">
       
     
     
     
       
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica+Now+Display:300,400,400i,700%7CCascadia+Code&display=fallback">
-        <style>body,input{font-family:"Helvetica Now Display",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Cascadia Code",SFMono-Regular,Consolas,Menlo,monospace}</style>
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica:300,400,400i,700%7CCascadia+Code&display=fallback">
+        <style>body,input{font-family:"Helvetica",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Cascadia Code",SFMono-Regular,Consolas,Menlo,monospace}</style>
       
     
     
       <link rel="manifest" href="../../manifest.webmanifest" crossorigin="use-credentials">
     
-    
-      <link rel="stylesheet" href="../../css/css.css">
     
     
       
@@ -62,11 +65,16 @@
   
     
     
+      
     
-    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="teal" data-md-color-accent="teal">
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal">
   
     
-      <script>matchMedia("(prefers-color-scheme: dark)").matches&&document.body.setAttribute("data-md-color-scheme","slate")</script>
+    
+      <script>var palette=JSON.parse(localStorage.getItem("__palette")||"{}");if(void 0!==palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -78,27 +86,73 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      
+
+
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="https://zyc.ai" title="Zhiyuan Chen" class="md-header-nav__button md-logo" aria-label="Zhiyuan Chen">
       
-  <img src="../../images/zc.png" alt="logo">
+  <img src="../../assests/site/logo.png" alt="logo">
 
     </a>
     <label class="md-header-nav__button md-icon" for="__drawer">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
     </label>
     <div class="md-header-nav__title" data-md-component="header-title">
-      
-        <div class="md-header-nav__ellipsis">
-          <span class="md-header-nav__topic md-ellipsis">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
             Zhiyuan Chen
           </span>
-          <span class="md-header-nav__topic md-ellipsis">
+        </div>
+        <div class="md-header-nav__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
             
               帕累托优化曲线
             
           </span>
+        </div>
+      </div>
+    </div>
+    <div class="md-header-nav__options">
+      
+        
+          
+          
+          
+          <button class="md-header-nav__button md-icon" title="Switch to dark mode" aria-label="Switch to dark mode" data-md-option="palette" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 00-5 5 5 5 0 005 5h10a5 5 0 005-5 5 5 0 00-5-5m0 8a3 3 0 01-3-3 3 3 0 013-3 3 3 0 013 3 3 3 0 01-3 3z"/></svg>
+          </button>
+        
+          
+          
+          
+          <button class="md-header-nav__button md-icon" title="Switch to light mode" aria-label="Switch to light mode" data-md-option="palette" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="cyan" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 012 2 2 2 0 01-2 2 2 2 0 01-2-2 2 2 0 012-2m10-3a5 5 0 015 5 5 5 0 01-5 5H7a5 5 0 01-5-5 5 5 0 015-5h10M7 9a3 3 0 00-3 3 3 3 0 003 3h10a3 3 0 003-3 3 3 0 00-3-3H7z"/></svg>
+          </button>
+        
+      
+      
+        <div class="md-select">
+          
+          <span class="md-header-nav__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7l1.62-4.33L19.12 17h-3.24z"/></svg>
+          </span>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="https://zyc.ai/en/" class="md-select__link">
+                    English
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
         </div>
       
     </div>
@@ -111,7 +165,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
@@ -119,12 +173,13 @@
       <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
       </button>
+      <div class="md-search__suggest" data-md-component="search-suggest"></div>
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Initializing search
+            正在初始化搜索引擎
           </div>
           <ol class="md-search-result__list"></ol>
         </div>
@@ -148,11 +203,193 @@
       </div>
     
   </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      zyc.ai
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../document/design_pattern/" class="md-tabs__link">
+        文档
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../stat/probability/" class="md-tabs__link">
+        统计
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../introduction/" class="md-tabs__link">
+        优化
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../cv/ssl/SimCLR/" class="md-tabs__link">
+        计算机视觉
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../k8s/introduction/" class="md-tabs__link">
+        Kubernetes
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../docker/introduction/" class="md-tabs__link">
+        Docker
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../cppcg/CppCoreGuidelines/" class="md-tabs__link">
+        C++核心指南
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../instant_food/introduction/" class="md-tabs__link">
+        速食食品
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../sketch/20190610/" class="md-tabs__link">
+        随笔
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/" class="md-tabs__link">
+        关于
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
 </header>
     
     <div class="md-container" data-md-component="container">
-      
-        
       
       
         
@@ -161,14 +398,22 @@
         <div class="md-main__inner md-grid">
           
             
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                    
+
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="https://zyc.ai" title="Zhiyuan Chen" class="md-nav__button md-logo" aria-label="Zhiyuan Chen">
       
-  <img src="../../images/zc.png" alt="logo">
+  <img src="../../assests/site/logo.png" alt="logo">
 
     </a>
     Zhiyuan Chen
@@ -194,8 +439,9 @@
       
 
 
+
   <li class="md-nav__item">
-    <a href="../.." title="zyc.ai" class="md-nav__link">
+    <a href="../.." class="md-nav__link">
       zyc.ai
     </a>
   </li>
@@ -206,21 +452,20 @@
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" data-md-state="indeterminate" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       文档
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="文档" data-md-level="1">
       <label class="md-nav__title" for="nav-2">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         文档
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -231,8 +476,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../document/design_pattern/" title="设计模式" class="md-nav__link">
+    <a href="../../document/design_pattern/" class="md-nav__link">
       设计模式
     </a>
   </li>
@@ -243,8 +489,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../document/jetbrains/" title="JetBrains使用指南" class="md-nav__link">
+    <a href="../../document/jetbrains/" class="md-nav__link">
       JetBrains使用指南
     </a>
   </li>
@@ -255,8 +502,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../document/torch.distributed/" title="PyTorch分布式" class="md-nav__link">
+    <a href="../../document/torch.distributed/" class="md-nav__link">
       PyTorch分布式
     </a>
   </li>
@@ -272,21 +520,20 @@
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" data-md-state="indeterminate" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
       统计
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="统计" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         统计
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -297,8 +544,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../stat/probability/" title="概率论" class="md-nav__link">
+    <a href="../../stat/probability/" class="md-nav__link">
       概率论
     </a>
   </li>
@@ -314,21 +562,20 @@
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" data-md-state="indeterminate" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
       优化
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="优化" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         优化
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -339,8 +586,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../introduction/" title="优化" class="md-nav__link">
+    <a href="../introduction/" class="md-nav__link">
       优化
     </a>
   </li>
@@ -351,8 +599,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../affine_convex/" title="仿射与凸" class="md-nav__link">
+    <a href="../affine_convex/" class="md-nav__link">
       仿射与凸
     </a>
   </li>
@@ -363,8 +612,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../ball_cone/" title="球与锥" class="md-nav__link">
+    <a href="../ball_cone/" class="md-nav__link">
       球与锥
     </a>
   </li>
@@ -375,8 +625,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../hyperplane_halfspace_polyhedra/" title="超平面、半空间与多面体" class="md-nav__link">
+    <a href="../hyperplane_halfspace_polyhedra/" class="md-nav__link">
       超平面、半空间与多面体
     </a>
   </li>
@@ -387,8 +638,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../dual_cone_generalized_inequality/" title="对偶锥与广义不等式" class="md-nav__link">
+    <a href="../dual_cone_generalized_inequality/" class="md-nav__link">
       对偶锥与广义不等式
     </a>
   </li>
@@ -399,8 +651,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../convex_concave/" title="凸凹" class="md-nav__link">
+    <a href="../convex_concave/" class="md-nav__link">
       凸凹
     </a>
   </li>
@@ -416,21 +669,20 @@
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" data-md-state="indeterminate" type="checkbox" id="nav-5" checked>
     
     <label class="md-nav__link" for="nav-5">
       计算机视觉
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="计算机视觉" data-md-level="1">
       <label class="md-nav__title" for="nav-5">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         计算机视觉
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -441,8 +693,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../cv/ssl/SimCLR/" title="SimCLR" class="md-nav__link">
+    <a href="../../cv/ssl/SimCLR/" class="md-nav__link">
       SimCLR
     </a>
   </li>
@@ -458,21 +711,20 @@
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" data-md-state="indeterminate" type="checkbox" id="nav-6" checked>
     
     <label class="md-nav__link" for="nav-6">
       Kubernetes
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Kubernetes" data-md-level="1">
       <label class="md-nav__title" for="nav-6">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         Kubernetes
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -483,8 +735,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../k8s/introduction/" title="导论" class="md-nav__link">
+    <a href="../../k8s/introduction/" class="md-nav__link">
       导论
     </a>
   </li>
@@ -495,8 +748,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../k8s/component/" title="组件" class="md-nav__link">
+    <a href="../../k8s/component/" class="md-nav__link">
       组件
     </a>
   </li>
@@ -507,8 +761,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../k8s/installation/" title="安装" class="md-nav__link">
+    <a href="../../k8s/installation/" class="md-nav__link">
       安装
     </a>
   </li>
@@ -519,8 +774,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../k8s/pods/" title="Pods" class="md-nav__link">
+    <a href="../../k8s/pods/" class="md-nav__link">
       Pods
     </a>
   </li>
@@ -531,8 +787,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../k8s/deployments/" title="Deployments" class="md-nav__link">
+    <a href="../../k8s/deployments/" class="md-nav__link">
       Deployments
     </a>
   </li>
@@ -548,21 +805,20 @@
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" data-md-state="indeterminate" type="checkbox" id="nav-7" checked>
     
     <label class="md-nav__link" for="nav-7">
       Docker
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Docker" data-md-level="1">
       <label class="md-nav__title" for="nav-7">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         Docker
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -573,8 +829,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../docker/introduction/" title="导论" class="md-nav__link">
+    <a href="../../docker/introduction/" class="md-nav__link">
       导论
     </a>
   </li>
@@ -585,8 +842,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../docker/installation/" title="安装" class="md-nav__link">
+    <a href="../../docker/installation/" class="md-nav__link">
       安装
     </a>
   </li>
@@ -597,8 +855,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../docker/command_line_interface/" title="命令行接口" class="md-nav__link">
+    <a href="../../docker/command_line_interface/" class="md-nav__link">
       命令行接口
     </a>
   </li>
@@ -609,8 +868,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../docker/dockerfile/" title="Dockerfile" class="md-nav__link">
+    <a href="../../docker/dockerfile/" class="md-nav__link">
       Dockerfile
     </a>
   </li>
@@ -626,21 +886,20 @@
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" data-md-state="indeterminate" type="checkbox" id="nav-8" checked>
     
     <label class="md-nav__link" for="nav-8">
       C++核心指南
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="C++核心指南" data-md-level="1">
       <label class="md-nav__title" for="nav-8">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         C++核心指南
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -651,8 +910,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../cppcg/CppCoreGuidelines/" title="原文" class="md-nav__link">
+    <a href="../../cppcg/CppCoreGuidelines/" class="md-nav__link">
       原文
     </a>
   </li>
@@ -663,8 +923,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../cppcg/abstract/" title="摘要" class="md-nav__link">
+    <a href="../../cppcg/abstract/" class="md-nav__link">
       摘要
     </a>
   </li>
@@ -680,21 +941,20 @@
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" data-md-state="indeterminate" type="checkbox" id="nav-9" checked>
     
     <label class="md-nav__link" for="nav-9">
       速食食品
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="速食食品" data-md-level="1">
       <label class="md-nav__title" for="nav-9">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         速食食品
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -705,8 +965,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../instant_food/introduction/" title="速食食品の评测" class="md-nav__link">
+    <a href="../../instant_food/introduction/" class="md-nav__link">
       速食食品の评测
     </a>
   </li>
@@ -722,21 +983,20 @@
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10" data-md-state="indeterminate" type="checkbox" id="nav-10" checked>
     
     <label class="md-nav__link" for="nav-10">
       随笔
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="随笔" data-md-level="1">
       <label class="md-nav__title" for="nav-10">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         随笔
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -747,8 +1007,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../sketch/20190610/" title="二〇一九年 六月 十日" class="md-nav__link">
+    <a href="../../sketch/20190610/" class="md-nav__link">
       二〇一九年 六月 十日
     </a>
   </li>
@@ -759,8 +1020,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../sketch/20191108/" title="二〇一九年 十一月 八日" class="md-nav__link">
+    <a href="../../sketch/20191108/" class="md-nav__link">
       二〇一九年 十一月 八日
     </a>
   </li>
@@ -771,8 +1033,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../sketch/20200404/" title="二〇二〇年 四月 四日" class="md-nav__link">
+    <a href="../../sketch/20200404/" class="md-nav__link">
       二〇二〇年 四月 四日
     </a>
   </li>
@@ -783,8 +1046,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../sketch/20201006/" title="二〇二〇年 十月 六日" class="md-nav__link">
+    <a href="../../sketch/20201006/" class="md-nav__link">
       二〇二〇年 十月 六日
     </a>
   </li>
@@ -800,21 +1064,20 @@
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11" data-md-state="indeterminate" type="checkbox" id="nav-11" checked>
     
     <label class="md-nav__link" for="nav-11">
       关于
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="关于" data-md-level="1">
       <label class="md-nav__title" for="nav-11">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         关于
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -825,8 +1088,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../about/" title="Zhiyuan Chen" class="md-nav__link">
+    <a href="../../about/" class="md-nav__link">
       Zhiyuan Chen
     </a>
   </li>
@@ -837,8 +1101,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../about/donate/" title="捐赠" class="md-nav__link">
+    <a href="../../about/donate/" class="md-nav__link">
       捐赠
     </a>
   </li>
@@ -849,8 +1114,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../about/contribute/" title="贡献" class="md-nav__link">
+    <a href="../../about/contribute/" class="md-nav__link">
       贡献
     </a>
   </li>
@@ -861,8 +1127,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../about/eula/" title="最终用户许可协议" class="md-nav__link">
+    <a href="../../about/eula/" class="md-nav__link">
       最终用户许可协议
     </a>
   </li>
@@ -873,8 +1140,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../about/privacy/" title="隐私声明" class="md-nav__link">
+    <a href="../../about/privacy/" class="md-nav__link">
       隐私声明
     </a>
   </li>
@@ -885,8 +1153,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../about/comment/" title="评论政策" class="md-nav__link">
+    <a href="../../about/comment/" class="md-nav__link">
       评论政策
     </a>
   </li>
@@ -897,8 +1166,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../about/license/" title="GPLv3" class="md-nav__link">
+    <a href="../../about/license/" class="md-nav__link">
       GPLv3
     </a>
   </li>
@@ -926,13 +1196,21 @@
                   </a>
                 
                 
-                  
-                
-                
                   <h1>帕累托优化曲线</h1>
                 
                 <p>在小节的最后，让我们讨论一下帕累托优化曲线。在这里，我们将极小元的思想引入优化。</p>
                 
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2020-12-14 01:41:56</span>
+    
+  </small>
+</div>
                   
                 
               
@@ -942,7 +1220,7 @@
 
   <h2 id="__comments">评论</h2>
   <div id="disqus_thread"></div>
-  <script>var disqus_config=function(){this.page.url="https://zyc.ai/optimisation/pareto_optimal_curve/",this.page.identifier="/optimisation/pareto_optimal_curve/"};!function(){var e=document,i=e.createElement("script");i.src="//zycai.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)}()</script>
+  <script>var disqus_config=function(){this.page.url="https://zyc.ai/optimisation/pareto_optimal_curve/",this.page.identifier="/optimisation/pareto_optimal_curve/"};window.addEventListener("load",function(){var e=document,i=e.createElement("script");i.src="//zycai.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)})</script>
 
               
             </article>
@@ -958,13 +1236,10 @@
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            All rights reserved © Zhiyuan Chen 2017-2020
+            All rights reserved &copy; Zhiyuan Chen 2017-2020
           </div>
         
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
+        
       </div>
       
   <div class="md-footer-social">
@@ -974,8 +1249,68 @@
         
         
       
-      <a href="https://github.com/zyc-ai" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+      <a href="https://github.com/ZhiyuanChen" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://gitlab.com/ZhiyuanChen" target="_blank" rel="noopener" title="gitlab.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M105.2 24.9c-3.1-8.9-15.7-8.9-18.9 0L29.8 199.7h132c-.1 0-56.6-174.8-56.6-174.8zM.9 287.7c-2.6 8 .3 16.9 7.1 22l247.9 184-226.2-294zm160.8-88l94.3 294 94.3-294zm349.4 88l-28.8-88-226.3 294 247.9-184c6.9-5.1 9.7-14 7.2-22zM425.7 24.9c-3.1-8.9-15.7-8.9-18.9 0l-56.6 174.8h132z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://bitbucket.org/ZhiyuanChen" target="_blank" rel="noopener" title="bitbucket.org" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M22.2 32A16 16 0 006 47.8a26.35 26.35 0 00.2 2.8l67.9 412.1a21.77 21.77 0 0021.3 18.2h325.7a16 16 0 0016-13.4L505 50.7a16 16 0 00-13.2-18.3 24.58 24.58 0 00-2.8-.2L22.2 32zm285.9 297.8h-104l-28.1-147h157.3l-25.2 147z"/></svg>
+      </a>
+    
+      
+      
+      <a href="mailto:this@zyc.ai" target="_blank" rel="noopener" title="" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.facebook.com/zyc.fb" target="_blank" rel="noopener" title="www.facebook.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/zyc_ai" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://instagram.com/zyc.ai" target="_blank" rel="noopener" title="instagram.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.linkedin.com/in/%E9%99%9F%E5%8E%9F-%E9%99%88-0b473aa9/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
       </a>
     
   </div>
@@ -986,16 +1321,17 @@
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.d1f5a259.min.js"></script>
-      <script src="../../assets/javascripts/bundle.d5fec882.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
+      <script src="../../assets/javascripts/vendor.49293c47.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f4f0c901.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
           base: "../..",
-          features: ["navigation.tabs", "navigation.instant"],
+          features: ["navigation.expand", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "search.highlight", "search.suggest", "header.autohide"],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.fae956e7.min.js"
-          }, typeof search !== "undefined" && search)
+            worker: "../../assets/javascripts/worker/search.0f64ce30.min.js"
+          }, typeof search !== "undefined" && search),
+          version: {}
         })
       </script>
       

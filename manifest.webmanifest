@@ -4,7 +4,7 @@
     "description": "The website of Zhiyuan Chen",
     "icons": [
       {
-        "src": "images/zc.png",
+        "src": "assests/site/logo.png",
         "type": "image/png",
         "sizes": "2000x2000"
       }
