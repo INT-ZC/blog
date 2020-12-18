@@ -706,6 +706,19 @@
   </li>
 
         
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../big_transfer/" class="md-nav__link">
+      Big Transfer
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1259,21 +1272,7 @@
                 
                   <h1>SiamRPN</h1>
                 
-                <div class="admonition info">
-<p class="admonition-title">专有名词翻译和缩写</p>
-<p>在本文当中，专有名词被如下翻译和缩写：</p>
-<ul>
-<li>anchor 锚框</li>
-<li>Convolution Neural Network CNN 卷积神经网络</li>
-<li>Meta-Learning 元学习</li>
-<li>Padding 填充</li>
-<li>Regional Proposal Network RPN 区域候选网络</li>
-<li>Siamese 孪生</li>
-<li>Single Object Tracking SOT 单目标跟踪</li>
-<li>Visual Object Tracking VOT</li>
-</ul>
-</div>
-<p>SiamFC是牛津大学的Luca Bertinetto等提出的用于单目标跟踪的网络。</p>
+                <p>SiamFC是牛津大学的Luca Bertinetto等提出的用于单目标跟踪的网络。</p>
 <h2 id="简介">简介<a class="headerlink" href="#简介" title="Permanent link">#</a></h2>
 <p>计算机视觉中的很多问题都已经在从大型监督数据集训练而来的深度卷积网络当中得到长足的进步，但是监督数据的稀缺和实时操作的约束阻止了简单的将深度学习应用到从每个视频当中学习到一个检测器。最近有一些工作旨在克服这些问题，他们要么应用一些“粗浅”的方法（比如 相关过滤器），将网络的内部表示作为特征，或者通过SGD来微调网络的多个层。然而，使用粗浅的方法并没有利用到端到端训练的全部优点，使用SGD的方法达到SOTA结果的均不能做到实时操作。本文作者提出了一个新的方法，训练一个深度卷积网络来在最初的离线阶段解决更普遍的相似性学习问题，然后只需在跟踪过程中在线评估此功能。</p>
 <p>本文的核心贡献在于本文所提出的方法可以在远超所需帧率的速度时达到极具竞争力的性能。特别的，本文作者训练一个孪生网络来在一个大的 <em>搜索</em> 图像当中定位一个 <em>样本</em> 图像。另一个贡献是相对于搜索图像的全卷积孪生架构：通过双线性层来计算两个输入的互相关性，从而实现了密集而有效的滑窗评估。</p>
