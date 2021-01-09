@@ -883,6 +883,19 @@
 
 
   <li class="md-nav__item">
+    <a href="../../cv/visual_transformer/" class="md-nav__link">
+      Visual Transformer
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
     <a href="../../cv/vision_transformer/" class="md-nav__link">
       Vision Transformer
     </a>
@@ -1529,7 +1542,7 @@
 </div>
 <h2 id="分布式数据并行ddp">分布式数据并行（DDP）<a class="headerlink" href="#分布式数据并行ddp" title="Permanent link">#</a></h2>
 <p>DDP在每个计算资源（GPU）上创建模型副本来独立的生成梯度，然后在每个迭代中交流这些梯度使得模型副本一致。PyTorch使用了多种技术来加速并行运算，包括梯度合桶（bucketing gradients）、计算通信重叠（overlapping computation with communication）以及梯度同步跳过（skipping gradient synchronization）。评估表明，PyTorch可以在256个GPU上达到接近线性的可扩展性。</p>
-<p><img align="right" alt="DistributedDataParallel" loading="lazy" src="../../assests/images/document/torch.distributed/ddp.png" style="width:40%" title="DistributedDataParallel" />
+<p><img align="right" alt="DistributedDataParallel" loading="lazy" src="../../assests/document/torch.distributed/ddp.png" style="width:40%" title="DistributedDataParallel" />
 DDP的每一个进程都对应一个独立的训练过程，它拥有自己的模型副本，自己的优化器，当然也控制一张GPU。DDP通过确保以下两点来确保算法的正确性（即其训练结果与单卡训练结果一致）。</p>
 <ol>
 <li>所有模型副本的初始状态相同</li>
@@ -1545,10 +1558,10 @@ DDP的每一个进程都对应一个独立的训练过程，它拥有自己的�
 <li>梯度的计算与同步被分为两个阶段，这使得我们无法通过计算通信重叠来提高模型效率。</li>
 </ol>
 <h4 id="梯度合桶bucketing-gradients">梯度合桶（bucketing gradients）<a class="headerlink" href="#梯度合桶bucketing-gradients" title="Permanent link">#</a></h4>
-<p><img align="right" alt="Collective Communication" loading="lazy" src="../../assests/images/document/torch.distributed/cc.png" style="width:60%" title="DistributedDataParallel" />
+<p><img align="right" alt="Collective Communication" loading="lazy" src="../../assests/document/torch.distributed/cc.png" style="width:60%" title="DistributedDataParallel" />
 聚合通信在小张量传输上的表现欠佳，但它的性能随着张量的尺寸增大而提升。右图的a、b子图展示了一个60MiB大小的<code>torch.float32</code>参数相对于每次<code>AllReduce</code>不同数量的参数的总运行时间。为了最大化带宽利用，<code>AllReduce</code>操作被设计为异步调用，并在反向传播时阻塞。我们可以发现，DDP等待较短时间后将多个梯度存储到一个桶里后执行一个<code>AllReduce</code>操作可以显著降低通信延迟。右图的c、d子图展示了一个包含大约60M个参数的ResNet152网络的反向传播计算时间，其中x轴代表就虚的梯度的数量。GPU上的反向传播大约需要250毫秒以完成，这与NVLink上的NCCL数量级相同。这些实验表明，如果参数桶相对小，DDP可以在反向传播的同时启动<code>AllReduce</code>操作，使通信与计算重叠。</p>
 <h4 id="计算通信重叠overlapping-computation-with-communication">计算通信重叠（overlapping computation with communication）<a class="headerlink" href="#计算通信重叠overlapping-computation-with-communication" title="Permanent link">#</a></h4>
-<p><img align="right" alt="Collective Communication" loading="lazy" src="../../assests/images/document/torch.distributed/gsf.png" style="width:60%" title="DistributedDataParallel" />
+<p><img align="right" alt="Collective Communication" loading="lazy" src="../../assests/document/torch.distributed/gsf.png" style="width:60%" title="DistributedDataParallel" />
 通过合桶，DDP仅需要在启动通信之前等待桶中所有的梯度完成计算。此时，在整个网络完成反向传播后再进行<code>AllReduce</code>操作便不再足够，而应该在每一个桶完成反向传播后都进行<code>AllReduce</code>操作。DDP为每一个梯度累加器注册一个自动求导钩子，并在相应的累加器更新梯度后激活。当一个桶内的所有钩子都被激活时，最后一个被激活的钩子会触发<code>AllReduce</code>操作。</p>
 <div class="admonition warning">
 <p class="admonition-title">进程的规约顺序重要</p>
@@ -1569,7 +1582,7 @@ DDP的每一个进程都对应一个独立的训练过程，它拥有自己的�
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2021-01-05 18:41:48</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2021-01-09 22:34:55</span>
     
   </small>
 </div>

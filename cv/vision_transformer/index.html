@@ -773,6 +773,19 @@
           
 
 
+
+  <li class="md-nav__item">
+    <a href="../visual_transformer/" class="md-nav__link">
+      Visual Transformer
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
   
 
 
@@ -1542,22 +1555,17 @@
 </div>
 <h2 id="介绍">介绍<a class="headerlink" href="#介绍" title="Permanent link">#</a></h2>
 <p>基于自注意力的结构，尤其是Transformer已经在自然语言处理中成为了首要选择。通行的做法是在大规模文本语料库上进行预训练，然后在更小的任务相关数据集上微调。得益于Transformer的计算高效和可扩展性，我们得以训练前所未有的规模的神经网络&ndash;超过1000亿参数。并且在模型和数据增大的情况下，仍然没有性能饱和的迹象。</p>
-<p>但在计算机视觉中，卷积结构还保持统治性地位。本文将一个标准的Transformer直接应用在图像上，仅有极少修改。为此，本文将一张图片分割成多个块，然后将这些块的线性嵌套的序列作为Transformer的输入。图像块和NLP任务中的符号（单词）一样被对待。</p>
+<p>但在计算机视觉中，卷积结构还保持统治性地位。本文将一个标准的Transformer直接应用在图像上，仅有极少修改。为此，本文将一张图片分割成多个块，然后将这些块的线性嵌套的序列作为Transformer的输入。图像块和NLP任务中的令牌（单词）一样被对待。</p>
 <p>本文的模型在ImageNet这样的中等规模数据集上训练时与相近大小的ResNets相比略低几个百分点。这个结果或许是被期待的：Transformer缺乏CNN固有的一些归纳偏见，例如平移同变性和局部性。因此在没有足够的数据进行训练时泛化性稍差。</p>
 <p>但在训练数据充分时（14M-300M）结果反了过来。本文发现大规模训练可以胜过归纳偏见。Transformer在以足够的数据预训练然后以很少的数据迁移到特定任务时达到了极好的结果。本文提出的ViT，在JFT-300M数据集上时，在多个图像识别任务中达到了SOTA结果。ImageNet 88.36%、ImageNet-ReaL 90.77%、CIFAR-100 94.55%、VTAB 19任务77.16%。</p>
 <h2 id="vision-transformer">Vision Transformer<a class="headerlink" href="#vision-transformer" title="Permanent link">#</a></h2>
 <p>本问尽可能地遵循了传统的Transformer结构，因此传统的Transformer和他们的实现几乎可以开箱即用。本文展示了在适当缩放的情况下，Transformer足以胜过最强的卷积神经网络。</p>
 <h3 id="结构">结构<a class="headerlink" href="#结构" title="Permanent link">#</a></h3>
-<p>图1描述了Vision Transformer的结构。标准Transformer的输入是1维的符号嵌套的序列。为了支持2维图像，本文将图像<span><span class="MathJax_Preview">\mathbf{x} \in \mathbb{R}^{H \times W \times C}</span><script type="math/tex">\mathbf{x} \in \mathbb{R}^{H \times W \times C}</script></span>重塑成一系列展平的2维块<span><span class="MathJax_Preview">\mathbf{x}_p \in \mathbb{R}^{N \times (P^2 \cdot C)}</span><script type="math/tex">\mathbf{x}_p \in \mathbb{R}^{N \times (P^2 \cdot C)}</script></span>，其中<span><span class="MathJax_Preview">(H, W)</span><script type="math/tex">(H, W)</script></span>是原始图像的分辨率，<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>是通道的数量，<span><span class="MathJax_Preview">(P,P)</span><script type="math/tex">(P,P)</script></span>是每个图像块的分辨率，<span><span class="MathJax_Preview">N=HW/P^2</span><script type="math/tex">N=HW/P^2</script></span>是块的数量，它同时也是Transformer的实际输入序列的长度。Transformer在所有层的宽度是恒定的，因此一个可训练的线性映射将每个矢量化的块映射到模型维度D（公式1），本文将这个映射的输出称为块嵌套。</p>
-<object data="../../assests/images/cv/vision_transformer/model_scheme.pdf" type="application/pdf" width="700px" height="400px">
-    <embed src="../../assests/images/cv/vision_transformer/model_scheme.pdf">
-        <p>本浏览器不支持PDF图像的显示，请更换浏览器或<a href="../assests/images/cv/vision_transformer/model_scheme.pdf">下载图像</a></p>
-    </embed>
-</object>
-
+<p>图1描述了Vision Transformer的结构。标准Transformer的输入是1维的令牌嵌套的序列。为了支持2维图像，本文将图像<span><span class="MathJax_Preview">\mathbf{x} \in \mathbb{R}^{H \times W \times C}</span><script type="math/tex">\mathbf{x} \in \mathbb{R}^{H \times W \times C}</script></span>重塑成一系列展平的2维块<span><span class="MathJax_Preview">\mathbf{x}_p \in \mathbb{R}^{N \times (P^2 \cdot C)}</span><script type="math/tex">\mathbf{x}_p \in \mathbb{R}^{N \times (P^2 \cdot C)}</script></span>，其中<span><span class="MathJax_Preview">(H, W)</span><script type="math/tex">(H, W)</script></span>是原始图像的分辨率，<span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>是通道的数量，<span><span class="MathJax_Preview">(P,P)</span><script type="math/tex">(P,P)</script></span>是每个图像块的分辨率，<span><span class="MathJax_Preview">N=HW/P^2</span><script type="math/tex">N=HW/P^2</script></span>是块的数量，它同时也是Transformer的实际输入序列的长度。Transformer在所有层的宽度是恒定的，因此一个可训练的线性映射将每个矢量化的块映射到模型维度D（公式1），本文将这个映射的输出称为块嵌套。</p>
+<p><img alt="图1" src="../../assests/cv/vision_transformer/model_scheme.svg" title="图1" />\</p>
 <div class="admonition note">
 <p class="admonition-title">类别嵌套</p>
-<p>与BERT的<span><span class="MathJax_Preview">\verb|[class]|</span><script type="math/tex">\verb|[class]|</script></span>符号相似，本文在块嵌套序列（<span><span class="MathJax_Preview">\mathbf{z}_0^0=\mathbf{x}_\text{class}</span><script type="math/tex">\mathbf{z}_0^0=\mathbf{x}_\text{class}</script></span>）前添加了可学习的类别嵌套，它的状态在Transformer编码器（<span><span class="MathJax_Preview">\mathbf{z}^0_L</span><script type="math/tex">\mathbf{z}^0_L</script></span>）的输出作为图像表达<span><span class="MathJax_Preview">\mathbf{y}</span><script type="math/tex">\mathbf{y}</script></span>。</p>
+<p>与BERT的<span><span class="MathJax_Preview">\verb|[class]|</span><script type="math/tex">\verb|[class]|</script></span>令牌相似，本文在块嵌套序列（<span><span class="MathJax_Preview">\mathbf{z}_0^0=\mathbf{x}_\text{class}</span><script type="math/tex">\mathbf{z}_0^0=\mathbf{x}_\text{class}</script></span>）前添加了可学习的类别嵌套，它的状态在Transformer编码器（<span><span class="MathJax_Preview">\mathbf{z}^0_L</span><script type="math/tex">\mathbf{z}^0_L</script></span>）的输出作为图像表达<span><span class="MathJax_Preview">\mathbf{y}</span><script type="math/tex">\mathbf{y}</script></span>。</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">位置嵌套</p>
@@ -1567,17 +1575,17 @@
 <div>
 <div class="MathJax_Preview">\begin{align}
     \mathbf{z}_0 &amp;= [ \mathbf{x}_\text{class}; \, \mathbf{x}^1_p \mathbf{E}; \, \mathbf{x}^2_p \mathbf{E}; \cdots; \, \mathbf{x}^{N}_p \mathbf{E} ] + \mathbf{E}_{pos},
-    &amp;&amp; \mathbf{E} \in \mathbb{R}^{(P^2 \cdot C) \times D},\, \mathbf{E}_{pos}  \in \mathbb{R}^{(N + 1) \times D} \quad 1 \\
-    \mathbf{z^\prime}_\ell &amp;= \operatorname{MSA}(\operatorname{LN}(\mathbf{z}_{\ell-1})) + \mathbf{z}_{\ell-1}, &amp;&amp; \ell=1\ldots L \quad 2 \\
-    \mathbf{z}_\ell &amp;= \operatorname{MLP}(\operatorname{LN}(\mathbf{z^\prime}_{\ell})) + \mathbf{z^\prime}_{\ell}, &amp;&amp; \ell=1\ldots L  \quad 3 \\
-    \mathbf{y} &amp;= \operatorname{LN}(\mathbf{z}_L^0) \quad 4
+    &amp;&amp; \mathbf{E} \in \mathbb{R}^{(P^2 \cdot C) \times D},\, \mathbf{E}_{pos}  \in \mathbb{R}^{(N + 1) \times D} &amp;&amp; 1 \\
+    \mathbf{z^\prime}_\ell &amp;= \operatorname{MSA}(\operatorname{LN}(\mathbf{z}_{\ell-1})) + \mathbf{z}_{\ell-1}, &amp;&amp; \ell=1\ldots L &amp;&amp; 2 \\
+    \mathbf{z}_\ell &amp;= \operatorname{MLP}(\operatorname{LN}(\mathbf{z^\prime}_{\ell})) + \mathbf{z^\prime}_{\ell}, &amp;&amp; \ell=1\ldots L  &amp;&amp; 3 \\
+    \mathbf{y} &amp;= \operatorname{LN}(\mathbf{z}_L^0) &amp;&amp; 4
 \end{align}</div>
 <script type="math/tex; mode=display">\begin{align}
     \mathbf{z}_0 &= [ \mathbf{x}_\text{class}; \, \mathbf{x}^1_p \mathbf{E}; \, \mathbf{x}^2_p \mathbf{E}; \cdots; \, \mathbf{x}^{N}_p \mathbf{E} ] + \mathbf{E}_{pos},
-    && \mathbf{E} \in \mathbb{R}^{(P^2 \cdot C) \times D},\, \mathbf{E}_{pos}  \in \mathbb{R}^{(N + 1) \times D} \quad 1 \\
-    \mathbf{z^\prime}_\ell &= \operatorname{MSA}(\operatorname{LN}(\mathbf{z}_{\ell-1})) + \mathbf{z}_{\ell-1}, && \ell=1\ldots L \quad 2 \\
-    \mathbf{z}_\ell &= \operatorname{MLP}(\operatorname{LN}(\mathbf{z^\prime}_{\ell})) + \mathbf{z^\prime}_{\ell}, && \ell=1\ldots L  \quad 3 \\
-    \mathbf{y} &= \operatorname{LN}(\mathbf{z}_L^0) \quad 4
+    && \mathbf{E} \in \mathbb{R}^{(P^2 \cdot C) \times D},\, \mathbf{E}_{pos}  \in \mathbb{R}^{(N + 1) \times D} && 1 \\
+    \mathbf{z^\prime}_\ell &= \operatorname{MSA}(\operatorname{LN}(\mathbf{z}_{\ell-1})) + \mathbf{z}_{\ell-1}, && \ell=1\ldots L && 2 \\
+    \mathbf{z}_\ell &= \operatorname{MLP}(\operatorname{LN}(\mathbf{z^\prime}_{\ell})) + \mathbf{z^\prime}_{\ell}, && \ell=1\ldots L  && 3 \\
+    \mathbf{y} &= \operatorname{LN}(\mathbf{z}_L^0) && 4
 \end{align}</script>
 </div>
 <h3 id="混合架构">混合架构<a class="headerlink" href="#混合架构" title="Permanent link">#</a></h3>
@@ -1606,7 +1614,7 @@
 <p>选项2导致Transformer序列更长，这同时使ViT预测头更大。</p>
 <div class="admonition note">
 <p class="admonition-title">Transformer的序列长度</p>
-<p>Transformer的序列长度为<span><span class="MathJax_Preview">image\_res^2 / patch_\size^2</span><script type="math/tex">image\_res^2 / patch_\size^2</script></span></p>
+<p>Transformer的序列长度为<span><span class="MathJax_Preview">image\_res^2 / patch\_size^2</span><script type="math/tex">image\_res^2 / patch\_size^2</script></span></p>
 </div>
 <table>
 <thead>
@@ -1744,7 +1752,7 @@
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2021-01-05 18:41:38</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2021-01-09 22:34:41</span>
     
   </small>
 </div>
@@ -1771,7 +1779,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../ssl/SimCLR/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../visual_transformer/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -1780,7 +1788,7 @@
                 <span class="md-footer-nav__direction">
                   上一页
                 </span>
-                SimCLR
+                Visual Transformer
               </div>
             </div>
           </a>
