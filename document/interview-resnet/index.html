@@ -202,13 +202,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../design_pattern/" class="md-tabs__link">
+      <a href="../design_pattern/" class="md-tabs__link md-tabs__link--active">
         文档
       </a>
     </li>
@@ -441,12 +443,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       <label class="md-nav__link" for="__nav_2">
         文档
@@ -479,6 +483,73 @@
       <a href="../jetbrains/" class="md-nav__link">
         JetBrains使用指南
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          ResNet面试简介
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        ResNet面试简介
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#梯度消失爆炸" class="md-nav__link">
+    梯度消失/爆炸
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#归一化" class="md-nav__link">
+    归一化
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#初始化" class="md-nav__link">
+    初始化
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#网络退化" class="md-nav__link">
+    网络退化
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1288,7 +1359,7 @@
                   </a>
                 
                 
-                  <h1>面试三问之ResNet</h1>
+                  <h1>ResNet面试简介</h1>
                 
                 <div class="admonition abstract">
 <p class="admonition-title">前言</p>
@@ -1368,7 +1439,7 @@
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2021-03-03 12:39:55</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2021-03-03 12:44:48</span>
     
   </small>
 </div>
@@ -1394,7 +1465,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../git/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../jetbrains/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1403,19 +1474,19 @@
               <span class="md-footer__direction">
                 上一页
               </span>
-              Git菜谱
+              JetBrains使用指南
             </div>
           </div>
         </a>
       
       
-        <a href="../interview/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../../pytorch/nn.Module/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              如何面试
+              nn.Module
             </div>
           </div>
           <div class="md-footer__button md-icon">
