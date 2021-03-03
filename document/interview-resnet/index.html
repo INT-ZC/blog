@@ -1369,7 +1369,7 @@
 <p>“请简要介绍ResNet。”</p>
 <p>这道问题看似简单&ndash;带有一个跳跃连接的神经网络。但他其实是对神经网络的一个综合的问题。具体来说，这包含三个方面：神经网络退化，梯度消失/爆炸，非线性、初始化与归一化。</p>
 <div class="admonition success">
-<p class="admonition-title">正确答案</p>
+<p class="admonition-title">ResNet</p>
 <p>ResNet通过将多个神经网络的层聚合成一个块，然后在这个块的一侧加入一个恒等映射，使得这个块从原本的<span><span class="MathJax_Preview">F(x)</span><script type="math/tex">F(x)</script></span>变成<span><span class="MathJax_Preview">F(x) + x</span><script type="math/tex">F(x) + x</script></span>，从而解决了神经网络的退化问题。</p>
 </div>
 <p>如果候选人能够给出类似这样的标准回答，那之后话题就会很自然而然地转移到网络退化与恒等映射去，另外两点只能找机会再问。然而，绝大多数人的回答都是：</p>
@@ -1385,7 +1385,7 @@
 </div>
 <p>从这个问题开始就在挖坑了。ReLU在输入为负时恒为0，因此对梯度消失的效果有限。</p>
 <div class="admonition success">
-<p class="admonition-title">正确答案</p>
+<p class="admonition-title">梯度消失/爆炸</p>
 <p>梯度消失/爆炸问题主要是通过BN和初始化来解决的。</p>
 </div>
 <h2 id="归一化">归一化<a class="headerlink" href="#归一化" title="Permanent link">#</a></h2>
@@ -1439,7 +1439,7 @@
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2021-03-03 12:44:48</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2021-03-03 12:47:40</span>
     
   </small>
 </div>
