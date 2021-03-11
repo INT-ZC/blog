@@ -13,7 +13,7 @@
         <meta name="author" content="Zhiyuan Chen">
       
       
-        <link rel="canonical" href="https://zyc.ai/optimisation/pareto_optimal_curve/">
+        <link rel="canonical" href="https://zyc.ai/transformer/attention/">
       
       
         
@@ -25,7 +25,7 @@
     
     
       
-        <title>帕累托优化曲线 - Zhiyuan Chen</title>
+        <title>注意力 - Zhiyuan Chen</title>
       
     
     
@@ -78,6 +78,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#介绍" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -107,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              帕累托优化曲线
+              注意力
             
           </span>
         </div>
@@ -281,7 +286,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../introduction/" class="md-tabs__link">
+      <a href="../../optimisation/introduction/" class="md-tabs__link">
         优化
       </a>
     </li>
@@ -685,7 +690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../introduction/" class="md-nav__link">
+      <a href="../../optimisation/introduction/" class="md-nav__link">
         优化
       </a>
     </li>
@@ -699,7 +704,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../affine_convex/" class="md-nav__link">
+      <a href="../../optimisation/affine_convex/" class="md-nav__link">
         仿射与凸
       </a>
     </li>
@@ -713,7 +718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ball_cone/" class="md-nav__link">
+      <a href="../../optimisation/ball_cone/" class="md-nav__link">
         球与锥
       </a>
     </li>
@@ -727,7 +732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hyperplane_halfspace_polyhedra/" class="md-nav__link">
+      <a href="../../optimisation/hyperplane_halfspace_polyhedra/" class="md-nav__link">
         超平面、半空间与多面体
       </a>
     </li>
@@ -741,7 +746,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../dual_cone_generalized_inequality/" class="md-nav__link">
+      <a href="../../optimisation/dual_cone_generalized_inequality/" class="md-nav__link">
         对偶锥与广义不等式
       </a>
     </li>
@@ -755,7 +760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../convex_concave/" class="md-nav__link">
+      <a href="../../optimisation/convex_concave/" class="md-nav__link">
         凸凹
       </a>
     </li>
@@ -1406,19 +1411,51 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#介绍" class="md-nav__link">
+    介绍
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/ZhiyuanChen/edit/master/docs/optimisation/pareto_optimal_curve.md" title="编辑此页" class="md-content__button md-icon">
+                  <a href="https://github.com/ZhiyuanChen/edit/master/docs/transformer/attention.md" title="编辑此页" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>帕累托优化曲线</h1>
+                  <h1>注意力</h1>
                 
-                <p>在小节的最后，让我们讨论一下帕累托优化曲线。在这里，我们将极小元的思想引入优化。</p>
+                <h2 id="介绍">介绍<a class="headerlink" href="#介绍" title="Permanent link">#</a></h2>
+<p>机器翻译通常使用编码器-解码器（encoder-decoder）架构，每个语言使用一个编码器/解码器。然而，这个架构的一个潜在问题是神经网络需要将所有必要的信息压缩到一个定长的向量中。这使得神经网络难以应对较长的句子。</p>
+<p>本文通过在训练中联合的进行对齐和翻译来解决这个问题。在预测下一个词时，模型首先会（软）搜索并关注源句子中具有最相关的信息的一组位置，然后基于与这些源位置和所有先前生成的目标词关联的上下文向量来预测目标词。</p>
+<p>本文所提出的方法与基础的编码器-解码器最重要的区别是，他不试图去将整句话编码成一个定长向量，而是将输入语句编码成一个向量序列，解码时自适应的从向量序列中选取一个子集进行解码。这样一来，模型就不再需要将源句中蕴含的所有信息压缩到一个定长向量中。从而使模型能够更好的应对较长的句子。</p>
                 
                   
                     
@@ -1427,7 +1464,7 @@
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2021-03-11 17:00:04</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2021-03-11 17:00:08</span>
     
   </small>
 </div>
@@ -1440,7 +1477,7 @@
 
   <h2 id="__comments">评论</h2>
   <div id="disqus_thread"></div>
-  <script>var disqus_config=function(){this.page.url="https://zyc.ai/optimisation/pareto_optimal_curve/",this.page.identifier="/optimisation/pareto_optimal_curve/"};window.addEventListener("load",function(){var e=document,i=e.createElement("script");i.src="//zycai.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)})</script>
+  <script>var disqus_config=function(){this.page.url="https://zyc.ai/transformer/attention/",this.page.identifier="/transformer/attention/"};window.addEventListener("load",function(){var e=document,i=e.createElement("script");i.src="//zycai.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)})</script>
 
               
             </article>
@@ -1453,7 +1490,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../introduction/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../../stat/statistics/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1462,25 +1499,11 @@
               <span class="md-footer__direction">
                 上一页
               </span>
-              None
+              统计
             </div>
           </div>
         </a>
       
-      
-        <a href="../../pytorch/distributed/" class="md-footer__link md-footer__link--next" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                下一页
-              </span>
-              None
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
       
     </nav>
   
