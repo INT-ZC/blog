@@ -13,7 +13,7 @@
         <meta name="author" content="Zhiyuan Chen">
       
       
-        <link rel="canonical" href="https://zyc.ai/about/about/">
+        <link rel="canonical" href="https://zyc.ai/ssl/SimCLRv2/">
       
       
         
@@ -25,7 +25,7 @@
     
     
       
-        <title>关于 - Zhiyuan Chen</title>
+        <title>SimCLRv2 - Zhiyuan Chen</title>
       
     
     
@@ -78,6 +78,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#动机" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -107,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              关于
+              SimCLRv2
             
           </span>
         </div>
@@ -297,7 +302,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../cv/ssl/SimCLR/" class="md-tabs__link">
+      <a href="../../cv/big_transfer/" class="md-tabs__link">
         计算机视觉
       </a>
     </li>
@@ -315,6 +320,24 @@
     <li class="md-tabs__item">
       <a href="../../transformer/attention/" class="md-tabs__link">
         变换网络
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../SimCLR/" class="md-tabs__link md-tabs__link--active">
+        自监督学习
       </a>
     </li>
   
@@ -393,7 +416,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../" class="md-tabs__link">
+      <a href="../../about/" class="md-tabs__link">
         关于
       </a>
     </li>
@@ -803,20 +826,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cv/ssl/SimCLR/" class="md-nav__link">
-        SimCLR
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../cv/big_transfer/" class="md-nav__link">
         Big Transfer
       </a>
@@ -913,23 +922,169 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" data-md-state="indeterminate" type="checkbox" id="__nav_8" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" checked>
       
       
       
       
         <label class="md-nav__link" for="__nav_8">
+          自监督学习
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="自监督学习" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          自监督学习
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SimCLR/" class="md-nav__link">
+        SimCLR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          SimCLRv2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        SimCLRv2
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#动机" class="md-nav__link">
+    动机
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#贡献" class="md-nav__link">
+    贡献
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#方法" class="md-nav__link">
+    方法
+  </a>
+  
+    <nav class="md-nav" aria-label="方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#框架" class="md-nav__link">
+    框架
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#大batch-size训练" class="md-nav__link">
+    大batch size训练
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#实验设置" class="md-nav__link">
+    实验设置
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#讨论" class="md-nav__link">
+    讨论
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" data-md-state="indeterminate" type="checkbox" id="__nav_9" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
           Kubernetes
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Kubernetes" data-md-level="1">
-        <label class="md-nav__title" for="__nav_8">
+        <label class="md-nav__title" for="__nav_9">
           <span class="md-nav__icon md-icon"></span>
           Kubernetes
         </label>
@@ -1022,18 +1177,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" data-md-state="indeterminate" type="checkbox" id="__nav_9" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" data-md-state="indeterminate" type="checkbox" id="__nav_10" checked>
       
       
       
       
-        <label class="md-nav__link" for="__nav_9">
+        <label class="md-nav__link" for="__nav_10">
           Docker
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Docker" data-md-level="1">
-        <label class="md-nav__title" for="__nav_9">
+        <label class="md-nav__title" for="__nav_10">
           <span class="md-nav__icon md-icon"></span>
           Docker
         </label>
@@ -1112,18 +1267,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" data-md-state="indeterminate" type="checkbox" id="__nav_10" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" data-md-state="indeterminate" type="checkbox" id="__nav_11" checked>
       
       
       
       
-        <label class="md-nav__link" for="__nav_10">
+        <label class="md-nav__link" for="__nav_11">
           C++核心指南
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="C++核心指南" data-md-level="1">
-        <label class="md-nav__title" for="__nav_10">
+        <label class="md-nav__title" for="__nav_11">
           <span class="md-nav__icon md-icon"></span>
           C++核心指南
         </label>
@@ -1174,18 +1329,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" data-md-state="indeterminate" type="checkbox" id="__nav_11" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" data-md-state="indeterminate" type="checkbox" id="__nav_12" checked>
       
       
       
       
-        <label class="md-nav__link" for="__nav_11">
+        <label class="md-nav__link" for="__nav_12">
           随笔
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="随笔" data-md-level="1">
-        <label class="md-nav__title" for="__nav_11">
+        <label class="md-nav__title" for="__nav_12">
           <span class="md-nav__icon md-icon"></span>
           随笔
         </label>
@@ -1278,18 +1433,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" data-md-state="indeterminate" type="checkbox" id="__nav_12" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" data-md-state="indeterminate" type="checkbox" id="__nav_13" checked>
       
       
       
       
-        <label class="md-nav__link" for="__nav_12">
+        <label class="md-nav__link" for="__nav_13">
           关于
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="关于" data-md-level="1">
-        <label class="md-nav__title" for="__nav_12">
+        <label class="md-nav__title" for="__nav_13">
           <span class="md-nav__icon md-icon"></span>
           关于
         </label>
@@ -1301,7 +1456,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../about/" class="md-nav__link">
         Zhiyuan Chen
       </a>
     </li>
@@ -1315,7 +1470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../donate/" class="md-nav__link">
+      <a href="../../about/donate/" class="md-nav__link">
         捐赠
       </a>
     </li>
@@ -1329,7 +1484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../contribute/" class="md-nav__link">
+      <a href="../../about/contribute/" class="md-nav__link">
         贡献
       </a>
     </li>
@@ -1343,7 +1498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../eula/" class="md-nav__link">
+      <a href="../../about/eula/" class="md-nav__link">
         最终用户许可协议
       </a>
     </li>
@@ -1357,7 +1512,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../privacy/" class="md-nav__link">
+      <a href="../../about/privacy/" class="md-nav__link">
         隐私声明
       </a>
     </li>
@@ -1371,7 +1526,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../comment/" class="md-nav__link">
+      <a href="../../about/comment/" class="md-nav__link">
         评论政策
       </a>
     </li>
@@ -1385,7 +1540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../license/" class="md-nav__link">
+      <a href="../../about/license/" class="md-nav__link">
         GPLv3
       </a>
     </li>
@@ -1406,28 +1561,142 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#动机" class="md-nav__link">
+    动机
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#贡献" class="md-nav__link">
+    贡献
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#方法" class="md-nav__link">
+    方法
+  </a>
+  
+    <nav class="md-nav" aria-label="方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#框架" class="md-nav__link">
+    框架
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#大batch-size训练" class="md-nav__link">
+    大batch size训练
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#实验设置" class="md-nav__link">
+    实验设置
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#讨论" class="md-nav__link">
+    讨论
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/ZhiyuanChen/edit/master/docs/about/about.md" title="编辑此页" class="md-content__button md-icon">
+                  <a href="https://github.com/ZhiyuanChen/edit/master/docs/ssl/SimCLRv2.md" title="编辑此页" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>关于</h1>
+                  <h1>SimCLRv2</h1>
                 
-                <p>你好，欢迎访问本网站。</p>
-<p>本网站基于<a href="https://pages.github.com/">GitHUb Pages</a>与<a href="https://www.mkdocs.org/">MKDocs</a>构建，旨在提供一个分享知识的平台。</p>
-<p>本网站是陈陟原的个人网站，但我也欢迎任何人士提交commit以分享新的知识，只要你遵循以下原则：</p>
-<p>Don&rsquo;t be evil.</p>
-<p>如果你有意贡献，敬请参阅贡献指南。</p>
-<p>如果你有意捐赠，敬请参阅<a href="../donate">捐赠</a>。</p>
-<p>SenseTime
-SenseTime</p>
-<p>3DVAR</p>
-<p>三维视觉与增强现实</p>
+                <p>SimCLRv2提出了一个三步的半监督算法，首先使用SimCLRv2无监督预训练一个大模型，然后使用一小部分标注数据监督fine-tune，最后通过无标签样本蒸馏来refine和迁移任务相关知识。对于ImageNet，在使用1%的标签时，本工作达到了73.9%的top-1准确率，并在使用10%的标签时达到了77.5%的top-1准确率。</p>
+<h2 id="动机">动机<a class="headerlink" href="#动机" title="Permanent link">#</a></h2>
+<p>使用无标签数据进行任务无关的预训练，然后使用标签数据进行任务相关的fine-tune在自然语言处理中被广泛应用，但在计算机视觉中还非主流。在计算机视觉当中更常见的另一个方法时在监督学习中直接利用无标签数据，作为一种规则化方法。这种方法在任务特定方式中使用无标签数据以鼓励在不同模型之间或者不同数据增强下对无标签数据进行类标签预测的一致性。</p>
+<h2 id="贡献">贡献<a class="headerlink" href="#贡献" title="Permanent link">#</a></h2>
+<p>本文提出了一个半监督学习的框架，该框架由三个部分组成：1. 无监督或自监督预训练，2. 监督 fine-tune，3. 使用无标签数据蒸馏。</p>
+<ol>
+<li>
+<p>对于半监督学习（通过任务无关的使用无标签数据），标签越少，越有可能受益于更大的模型。更大的自监督模型拥有更高的标签效率，在很少的标签样本上fine-tune之后有显著更好的表现，尽管他们的容量更大因而更可能过拟合。</p>
+</li>
+<li>
+<p>尽管大模型对于学习通用（视觉）表达而言十分重要，但是额外的容量对于特定目标任务而言可能是不必须的。因此，通过使用任务特定的使用无标签数据，模型的预测性能可以被进一步提升并被迁移到更小的网络中。</p>
+</li>
+<li>
+<p>更深的映射头不但能提升通过线性评估测得的表达质量，而且还能提升从映射头的一个 <em>中间层</em> 进行微调时的半监督性能。</p>
+</li>
+</ol>
+<h2 id="方法">方法<a class="headerlink" href="#方法" title="Permanent link">#</a></h2>
+<h3 id="框架">框架<a class="headerlink" href="#框架" title="Permanent link">#</a></h3>
+<p>本文从隐空间的对比损失来最大化同一数据样本的不同增强视图的一致性以学习表达。本框架由四个主要部分构成。</p>
+<ol>
+<li>
+<p>一个随机 <em>数据增强</em> 模块，对任一给定数据样本产生两个相关的视图，表示为<span><span class="MathJax_Preview">\tilde{x}_i</span><script type="math/tex">\tilde{x}_i</script></span>和<span><span class="MathJax_Preview">\tilde{x}_j</span><script type="math/tex">\tilde{x}_j</script></span>，我们将其称为正样本对。在本工作中， <strong>我们顺序的应用三个简单的增强：随即裁剪（镜像）并将其缩放回原始大小、随机色彩失真、随机高斯模糊。</strong> 其中，裁剪和颜色失真的组合对性能有至关重要的影响。</p>
+</li>
+<li>
+<p>一个神经网络 <em>基础编码器</em> <span><span class="MathJax_Preview">f(\cdot)</span><script type="math/tex">f(\cdot)</script></span>，从增强后的数据样本中提取出表达向量。本文的框架允许使用多种网络结构而没有限制。本文出于简单的考量使用了广泛使用的ResNet来获取<span><span class="MathJax_Preview">\mathbf{h}_i = f(\tilde{x}_i) = \mathrm{ResNet}(\tilde{x}_i)</span><script type="math/tex">\mathbf{h}_i = f(\tilde{x}_i) = \mathrm{ResNet}(\tilde{x}_i)</script></span>，其中<span><span class="MathJax_Preview">\mathbf{h}_i \in \mathbb{R}^d</span><script type="math/tex">\mathbf{h}_i \in \mathbb{R}^d</script></span>是平均池化层的输出。</p>
+</li>
+<li>
+<p>一个小的神经网络 <em>预测头</em> <span><span class="MathJax_Preview">g(\cdot)</span><script type="math/tex">g(\cdot)</script></span>，将表达映射到对比损失被应用的空间上。本文使用一个具有一个隐藏层的MLP来获得<span><span class="MathJax_Preview">\mathcal{z}_i = g(\mathbf{h}_i) = W^{(2)} \sigma (W^{(1)} h_i)</span><script type="math/tex">\mathcal{z}_i = g(\mathbf{h}_i) = W^{(2)} \sigma (W^{(1)} h_i)</script></span>，其中<span><span class="MathJax_Preview">\sigma</span><script type="math/tex">\sigma</script></span>代表ReLU非线性层。我们发现在<span><span class="MathJax_Preview">\mathcal{z}_i</span><script type="math/tex">\mathcal{z}_i</script></span>上定义对比损失比在<span><span class="MathJax_Preview">\mathbf{h}_i</span><script type="math/tex">\mathbf{h}_i</script></span>上更好。</p>
+</li>
+<li>
+<p>一个 <em>对比损失函数 NT-Xent</em> <span><span class="MathJax_Preview">\mathcal{l}_{i, j} = -\log \frac{\exp(\mathrm{sim}(\mathcal{z}_i, \mathcal{z}_j) / \tau)}{\sum^{2N}_{k=1} \mathbf{1}_{[k \neq i]} \exp(\mathrm{sim}(\mathcal{z}_i, \mathcal{z}_k) / \tau)}</span><script type="math/tex">\mathcal{l}_{i, j} = -\log \frac{\exp(\mathrm{sim}(\mathcal{z}_i, \mathcal{z}_j) / \tau)}{\sum^{2N}_{k=1} \mathbf{1}_{[k \neq i]} \exp(\mathrm{sim}(\mathcal{z}_i, \mathcal{z}_k) / \tau)}</script></span>，其中<span><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span>为batch size，<span><span class="MathJax_Preview">\mathrm{sim}(u, v) = u^Tv / \left\Vert u \right\Vert \left\Vert v \right\Vert</span><script type="math/tex">\mathrm{sim}(u, v) = u^Tv / \left\Vert u \right\Vert \left\Vert v \right\Vert</script></span>表示<span><span class="MathJax_Preview">\mathcal{l}_2</span><script type="math/tex">\mathcal{l}_2</script></span>正则后的<span><span class="MathJax_Preview">u</span><script type="math/tex">u</script></span>和<span><span class="MathJax_Preview">v</span><script type="math/tex">v</script></span>的点积（也即余弦相似度），<span><span class="MathJax_Preview">\mathbf{1}_{[k \neq i]}</span><script type="math/tex">\mathbf{1}_{[k \neq i]}</script></span>为一个指示器函数，当且仅当<span><span class="MathJax_Preview">k \neq i</span><script type="math/tex">k \neq i</script></span>时为1，<span><span class="MathJax_Preview">\tau</span><script type="math/tex">\tau</script></span>表示温度参数。<strong>损失在所有正样本对上被计算，也即<span><span class="MathJax_Preview">(i, j)</span><script type="math/tex">(i, j)</script></span>和<span><span class="MathJax_Preview">(j, i)</span><script type="math/tex">(j, i)</script></span></strong>。</p>
+</li>
+</ol>
+<h3 id="大batch-size训练">大batch size训练<a class="headerlink" href="#大batch-size训练" title="Permanent link">#</a></h3>
+<p>标准的SGD/Momentum结合线性学习率调整对于超大规模网络训练来说可能不太稳定。本工作使用LARS优化器以解决这个问题。</p>
+<p>由于正样本对通常在同一张卡上，模型可能利用局部信息的泄露而在不提升表达的情况下提升性能。本文通过聚合BN的均值和方差来实现Global BN以解决这个问题。其他方法还包括跨设备随机排布数据、使用layer norm替代BN。</p>
+<h3 id="实验设置">实验设置<a class="headerlink" href="#实验设置" title="Permanent link">#</a></h3>
+<p>本工作在ImageNet ILSVRC-2012上训练，数据增强包括随机剪裁并缩放回原始大小（伴随随机镜像）、色彩失真和高斯模糊。模型使用ResNet-50作为编码器，和一个2层MLP映射头来将表达映射到一个128维的隐空间上。本工作使用NT-Xent损失，通过LARS进行优化。学习率被设置为4.8（<span><span class="MathJax_Preview">0.3 \times \text{batch size} / 256</span><script type="math/tex">0.3 \times \text{batch size} / 256</script></span>），weight decay设置为1e-6。Batch size为4096，训练100个周期s。此外，线性预热在前10个周期被应用，学习率按照cosine decay schedule衰减，没有重启。</p>
+<h2 id="讨论">讨论<a class="headerlink" href="#讨论" title="Permanent link">#</a></h2>
+<ul>
+<li>数据增强的构成对学习好的表达至关重要</li>
+<li>相较于监督学习，对比学习需要更强的数据增强</li>
+<li>对比学习从更大的模型中获益（更多）</li>
+<li>非线性映射头提升在其之前的表达的质量</li>
+<li>正则化的交叉熵损失与可调的温度参数比其他方法效果更好</li>
+<li>对比学习从更大的batch sizes和更长的训练中获益（更多）</li>
+</ul>
                 
                   
                     
@@ -1436,7 +1705,7 @@ SenseTime</p>
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2020-08-26 07:01:05</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2021-03-23 17:14:29</span>
     
   </small>
 </div>
@@ -1449,7 +1718,7 @@ SenseTime</p>
 
   <h2 id="__comments">评论</h2>
   <div id="disqus_thread"></div>
-  <script>var disqus_config=function(){this.page.url="https://zyc.ai/about/about/",this.page.identifier="/about/about/"};window.addEventListener("load",function(){var e=document,i=e.createElement("script");i.src="//zycai.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)})</script>
+  <script>var disqus_config=function(){this.page.url="https://zyc.ai/ssl/SimCLRv2/",this.page.identifier="/ssl/SimCLRv2/"};window.addEventListener("load",function(){var e=document,i=e.createElement("script");i.src="//zycai.disqus.com/embed.js",i.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(i)})</script>
 
               
             </article>
@@ -1462,7 +1731,7 @@ SenseTime</p>
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../SimCLR/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1471,19 +1740,19 @@ SenseTime</p>
               <span class="md-footer__direction">
                 上一页
               </span>
-              None
+              SimCLR
             </div>
           </div>
         </a>
       
       
-        <a href="../comment/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../../k8s/introduction/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              None
+              导论
             </div>
           </div>
           <div class="md-footer__button md-icon">
